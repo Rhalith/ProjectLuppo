@@ -11,7 +11,7 @@ public class AudioManager : MonoBehaviour
     [SerializeField] private AudioSource audioSource, effectsSource;
 
 
-    //Makes AudioManager Instance not destroyed on scene changes
+    //Makes AudioManager Object not destroyed on scene changes
     private void Awake()
     {
         if (instance == null)
@@ -40,6 +40,7 @@ public class AudioManager : MonoBehaviour
         effectsSource.PlayOneShot(clip);
     }
 
+    //For playing music for once
     public void PlayMusic(AudioClip clip)
     {
         audioSource.PlayOneShot(clip);
