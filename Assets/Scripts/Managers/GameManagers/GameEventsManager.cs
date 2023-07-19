@@ -27,4 +27,26 @@ public class GameEventsManager : MonoBehaviour
             onDayEnded();
         }
     }
+
+    // Button Activation/Scene Change to Kitchen
+    public event Action onKitchenActivated;
+
+    public void KitchenActivated()
+    {
+        if (onKitchenActivated != null)
+        {
+            onKitchenActivated();
+        }
+    }
+
+    // Button Activation/Scene Change to Restaurant
+    public event Action onRestaurantActivated;
+
+    public void RestaurantActivated()
+    {
+        if (onRestaurantActivated != null)
+        {
+            onRestaurantActivated();
+        }
+    }
 }
