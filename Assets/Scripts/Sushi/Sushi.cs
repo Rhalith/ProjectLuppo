@@ -6,13 +6,16 @@ using UnityEngine;
 public class Sushi
 {
     List<string> ingredients;
+    SushiType sushiType;
 
-    public Sushi(params string[] ingredients)
+    //TODO: Change this to a more elegant way use enum
+    public Sushi(SushiType sushiType, params string[] ingredients)
     {
         foreach (var item in ingredients)
         {
             this.ingredients.Add(item);
         }
+        this.sushiType = sushiType;
     }
 
     public bool CheckIngredients(List<string> availableIngredients)
