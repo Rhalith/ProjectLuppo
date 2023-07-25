@@ -7,8 +7,10 @@ using UnityEngine.UI;
 
 public class InGameManager : MonoBehaviour
 {
-    [SerializeField] GameObject RestaurantUI;
-    [SerializeField] GameObject KitchenUI;
+    [SerializeField] GameObject restaurantUI;
+    [SerializeField] GameObject kitchenUI;
+
+    //TODO: remove unused variables
     bool animate = false;
     bool kitchenActive = false;
     bool restaurantActive = true;
@@ -16,15 +18,15 @@ public class InGameManager : MonoBehaviour
 
     public void Start()
     {
-        GameEventsManager.instance.onKitchenActivated += OnKitchenActivated;
-        GameEventsManager.instance.onRestaurantActivated += OnRestaurantActivated;
+        GameEventsManager.instance.OnKitchenActivated += OnKitchenActivated;
+        GameEventsManager.instance.OnRestaurantActivated += OnRestaurantActivated;
         anim.GetComponent<Animator>();
     }
 
     public void OnDestroy()
     {
-        GameEventsManager.instance.onKitchenActivated -= OnKitchenActivated;
-        GameEventsManager.instance.onRestaurantActivated -= OnRestaurantActivated;
+        GameEventsManager.instance.OnKitchenActivated -= OnKitchenActivated;
+        GameEventsManager.instance.OnRestaurantActivated -= OnRestaurantActivated;
     }
 
     public void ActivateRestaurant()
@@ -49,22 +51,22 @@ public class InGameManager : MonoBehaviour
 
     IEnumerator RestaurantActivated()
     {
-        KitchenUI.SetActive(false);
+        kitchenUI.SetActive(false);
 
         yield return new WaitForSeconds(0.5f);
 
-        RestaurantUI.SetActive(true);
+        restaurantUI.SetActive(true);
     }
 
     IEnumerator KitchenActivated()
     {
         
         
-        RestaurantUI.SetActive(false);
+        restaurantUI.SetActive(false);
         
         yield return new WaitForSeconds(0.5f);
 
-        KitchenUI.SetActive(true);
+        kitchenUI.SetActive(true);
 
         //firstmethod();
         //invoke(secondmethod(), 0.5f);

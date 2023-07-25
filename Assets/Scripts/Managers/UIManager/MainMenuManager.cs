@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class MainMenuManager : MonoBehaviour
 {
-    [SerializeField] private GameObject mainMenuUI;
-    [SerializeField] private GameObject optionsUI;
+    [SerializeField] private GameObject _mainMenuUI;
+    [SerializeField] private GameObject _optionsUI;
 
     //Starts New Game
     public void StartNewGame()
@@ -16,7 +16,7 @@ public class MainMenuManager : MonoBehaviour
     //Opens Options Menu
     public void OpenOptions()
     {
-        optionsUI.SetActive(true);
+        _optionsUI.SetActive(true);
     }
 
     //Closes Game

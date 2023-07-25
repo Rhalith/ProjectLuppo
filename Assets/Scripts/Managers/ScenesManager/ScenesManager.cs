@@ -11,12 +11,6 @@ public class ScenesManager : MonoBehaviour
         instance = this;
     }
 
-    public enum Scene
-    {
-        MainMenu,
-        Level01
-    }
-
     //Loads Specific Scene
     public void LoadScene(Scene scene)
     {
@@ -40,4 +34,10 @@ public class ScenesManager : MonoBehaviour
     {
         SceneManager.LoadScene(Scene.MainMenu.ToString());
     }
+}
+
+public enum Scene
+{
+    MainMenu,
+    Level01
 }

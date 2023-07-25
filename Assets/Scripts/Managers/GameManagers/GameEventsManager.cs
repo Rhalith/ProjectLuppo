@@ -18,35 +18,29 @@ public class GameEventsManager : MonoBehaviour
     }
 
     //Example event(Also day end event)
-    public event Action onDayEnded;
+    public event Action OnDayEnded;
 
     public void DayEnded()
     {
-        if (onDayEnded != null)
-        {
-            onDayEnded();
-        }
+        OnDayEnded?.Invoke();
     }
 
     // Button Activation/Scene Change to Kitchen
-    public event Action onKitchenActivated;
+    public event Action OnKitchenActivated;
 
     public void KitchenActivated()
     {
-        if (onKitchenActivated != null)
-        {
-            onKitchenActivated();
-        }
+        OnKitchenActivated?.Invoke();
     }
 
     // Button Activation/Scene Change to Restaurant
-    public event Action onRestaurantActivated;
+    public event Action OnRestaurantActivated;
 
     public void RestaurantActivated()
     {
-        if (onRestaurantActivated != null)
+        if (OnRestaurantActivated != null)
         {
-            onRestaurantActivated();
+            OnRestaurantActivated();
         }
     }
 }
