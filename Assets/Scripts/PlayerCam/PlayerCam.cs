@@ -26,7 +26,8 @@ public class PlayerCam : MonoBehaviour
             previousMousePosition = currentMousePosition;
         }
 
-        Vector3 moveDir = transform.forward * inputDir.x;
+        Vector3 moveDir = transform.right
+            * inputDir.x;
 
         transform.position += moveDir * moveSpeed * Time.deltaTime;
         

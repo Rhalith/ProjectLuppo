@@ -24,7 +24,7 @@ public class InGameManager : MonoBehaviour
     public void OnDestroy()
     {
         GameEventsManager.instance.onKitchenActivated -= OnKitchenActivated;
-        GameEventsManager.instance.onRestaurantActivated += OnRestaurantActivated;
+        GameEventsManager.instance.onRestaurantActivated -= OnRestaurantActivated;
     }
 
     public void ActivateRestaurant()
@@ -49,19 +49,10 @@ public class InGameManager : MonoBehaviour
 
     IEnumerator RestaurantActivated()
     {
-        
-        kitchenActive = false;
-        restaurantActive = true;
-        animate = true;
-        anim.SetBool("KitchenActive", kitchenActive);
-        anim.SetBool("RestaurantActive", restaurantActive);
-        anim.SetBool("Animate", animate);
         KitchenUI.SetActive(false);
 
         yield return new WaitForSeconds(0.5f);
 
-        animate = false;
-        anim.SetBool("Animate", animate);
         RestaurantUI.SetActive(true);
     }
 
@@ -70,19 +61,13 @@ public class InGameManager : MonoBehaviour
         
         
         RestaurantUI.SetActive(false);
-        kitchenActive = true;
-        restaurantActive = false;
-        animate = true;
-        anim.SetBool("KitchenActive", kitchenActive);
-        anim.SetBool("RestaurantActive", restaurantActive);
-        anim.SetBool("Animate", animate);
         
-
         yield return new WaitForSeconds(0.5f);
 
-        animate = false;
-        anim.SetBool("Animate", animate);
         KitchenUI.SetActive(true);
+
+        //firstmethod();
+        //invoke(secondmethod(), 0.5f);
         
     }
 }
