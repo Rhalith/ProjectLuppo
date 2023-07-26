@@ -2454,8 +2454,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40ad5ae8c9ec6d945845884af6116459, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainMenuUI: {fileID: 1381747570}
-  optionsUI: {fileID: 744931519}
+  _mainMenuUI: {fileID: 1381747570}
+  _optionsUI: {fileID: 744931519}
 --- !u!1 &1447817418
 GameObject:
   m_ObjectHideFlags: 0
@@ -3132,7 +3132,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4fc532bf21e67f409bd2b7fb6755a8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clip: {fileID: 8300000, guid: e66ca53df337a0642b4136f86dd69655, type: 3}
+  _clip: {fileID: 8300000, guid: f3347ba2e37fdb04ea501461840f6d4c, type: 3}
 --- !u!114 &1597114568
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3145,8 +3145,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb9a433864054924f992a347ba135863, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioSource: {fileID: 1577320827}
-  effectsSource: {fileID: 1677141191}
+  _audioSource: {fileID: 1577320827}
+  _effectsSource: {fileID: 1677141191}
 --- !u!4 &1597114569
 Transform:
   m_ObjectHideFlags: 0
@@ -4341,5 +4341,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc9a02408b65490438c32f48b5eaa9d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _Slider: {fileID: 136709940}
-  optionsUI: {fileID: 2139745891}
+  _slider: {fileID: 136709940}
+  _optionsUI: {fileID: 744931519}
