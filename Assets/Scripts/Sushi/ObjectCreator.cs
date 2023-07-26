@@ -6,12 +6,17 @@ public class ObjectCreator : MonoBehaviour
 {
     [SerializeField] GameObject sushiObject;
     GameObject instObj;
-    private bool check = false;
 
     public void OnMouseDown()
     {
-        if (!check)
+        if (!GameObject.FindWithTag("Instantiated"))
         {
+            InstantiateIngredientObject(sushiObject);
+        }
+
+        else if (!instObj)
+        {
+            DestroySushiObjectIfExists();
             InstantiateIngredientObject(sushiObject);
         }
 
@@ -20,19 +25,22 @@ public class ObjectCreator : MonoBehaviour
             DestroySushiObjectIfExists();
         }
 
-        check = !check;
     }
 
     public void InstantiateIngredientObject(GameObject sushiIngredientPrefab)
     {
         this.instObj = Object.Instantiate(sushiIngredientPrefab);
+        instObj.gameObject.tag = "Instantiated";
+        foreach (Transform t in instObj.transform)
+        {
+            t.gameObject.tag = "Instantiated";
+        }
     }
 
     public void DestroySushiObjectIfExists()
     {
-        if (instObj != null)
-        {
-            Object.Destroy(instObj.gameObject);
-        }
+     
+            Object.Destroy(GameObject.FindWithTag("Instantiated"));
+     
     }
 }
