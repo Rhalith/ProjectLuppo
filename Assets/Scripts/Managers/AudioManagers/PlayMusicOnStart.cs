@@ -5,11 +5,11 @@ using UnityEngine;
 public class PlayMusicOnStart : MonoBehaviour
 {
     [Header("Main Menu Music")]
-    [SerializeField] private AudioClip clip;
+    [SerializeField] private AudioClip _clip;
 
     //Makes Music Starts When Game is Launched
     void Start()
     {
-       AudioManager.instance.PlayMusic(clip);
+       AudioManager.instance.PlayMusic(_clip);
     }
 }

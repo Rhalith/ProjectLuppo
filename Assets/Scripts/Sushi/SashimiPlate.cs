@@ -11,7 +11,7 @@ public class SashimiPlate : MonoBehaviour
     private void Start()
     {
         position = sashimiPlate.transform.position;
-        GameEventsManager.instance.onServingAdded += OnServingAdded;
+        GameEventsManager.instance.OnServingAdded += OnServingAdded;
     }
 
 

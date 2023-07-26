@@ -6,13 +6,13 @@ using UnityEngine.UI;
 public class OptionsManager : MonoBehaviour
 {
     [Header("Set Slider")]
-    [SerializeField] private Slider _Slider;
-    [SerializeField] private GameObject optionsUI;
+    [SerializeField] private Slider _slider;
+    [SerializeField] private GameObject _optionsUI;
 
     private void Start()
     {
         //Adds listener for Volume Slider
-        _Slider.onValueChanged.AddListener(val => AudioManager.instance.ChangeMasterVolume(val));
+        _slider.onValueChanged.AddListener(val => AudioManager.instance.ChangeMasterVolume(val));
     }
     #region URL-Methods
 
@@ -75,6 +75,6 @@ public class OptionsManager : MonoBehaviour
     //Closes Options Menu
     public void CloseOptions() 
     {
-        optionsUI.SetActive(false);
+        _optionsUI.SetActive(false);
     }
 }

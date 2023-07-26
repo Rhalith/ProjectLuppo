@@ -11,7 +11,7 @@ public class NigiriPlate : MonoBehaviour
     private void Start()
     {
         position = nigiriPlate.transform.position;
-        GameEventsManager.instance.onServingAdded += OnServingAdded;
+        GameEventsManager.instance.OnServingAdded += OnServingAdded;
     }
 
 

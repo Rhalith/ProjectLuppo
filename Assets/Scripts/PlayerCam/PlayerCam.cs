@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class PlayerCam : MonoBehaviour
 {
+    //position cannot be float, needs to be vector3
     float previousMousePosition;
     public float moveSpeed;
+    //use new input system
     private void Update()
     {
         Vector3 inputDir = new Vector3(0, 0, 0);

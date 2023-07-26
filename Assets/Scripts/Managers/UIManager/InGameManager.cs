@@ -16,15 +16,15 @@ public class InGameManager : MonoBehaviour
 
     public void Start()
     {
-        GameEventsManager.instance.onKitchenActivated += OnKitchenActivated;
-        GameEventsManager.instance.onRestaurantActivated += OnRestaurantActivated;
+        GameEventsManager.instance.OnKitchenActivated += OnKitchenActivated;
+        GameEventsManager.instance.OnRestaurantActivated += OnRestaurantActivated;
         anim.GetComponent<Animator>();
     }
 
     public void OnDestroy()
     {
-        GameEventsManager.instance.onKitchenActivated -= OnKitchenActivated;
-        GameEventsManager.instance.onRestaurantActivated -= OnRestaurantActivated;
+        GameEventsManager.instance.OnKitchenActivated -= OnKitchenActivated;
+        GameEventsManager.instance.OnRestaurantActivated -= OnRestaurantActivated;
     }
 
     public void ActivateRestaurant()

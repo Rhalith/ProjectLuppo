@@ -5,20 +5,22 @@ using UnityEngine;
 public class CharacterMovement : MonoBehaviour
 {
     [Header("Movement")]
-    public float moveSpeed;
+    //PUBLIC VARIABLES SHOULD START WITH CAPITAL LETTERS
+    public float MoveSpeed;
 
-    public Transform orientation;
+    public Transform Orientation;
 
     float horizontalInput;
     float verticalInput;
 
     Vector3 moveDirection;
-    Rigidbody rb;
+    [SerializeField] private Rigidbody _rb;
 
     private void Start()
     {
-        rb = GetComponent<Rigidbody>();
-        rb.freezeRotation = true;
+        //get component is expensive, so use serializefield and scroll it from inspector
+        _rb = GetComponent<Rigidbody>();
+        _rb.freezeRotation = true;
     }
 
     private void Update()
@@ -31,6 +33,7 @@ public class CharacterMovement : MonoBehaviour
         MovePlayer();
     }
 
+    //Use new input system  
     private void GetInput()
     {
         horizontalInput = Input.GetAxisRaw("Horizontal");
@@ -39,9 +42,9 @@ public class CharacterMovement : MonoBehaviour
 
     private void MovePlayer()
     {
-        moveDirection = orientation.forward * verticalInput + orientation.right * horizontalInput;
+        moveDirection = Orientation.forward * verticalInput + Orientation.right * horizontalInput;
 
-        rb.AddForce(moveDirection.normalized * moveSpeed * 10f, ForceMode.Force);
+        _rb.AddForce(moveDirection.normalized * MoveSpeed * 10f, ForceMode.Force);
     }
 
 
