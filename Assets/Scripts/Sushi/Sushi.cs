@@ -5,10 +5,9 @@ using UnityEngine;
 
 public class Sushi
 {
-    List<SushiIngredient> ingredients;
+    List<SushiIngredient> ingredients = new();
     SushiType sushiType;
 
-    //TODO: Change this to a more elegant way use enum
     public Sushi(SushiType sushiType, params SushiIngredient[] ingredients)
     {
         foreach (var item in ingredients)
@@ -17,6 +16,7 @@ public class Sushi
         }
         this.sushiType = sushiType;
     }
+    public SushiType SushiType { get => sushiType;}
 
     public bool CheckIngredients(List<SushiIngredient> availableIngredients)
     {

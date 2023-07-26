@@ -4,7 +4,7 @@ public enum SushiIngredient
     omlet,
     tatlisuyyilanbaligi,
     somon,
-    tazedcigdeniztaragi,
+    tazecigdeniztaragi,
     cigtonbaligi,
     tazesogan,
     pirinc,

@@ -53,63 +53,70 @@ public class SushiManager : MonoBehaviour
         List<Sushi> sushiList = new ();
 
         #region Sashimi
-        Sushi sake = new Sushi(SushiType.Sashimi,SushiIngredient.somon); 
+        Sushi sake = new(SushiType.Sashimi,SushiIngredient.somon); 
         sushiList.Add(sake);
-        Sushi ebi = new Sushi(SushiType.Sashimi, SushiIngredient.karides); 
+        Sushi ebi = new(SushiType.Sashimi, SushiIngredient.karides); 
         sushiList.Add(ebi);
-        Sushi ahi = new Sushi(SushiType.Sashimi, SushiIngredient.cigtonbaligi, SushiIngredient.soyasosu); 
+        Sushi ahi = new(SushiType.Sashimi, SushiIngredient.cigtonbaligi, SushiIngredient.soyasosu); 
         sushiList.Add(ahi);
-        Sushi unagi = new Sushi(SushiType.Sashimi, SushiIngredient.tatlisuyyilanbaligi, SushiIngredient.unagisosu); 
+        Sushi unagi = new(SushiType.Sashimi, SushiIngredient.tatlisuyyilanbaligi, SushiIngredient.unagisosu); 
         sushiList.Add(unagi); 
-        Sushi hamachi = new Sushi(SushiType.Sashimi, SushiIngredient.sarikuyruk, SushiIngredient.yuzu, SushiIngredient.soyasosu); 
+        Sushi hamachi = new(SushiType.Sashimi, SushiIngredient.sarikuyruk, SushiIngredient.yuzu, SushiIngredient.soyasosu); 
         sushiList.Add(hamachi);
-        Sushi tako = new Sushi(SushiType.Sashimi, SushiIngredient.ahtapot);
+        Sushi tako = new(SushiType.Sashimi, SushiIngredient.ahtapot);
         sushiList.Add(tako);
         #endregion
         #region Nigiri
-        Sushi ebiNigiri = new Sushi(SushiType.Nigiri, SushiIngredient.karides, SushiIngredient.pirinc, SushiIngredient.kombuyosunu);
+        Sushi ebiNigiri = new(SushiType.Nigiri, SushiIngredient.karides, SushiIngredient.pirinc, SushiIngredient.kombuyosunu);
         sushiList.Add(ebiNigiri);
-        Sushi tamagoNigiri = new Sushi(SushiType.Nigiri, SushiIngredient.omlet, SushiIngredient.kombuyosunu, SushiIngredient.pirinc);
+        Sushi tamagoNigiri = new(SushiType.Nigiri, SushiIngredient.omlet, SushiIngredient.kombuyosunu, SushiIngredient.pirinc);
         sushiList.Add(tamagoNigiri);
-        Sushi unagiNigiri = new Sushi(SushiType.Nigiri, SushiIngredient.tatlisuyyilanbaligi, SushiIngredient.pirinc, SushiIngredient.kombuyosunu);
+        Sushi unagiNigiri = new(SushiType.Nigiri, SushiIngredient.tatlisuyyilanbaligi, SushiIngredient.pirinc, SushiIngredient.kombuyosunu);
         sushiList.Add(unagiNigiri);
-        Sushi sakeNigiri = new Sushi(SushiType.Nigiri, SushiIngredient.somon, SushiIngredient.pirinc);
+        Sushi sakeNigiri = new(SushiType.Nigiri, SushiIngredient.somon, SushiIngredient.pirinc);
         sushiList.Add(sakeNigiri);
-        Sushi hotateNigiri = new Sushi(SushiType.Nigiri, SushiIngredient.tazedcigdeniztaragi, SushiIngredient.pirinc);
+        Sushi hotateNigiri = new(SushiType.Nigiri, SushiIngredient.tazecigdeniztaragi, SushiIngredient.pirinc);
         sushiList.Add(hotateNigiri);
-        Sushi maguroNigiri = new Sushi(SushiType.Nigiri, SushiIngredient.cigtonbaligi, SushiIngredient.pirinc);
+        Sushi maguroNigiri = new(SushiType.Nigiri, SushiIngredient.cigtonbaligi, SushiIngredient.pirinc);
         sushiList.Add(maguroNigiri);
         #endregion
         #region Maki
-        Sushi hosoMaki = new Sushi(SushiType.Maki, SushiIngredient.omlet, SushiIngredient.kombuyosunu, SushiIngredient.salatalik);
+        Sushi hosoMaki = new(SushiType.Maki, SushiIngredient.omlet, SushiIngredient.kombuyosunu, SushiIngredient.salatalik);
         sushiList.Add(hosoMaki);
-        Sushi nattoMaki = new Sushi(SushiType.Maki, SushiIngredient.pirinc, SushiIngredient.tazesogan, SushiIngredient.fermentesoyafasulyesi, SushiIngredient.yosun);
+        Sushi nattoMaki = new(SushiType.Maki, SushiIngredient.pirinc, SushiIngredient.tazesogan, SushiIngredient.fermentesoyafasulyesi, SushiIngredient.yosun);
         sushiList.Add(nattoMaki);
-        Sushi sakeMaki = new Sushi(SushiType.Maki, SushiIngredient.pirinc, SushiIngredient.yosun, SushiIngredient.somon, SushiIngredient.julyensalatalik);
+        Sushi sakeMaki = new(SushiType.Maki, SushiIngredient.pirinc, SushiIngredient.yosun, SushiIngredient.somon, SushiIngredient.julyensalatalik);
         sushiList.Add(sakeMaki);
-        Sushi tekkaMaki = new Sushi(SushiType.Maki, SushiIngredient.pirinc, SushiIngredient.yosun, SushiIngredient.cigtonbaligi);
+        Sushi tekkaMaki = new(SushiType.Maki, SushiIngredient.pirinc, SushiIngredient.yosun, SushiIngredient.cigtonbaligi);
         sushiList.Add(tekkaMaki);
-        Sushi kappaMaki = new Sushi(SushiType.Maki, SushiIngredient.pirinc, SushiIngredient.yosun, SushiIngredient.cigtonbaligi);
+        Sushi kappaMaki = new(SushiType.Maki, SushiIngredient.pirinc, SushiIngredient.yosun, SushiIngredient.cigtonbaligi);
         sushiList.Add(kappaMaki);
-        Sushi shinkoMaki = new Sushi(SushiType.Maki, SushiIngredient.pirinc, SushiIngredient.yosun, SushiIngredient.julyenturp);
+        Sushi shinkoMaki = new(SushiType.Maki, SushiIngredient.pirinc, SushiIngredient.yosun, SushiIngredient.julyenturp);
         sushiList.Add(shinkoMaki);
-        Sushi kanpyoMaki = new Sushi(SushiType.Maki, SushiIngredient.pirinc, SushiIngredient.soyasosu, SushiIngredient.kanpyo);
+        Sushi kanpyoMaki = new(SushiType.Maki, SushiIngredient.pirinc, SushiIngredient.soyasosu, SushiIngredient.kanpyo);
         sushiList.Add(kanpyoMaki);
-        Sushi chumaki = new Sushi(SushiType.Maki, SushiIngredient.pirinc, SushiIngredient.nori, SushiIngredient.julyensalatalik, SushiIngredient.avokado, SushiIngredient.omlet);
+        Sushi chumaki = new(SushiType.Maki, SushiIngredient.pirinc, SushiIngredient.nori, SushiIngredient.julyensalatalik, SushiIngredient.avokado, SushiIngredient.omlet);
         sushiList.Add(chumaki);
-        //ask to burak about somon/ton realation
-        Sushi futomaki = new Sushi(SushiType.Maki, SushiIngredient.pirinc, SushiIngredient.yosun, SushiIngredient.somon, SushiIngredient.cigtonbaligi, SushiIngredient.havuc);
+        Sushi futomakiSomon = new(SushiType.Maki, SushiIngredient.pirinc, SushiIngredient.yosun, SushiIngredient.somon, SushiIngredient.havuc);
+        sushiList.Add(futomakiSomon);
+        Sushi futomakiTon = new(SushiType.Maki, SushiIngredient.pirinc, SushiIngredient.yosun, SushiIngredient.cigtonbaligi, SushiIngredient.havuc);
+        sushiList.Add(futomakiTon);
+        Sushi futomaki = new(SushiType.Maki, SushiIngredient.pirinc, SushiIngredient.yosun, SushiIngredient.cigtonbaligi, SushiIngredient.somon, SushiIngredient.havuc);
         sushiList.Add(futomaki);
         #endregion
         #region Uramaki
-        Sushi californiaRoll = new Sushi(SushiType.Uramaki, SushiIngredient.pirinc, SushiIngredient.julyensalatalik, SushiIngredient.avokado, SushiIngredient.yengeceti, SushiIngredient.yosun, SushiIngredient.havyar);
+        Sushi californiaRoll = new(SushiType.Uramaki, SushiIngredient.pirinc, SushiIngredient.julyensalatalik, SushiIngredient.avokado, SushiIngredient.yengeceti, SushiIngredient.yosun, SushiIngredient.havyar);
         sushiList.Add(californiaRoll);
-        //ask burak about ton/sarikuyruk/somon relation
-        Sushi rainbowRoll = new Sushi(SushiType.Uramaki, SushiIngredient.pirinc, SushiIngredient.yosun, SushiIngredient.cigtonbaligi, SushiIngredient.avokado, SushiIngredient.yengeceti, SushiIngredient.julyensalatalik);
-        sushiList.Add(rainbowRoll);
-        Sushi dragonRoll = new Sushi(SushiType.Uramaki, SushiIngredient.pirinc, SushiIngredient.yosun, SushiIngredient.avokado, SushiIngredient.julyensalatalik, SushiIngredient.tatlisuyyilanbaligi, SushiIngredient.karides);
+        Sushi rainbowRollTon = new(SushiType.Uramaki, SushiIngredient.pirinc, SushiIngredient.yosun, SushiIngredient.cigtonbaligi, SushiIngredient.avokado, SushiIngredient.yengeceti, SushiIngredient.julyensalatalik);
+        sushiList.Add(rainbowRollTon);
+        Sushi rainbowRollSarikuyruk = new(SushiType.Uramaki, SushiIngredient.pirinc, SushiIngredient.yosun, SushiIngredient.sarikuyruk, SushiIngredient.avokado, SushiIngredient.yengeceti, SushiIngredient.julyensalatalik);
+        sushiList.Add(rainbowRollSarikuyruk);
+        Sushi rainbowRollSomon = new(SushiType.Uramaki, SushiIngredient.pirinc, SushiIngredient.yosun, SushiIngredient.somon, SushiIngredient.avokado, SushiIngredient.yengeceti, SushiIngredient.julyensalatalik);
+        sushiList.Add(rainbowRollSomon);
+        Sushi dragonRoll = new(SushiType.Uramaki, SushiIngredient.pirinc, SushiIngredient.yosun, SushiIngredient.avokado, SushiIngredient.julyensalatalik, SushiIngredient.tatlisuyyilanbaligi, SushiIngredient.karides);
         sushiList.Add(dragonRoll);
-        Sushi spicyTunaRoll = new Sushi(SushiType.Uramaki, SushiIngredient.pirinc, SushiIngredient.yosun, SushiIngredient.cigtonbaligi, SushiIngredient.sriracha, SushiIngredient.susamyagi, SushiIngredient.baharatlimayonez);
+        Sushi spicyTunaRoll = new(SushiType.Uramaki, SushiIngredient.pirinc, SushiIngredient.yosun, SushiIngredient.cigtonbaligi, SushiIngredient.sriracha, SushiIngredient.susamyagi, SushiIngredient.baharatlimayonez);
+        sushiList.Add(spicyTunaRoll);
         #endregion
 
         return sushiList;
