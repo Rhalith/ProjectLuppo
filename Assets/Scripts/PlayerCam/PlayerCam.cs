@@ -9,25 +9,19 @@ public class PlayerCam : MonoBehaviour
     private void Update()
     {
         Vector3 inputDir = new Vector3(0, 0, 0);
-        if(Input.GetKey(KeyCode.Mouse1))
-        {
-
-            float currentMousePosition = Input.mousePosition.x;
-            if(previousMousePosition < currentMousePosition)
-            {
-                inputDir.x = -0.1f;
-            }
-
-            if (previousMousePosition > currentMousePosition)
+        
+        if (Input.GetKey(KeyCode.A))
             {
                 inputDir.x = +0.1f;
             }
 
-            previousMousePosition = currentMousePosition;
+        if (Input.GetKey(KeyCode.D))
+        {
+            inputDir.x = -0.1f;
         }
 
-        Vector3 moveDir = transform.right
-            * inputDir.x;
+
+        Vector3 moveDir = transform.right * inputDir.x;
 
         transform.position += moveDir * moveSpeed * Time.deltaTime;
         

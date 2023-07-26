@@ -14,8 +14,12 @@ public class MaterialCreator : MonoBehaviour
     {
         if (!check)
         {
-            InstantiateIngredientObject(createPrefab);
-            check = true;
+            if (!GameObject.FindWithTag("Instantiated"))
+            {
+                InstantiateIngredientObject(createPrefab);
+                check = true;
+            }
+            
         }
 
         else

@@ -6,6 +6,10 @@ TagManager:
   tags:
   - Ingredient
   - Instantiated
+  - ServingSet
+  - CuttingBoard
+  - SashimiPlate
+  - NigiriPlate
   layers:
   - Default
   - TransparentFX

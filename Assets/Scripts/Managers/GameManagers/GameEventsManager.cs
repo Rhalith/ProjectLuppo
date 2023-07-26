@@ -49,4 +49,12 @@ public class GameEventsManager : MonoBehaviour
             onRestaurantActivated();
         }
     }
+
+    public event Action onServingAdded;
+    
+    public void ServingAdded()
+    {
+        if (onServingAdded != null)
+        { onServingAdded(); }
+    }
 }

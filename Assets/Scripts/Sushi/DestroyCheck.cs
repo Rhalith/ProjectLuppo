@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class DestroyCheck : MonoBehaviour
 {
-    private MaterialCreator mCreator;
+    public MaterialCreator mc;
     private void OnDestroy()
     {
-        mCreator.check = false;
+        mc.check = false;
     }
 }
