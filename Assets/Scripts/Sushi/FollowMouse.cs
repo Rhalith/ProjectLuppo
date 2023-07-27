@@ -35,6 +35,7 @@ public class FollowMouse : MonoBehaviour
                 {
                     Instantiate(prefab, transform.position, Quaternion.identity);
                     prefab.tag = "Ingredient";
+                    //TODO: Instantiate as a child
                 }
             }
         }

@@ -6,12 +6,12 @@ public class SashimiPlate : MonoBehaviour
 {
     [SerializeField] GameObject sashimiPlate;
     Vector3 position;
-    int count = 0;
 
     private void Start()
     {
         position = sashimiPlate.transform.position;
         GameEventsManager.instance.OnServingAdded += OnServingAdded;
+        GameEventsManager.instance.OnServingServed += OnServingServed;
     }
 
 
@@ -23,7 +23,11 @@ public class SashimiPlate : MonoBehaviour
 
     public void OnServingAdded()
     {
-        count++;
-        position.x = +1.5f * count;
+        position.x -= 1.5f;
+    }
+
+    public void OnServingServed()
+    {
+        position.x += 1.5f;
     }
 }

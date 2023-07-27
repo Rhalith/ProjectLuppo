@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3822564695933447430}
   - component: {fileID: 7869534072144526022}
   - component: {fileID: 1155708330635775552}
+  - component: {fileID: 2894359586995089635}
   m_Layer: 0
   m_Name: NigiriPlate
   m_TagString: NigiriPlate
@@ -26,8 +27,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6342378912006885539}
   m_LocalRotation: {x: -0.5000132, y: -0.50001305, z: -0.49998695, w: 0.49998686}
-  m_LocalPosition: {x: 515.51965, y: 3.943584, z: 164.07686}
-  m_LocalScale: {x: 0.5206217, y: 0.52062166, z: 0.039373193}
+  m_LocalPosition: {x: 516.5207, y: 3.939574, z: 163.88785}
+  m_LocalScale: {x: 52.062164, y: 52.062164, z: 3.9373198}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -40,7 +41,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6342378912006885539}
-  m_Mesh: {fileID: -1716842359454501035, guid: 3902446b101a16c4fbc3cf89435107cb, type: 3}
+  m_Mesh: {fileID: -1716842359454501035, guid: 32ec6774d4082894b9100510425073bc, type: 3}
 --- !u!23 &1155708330635775552
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -61,7 +62,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 99656467281103303, guid: 3902446b101a16c4fbc3cf89435107cb, type: 3}
+  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -83,3 +84,16 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &2894359586995089635
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6342378912006885539}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.020000007, y: 0.020000003, z: 0.020000001}
+  m_Center: {x: 0.00000023841858, y: -0.0000009536743, z: -0.00000005820766}

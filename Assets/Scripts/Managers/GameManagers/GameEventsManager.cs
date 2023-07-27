@@ -56,4 +56,14 @@ public class GameEventsManager : MonoBehaviour
         if (OnServingAdded != null)
         { OnServingAdded(); }
     }
+
+    public event Action OnServingServed;
+
+    public void ServingServed()
+    {
+        if (OnServingServed != null)
+        { 
+            OnServingServed();
+        }
+    }
 }
