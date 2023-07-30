@@ -24,7 +24,7 @@ public class MaterialCreator : MonoBehaviour
             return;
         }
     }
-
+    //TODO: please ask about this
     public void InstantiateIngredientObject()
     {
         if (gameObject.name == "Rice Cooker" && GameObject.FindWithTag("NigiriPlate"))
