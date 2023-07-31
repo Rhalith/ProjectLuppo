@@ -8,6 +8,8 @@ public class FollowMouse : MonoBehaviour
     RaycastHit hit;
     Vector3 movePoint;
     public GameObject prefab;
+    GameObject hitObject;
+    GameObject instObj;
 
     private void Start()
     {
@@ -16,6 +18,7 @@ public class FollowMouse : MonoBehaviour
         if (Physics.Raycast(ray, out hit, 50000.0f))
         {
             transform.position = hit.point;
+            
         }
     }
     private void Update()
@@ -25,17 +28,28 @@ public class FollowMouse : MonoBehaviour
         if (Physics.Raycast(ray, out hit, 50000.0f))
         {
             transform.position = hit.point;
+            hitObject = hit.transform.gameObject;
+            
         }
 
         if(Input.GetMouseButtonDown(0))
         {
             if (Physics.Raycast(ray, out hit, 50000.0f))
             {
-                if (hit.collider.CompareTag("Ingredient"))
+                if (hit.collider.CompareTag("ServingSet"))
                 {
-                    Instantiate(prefab, transform.position, Quaternion.identity);
+                    
+                    instObj = Instantiate(prefab, transform.position, Quaternion.identity);
                     prefab.tag = "Ingredient";
-                    //TODO: Instantiate as a child
+                    instObj.transform.parent = hitObject.transform;
+                }
+
+                if(hit.collider.CompareTag("Ingredient"))
+                {
+
+                    instObj = Instantiate(prefab, transform.position, Quaternion.identity);
+                    prefab.tag = "Ingredient";
+                    instObj.transform.parent = hitObject.transform;
                 }
             }
         }

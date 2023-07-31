@@ -14,40 +14,37 @@ public class MaterialCreator : MonoBehaviour
 
     private void OnMouseDown()
     {
-        if (!check)
+        if (!GameObject.FindWithTag("Instantiated"))
         {
-             InstantiateIngredientObject();
-        } 
+            InstantiateIngredientObject();
+        }
+
+        else if (!instObj)
+        {
+            DestroySushiObjectIfExists();
+            InstantiateIngredientObject();
+        }
 
         else
         {
-            return;
+            DestroySushiObjectIfExists();
         }
+
     }
-    //TODO: please ask about this
-    public void InstantiateIngredientObject()
+
+        //TODO: please ask about this
+        public void InstantiateIngredientObject()
     {
-        if (gameObject.name == "Rice Cooker" && GameObject.FindWithTag("NigiriPlate"))
-        {
-            this.instObj = Object.Instantiate(_nigiriRice);
-            instObj.gameObject.tag = "Ingredient";
-            instObj.transform.parent = GameObject.Find("NigiriPlate(Clone)").transform;
-            instObj.transform.localPosition = Vector3.zero;
-            check = true;
-        }
 
-        else if(!GameObject.FindWithTag("Instantiated") && _cuttingBoard.activeInHierarchy == true)
-        {
             this.instObj = Object.Instantiate(_createPrefab);
-            instObj.gameObject.tag = "Ingredient";
-            foreach (Transform t in instObj.transform)
-            {
-                t.gameObject.tag = "Ingredient";
-            }
-            check = true;
-        }
-        
+            instObj.gameObject.tag = "Instantiated";
 
-        
+    }
+
+    public void DestroySushiObjectIfExists()
+    {
+
+        Object.Destroy(GameObject.FindWithTag("Instantiated"));
+
     }
 }

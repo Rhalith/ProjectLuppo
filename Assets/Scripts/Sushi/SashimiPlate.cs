@@ -4,12 +4,16 @@ using UnityEngine;
 
 public class SashimiPlate : MonoBehaviour
 {
-    [SerializeField] GameObject sashimiPlate;
+    GameObject Container1;
+    GameObject Container2;
+    GameObject Container3;
     Vector3 position;
 
     private void Start()
     {
-        position = sashimiPlate.transform.position;
+        Container1 = GameObject.Find("Container_1");
+        Container2 = GameObject.Find("Container_2");
+        Container3 = GameObject.Find("Container_3");
         GameEventsManager.instance.OnServingAdded += OnServingAdded;
         GameEventsManager.instance.OnServingServed += OnServingServed;
     }
@@ -17,8 +21,12 @@ public class SashimiPlate : MonoBehaviour
 
     public void OnMouseDown()
     {
-        Instantiate(sashimiPlate, position, sashimiPlate.transform.rotation);
-        GameEventsManager.instance.ServingAdded();
+ 
+        Debug.Log("Pressed");
+        //if(Container1.transform.childCount = 0)
+        //gameObject.transform.parent = sashimiPlate.transform;
+        gameObject.transform.localPosition = new Vector3(0, 3f,0);
+        
     }
 
     public void OnServingAdded()
@@ -30,4 +38,5 @@ public class SashimiPlate : MonoBehaviour
     {
         position.x += 1.5f;
     }
+
 }

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Cinemachine;
 
 public class PlayerCam : MonoBehaviour
 {
@@ -8,6 +9,9 @@ public class PlayerCam : MonoBehaviour
     float previousMousePosition;
     public float moveSpeed;
     //use new input system
+
+
+
     private void Update()
     {
         Vector3 inputDir = new Vector3(0, 0, 0);
@@ -28,4 +32,5 @@ public class PlayerCam : MonoBehaviour
         transform.position += moveDir * moveSpeed * Time.deltaTime;
         
     }
+
 }

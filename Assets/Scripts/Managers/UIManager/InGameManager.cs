@@ -1,4 +1,5 @@
 
+using Cinemachine;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -13,6 +14,7 @@ public class InGameManager : MonoBehaviour
     bool kitchenActive = false;
     bool restaurantActive = true;
     public Animator anim;
+
 
     public void Start()
     {
@@ -61,7 +63,7 @@ public class InGameManager : MonoBehaviour
         
         
         RestaurantUI.SetActive(false);
-        
+
         yield return new WaitForSeconds(0.5f);
 
         KitchenUI.SetActive(true);

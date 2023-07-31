@@ -10,6 +10,7 @@ TagManager:
   - CuttingBoard
   - SashimiPlate
   - NigiriPlate
+  - drag
   layers:
   - Default
   - TransparentFX
