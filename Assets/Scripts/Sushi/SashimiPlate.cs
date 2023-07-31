@@ -9,6 +9,7 @@ public class SashimiPlate : MonoBehaviour
     GameObject Container3;
     Vector3 position;
 
+    //Must Check, this will be unusable
     private void Start()
     {
         Container1 = GameObject.Find("Container_1");

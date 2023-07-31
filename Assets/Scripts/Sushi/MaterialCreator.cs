@@ -12,6 +12,7 @@ public class MaterialCreator : MonoBehaviour
     public bool check = false;
     [SerializeField] GameObject _cuttingBoard;
 
+    //Another material Instantiator
     private void OnMouseDown()
     {
         if (!GameObject.FindWithTag("Instantiated"))

@@ -7,6 +7,7 @@ public class ObjectCreator : MonoBehaviour
     [SerializeField] GameObject sushiObject;
     GameObject instObj;
 
+    //Blueprint Instantiator
     public void OnMouseDown()
     {
         if (!GameObject.FindWithTag("Instantiated"))

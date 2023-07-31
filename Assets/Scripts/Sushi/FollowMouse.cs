@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
+using UnityEngine.UIElements;
 
 public class FollowMouse : MonoBehaviour
 {
@@ -13,6 +14,7 @@ public class FollowMouse : MonoBehaviour
     GameObject hitObject;
     GameObject instObj;
 
+    //Makes Instantiated objects follow mouse, and when clicked they instantiates objects they symbolize.
     private void Start()
     {
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -68,19 +70,40 @@ public class FollowMouse : MonoBehaviour
                             }
                         }
                     }
+
                     
+
                 }
 
                 if(hit.collider.CompareTag("Ingredient"))
                 {
                     if (ingredientPrefab != null)
                     {
-                        instObj = Instantiate(ingredientPrefab, transform.position, Quaternion.identity);
-                        ingredientPrefab.tag = "Ingredient";
-                        instObj.transform.parent = hitObject.transform;
-                        foreach (Transform t in instObj.transform)
+                        if (ingredientPrefab.name == "Rice")
                         {
-                            t.gameObject.tag = "Ingredient";
+                            if (hit.collider.name == "Plane")
+                            {
+                                //TODO: Get Child Name for filtering
+                                Debug.Log("done.");
+                                instObj = Instantiate(ingredientPrefab, transform.position, Quaternion.identity);
+                                ingredientPrefab.tag = "Ingredient";
+                                instObj.transform.parent = hitObject.transform;
+                                foreach (Transform t in instObj.transform)
+                                {
+                                    t.gameObject.tag = "Ingredient";
+                                }
+                                instObj.transform.localPosition = new Vector3(0, 0.1f, -1);
+                            }
+                        }
+                        else
+                        {
+                            instObj = Instantiate(ingredientPrefab, transform.position, Quaternion.identity);
+                            ingredientPrefab.tag = "Ingredient";
+                            instObj.transform.parent = hitObject.transform;
+                            foreach (Transform t in instObj.transform)
+                            {
+                                t.gameObject.tag = "Ingredient";
+                            }
                         }
                     }
                 }

@@ -7,6 +7,7 @@ public class NigiriPlate : MonoBehaviour
     [SerializeField] GameObject nigiriPlate;
     Vector3 position;
 
+    //Must Check, this will be unusable
     private void Start()
     {
         position = nigiriPlate.transform.position;

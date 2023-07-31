@@ -7,6 +7,7 @@ public class FoodPreparation : MonoBehaviour
     [Header("Cutting Board")]
     [SerializeField] GameObject cuttingBoard;
 
+    //Not useable anymore
     private void OnMouseDown()
     {
             cuttingBoard.SetActive(true);

@@ -7,6 +7,8 @@ public class DragAndDrop : MonoBehaviour
     private GameObject selectedObject;
     [SerializeField] GameObject thisObject;
 
+    //TODO: Make it must dropped specific points, otherwise turns to original position. also if that point is full, can't put this in there.
+
     private void Update()
     {
         if (!GameObject.FindWithTag("Instantiated"))
