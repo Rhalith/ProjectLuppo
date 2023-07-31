@@ -7,7 +7,9 @@ public class FollowMouse : MonoBehaviour
 {
     RaycastHit hit;
     Vector3 movePoint;
-    public GameObject prefab;
+    public GameObject ingredientPrefab;
+    public GameObject wrapPrefab;
+    [SerializeField] GameObject _nigiriRice;
     GameObject hitObject;
     GameObject instObj;
 
@@ -38,18 +40,49 @@ public class FollowMouse : MonoBehaviour
             {
                 if (hit.collider.CompareTag("ServingSet"))
                 {
+                    if (wrapPrefab != null)
+                    {
+                        if (hit.collider.name == "CuttingBoard")
+                        {
+                            instObj = Instantiate(wrapPrefab, transform.position, Quaternion.identity);
+                            wrapPrefab.tag = "Ingredient";
+                            instObj.transform.parent = hitObject.transform;
+                            instObj.transform.localPosition = new Vector3(0, 0.54f, 0);
+                            foreach (Transform t in instObj.transform)
+                            {
+                                t.gameObject.tag = "Ingredient";
+                            }
+                        }
+                    }
+
+                    else if (ingredientPrefab.name == "Rice")
+                    {
+                        if(hit.collider.name == "NigiriPlate")
+                        {
+                            instObj = Instantiate(_nigiriRice, transform.position, Quaternion.identity);
+                            ingredientPrefab.tag = "Ingredient";
+                            instObj.transform.parent = hitObject.transform;
+                            foreach (Transform t in instObj.transform)
+                            {
+                                t.gameObject.tag = "Ingredient";
+                            }
+                        }
+                    }
                     
-                    instObj = Instantiate(prefab, transform.position, Quaternion.identity);
-                    prefab.tag = "Ingredient";
-                    instObj.transform.parent = hitObject.transform;
                 }
 
                 if(hit.collider.CompareTag("Ingredient"))
                 {
-
-                    instObj = Instantiate(prefab, transform.position, Quaternion.identity);
-                    prefab.tag = "Ingredient";
-                    instObj.transform.parent = hitObject.transform;
+                    if (ingredientPrefab != null)
+                    {
+                        instObj = Instantiate(ingredientPrefab, transform.position, Quaternion.identity);
+                        ingredientPrefab.tag = "Ingredient";
+                        instObj.transform.parent = hitObject.transform;
+                        foreach (Transform t in instObj.transform)
+                        {
+                            t.gameObject.tag = "Ingredient";
+                        }
+                    }
                 }
             }
         }

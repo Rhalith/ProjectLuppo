@@ -7,17 +7,6 @@ public class DragAndDrop : MonoBehaviour
     private GameObject selectedObject;
     [SerializeField] GameObject thisObject;
 
-    private void OnDestroy()
-    {
-        StartCoroutine(Recreate());
-    }
-
-    IEnumerator Recreate()
-    {
-        yield return new WaitForSeconds(.1f);
-        Instantiate(thisObject);
-    }
-
     private void Update()
     {
         if (!GameObject.FindWithTag("Instantiated"))
@@ -42,7 +31,26 @@ public class DragAndDrop : MonoBehaviour
                 {
                     Vector3 position = new Vector3(Input.mousePosition.x, Input.mousePosition.y, Camera.main.WorldToScreenPoint(selectedObject.transform.position).z);
                     Vector3 worldPosition = Camera.main.ScreenToWorldPoint(position);
-                    selectedObject.transform.position = new Vector3(worldPosition.x, 3.75f, worldPosition.z);
+                    selectedObject.transform.position = new Vector3(worldPosition.x, 3.2f, worldPosition.z);
+                    if (selectedObject.transform.position.x > 520) 
+                    {
+                        selectedObject.transform.position = new Vector3(520f, 3.2f, worldPosition.z);
+                    }
+
+                    if (selectedObject.transform.position.x < 508)
+                    {
+                        selectedObject.transform.position = new Vector3(508, 3.2f, worldPosition.z);
+                    }
+
+                    if (selectedObject.transform.position.z > 166)
+                    {
+                        selectedObject.transform.position = new Vector3(worldPosition.x, 3.2f, 166f);
+                    }
+
+                    if (selectedObject.transform.position.z < 163.5)
+                    {
+                        selectedObject.transform.position = new Vector3(worldPosition.x, 3.2f, 163.5f);
+                    }
 
                     selectedObject = null;
                 }

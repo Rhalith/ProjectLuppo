@@ -32,7 +32,7 @@ public class MaterialCreator : MonoBehaviour
 
     }
 
-        //TODO: please ask about this
+        
         public void InstantiateIngredientObject()
     {
 
