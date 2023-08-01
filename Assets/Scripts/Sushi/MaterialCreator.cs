@@ -9,10 +9,8 @@ public class MaterialCreator : MonoBehaviour
     [SerializeField] GameObject _createPrefab;
     GameObject instObj;
     [SerializeField] GameObject _nigiriRice;
-    public bool check = false;
-    [SerializeField] GameObject _cuttingBoard;
 
-    //Another material Instantiator
+    //TODO: MUST DONE BETTER!!!
     private void OnMouseDown()
     {
         if (!GameObject.FindWithTag("Instantiated"))

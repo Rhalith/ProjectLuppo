@@ -11,6 +11,8 @@ TagManager:
   - SashimiPlate
   - NigiriPlate
   - drag
+  - PrepareZone
+  - Sushi
   layers:
   - Default
   - TransparentFX

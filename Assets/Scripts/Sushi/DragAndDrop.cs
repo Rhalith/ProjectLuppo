@@ -39,21 +39,45 @@ public class DragAndDrop : MonoBehaviour
                     if (_selectedObject.transform.position.x > 520)
                     {
                         _selectedObject.transform.position = new Vector3(520f, 3.3f, worldPosition.z);
+
+                        if (_selectedObject.transform.position.z > 166)
+                        {
+                            _selectedObject.transform.position = new Vector3(520f, 3.3f, 166f);
+                        }
+
+                        if (_selectedObject.transform.position.z < 163.5)
+                        {
+                            _selectedObject.transform.position = new Vector3(520f, 3.3f, 163.5f);
+                        }
                     }
 
-                    if (_selectedObject.transform.position.x < 508)
+
+
+                    else if (_selectedObject.transform.position.x < 508)
                     {
                         _selectedObject.transform.position = new Vector3(508, 3.3f, worldPosition.z);
-                    }
 
-                    if (_selectedObject.transform.position.z > 166)
-                    {
-                        _selectedObject.transform.position = new Vector3(worldPosition.x, 3.3f, 166f);
-                    }
+                        if (_selectedObject.transform.position.z < 163.5)
+                        {
+                            _selectedObject.transform.position = new Vector3(508f, 3.3f, 163.5f);
+                        }
 
-                    if (_selectedObject.transform.position.z < 163.5)
+                        if (_selectedObject.transform.position.z > 166)
+                        {
+                            _selectedObject.transform.position = new Vector3(508f, 3.3f, 166f);
+                        }
+                    }
+                    else
                     {
-                        _selectedObject.transform.position = new Vector3(worldPosition.x, 3.3f, 163.5f);
+                        if (_selectedObject.transform.position.z > 166)
+                        {
+                            _selectedObject.transform.position = new Vector3(worldPosition.x, 3.3f, 166f);
+                        }
+
+                        if (_selectedObject.transform.position.z < 163.5)
+                        {
+                            _selectedObject.transform.position = new Vector3(worldPosition.x, 3.3f, 163.5f);
+                        }
                     }
 
                     _selectedObject = null;

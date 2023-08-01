@@ -49,7 +49,7 @@ public class FollowMouse : MonoBehaviour
                             instObj = Instantiate(wrapPrefab, transform.position, Quaternion.identity);
                             wrapPrefab.tag = "Ingredient";
                             instObj.transform.parent = hitObject.transform;
-                            instObj.transform.localPosition = new Vector3(0, 0.54f, 0);
+                            instObj.transform.localPosition = new Vector3(0, 0f, 0.00073f);
                             foreach (Transform t in instObj.transform)
                             {
                                 t.gameObject.tag = "Ingredient";
