@@ -121,4 +121,25 @@ public class SushiManager : MonoBehaviour
 
         return sushiList;
     }
+
+    #region Used Ingredient Zone
+    //Bu kýsým kontrol edilip uygun bir kod olup olmadýðý belirtilecek.
+    //TODO: IngredientManager adýnda yeni bir scripte taþýnacak.
+    private List<SushiIngredient> _usedIngredients = new List<SushiIngredient>();
+
+    public void AddIngredientToSushi(SushiIngredient ingredient)
+    {
+        _usedIngredients.Add(ingredient);
+    }
+
+    public void RemoveIngredientFromSushi(SushiIngredient ingredient)
+    {
+        _usedIngredients.Remove(ingredient);
+    }
+
+    public void ClearUsedIngredients()
+    {
+        _usedIngredients.Clear();
+    }
+    #endregion
 }
