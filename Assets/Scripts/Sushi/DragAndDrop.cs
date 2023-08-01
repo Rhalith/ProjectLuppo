@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class DragAndDrop : MonoBehaviour
 {
-    private GameObject selectedObject;
-    [SerializeField] GameObject thisObject;
+    private GameObject _selectedObject;
+    Vector3 _zoneOffset = new Vector3(0, 0.1f, 0);
+    [SerializeField] GameObject[] _prepareZones;
 
     //TODO: Make it must dropped specific points, otherwise turns to original position. also if that point is full, can't put this in there.
+
 
     private void Update()
     {
@@ -15,7 +17,7 @@ public class DragAndDrop : MonoBehaviour
         {
             if (Input.GetMouseButtonDown(0))
             {
-                if (selectedObject == null)
+                if (_selectedObject == null)
                 {
                     RaycastHit hit = CastRay();
 
@@ -26,58 +28,60 @@ public class DragAndDrop : MonoBehaviour
                             return;
                         }
 
-                        selectedObject = hit.collider.gameObject;
+                        _selectedObject = hit.collider.gameObject;
                     }
                 }
                 else
                 {
-                    Vector3 position = new Vector3(Input.mousePosition.x, Input.mousePosition.y, Camera.main.WorldToScreenPoint(selectedObject.transform.position).z);
+                    Vector3 position = new Vector3(Input.mousePosition.x, Input.mousePosition.y, Camera.main.WorldToScreenPoint(_selectedObject.transform.position).z);
                     Vector3 worldPosition = Camera.main.ScreenToWorldPoint(position);
-                    selectedObject.transform.position = new Vector3(worldPosition.x, 3.2f, worldPosition.z);
-                    if (selectedObject.transform.position.x > 520) 
+                    _selectedObject.transform.position = new Vector3(worldPosition.x, 3.3f, worldPosition.z);
+                    if (_selectedObject.transform.position.x > 520)
                     {
-                        selectedObject.transform.position = new Vector3(520f, 3.2f, worldPosition.z);
+                        _selectedObject.transform.position = new Vector3(520f, 3.3f, worldPosition.z);
                     }
 
-                    if (selectedObject.transform.position.x < 508)
+                    if (_selectedObject.transform.position.x < 508)
                     {
-                        selectedObject.transform.position = new Vector3(508, 3.2f, worldPosition.z);
+                        _selectedObject.transform.position = new Vector3(508, 3.3f, worldPosition.z);
                     }
 
-                    if (selectedObject.transform.position.z > 166)
+                    if (_selectedObject.transform.position.z > 166)
                     {
-                        selectedObject.transform.position = new Vector3(worldPosition.x, 3.2f, 166f);
+                        _selectedObject.transform.position = new Vector3(worldPosition.x, 3.3f, 166f);
                     }
 
-                    if (selectedObject.transform.position.z < 163.5)
+                    if (_selectedObject.transform.position.z < 163.5)
                     {
-                        selectedObject.transform.position = new Vector3(worldPosition.x, 3.2f, 163.5f);
+                        _selectedObject.transform.position = new Vector3(worldPosition.x, 3.3f, 163.5f);
                     }
 
-                    Collider[] hitColliders = Physics.OverlapSphere(transform.position, 0.1f);
-
-                   foreach (Collider collider in hitColliders)
-                    {
-                        if(collider.CompareTag("PrepareZone"))
-                        {
-                            transform.position = collider.transform.position;
-                        }
-                    }
-
-                    selectedObject = null;
+                    _selectedObject = null;
                 }
             }
         
 
-        if(selectedObject != null)
+        if(_selectedObject != null)
         {
-            Vector3 position = new Vector3(Input.mousePosition.x, Input.mousePosition.y, Camera.main.WorldToScreenPoint(selectedObject.transform.position).z);
+            Vector3 position = new Vector3(Input.mousePosition.x, Input.mousePosition.y, Camera.main.WorldToScreenPoint(_selectedObject.transform.position).z);
             Vector3 worldPosition = Camera.main.ScreenToWorldPoint(position);
-            selectedObject.transform.position = new Vector3(worldPosition.x, 4f, worldPosition.z);
+            _selectedObject.transform.position = new Vector3(worldPosition.x, 4f, worldPosition.z);
         }
         }
 
     }
+
+    private void PlaceObjectInZone(GameObject objectToPlace)
+        {
+            foreach (GameObject prepareZone in _prepareZones)
+        {
+            if(Vector3.Distance(objectToPlace.transform.position, prepareZone.transform.position) < 1.0f)
+            {
+                objectToPlace.transform.position = prepareZone.transform.position;
+                return;
+            }
+        }
+        }
 
     private RaycastHit CastRay()
     {
@@ -89,5 +93,14 @@ public class DragAndDrop : MonoBehaviour
         Physics.Raycast(worldMousePosNear, worldMousePosFar - worldMousePosNear, out hit);
 
         return hit;
+    }
+
+    private void OnMouseUp()
+    {
+        if(_selectedObject !=null)
+        {
+            PlaceObjectInZone(_selectedObject);
+            _selectedObject = null;
+        }
     }
 }

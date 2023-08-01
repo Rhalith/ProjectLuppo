@@ -84,7 +84,6 @@ public class FollowMouse : MonoBehaviour
                             if (hit.collider.name == "Plane")
                             {
                                 //TODO: Get Child Name for filtering
-                                Debug.Log("done.");
                                 instObj = Instantiate(ingredientPrefab, transform.position, Quaternion.identity);
                                 ingredientPrefab.tag = "Ingredient";
                                 instObj.transform.parent = hitObject.transform;
@@ -92,7 +91,7 @@ public class FollowMouse : MonoBehaviour
                                 {
                                     t.gameObject.tag = "Ingredient";
                                 }
-                                instObj.transform.localPosition = new Vector3(0, 0.1f, -1);
+                                instObj.transform.localPosition = new Vector3(3, 0, 0);
                             }
                         }
                         else
