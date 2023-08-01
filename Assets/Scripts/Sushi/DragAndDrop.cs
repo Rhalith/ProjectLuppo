@@ -54,6 +54,16 @@ public class DragAndDrop : MonoBehaviour
                         selectedObject.transform.position = new Vector3(worldPosition.x, 3.2f, 163.5f);
                     }
 
+                    Collider[] hitColliders = Physics.OverlapSphere(transform.position, 0.1f);
+
+                   foreach (Collider collider in hitColliders)
+                    {
+                        if(collider.CompareTag("PrepareZone"))
+                        {
+                            transform.position = collider.transform.position;
+                        }
+                    }
+
                     selectedObject = null;
                 }
             }
