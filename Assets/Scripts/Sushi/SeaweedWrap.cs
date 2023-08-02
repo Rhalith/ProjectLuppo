@@ -7,8 +7,12 @@ public class SeaweedWrap : MonoBehaviour
     private Vector3 _startPosition;
     private Vector3 _endPosition;
     private bool _isBeingDragged = false;
-    public GameObject sushiPrefab;
+    public GameObject hosomakiPrefab;
+    public GameObject chumaki2Prefab;
+    public GameObject chumaki3Prefab;
+    public GameObject futomakiPrefab;
     Vector3 sushiPos;
+    IngredientController ingredientController;
 
     private void OnMouseDown()
     {
@@ -46,8 +50,28 @@ public class SeaweedWrap : MonoBehaviour
 
     private void InstantiateSushi()
     {
-        Vector3 sushiPosition =_endPosition; // Place sushi at the middle point of start and end positions
-        Instantiate(sushiPrefab, sushiPos, Quaternion.identity);
-        // Do any additional setup for the sushi object if needed
+        if (ingredientController.differentIngredientCount == 1)
+        {
+            Vector3 sushiPosition = _endPosition;
+            Instantiate(hosomakiPrefab, sushiPos, Quaternion.identity);
+        }
+
+        else if (ingredientController.differentIngredientCount == 2)
+        {
+            Vector3 sushiPosition = _endPosition;
+            Instantiate(chumaki2Prefab, sushiPos, Quaternion.identity);
+        }
+
+        else if (ingredientController.differentIngredientCount == 3)
+        {
+            Vector3 sushiPosition = _endPosition;
+            Instantiate(chumaki3Prefab, sushiPos, Quaternion.identity);
+        }
+
+        else
+        {
+            Vector3 sushiPosition = _endPosition;
+            Instantiate(futomakiPrefab, sushiPos, Quaternion.identity);
+        }
     }
 }
