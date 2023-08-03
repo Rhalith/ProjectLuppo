@@ -8,8 +8,6 @@ public class DragAndDrop : MonoBehaviour
     Vector3 _zoneOffset = new Vector3(0, 0.1f, 0);
     [SerializeField] GameObject[] _prepareZones;
 
-    //TODO: Make it must dropped specific points, otherwise turns to original position. also if that point is full, can't put this in there.
-
 
     private void Update()
     {

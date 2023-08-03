@@ -13,10 +13,13 @@ public class FollowMouse : MonoBehaviour
     [SerializeField] GameObject _nigiriRice;
     GameObject hitObject;
     GameObject instObj;
+    string ingredientName;
+    IngredientController ingredientController;
 
     //Makes Instantiated objects follow mouse, and when clicked they instantiates objects they symbolize.
     private void Start()
     {
+        ingredientController = GameObject.FindWithTag("GameEventsManager").GetComponent<IngredientController>();
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
         if (Physics.Raycast(ray, out hit, 50000.0f))
@@ -85,6 +88,7 @@ public class FollowMouse : MonoBehaviour
                             {
                                 //TODO: Get Child Name for filtering
                                 instObj = Instantiate(ingredientPrefab, transform.position, Quaternion.identity);
+                                ingredientName = ingredientPrefab.name;
                                 ingredientPrefab.tag = "Ingredient";
                                 instObj.transform.parent = hitObject.transform;
                                 foreach (Transform t in instObj.transform)
@@ -96,6 +100,8 @@ public class FollowMouse : MonoBehaviour
                         }
                         else
                         {
+                            ingredientName = ingredientPrefab.name;
+                            ingredientController.AddIngredient(ingredientName);
                             instObj = Instantiate(ingredientPrefab, transform.position, Quaternion.identity);
                             ingredientPrefab.tag = "Ingredient";
                             instObj.transform.parent = hitObject.transform;

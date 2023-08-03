@@ -6,5 +6,4 @@ using UnityEngine;
 public class HosomakiObject : ScriptableObject
 {
     public Material filling;
-    public Material filling2;
 }

@@ -10,6 +10,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8c013e76f9e4d8144949c3f7774af6b7, type: 3}
-  m_Name: Salmon Hosomaki
+  m_Name: Cucumber Hosomaki
   m_EditorClassIdentifier: 
-  Filling: {fileID: 2100000, guid: 4d999e89b76ab3145b6c7689629f94dc, type: 2}
+  filling: {fileID: 2100000, guid: c254d3e64e89c0f4786b0ede62522da6, type: 2}

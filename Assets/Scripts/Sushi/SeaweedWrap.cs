@@ -11,8 +11,15 @@ public class SeaweedWrap : MonoBehaviour
     public GameObject chumaki2Prefab;
     public GameObject chumaki3Prefab;
     public GameObject futomakiPrefab;
+    private GameObject _instObj;
     Vector3 sushiPos;
     IngredientController ingredientController;
+    string _sushiMaterial;
+
+    private void Start()
+    {
+        ingredientController = GameObject.FindWithTag("GameEventsManager").GetComponent<IngredientController>();
+    }
 
     private void OnMouseDown()
     {
@@ -50,10 +57,13 @@ public class SeaweedWrap : MonoBehaviour
 
     private void InstantiateSushi()
     {
+        //TODO: Must change scriptable object based on their ingredient (mostly done)
         if (ingredientController.differentIngredientCount == 1)
         {
             Vector3 sushiPosition = _endPosition;
-            Instantiate(hosomakiPrefab, sushiPos, Quaternion.identity);
+            _instObj = Instantiate(hosomakiPrefab, sushiPos, Quaternion.identity);
+            _instObj.GetComponent<HosomakiDisplay>().sushiName = _sushiMaterial + " Hosomaki";
+
         }
 
         else if (ingredientController.differentIngredientCount == 2)

@@ -1,7 +1,9 @@
 
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Threading;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class IngredientController : MonoBehaviour
@@ -10,23 +12,48 @@ public class IngredientController : MonoBehaviour
     public int count = 0;
     public int differentIngredientCount = 0;
     bool has = false;
-    public Material[] material;
+    public string[] material;
+
+    //TODO: Get rid of Array, Use List instead. Much more effective and easy.
+    private void Start()
+    {
+      ingredients = new string[100];
+      material = new string[100];
+    }
     public void AddIngredient(string ingredient)
     {
-        ingredients[count] = ingredient;
-        count++;
-        
-        foreach (string t in ingredients) 
+        if(count > 0)
         {
-            if(t.Equals(ingredient))
+            if (ingredients[count-1] != null)
             {
-                has = true;
-                break;
+                foreach (string t in ingredients)
+                {
+                    if(t != null)
+                    {
+                        if (t.Equals(ingredient))
+                        {
+                            has = true;
+                            break;
+                        }
+                    }
+                    
+
+                    else
+                    {
+                        //empty
+                    }
+                }
             }
         }
 
+        ingredients[count] = ingredient;
+        count++;
+        
+
         if (!has)
         {
+            material[differentIngredientCount] = ingredient;
+            Debug.Log("ingredients: " + material[differentIngredientCount]);
             differentIngredientCount++;
         }
 
@@ -34,5 +61,17 @@ public class IngredientController : MonoBehaviour
         {
             has = false;
         }
+    }
+
+    public void ServeSushi()
+    {
+        //TODO: Serving time
+        System.Array.Sort(material);
+    }
+
+    public void ClearIngredient()
+    {
+        ingredients = new string[10];
+        material = new string[10];
     }
 }
