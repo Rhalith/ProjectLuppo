@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class CustomerManager : MonoBehaviour
 {
@@ -8,6 +9,7 @@ public class CustomerManager : MonoBehaviour
 
     [SerializeField] GameObject[] _customerPrefabs;
     GameObject _currentCustomer;
+    GameObject _instCustomer;
     [SerializeField] GameObject _spawnPoint;
     [SerializeField] GameObject _turnPoint;
     [SerializeField] GameObject _orderPoint;
@@ -15,8 +17,11 @@ public class CustomerManager : MonoBehaviour
     Quaternion _rotation;
     private int _score;
     private string[] _wantedMaterials;
-    private int orderNumber;
-    WantedFoods wantedSushi;
+    private int _orderNumber;
+    WantedFoods _wantedSushi;
+    public string _sushiName;
+    [SerializeField] TextMeshProUGUI _customerText;
+    [SerializeField] GameObject CustomerUI;
 
     enum WantedFoods
     {
@@ -33,36 +38,42 @@ public class CustomerManager : MonoBehaviour
         _position = _orderPoint.transform.position;
         _rotation.eulerAngles = new Vector3(0, 0, 0);
         
-        wantedSushi = WantedFoods.SalmonHosomaki;
+        _wantedSushi = WantedFoods.SalmonHosomaki;
 
-        
+        StartCoroutine(SpawnNewCustomer());
+
+        GameEventsManager.instance.OnServingAdded += OnServingAdded;
 
     }
 
     WantedFoods GiveOrder()
     {
-        if (orderNumber == 0)
+        if (_orderNumber == 0)
         {
-            wantedSushi = WantedFoods.CucumberHosomaki;
+            _wantedSushi = WantedFoods.CucumberHosomaki;
+            _sushiName = "Salatalýk Hosomaki";
         }
-        else if (orderNumber == 1)
+        else if (_orderNumber == 1)
         {
-            wantedSushi = WantedFoods.SalmonHosomaki;
-        }
-
-        else if (orderNumber == 2)
-        {
-            wantedSushi = WantedFoods.SalmonCucumberChumaki;
+            _wantedSushi = WantedFoods.SalmonHosomaki;
+            _sushiName = "Somon Hosomaki";
         }
 
-        return wantedSushi;
+        else if (_orderNumber == 2)
+        {
+            _wantedSushi = WantedFoods.SalmonCucumberChumaki;
+            _sushiName = "Somon Salatalýk Chumaki";
+        }
+
+        return _wantedSushi;
     }
 
     private void CustomerInstantiate()
     {
-        orderNumber = Random.Range(0, 3);
+        _orderNumber = Random.Range(0, 3);
         _currentCustomer = _customerPrefabs[Random.Range(0, 3)];
-        Instantiate(_currentCustomer, _position, _rotation);
+        _instCustomer = Instantiate(_currentCustomer, _position, _rotation);
+        _instCustomer.tag = "Customer";
     }
     #endregion
 
@@ -77,13 +88,27 @@ public class CustomerManager : MonoBehaviour
 
     //TODO: movement system. can instantly instantiate for tomorrow.
 
-    IEnumerator SpawnNewCustomer()
+    public IEnumerator SpawnNewCustomer()
     {
         CustomerInstantiate();
         yield return new WaitForSeconds(1.5f);
         GiveOrder();
-
+        _customerText.text = "Selamlar, ben bir adet " + _sushiName + " alabilir miyim?";
     }
+
+    IEnumerator DestroyCustomer()
+    {
+        yield return new WaitForSeconds(3f);
+        Destroy(GameObject.FindWithTag("Customer"));
+        yield return new WaitForSeconds(2f);
+        StartCoroutine(SpawnNewCustomer());
+    }
+
+    void OnServingAdded()
+    {
+        StartCoroutine(DestroyCustomer());
+    }
+
 
     #endregion
 }

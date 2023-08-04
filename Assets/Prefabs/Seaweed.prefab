@@ -115,6 +115,9 @@ MonoBehaviour:
   chumaki2Prefab: {fileID: 4875584856571692352, guid: c6bb1677e7cda3a46b17ccab8ef3db24, type: 3}
   chumaki3Prefab: {fileID: 0}
   futomakiPrefab: {fileID: 4618494973174396392, guid: 8f11c4d6809ea264eabb4179b177b9d6, type: 3}
+  _sushiMaterial: 
+  salmonCounter: 0
+  cucumberCounter: 0
 --- !u!1 &1374850492955798585
 GameObject:
   m_ObjectHideFlags: 0

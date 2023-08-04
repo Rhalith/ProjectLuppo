@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 82a16ef507781904e954918e01dc426a, type: 3}
-  m_Name: Salmon and Cucumber Chumaki
+  m_Name: Salmon Cucumber Chumaki
   m_EditorClassIdentifier: 
   filling:
   - {fileID: 2100000, guid: 4d999e89b76ab3145b6c7689629f94dc, type: 2}

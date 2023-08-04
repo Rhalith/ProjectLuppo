@@ -2454,8 +2454,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40ad5ae8c9ec6d945845884af6116459, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainMenuUI: {fileID: 1381747570}
-  optionsUI: {fileID: 744931519}
+  _mainMenuUI: {fileID: 1381747570}
+  _optionsUI: {fileID: 744931519}
 --- !u!1 &1447817418
 GameObject:
   m_ObjectHideFlags: 0
@@ -3113,6 +3113,7 @@ GameObject:
   - component: {fileID: 1597114569}
   - component: {fileID: 1597114568}
   - component: {fileID: 1597114567}
+  - component: {fileID: 1597114570}
   m_Layer: 0
   m_Name: AudioManager
   m_TagString: Untagged
@@ -3132,7 +3133,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4fc532bf21e67f409bd2b7fb6755a8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clip: {fileID: 8300000, guid: e66ca53df337a0642b4136f86dd69655, type: 3}
+  _clip: {fileID: 8300000, guid: f3347ba2e37fdb04ea501461840f6d4c, type: 3}
 --- !u!114 &1597114568
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3164,6 +3165,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1597114570
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1597114566}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a02cfb77ddcb77d4ca8900785e6725b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1677141190
 GameObject:
   m_ObjectHideFlags: 0
@@ -4341,5 +4354,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc9a02408b65490438c32f48b5eaa9d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _Slider: {fileID: 136709940}
-  optionsUI: {fileID: 2139745891}
+  _slider: {fileID: 136709940}
+  _optionsUI: {fileID: 744931519}

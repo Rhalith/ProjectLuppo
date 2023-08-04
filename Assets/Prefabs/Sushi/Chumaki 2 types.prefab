@@ -93,6 +93,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5251863696162594810}
   - component: {fileID: 3077656264292093052}
+  - component: {fileID: 1463877860001030530}
   m_Layer: 0
   m_Name: Chumaki 2 types
   m_TagString: Untagged
@@ -131,9 +132,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   chumaki: {fileID: 0}
+  sushiName: 
   filling:
   - {fileID: 4129706966404274466}
   - {fileID: 7919040722735505159}
+--- !u!65 &1463877860001030530
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4875584856571692352}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &7919040722735505159
 GameObject:
   m_ObjectHideFlags: 0

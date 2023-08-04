@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 
 public class SeaweedWrap : MonoBehaviour
@@ -14,11 +15,13 @@ public class SeaweedWrap : MonoBehaviour
     private GameObject _instObj;
     Vector3 sushiPos;
     IngredientController ingredientController;
-    string _sushiMaterial;
+    public string _sushiMaterial;
+    public int salmonCounter;
+    public int cucumberCounter;
 
     private void Start()
     {
-        ingredientController = GameObject.FindWithTag("GameEventsManager").GetComponent<IngredientController>();
+        ingredientController = GameObject.FindWithTag("CustomerManager").GetComponent<IngredientController>();
     }
 
     private void OnMouseDown()
@@ -44,7 +47,7 @@ public class SeaweedWrap : MonoBehaviour
             {
                 InstantiateSushi();
                 _isBeingDragged = false;
-                Destroy(gameObject);
+                Destroy(GameObject.Find("Seaweed(Clone)"));
             }
         }
     }
@@ -60,28 +63,64 @@ public class SeaweedWrap : MonoBehaviour
         //TODO: Must change scriptable object based on their ingredient (mostly done)
         if (ingredientController.differentIngredientCount == 1)
         {
+            SaveSushiIngredients();
             Vector3 sushiPosition = _endPosition;
             _instObj = Instantiate(hosomakiPrefab, sushiPos, Quaternion.identity);
-            _instObj.GetComponent<HosomakiDisplay>().sushiName = _sushiMaterial + " Hosomaki";
+            _instObj.tag = "Sushi";
+            _instObj.GetComponent<HosomakiDisplay>().sushiName = _sushiMaterial + "Hosomaki";
+            
 
         }
 
         else if (ingredientController.differentIngredientCount == 2)
         {
+            SaveSushiIngredients();
             Vector3 sushiPosition = _endPosition;
-            Instantiate(chumaki2Prefab, sushiPos, Quaternion.identity);
+            _instObj = Instantiate(chumaki2Prefab, sushiPos, Quaternion.identity);
+            _instObj.tag = "Sushi";
+            _instObj.GetComponent<ChumakiDisplay>().sushiName = _sushiMaterial + "Chumaki";
+            
         }
 
         else if (ingredientController.differentIngredientCount == 3)
         {
+            SaveSushiIngredients();
             Vector3 sushiPosition = _endPosition;
-            Instantiate(chumaki3Prefab, sushiPos, Quaternion.identity);
+            _instObj = Instantiate(chumaki3Prefab, sushiPos, Quaternion.identity);
+            _instObj.tag = "Sushi";
+            
         }
 
         else
         {
+            SaveSushiIngredients();
             Vector3 sushiPosition = _endPosition;
-            Instantiate(futomakiPrefab, sushiPos, Quaternion.identity);
+            _instObj = Instantiate(futomakiPrefab, sushiPos, Quaternion.identity);
+            _instObj.tag = "Sushi";
+            
+
         }
+    }
+
+    public void SaveSushiIngredients()
+    {
+        foreach(string t in ingredientController.ingredients)
+        {
+            if(t != null)
+            {
+                if (t.Equals("Salmon"))
+                {
+                    salmonCounter++;
+                }
+
+                if (t.Equals("Cucumber"))
+                {
+                    cucumberCounter++;
+                }
+            }
+        }
+
+        ingredientController.salmonCounter = salmonCounter;
+        ingredientController.cucumberCounter = cucumberCounter;
     }
 }

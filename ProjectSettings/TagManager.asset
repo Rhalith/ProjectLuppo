@@ -17,6 +17,7 @@ TagManager:
   - Spawn
   - Turn
   - Order
+  - CustomerManager
   layers:
   - Default
   - TransparentFX

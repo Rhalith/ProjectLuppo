@@ -21,7 +21,7 @@ public class DragAndDrop : MonoBehaviour
 
                     if (hit.collider != null)
                     {
-                        if (!hit.collider.CompareTag("ServingSet"))
+                        if (!hit.collider.CompareTag("ServingSet") && !hit.collider.CompareTag("Sushi"))
                         {
                             return;
                         }

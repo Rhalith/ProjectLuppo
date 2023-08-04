@@ -10,6 +10,7 @@ public class InGameManager : MonoBehaviour
 {
     [SerializeField] GameObject RestaurantUI;
     [SerializeField] GameObject KitchenUI;
+    [SerializeField] GameObject CustomerUI;
     bool animate = false;
     bool kitchenActive = false;
     bool restaurantActive = true;
@@ -20,7 +21,8 @@ public class InGameManager : MonoBehaviour
     {
         GameEventsManager.instance.OnKitchenActivated += OnKitchenActivated;
         GameEventsManager.instance.OnRestaurantActivated += OnRestaurantActivated;
-        anim.GetComponent<Animator>();
+        GameEventsManager.instance.OnServingAdded += OnServingAdded;
+        StartCoroutine(DayStart());
     }
 
     public void OnDestroy()
@@ -49,6 +51,13 @@ public class InGameManager : MonoBehaviour
         StartCoroutine(RestaurantActivated());
     }
 
+    void OnServingAdded()
+    {
+        ActivateCustomerUI();
+
+        StartCoroutine(RestaurantActivated());
+    }
+
     IEnumerator RestaurantActivated()
     {
         KitchenUI.SetActive(false);
@@ -70,6 +79,27 @@ public class InGameManager : MonoBehaviour
 
         //firstmethod();
         //invoke(secondmethod(), 0.5f);
+        
+    }
+
+    private void ActivateCustomerUI()
+    {
+        CustomerUI.SetActive(true);
+    }
+
+    public void CloseCustomerScreen()
+    {
+        CustomerUI.SetActive(false);
+    }
+
+    IEnumerator DayStart()
+    {
+        yield return new WaitForSeconds(3f);
+
+        CustomerUI.SetActive(true);
+
+        RestaurantUI.SetActive(true);
+
         
     }
 }

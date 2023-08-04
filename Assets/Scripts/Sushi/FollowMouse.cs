@@ -19,7 +19,7 @@ public class FollowMouse : MonoBehaviour
     //Makes Instantiated objects follow mouse, and when clicked they instantiates objects they symbolize.
     private void Start()
     {
-        ingredientController = GameObject.FindWithTag("GameEventsManager").GetComponent<IngredientController>();
+        ingredientController = GameObject.FindWithTag("CustomerManager").GetComponent<IngredientController>();
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
         if (Physics.Raycast(ray, out hit, 50000.0f))

@@ -14,6 +14,8 @@ public class VCamFollower : MonoBehaviour
     {
         GameEventsManager.instance.OnKitchenActivated += OnKitchenActivated;
         GameEventsManager.instance.OnRestaurantActivated += OnRestaurantActivated;
+        GameEventsManager.instance.OnServingAdded += OnServingAdded;
+
         vcam = GetComponent<CinemachineVirtualCamera>();
     }
 
@@ -23,6 +25,11 @@ public class VCamFollower : MonoBehaviour
     }
 
     private void OnRestaurantActivated()
+    {
+        vcam.LookAt = RestaurantCam.transform;
+    }
+
+    void OnServingAdded()
     {
         vcam.LookAt = RestaurantCam.transform;
     }
