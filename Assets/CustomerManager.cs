@@ -71,7 +71,7 @@ public class CustomerManager : MonoBehaviour
     private void CustomerInstantiate()
     {
         _orderNumber = Random.Range(0, 3);
-        _currentCustomer = _customerPrefabs[Random.Range(0, 3)];
+        _currentCustomer = _customerPrefabs[Random.Range(0, 4)];
         _instCustomer = Instantiate(_currentCustomer, _position, _rotation);
         _instCustomer.tag = "Customer";
     }
@@ -99,7 +99,9 @@ public class CustomerManager : MonoBehaviour
     IEnumerator DestroyCustomer()
     {
         yield return new WaitForSeconds(3f);
-        Destroy(GameObject.FindWithTag("Customer"));
+        GameObject[] a;
+        a = GameObject.FindGameObjectsWithTag("Customer");
+        foreach (GameObject go in a) { Destroy(go); }
         yield return new WaitForSeconds(2f);
         StartCoroutine(SpawnNewCustomer());
     }

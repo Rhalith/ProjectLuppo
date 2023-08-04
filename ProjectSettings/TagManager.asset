@@ -18,6 +18,7 @@ TagManager:
   - Turn
   - Order
   - CustomerManager
+  - Customer
   layers:
   - Default
   - TransparentFX

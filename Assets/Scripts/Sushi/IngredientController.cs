@@ -56,7 +56,7 @@ public class IngredientController : MonoBehaviour
                     }
                 }
             }
-            if(customerManager._sushiName != "SalmonCucumberChumaki")
+            if(customerManager._sushiName != "Somon Salatalýk Chumaki")
             {
                 _text.text = "Ben bu yemeði istememiþtim!";
             }
