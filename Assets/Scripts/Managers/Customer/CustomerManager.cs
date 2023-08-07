@@ -3,113 +3,130 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
+
+// GetFoodName metodu ile ayrý bir yere taþýnabilirler.
+public enum WantedSushi
+{
+    SalmonHosomaki,
+    CucumberHosomaki,
+    SalmonCucumberChumaki,
+}
+
 public class CustomerManager : MonoBehaviour
 {
     #region Customer Creation
-
+    #region SerializeFields
     [SerializeField] GameObject[] _customerPrefabs;
-    GameObject _currentCustomer;
-    GameObject _instCustomer;
     [SerializeField] GameObject _spawnPoint;
     [SerializeField] GameObject _turnPoint;
     [SerializeField] GameObject _orderPoint;
-    Vector3 _position;
-    Quaternion _rotation;
-    private int _score;
-    private string[] _wantedMaterials;
-    private int _orderNumber;
-    WantedFoods _wantedSushi;
-    public string _sushiName;
     [SerializeField] TextMeshProUGUI _customerText;
     [SerializeField] GameObject CustomerUI;
+    #endregion
 
-    enum WantedFoods
+    // Customer Tipine çevrilecek.
+    Queue<Customer> customers = new Queue<Customer>();
+
+    Vector3 _position;
+    Quaternion _rotation;
+
+    #region Get Name With enum
+    public string GetFoodName(WantedSushi food)
     {
-        SalmonHosomaki,
-        CucumberHosomaki,
-        SalmonCucumberChumaki,
+        string sushiName = "Somon Salatalýk Chumaki";
+
+        if (food == WantedSushi.CucumberHosomaki)
+        {
+            sushiName = "Salatalýk Hosomaki";
+        }
+        else if (food == WantedSushi.SalmonHosomaki)
+        {
+            sushiName = "Somon Hosomaki";
+        }
+        else if (food == WantedSushi.SalmonCucumberChumaki)
+        {
+            sushiName = "Somon Salatalýk Chumaki";
+        }
+
+        return sushiName;
     }
+    #endregion
 
     private void Start()
     {
-        //_spawnPoint = GetComponent<GameObject>();
-        //_turnPoint = GetComponent<GameObject>();
-        //_orderPoint = GetComponent<GameObject>();
+        // Þu anlýk Customer'lar direkt karþýmýzda spawnlansýn diye varlar.
         _position = _orderPoint.transform.position;
         _rotation.eulerAngles = new Vector3(0, 0, 0);
-        
-        _wantedSushi = WantedFoods.SalmonHosomaki;
 
         StartCoroutine(SpawnNewCustomer());
 
         GameEventsManager.instance.OnServingAdded += OnServingAdded;
-
     }
 
-    WantedFoods GiveOrder()
+    private WantedSushi GiveOrder()
     {
-        if (_orderNumber == 0)
+        int orderNumber = Random.Range(0, 3);
+        WantedSushi food = WantedSushi.CucumberHosomaki; ;
+
+        if (orderNumber == 0)
         {
-            _wantedSushi = WantedFoods.CucumberHosomaki;
-            _sushiName = "Salatalýk Hosomaki";
+            food = WantedSushi.CucumberHosomaki;
         }
-        else if (_orderNumber == 1)
+        else if (orderNumber == 1)
         {
-            _wantedSushi = WantedFoods.SalmonHosomaki;
-            _sushiName = "Somon Hosomaki";
+            food = WantedSushi.SalmonHosomaki;
+        }
+        else if (orderNumber == 2)
+        {
+            food = WantedSushi.SalmonCucumberChumaki;
         }
 
-        else if (_orderNumber == 2)
-        {
-            _wantedSushi = WantedFoods.SalmonCucumberChumaki;
-            _sushiName = "Somon Salatalýk Chumaki";
-        }
-
-        return _wantedSushi;
+        return food;
     }
 
-    private void CustomerInstantiate()
+    private GameObject CustomerInstantiate()
     {
-        _orderNumber = Random.Range(0, 3);
-        _currentCustomer = _customerPrefabs[Random.Range(0, 4)];
-        _instCustomer = Instantiate(_currentCustomer, _position, _rotation);
-        _instCustomer.tag = "Customer";
+        GameObject customerPref = _customerPrefabs[Random.Range(0, 3)];
+        return Instantiate(customerPref, _position, _rotation);
     }
     #endregion
 
-    #region SushiMechanic
-
-
-
-    #endregion
-
-
-    #region CustomerMovement
+    #region Customer Ordering
 
     //TODO: movement system. can instantly instantiate for tomorrow.
-
     public IEnumerator SpawnNewCustomer()
     {
-        CustomerInstantiate();
+        // Fonksiyon isimleri düzenlenebilir.
+        GameObject customerObj = CustomerInstantiate();
+        WantedSushi sushi = GiveOrder();
+
+        Customer customer = new Customer(customerObj, sushi);
+        customers.Enqueue(customer);
+
         yield return new WaitForSeconds(1.5f);
-        GiveOrder();
-        _customerText.text = "Selamlar, ben bir adet " + _sushiName + " alabilir miyim?";
+        _customerText.text = "Selamlar, ben bir adet " + GetFoodName(sushi) + " alabilir miyim?";
     }
 
     IEnumerator DestroyCustomer()
     {
         yield return new WaitForSeconds(3f);
-        GameObject[] a;
-        a = GameObject.FindGameObjectsWithTag("Customer");
-        foreach (GameObject go in a) { Destroy(go); }
+
+        // Sýrada en baþta olan eleman destroy edilir.
+        Destroy(customers.Dequeue().GetCustomerObj);
+
         yield return new WaitForSeconds(2f);
-        StartCoroutine(SpawnNewCustomer());
     }
 
     void OnServingAdded()
     {
         StartCoroutine(DestroyCustomer());
     }
+
+
+    #endregion
+
+    #region SushiMechanic
+
 
 
     #endregion

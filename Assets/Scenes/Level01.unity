@@ -167,7 +167,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1075624787}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: -179.931, z: 0}
 --- !u!114 &18963780
 MonoBehaviour:
@@ -2034,8 +2034,8 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1229482660}
-  - {fileID: 1609523273}
   - {fileID: 18963779}
+  - {fileID: 1609523273}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2418,13 +2418,12 @@ MonoBehaviour:
   - {fileID: 6802376385503503769, guid: 4c605e6a781a55242a809461566dcae6, type: 3}
   - {fileID: 4726893075092457869, guid: 9b3e30ae04075414eb42379efec91b96, type: 3}
   - {fileID: 4693578854697025304, guid: 062595b574cdaad4c8c40f3ef26e41a3, type: 3}
-  - {fileID: -1728013695380148634, guid: 694027245a9ed3c47a4aa26f719f3df2, type: 3}
   _spawnPoint: {fileID: 423231737}
   _turnPoint: {fileID: 1829529757}
   _orderPoint: {fileID: 1150858362}
-  _sushiName: 
   _customerText: {fileID: 1147023441}
   CustomerUI: {fileID: 1535243134}
+  _sushiName: 
 --- !u!4 &1229482660
 Transform:
   m_ObjectHideFlags: 0
@@ -3750,7 +3749,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1075624787}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: -179.931, z: 0}
 --- !u!1 &1641260865
 GameObject:
