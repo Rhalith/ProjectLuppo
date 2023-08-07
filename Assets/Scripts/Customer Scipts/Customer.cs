@@ -1,11 +1,11 @@
 using UnityEngine;
 
-public class Customer : MonoBehaviour
+public class Customer
 {
     GameObject customerObj;
-    WantedSushi wantedSushi;
+    OrderSushiType wantedSushi;
 
-    public Customer(GameObject customerObj, WantedSushi wantedSushi)
+    public Customer(GameObject customerObj, OrderSushiType wantedSushi)
     {
         this.customerObj = customerObj;
         this.wantedSushi = wantedSushi;
@@ -16,7 +16,7 @@ public class Customer : MonoBehaviour
         get => customerObj; 
     }
 
-    public WantedSushi GetWantedSushi 
+    public OrderSushiType GetOrderedSushi 
     { 
         get => wantedSushi; 
     }

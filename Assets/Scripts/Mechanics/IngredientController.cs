@@ -1,13 +1,8 @@
-
-using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.Threading;
-using UniJSON;
-using Unity.VisualScripting;
+using System.Collections;
+using System;
 using UnityEngine;
 using TMPro;
-using Cinemachine;
 
 public class IngredientController : MonoBehaviour
 {
@@ -16,84 +11,81 @@ public class IngredientController : MonoBehaviour
     public int differentIngredientCount = 0;
     bool has = false;
     public string[] material;
+
     [SerializeField] GameObject _seaweed;
+
     SeaweedWrap _wrap;
+
     public int salmonCounter;
     public int cucumberCounter;
+
     private int _cucumber;
     private int _salmon;
+
     CustomerManager customerManager;
+
     [SerializeField] TextMeshProUGUI _text;
     private Dictionary<string, int> _sushis = new Dictionary<string, int>();
-    
+
 
     #region Ingredients
-    
 
-    
+
+
     void OnTriggerEnter(Collider other)
     {
-        
-        var chumaki = other.GetComponent<ChumakiDisplay>();
-        var chumakiGO = other.gameObject;
-        var hosomaki = other.GetComponent<HosomakiDisplay>();
-        var hosomakiGO = other.gameObject;
-
-        if (chumaki != null)
+        if (other.CompareTag("Chumaki"))
         {
-            if(chumakiGO.name == "Salmon Cucumber Chumaki")
+            ChumakiDisplay chumaki = other.GetComponent<ChumakiDisplay>();
+            GameObject chumakiGO = other.gameObject;
+
+            if (chumakiGO.name == "Salmon Cucumber Chumaki")
             {
                 foreach (KeyValuePair<string, int> s in chumaki.ingredients)
                 {
                     if (s.Key == "Salmon")
                     {
-                       _salmon = s.Value;
+                        _salmon = s.Value;
                     }
 
                     if (s.Key == "Cucumber")
                     {
-                       _cucumber = s.Value;
+                        _cucumber = s.Value;
                     }
                 }
             }
-            if(customerManager._sushiName != "Somon Salatalýk Chumaki")
+
+            if (OrderManager.Instance.orderedSushi != OrderSushiType.SalmonCucumberChumaki)
             {
                 _text.text = "Ben bu yemeði istememiþtim!";
             }
-
-            else if(_cucumber < 3)
+            else if (_cucumber < 3)
             {
                 _text.text = "Salatalýðý az olmuþ.";
             }
-
-            else if(_cucumber > 3)
+            else if (_cucumber > 3)
             {
                 _text.text = "Salatalýðý fazla olmuþ.";
             }
-
             else if (_salmon < 3)
             {
                 _text.text = "Somonu az olmuþ.";
             }
-
             else if (_salmon > 3)
             {
                 _text.text = "Somonu fazla olmuþ.";
             }
-
             else
             {
                 _text.text = "Yediðim en güzel sushiydi. Sanki bu dünyadan deðil!";
             }
-
-            
-
-            Destroy(other);
         }
-
-        if (hosomaki != null)
+        else if (other.CompareTag("Hosomaki"))
         {
-            if (customerManager._sushiName == "Somon Hosomaki")
+            HosomakiDisplay hosomaki = other.GetComponent<HosomakiDisplay>();
+            GameObject hosomakiGO = other.gameObject;
+
+            if (OrderManager.Instance.orderedSushi == OrderSushiType.SalmonHosomaki)
             {
                 if (hosomakiGO.name == "Salmon Hosomaki")
                 {
@@ -101,23 +93,17 @@ public class IngredientController : MonoBehaviour
                     {
                         _text.text = "Somonu az olmuþ.";
                     }
-
                     else if (hosomaki.count > 3)
                     {
                         _text.text = "Somonu fazla olmuþ.";
                     }
-
                     else
                     {
                         _text.text = "Yediðim en güzel sushiydi. Sanki bu dünyadan deðil!";
                     }
                 }
-
-
             }
-
-
-            else if (customerManager._sushiName == "Salatalýk Hosomaki")
+            else if (OrderManager.Instance.orderedSushi == OrderSushiType.CucumberHosomaki)
             {
                 if (hosomakiGO.name == "Cucumber Hosomaki")
                 {
@@ -136,19 +122,16 @@ public class IngredientController : MonoBehaviour
                         _text.text = "Yediðim en güzel sushiydi. Sanki bu dünyadan deðil!";
                     }
                 }
-                
-
-
             }
-
             else
             {
                 _text.text = "Ben sizden bunu istememiþtim!";
             }
         }
 
-        GameEventsManager.instance.ServingAdded();
         Destroy(other.gameObject);
+
+        GameEventsManager.instance.ServingAdded();
     }
 
     #endregion
@@ -156,20 +139,20 @@ public class IngredientController : MonoBehaviour
     //TODO: Get rid of Array, Use List instead. Much more effective and easy.
     private void Start()
     {
-       
-      ingredients = new string[100];
-      material = new string[100];
+        ingredients = new string[100];
+        material = new string[100];
         customerManager = GameObject.FindWithTag("CustomerManager").GetComponent<CustomerManager>();
     }
+
     public void AddIngredient(string ingredient)
     {
-        if(count > 0)
+        if (count > 0)
         {
-            if (ingredients[count-1] != null)
+            if (ingredients[count - 1] != null)
             {
                 foreach (string t in ingredients)
                 {
-                    if(t != null)
+                    if (t != null)
                     {
                         if (t.Equals(ingredient))
                         {
@@ -177,8 +160,6 @@ public class IngredientController : MonoBehaviour
                             break;
                         }
                     }
-                    
-
                     else
                     {
                         //empty
@@ -189,7 +170,7 @@ public class IngredientController : MonoBehaviour
 
         ingredients[count] = ingredient;
         count++;
-        
+
 
         if (!has)
         {
@@ -199,14 +180,11 @@ public class IngredientController : MonoBehaviour
             Debug.Log("ingredients: " + material[differentIngredientCount]);
             differentIngredientCount++;
         }
-
         else
         {
             has = false;
         }
     }
-
-   
 
     public void ClearIngredient()
     {
@@ -215,6 +193,4 @@ public class IngredientController : MonoBehaviour
         differentIngredientCount = 0;
         count = 0;
     }
-
-
 }

@@ -5,8 +5,9 @@ using TMPro;
 
 
 // GetFoodName metodu ile ayrý bir yere taþýnabilirler.
-public enum WantedSushi
+public enum OrderSushiType
 {
+    Empty,
     SalmonHosomaki,
     CucumberHosomaki,
     SalmonCucumberChumaki,
@@ -16,34 +17,62 @@ public class CustomerManager : MonoBehaviour
 {
     #region Customer Creation
     #region SerializeFields
-    [SerializeField] GameObject[] _customerPrefabs;
-    [SerializeField] GameObject _spawnPoint;
-    [SerializeField] GameObject _turnPoint;
-    [SerializeField] GameObject _orderPoint;
-    [SerializeField] TextMeshProUGUI _customerText;
-    [SerializeField] GameObject CustomerUI;
+    [SerializeField] GameObject[] customerPrefabs;
+    [SerializeField] GameObject spawnPoint;
+    [SerializeField] GameObject turnPoint;
+    [SerializeField] GameObject orderPoint;
+    [SerializeField] TextMeshProUGUI customerText;
+    [SerializeField] GameObject customerUI;
+    [SerializeField] Transform customersParentTransform;
+
+    [SerializeField] int customerLimit = 5;
     #endregion
 
-    // Customer Tipine çevrilecek.
-    Queue<Customer> customers = new Queue<Customer>();
+    private Vector3 _position;
+    private Quaternion _rotation;
 
-    Vector3 _position;
-    Quaternion _rotation;
+    // Customer Tipine çevrilecek.
+    public Queue<Customer> customerQueue = new Queue<Customer>();
+
+    public static CustomerManager Instance;
+
+    private void Awake()
+    {
+        if (Instance != null && Instance != this)
+        {
+            Destroy(this);
+        }
+        else
+        {
+            Instance = this;
+        }
+    }
+
+    private void Start()
+    {
+        // Þu anlýk Customer'lar direkt karþýmýzda spawnlansýn diye varlar.
+        _position = orderPoint.transform.position;
+        _rotation.eulerAngles = new Vector3(0, 0, 0);
+
+        StartCoroutine(SpawnNewCustomers());
+
+        GameEventsManager.instance.OnServingAdded += OnServingAdded;
+    }
 
     #region Get Name With enum
-    public string GetFoodName(WantedSushi food)
+    public string GetFoodName(OrderSushiType orderedSushi)
     {
         string sushiName = "Somon Salatalýk Chumaki";
 
-        if (food == WantedSushi.CucumberHosomaki)
+        if (orderedSushi == OrderSushiType.CucumberHosomaki)
         {
             sushiName = "Salatalýk Hosomaki";
         }
-        else if (food == WantedSushi.SalmonHosomaki)
+        else if (orderedSushi == OrderSushiType.SalmonHosomaki)
         {
             sushiName = "Somon Hosomaki";
         }
-        else if (food == WantedSushi.SalmonCucumberChumaki)
+        else if (orderedSushi == OrderSushiType.SalmonCucumberChumaki)
         {
             sushiName = "Somon Salatalýk Chumaki";
         }
@@ -52,33 +81,22 @@ public class CustomerManager : MonoBehaviour
     }
     #endregion
 
-    private void Start()
-    {
-        // Þu anlýk Customer'lar direkt karþýmýzda spawnlansýn diye varlar.
-        _position = _orderPoint.transform.position;
-        _rotation.eulerAngles = new Vector3(0, 0, 0);
-
-        StartCoroutine(SpawnNewCustomer());
-
-        GameEventsManager.instance.OnServingAdded += OnServingAdded;
-    }
-
-    private WantedSushi GiveOrder()
+    private OrderSushiType GiveOrder()
     {
         int orderNumber = Random.Range(0, 3);
-        WantedSushi food = WantedSushi.CucumberHosomaki; ;
+        OrderSushiType food = OrderSushiType.CucumberHosomaki; ;
 
         if (orderNumber == 0)
         {
-            food = WantedSushi.CucumberHosomaki;
+            food = OrderSushiType.CucumberHosomaki;
         }
         else if (orderNumber == 1)
         {
-            food = WantedSushi.SalmonHosomaki;
+            food = OrderSushiType.SalmonHosomaki;
         }
         else if (orderNumber == 2)
         {
-            food = WantedSushi.SalmonCucumberChumaki;
+            food = OrderSushiType.SalmonCucumberChumaki;
         }
 
         return food;
@@ -86,35 +104,52 @@ public class CustomerManager : MonoBehaviour
 
     private GameObject CustomerInstantiate()
     {
-        GameObject customerPref = _customerPrefabs[Random.Range(0, 3)];
-        return Instantiate(customerPref, _position, _rotation);
+        GameObject customerPref = customerPrefabs[Random.Range(0, 3)];
+        return Instantiate(customerPref, _position, _rotation, customersParentTransform);
     }
     #endregion
 
     #region Customer Ordering
 
-    //TODO: movement system. can instantly instantiate for tomorrow.
-    public IEnumerator SpawnNewCustomer()
+    // Customer spawner ve queue baþtan yazýlacak
+    public IEnumerator SpawnNewCustomers()
     {
-        // Fonksiyon isimleri düzenlenebilir.
-        GameObject customerObj = CustomerInstantiate();
-        WantedSushi sushi = GiveOrder();
+        while(customerQueue.Count < customerLimit)
+        {
+            // Fonksiyon isimleri düzenlenebilir.
+            GameObject customerObj = CustomerInstantiate();
+            OrderSushiType sushi = GiveOrder();
 
-        Customer customer = new Customer(customerObj, sushi);
-        customers.Enqueue(customer);
+            Customer customer = new Customer(customerObj, sushi);
+            customerQueue.Enqueue(customer);
 
-        yield return new WaitForSeconds(1.5f);
-        _customerText.text = "Selamlar, ben bir adet " + GetFoodName(sushi) + " alabilir miyim?";
+            // Bunun yerine event kullanýlabilir.
+            OrderManager.Instance.UpdateOrder(customerQueue.Peek().GetOrderedSushi);
+
+            // Wait for a random time
+            yield return new WaitForSeconds(Random.Range(1.5f, 5f));
+
+            // Customer diyalog'u buradan ayrý olmalý. 
+            // customerText.text = "Selamlar, ben bir adet " + GetFoodName(sushi) + " alabilir miyim?";
+        }
     }
 
     IEnumerator DestroyCustomer()
     {
-        yield return new WaitForSeconds(3f);
-
         // Sýrada en baþta olan eleman destroy edilir.
-        Destroy(customers.Dequeue().GetCustomerObj);
+        Destroy(customerQueue.Dequeue().GetCustomerObj);
+        OrderManager.Instance.EmptyOrder();
+
+        // Bunun yerine event kullanýlabilir.
+        OrderManager.Instance.UpdateOrder(customerQueue.Peek().GetOrderedSushi);
 
         yield return new WaitForSeconds(2f);
+
+
+        // Coroutine'ler tamamlanýnca temizleniyorlar mý???
+        //if(_spawnCustomerCoroutine == null)
+
+        _spawnCustomerCoroutine = StartCoroutine(SpawnNewCustomers());
     }
 
     void OnServingAdded()

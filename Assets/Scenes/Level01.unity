@@ -808,6 +808,37 @@ Transform:
   m_Father: {fileID: 294520831}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: -14.905, y: -357.374, z: 0.016}
+--- !u!1 &397253849
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 397253850}
+  m_Layer: 0
+  m_Name: Customers
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &397253850
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 397253849}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1277152694}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &423231737
 GameObject:
   m_ObjectHideFlags: 0
@@ -2036,6 +2067,7 @@ Transform:
   - {fileID: 1229482660}
   - {fileID: 18963779}
   - {fileID: 1609523273}
+  - {fileID: 1143800182}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2185,6 +2217,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1084682738}
   m_CullTransparentMesh: 1
+--- !u!1 &1143800181
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1143800182}
+  - component: {fileID: 1143800183}
+  m_Layer: 0
+  m_Name: OrderManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1143800182
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1143800181}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1075624787}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1143800183
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1143800181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5a320e81755182428ac527116e303c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  orderedSushi: 0
 --- !u!1 &1147023439
 GameObject:
   m_ObjectHideFlags: 0
@@ -2414,16 +2491,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4566bf314d4deff4b8225a2fba5e5433, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _customerPrefabs:
+  customerPrefabs:
   - {fileID: 6802376385503503769, guid: 4c605e6a781a55242a809461566dcae6, type: 3}
   - {fileID: 4726893075092457869, guid: 9b3e30ae04075414eb42379efec91b96, type: 3}
   - {fileID: 4693578854697025304, guid: 062595b574cdaad4c8c40f3ef26e41a3, type: 3}
-  _spawnPoint: {fileID: 423231737}
-  _turnPoint: {fileID: 1829529757}
-  _orderPoint: {fileID: 1150858362}
-  _customerText: {fileID: 1147023441}
-  CustomerUI: {fileID: 1535243134}
-  _sushiName: 
+  spawnPoint: {fileID: 423231737}
+  turnPoint: {fileID: 1829529757}
+  orderPoint: {fileID: 1150858362}
+  customerText: {fileID: 1147023441}
+  customerUI: {fileID: 1535243134}
+  customersParentTransform: {fileID: 397253850}
+  customerLimit: 5
 --- !u!4 &1229482660
 Transform:
   m_ObjectHideFlags: 0
@@ -2688,6 +2766,7 @@ Transform:
   - {fileID: 205887027}
   - {fileID: 445989234}
   - {fileID: 780781438}
+  - {fileID: 397253850}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3420,7 +3499,7 @@ MonoBehaviour:
   count: 0
   differentIngredientCount: 0
   material: []
-  _seaweed: {fileID: 0}
+  _seaweed: {fileID: 780781433}
   salmonCounter: 0
   cucumberCounter: 0
   _text: {fileID: 1147023441}
@@ -4025,7 +4104,7 @@ GameObject:
   - component: {fileID: 1824129952}
   - component: {fileID: 1824129956}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: TrashCan
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
