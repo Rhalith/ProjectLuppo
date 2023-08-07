@@ -149,7 +149,7 @@ public class CustomerManager : MonoBehaviour
         // Coroutine'ler tamamlanýnca temizleniyorlar mý???
         //if(_spawnCustomerCoroutine == null)
 
-        _spawnCustomerCoroutine = StartCoroutine(SpawnNewCustomers());
+        StartCoroutine(SpawnNewCustomers());
     }
 
     void OnServingAdded()
