@@ -14,15 +14,9 @@ public class SeaweedWrap : MonoBehaviour
     public GameObject futomakiPrefab;
     private GameObject _instObj;
     Vector3 sushiPos;
-    IngredientController ingredientController;
     public string _sushiMaterial;
     public int salmonCounter;
     public int cucumberCounter;
-
-    private void Start()
-    {
-        ingredientController = GameObject.FindWithTag("CustomerManager").GetComponent<IngredientController>();
-    }
 
     private void OnMouseDown()
     {
@@ -61,7 +55,7 @@ public class SeaweedWrap : MonoBehaviour
     private void InstantiateSushi()
     {
         //TODO: Must change scriptable object based on their ingredient (mostly done)
-        if (ingredientController.differentIngredientCount == 1)
+        if (IngredientController.Instance.differentIngredientCount == 1)
         {
             SaveSushiIngredients();
             Vector3 sushiPosition = _endPosition;
@@ -71,8 +65,7 @@ public class SeaweedWrap : MonoBehaviour
             
 
         }
-
-        else if (ingredientController.differentIngredientCount == 2)
+        else if (IngredientController.Instance.differentIngredientCount == 2)
         {
             SaveSushiIngredients();
             Vector3 sushiPosition = _endPosition;
@@ -81,8 +74,7 @@ public class SeaweedWrap : MonoBehaviour
             _instObj.GetComponent<ChumakiDisplay>().sushiName = _sushiMaterial + "Chumaki";
             
         }
-
-        else if (ingredientController.differentIngredientCount == 3)
+        else if (IngredientController.Instance.differentIngredientCount == 3)
         {
             SaveSushiIngredients();
             Vector3 sushiPosition = _endPosition;
@@ -104,7 +96,7 @@ public class SeaweedWrap : MonoBehaviour
 
     public void SaveSushiIngredients()
     {
-        foreach(string t in ingredientController.ingredients)
+        foreach(string t in IngredientController.Instance.ingredients)
         {
             if(t != null)
             {
@@ -120,7 +112,7 @@ public class SeaweedWrap : MonoBehaviour
             }
         }
 
-        ingredientController.salmonCounter = salmonCounter;
-        ingredientController.cucumberCounter = cucumberCounter;
+        IngredientController.Instance.SalmonCounter = salmonCounter;
+        IngredientController.Instance.CucumberCounter = cucumberCounter;
     }
 }

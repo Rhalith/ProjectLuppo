@@ -12,9 +12,9 @@ public class VCamFollower : MonoBehaviour
     [SerializeField] GameObject RestaurantCam;
     private void Start()
     {
-        GameEventsManager.instance.OnKitchenActivated += OnKitchenActivated;
-        GameEventsManager.instance.OnRestaurantActivated += OnRestaurantActivated;
-        GameEventsManager.instance.OnServingAdded += OnServingAdded;
+        GameEventsManager.Instance.OnKitchenActivated += OnKitchenActivated;
+        GameEventsManager.Instance.OnRestaurantActivated += OnRestaurantActivated;
+        GameEventsManager.Instance.OnServingAdded += OnServingAdded;
 
         vcam = GetComponent<CinemachineVirtualCamera>();
     }

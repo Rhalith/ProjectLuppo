@@ -35,11 +35,11 @@ public class HosomakiDisplay : MonoBehaviour
 
         if(gameObject.name == "Salmon Hosomaki")
         {
-            count = controller.salmonCounter;
+            count = controller.SalmonCounter;
         }
         else if(gameObject.name == "Cucumber Hosomaki")
         {
-            count = controller.cucumberCounter;
+            count = controller.CucumberCounter;
         }
         controller.ClearIngredient();
     }

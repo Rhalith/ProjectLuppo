@@ -16,21 +16,36 @@ public class IngredientController : MonoBehaviour
 
     SeaweedWrap _wrap;
 
-    public int salmonCounter;
-    public int cucumberCounter;
+    public int SalmonCounter;
+    public int CucumberCounter;
 
     private int _cucumber;
     private int _salmon;
 
-    CustomerManager customerManager;
-
     [SerializeField] TextMeshProUGUI _text;
-    private Dictionary<string, int> _sushis = new Dictionary<string, int>();
 
+    public static IngredientController Instance;
+
+    private void Awake()
+    {
+        if (Instance != null && Instance != this)
+        {
+            Destroy(this);
+        }
+        else
+        {
+            Instance = this;
+        }
+    }
+
+    //TODO: Get rid of Array, Use List instead. Much more effective and easy.
+    private void Start()
+    {
+        ingredients = new string[100];
+        material = new string[100];
+    }
 
     #region Ingredients
-
-
 
     void OnTriggerEnter(Collider other)
     {
@@ -131,18 +146,9 @@ public class IngredientController : MonoBehaviour
 
         Destroy(other.gameObject);
 
-        GameEventsManager.instance.ServingAdded();
+        GameEventsManager.Instance.ServingAdded();
     }
-
     #endregion
-
-    //TODO: Get rid of Array, Use List instead. Much more effective and easy.
-    private void Start()
-    {
-        ingredients = new string[100];
-        material = new string[100];
-        customerManager = GameObject.FindWithTag("CustomerManager").GetComponent<CustomerManager>();
-    }
 
     public void AddIngredient(string ingredient)
     {

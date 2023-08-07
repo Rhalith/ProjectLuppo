@@ -56,7 +56,7 @@ public class CustomerManager : MonoBehaviour
 
         StartCoroutine(SpawnNewCustomers());
 
-        GameEventsManager.instance.OnServingAdded += OnServingAdded;
+        GameEventsManager.Instance.OnServingAdded += OnServingAdded;
     }
 
     #region Get Name With enum

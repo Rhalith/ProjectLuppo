@@ -19,26 +19,26 @@ public class InGameManager : MonoBehaviour
 
     public void Start()
     {
-        GameEventsManager.instance.OnKitchenActivated += OnKitchenActivated;
-        GameEventsManager.instance.OnRestaurantActivated += OnRestaurantActivated;
-        GameEventsManager.instance.OnServingAdded += OnServingAdded;
+        GameEventsManager.Instance.OnKitchenActivated += OnKitchenActivated;
+        GameEventsManager.Instance.OnRestaurantActivated += OnRestaurantActivated;
+        GameEventsManager.Instance.OnServingAdded += OnServingAdded;
         StartCoroutine(DayStart());
     }
 
     public void OnDestroy()
     {
-        GameEventsManager.instance.OnKitchenActivated -= OnKitchenActivated;
-        GameEventsManager.instance.OnRestaurantActivated -= OnRestaurantActivated;
+        GameEventsManager.Instance.OnKitchenActivated -= OnKitchenActivated;
+        GameEventsManager.Instance.OnRestaurantActivated -= OnRestaurantActivated;
     }
 
     public void ActivateRestaurant()
     {
-        GameEventsManager.instance.RestaurantActivated();
+        GameEventsManager.Instance.RestaurantActivated();
     }
 
     public void ActivateKitchen()
     {
-        GameEventsManager.instance.KitchenActivated();
+        GameEventsManager.Instance.KitchenActivated();
     }
 
     private void OnKitchenActivated()
