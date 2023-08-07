@@ -14,13 +14,11 @@ public class ObjectCreator : MonoBehaviour
         {
             InstantiateIngredientObject(sushiObject);
         }
-
         else if (!instObj)
         {
             DestroySushiObjectIfExists();
             InstantiateIngredientObject(sushiObject);
         }
-
         else
         {
             DestroySushiObjectIfExists();
@@ -30,7 +28,7 @@ public class ObjectCreator : MonoBehaviour
 
     public void InstantiateIngredientObject(GameObject sushiIngredientPrefab)
     {
-        this.instObj = Object.Instantiate(sushiIngredientPrefab);
+        this.instObj = Instantiate(sushiIngredientPrefab);
         instObj.gameObject.tag = "Instantiated";
         foreach (Transform t in instObj.transform)
         {
@@ -40,8 +38,6 @@ public class ObjectCreator : MonoBehaviour
 
     public void DestroySushiObjectIfExists()
     {
-     
-            Object.Destroy(GameObject.FindWithTag("Instantiated"));
-     
+            Destroy(GameObject.FindWithTag("Instantiated"));
     }
 }

@@ -5,16 +5,15 @@ using UnityEngine;
 
 public class GameEventsManager : MonoBehaviour
 {
-    public static GameEventsManager instance { get; private set; }
+    public static GameEventsManager Instance { get; private set; }
 
     private void Awake()
     {
-        if
-            (instance != null)
+        if (Instance != null)
         {
             Debug.LogError("Found more than one Game Events Manager in the scene.");
         }
-        instance = this;
+        Instance = this;
     }
     //Example event(Also day end event)
     public event Action OnDayEnded;
@@ -50,7 +49,7 @@ public class GameEventsManager : MonoBehaviour
     }
 
     public event Action OnServingAdded;
-    
+
     public void ServingAdded()
     {
         if (OnServingAdded != null)
@@ -62,7 +61,7 @@ public class GameEventsManager : MonoBehaviour
     public void ServingServed()
     {
         if (OnServingServed != null)
-        { 
+        {
             OnServingServed();
         }
     }
