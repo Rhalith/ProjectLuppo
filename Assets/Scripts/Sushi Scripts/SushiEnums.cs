@@ -1,3 +1,11 @@
+public enum SushiType
+{
+    Sashimi,
+    Nigiri,
+    Maki,
+    Uramaki,
+}
+
 public enum SushiIngredient
 {
     karides,

@@ -19,6 +19,8 @@ TagManager:
   - Order
   - CustomerManager
   - Customer
+  - Chumaki
+  - Hosomaki
   layers:
   - Default
   - TransparentFX
