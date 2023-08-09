@@ -5,7 +5,7 @@ using TMPro;
 
 
 // GetFoodName metodu ile ayrý bir yere taþýnabilirler.
-public enum OrderSushiType
+public enum OrderedSushiType
 {
     Empty,
     SalmonHosomaki,
@@ -30,8 +30,8 @@ public class CustomerManager : MonoBehaviour
 
     private Vector3 _position;
     private Quaternion _rotation;
-
-    // Customer Tipine çevrilecek.
+    
+    // Customer Queue FIFO
     public Queue<Customer> customerQueue = new Queue<Customer>();
 
     public static CustomerManager Instance;
@@ -60,19 +60,19 @@ public class CustomerManager : MonoBehaviour
     }
 
     #region Get Name With enum
-    public string GetFoodName(OrderSushiType orderedSushi)
+    public string GetFoodName(OrderedSushiType orderedSushi)
     {
         string sushiName = "Somon Salatalýk Chumaki";
 
-        if (orderedSushi == OrderSushiType.CucumberHosomaki)
+        if (orderedSushi == OrderedSushiType.CucumberHosomaki)
         {
             sushiName = "Salatalýk Hosomaki";
         }
-        else if (orderedSushi == OrderSushiType.SalmonHosomaki)
+        else if (orderedSushi == OrderedSushiType.SalmonHosomaki)
         {
             sushiName = "Somon Hosomaki";
         }
-        else if (orderedSushi == OrderSushiType.SalmonCucumberChumaki)
+        else if (orderedSushi == OrderedSushiType.SalmonCucumberChumaki)
         {
             sushiName = "Somon Salatalýk Chumaki";
         }
@@ -81,22 +81,22 @@ public class CustomerManager : MonoBehaviour
     }
     #endregion
 
-    private OrderSushiType GiveOrder()
+    private OrderedSushiType GiveOrder()
     {
         int orderNumber = Random.Range(0, 3);
-        OrderSushiType food = OrderSushiType.CucumberHosomaki; ;
+        OrderedSushiType food = OrderedSushiType.CucumberHosomaki; ;
 
         if (orderNumber == 0)
         {
-            food = OrderSushiType.CucumberHosomaki;
+            food = OrderedSushiType.CucumberHosomaki;
         }
         else if (orderNumber == 1)
         {
-            food = OrderSushiType.SalmonHosomaki;
+            food = OrderedSushiType.SalmonHosomaki;
         }
         else if (orderNumber == 2)
         {
-            food = OrderSushiType.SalmonCucumberChumaki;
+            food = OrderedSushiType.SalmonCucumberChumaki;
         }
 
         return food;
@@ -118,7 +118,7 @@ public class CustomerManager : MonoBehaviour
         {
             // Fonksiyon isimleri düzenlenebilir.
             GameObject customerObj = CustomerInstantiate();
-            OrderSushiType sushi = GiveOrder();
+            OrderedSushiType sushi = GiveOrder();
 
             Customer customer = new Customer(customerObj, sushi);
             customerQueue.Enqueue(customer);
@@ -136,7 +136,7 @@ public class CustomerManager : MonoBehaviour
 
     IEnumerator DestroyCustomer()
     {
-        // Sýrada en baþta olan eleman destroy edilir.
+        // Sýrada en baþta olan eleman destroy edilir ve order Empty olarak ayarlanýr.
         Destroy(customerQueue.Dequeue().GetCustomerObj);
         OrderManager.Instance.EmptyOrder();
 
