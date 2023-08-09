@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
-using UnityEditor.VersionControl;
 using UnityEngine;
 
 public class HosomakiDisplay : MonoBehaviour
@@ -35,11 +34,12 @@ public class HosomakiDisplay : MonoBehaviour
 
         if(gameObject.name == "Salmon Hosomaki")
         {
-            count = controller.SalmonCounter;
+            //TODO: SalmonCounter and CucumberCounter is not using, so I comment it out
+            //count = controller.SalmonCounter;
         }
         else if(gameObject.name == "Cucumber Hosomaki")
         {
-            count = controller.CucumberCounter;
+            //count = controller.CucumberCounter;
         }
         controller.ClearIngredient();
     }

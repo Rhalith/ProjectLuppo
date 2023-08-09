@@ -48,13 +48,9 @@ public class FollowMouse : MonoBehaviour
                         if (hit.collider.name == "CuttingBoard")
                         {
                             instObj = Instantiate(wrapPrefab, transform.position, Quaternion.identity);
-                            wrapPrefab.tag = "Ingredient";
+                            InstantiatedController.Instance.SeawedWrap = instObj;
                             instObj.transform.parent = hitObject.transform;
                             instObj.transform.localPosition = new Vector3(0, 0f, 0.00073f);
-                            foreach (Transform t in instObj.transform)
-                            {
-                                t.gameObject.tag = "Ingredient";
-                            }
                         }
                     }
 

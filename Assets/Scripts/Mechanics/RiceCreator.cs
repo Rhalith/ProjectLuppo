@@ -1,11 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
+using UnityEditor;
 using UnityEngine;
 
-public class ObjectCreator : MonoBehaviour 
+public class RiceCreator : MonoBehaviour
 {
-    [SerializeField] GameObject sushiObject;
+    [Header("Ingredient to Instantiate")]
+    [SerializeField] GameObject _createPrefab;
     private GameObject _instantiatedObject;
     private void OnMouseDown()
     {
@@ -24,9 +25,11 @@ public class ObjectCreator : MonoBehaviour
         }
     }
 
+        
     public void InstantiateIngredientObject()
     {
-        _instantiatedObject = Instantiate(sushiObject);
+        _instantiatedObject = Instantiate(_createPrefab);
+        _instantiatedObject.tag = "Instantiated";
         InstantiatedController.Instance.InstantiatedObject = _instantiatedObject;
     }
 
