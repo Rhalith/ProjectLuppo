@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 
-public class MaterialCreator : MonoBehaviour
+public class RiceCreator : MonoBehaviour
 {
     [Header("Ingredient to Instantiate")]
     [SerializeField] GameObject _createPrefab;

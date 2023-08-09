@@ -11,6 +11,7 @@ public class DragAndDrop : MonoBehaviour
 
     private void Update()
     {
+        //Knowing issue: Because of not checking if there is any instantiated object, it is selecting cutting board when you put seawed on the cutting board.
         if (Input.GetMouseButtonDown(0))
         {
             if (_selectedObject == null)

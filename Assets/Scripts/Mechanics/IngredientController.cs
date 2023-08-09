@@ -164,15 +164,13 @@ public class IngredientController : MonoBehaviour
         }
         _ingredients.Add(ingredient);
         _count++;
-        //please explain this part
         if (!_has)
         {
-            //TODO: Connect it to a manager or controller to get the instantiated object
-            _wrap = GameObject.Find("Seaweed(Clone)").GetComponentInChildren<SeaweedWrap>();
-            _material[_differentIngredientCount] = ingredient;
-            _wrap._sushiMaterial = _wrap._sushiMaterial + _material[_differentIngredientCount] + " ";
-            Debug.Log("ingredients: " + _material[_differentIngredientCount]);
-            _differentIngredientCount++;
+            _wrap = InstantiatedController.Instance.SeawedWrap.GetComponent<SeaweedWrap>();
+            _material.Add(ingredient);
+            _wrap._sushiMaterial = _wrap._sushiMaterial + _material[InstantiatedController.Instance.InstantiatedIngredientCount] + " ";
+            Debug.Log("ingredients: " + _material[InstantiatedController.Instance.InstantiatedIngredientCount]);
+            InstantiatedController.Instance.InstantiatedIngredientCount++;
         }
         else
         {
@@ -184,7 +182,7 @@ public class IngredientController : MonoBehaviour
     {
         _ingredients.Clear();
         _material.Clear();
-        _differentIngredientCount = 0;
+        InstantiatedController.Instance.InstantiatedIngredientCount = 0;
         _count = 0;
     }
 }
