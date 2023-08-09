@@ -7,43 +7,35 @@ public class MaterialCreator : MonoBehaviour
 {
     [Header("Ingredient to Instantiate")]
     [SerializeField] GameObject _createPrefab;
-    GameObject instObj;
-    [SerializeField] GameObject _nigiriRice;
-
-    //TODO: MUST DONE BETTER!!!
+    private GameObject _instantiatedObject;
     private void OnMouseDown()
     {
-        if (!GameObject.FindWithTag("Instantiated"))
+        if (!InstantiatedController.Instance.InstantiatedObject)
         {
             InstantiateIngredientObject();
         }
-
-        else if (!instObj)
+        else if (!InstantiatedController.Instance.InstantiatedObject.Equals(_instantiatedObject))
         {
             DestroySushiObjectIfExists();
             InstantiateIngredientObject();
         }
-
         else
         {
             DestroySushiObjectIfExists();
         }
-
     }
 
         
-        public void InstantiateIngredientObject()
+    public void InstantiateIngredientObject()
     {
-
-            this.instObj = Object.Instantiate(_createPrefab);
-            instObj.gameObject.tag = "Instantiated";
-
+        _instantiatedObject = Instantiate(_createPrefab);
+        _instantiatedObject.tag = "Instantiated";
+        InstantiatedController.Instance.InstantiatedObject = _instantiatedObject;
     }
 
     public void DestroySushiObjectIfExists()
     {
-
-        Object.Destroy(GameObject.FindWithTag("Instantiated"));
-
+        InstantiatedController.Instance.ClearInstantiatedObject();
+        Destroy(_instantiatedObject);
     }
 }

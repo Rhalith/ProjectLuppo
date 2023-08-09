@@ -1,43 +1,38 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class ObjectCreator : MonoBehaviour 
 {
     [SerializeField] GameObject sushiObject;
-    GameObject instObj;
-
-    //Blueprint Instantiator
-    public void OnMouseDown()
+    private GameObject _instantiatedObject;
+    private void OnMouseDown()
     {
-        if (!GameObject.FindWithTag("Instantiated"))
+        if (!InstantiatedController.Instance.InstantiatedObject)
         {
-            InstantiateIngredientObject(sushiObject);
+            InstantiateIngredientObject();
         }
-        else if (!instObj)
+        else if (!InstantiatedController.Instance.InstantiatedObject.Equals(_instantiatedObject))
         {
             DestroySushiObjectIfExists();
-            InstantiateIngredientObject(sushiObject);
+            InstantiateIngredientObject();
         }
         else
         {
             DestroySushiObjectIfExists();
         }
-
     }
 
-    public void InstantiateIngredientObject(GameObject sushiIngredientPrefab)
+    public void InstantiateIngredientObject()
     {
-        this.instObj = Instantiate(sushiIngredientPrefab);
-        instObj.gameObject.tag = "Instantiated";
-        foreach (Transform t in instObj.transform)
-        {
-            t.gameObject.tag = "Instantiated";
-        }
+        _instantiatedObject = Instantiate(sushiObject);
+        InstantiatedController.Instance.InstantiatedObject = _instantiatedObject;
     }
 
     public void DestroySushiObjectIfExists()
     {
-            Destroy(GameObject.FindWithTag("Instantiated"));
+        InstantiatedController.Instance.ClearInstantiatedObject();
+        Destroy(_instantiatedObject);
     }
 }
