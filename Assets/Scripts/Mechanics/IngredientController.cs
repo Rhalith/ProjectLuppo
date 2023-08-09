@@ -6,25 +6,32 @@ using TMPro;
 
 public class IngredientController : MonoBehaviour
 {
-    public string[] ingredients;
-    public int count = 0;
-    public int differentIngredientCount = 0;
-    bool has = false;
-    public string[] material;
+    [SerializeField] private GameObject _seaweed;
+    [SerializeField] TextMeshProUGUI _text;
 
-    [SerializeField] GameObject _seaweed;
+    private int _count;
+    private int _differentIngredientCount;
 
-    SeaweedWrap _wrap;
+    private List<string> _ingredients = new();
+    private List<string> _material = new();
 
-    public int SalmonCounter;
-    public int CucumberCounter;
+    private bool _has;
+
+    private SeaweedWrap _wrap;
 
     private int _cucumber;
     private int _salmon;
 
-    [SerializeField] TextMeshProUGUI _text;
-
     public static IngredientController Instance;
+
+    public List<string> Ingredients { get => _ingredients;}
+    public List<string> Material { get => _material;}
+    public int DifferentIngredientCount { get => _differentIngredientCount; }
+
+
+    //TODO: SalmonCounter and CucumberCounter is not using, so I comment it out
+    //public int SalmonCounter;
+    //public int CucumberCounter;
 
     private void Awake()
     {
@@ -36,13 +43,6 @@ public class IngredientController : MonoBehaviour
         {
             Instance = this;
         }
-    }
-
-    //TODO: Get rid of Array, Use List instead. Much more effective and easy.
-    private void Start()
-    {
-        ingredients = new string[100];
-        material = new string[100];
     }
 
     #region Ingredients
@@ -152,51 +152,41 @@ public class IngredientController : MonoBehaviour
 
     public void AddIngredient(string ingredient)
     {
-        if (count > 0)
+        if (_count > 0)
         {
-            if (ingredients[count - 1] != null)
+            if(_ingredients.Contains(ingredient))
             {
-                foreach (string t in ingredients)
-                {
-                    if (t != null)
-                    {
-                        if (t.Equals(ingredient))
-                        {
-                            has = true;
-                            break;
-                        }
-                    }
-                    else
-                    {
-                        //empty
-                    }
-                }
+                _has = true;
+            }
+            else
+            {
+                _has = false;
             }
         }
+        _ingredients.Add(ingredient);
+        _count++;
 
-        ingredients[count] = ingredient;
-        count++;
-
-
-        if (!has)
+        //please explain this part
+        if (!_has)
         {
+            //TODO: Connect it to a manager or controller to get the instantiated object
             _wrap = GameObject.Find("Seaweed(Clone)").GetComponentInChildren<SeaweedWrap>();
-            material[differentIngredientCount] = ingredient;
-            _wrap._sushiMaterial = _wrap._sushiMaterial + material[differentIngredientCount] + " ";
-            Debug.Log("ingredients: " + material[differentIngredientCount]);
-            differentIngredientCount++;
+            _material[_differentIngredientCount] = ingredient;
+            _wrap._sushiMaterial = _wrap._sushiMaterial + _material[_differentIngredientCount] + " ";
+            Debug.Log("ingredients: " + _material[_differentIngredientCount]);
+            _differentIngredientCount++;
         }
         else
         {
-            has = false;
+            _has = false;
         }
     }
 
     public void ClearIngredient()
     {
-        ingredients = new string[100];
-        material = new string[100];
-        differentIngredientCount = 0;
-        count = 0;
+        _ingredients.Clear();
+        _material.Clear();
+        _differentIngredientCount = 0;
+        _count = 0;
     }
 }

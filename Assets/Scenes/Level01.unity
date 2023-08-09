@@ -1162,7 +1162,19 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 18963781}
         m_TargetAssemblyTypeName: InGameManager, Assembly-CSharp
-        m_MethodName: CloseCustomerScreen
+        m_MethodName: CloseRestaurantUI
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 18963781}
+        m_TargetAssemblyTypeName: InGameManager, Assembly-CSharp
+        m_MethodName: ActivateKitchen
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2180,16 +2192,16 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
-        m_MethodName: Play
-        m_Mode: 5
+      - m_Target: {fileID: 18963781}
+        m_TargetAssemblyTypeName: InGameManager, Assembly-CSharp
+        m_MethodName: CloseCustomerUI
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Kitchen2Restaurant
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1084682741
@@ -2767,8 +2779,8 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7265496515570058216}
-  - {fileID: 1583828997}
   - {fileID: 6280851810471865326}
+  - {fileID: 1583828997}
   - {fileID: 2708459763944060219}
   - {fileID: 543450653432473716}
   - {fileID: 3031152291439390471}
@@ -3493,7 +3505,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1277152694}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: -179.931, z: 0}
 --- !u!114 &1583828998
 MonoBehaviour:
@@ -3507,13 +3519,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43c9cc9e2c11d6f4aae3f82403b45da0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ingredients: []
-  count: 0
-  differentIngredientCount: 0
-  material: []
   _seaweed: {fileID: 780781433}
-  SalmonCounter: 0
-  CucumberCounter: 0
   _text: {fileID: 1147023441}
 --- !u!54 &1583828999
 Rigidbody:
@@ -3722,18 +3728,6 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
-        m_MethodName: Play
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: Restaurant2Kitchen
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1608838451
@@ -5133,7 +5127,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5251863696162594810, guid: c6bb1677e7cda3a46b17ccab8ef3db24, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5251863696162594810, guid: c6bb1677e7cda3a46b17ccab8ef3db24, type: 3}
       propertyPath: m_LocalPosition.x

@@ -44,7 +44,8 @@ public class ChumakiDisplay : MonoBehaviour
 
     private void FillingCount()
     {
-        ingredients.Add("Salmon", GameObject.FindWithTag("CustomerManager").GetComponent<IngredientController>().SalmonCounter);
-        ingredients.Add("Cucumber", GameObject.FindWithTag("CustomerManager").GetComponent<IngredientController>().CucumberCounter);
+        //TODO: SalmonCounter and CucumberCounter is not using, so I comment it out
+        //ingredients.Add("Salmon", GameObject.FindWithTag("CustomerManager").GetComponent<IngredientController>().SalmonCounter);
+        //ingredients.Add("Cucumber", GameObject.FindWithTag("CustomerManager").GetComponent<IngredientController>().CucumberCounter);
     }
 }
