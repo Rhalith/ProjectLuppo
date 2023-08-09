@@ -22,9 +22,6 @@ public class SushiManager : MonoBehaviour
         else
         {
             _instance = this;
-
-            // This did not works, because this script's object is child of Managers GameObject
-            DontDestroyOnLoad(gameObject);
         }
     }
 
