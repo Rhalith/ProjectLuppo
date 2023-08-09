@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: 0888fd18c8509894e8d58fd46c454aa6
+=======
+guid: cb5229eb8a46ed14daf2be5f1292b6c0
+>>>>>>> f01a1e5ffd8329f9b89407ed3a9dbc4686ea9e13
 TextureImporter:
   fileIDToRecycleName:
     8900000: generatedCubemap
