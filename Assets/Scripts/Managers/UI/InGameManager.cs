@@ -53,9 +53,29 @@ public class InGameManager : MonoBehaviour
 
     void OnServingAdded()
     {
-        ActivateCustomerUI();
+        OpenCustomerUI();
 
         StartCoroutine(RestaurantActivated());
+    }
+
+    private void OpenCustomerUI()
+    {
+        CustomerUI.SetActive(true);
+    }
+
+    public void CloseCustomerUI()
+    {
+        CustomerUI.SetActive(false);
+    }
+
+    private void OpenRestaurantUI()
+    {
+        CustomerUI.SetActive(true);
+    }
+
+    public void CloseRestaurantUI()
+    {
+        CustomerUI.SetActive(false);
     }
 
     IEnumerator RestaurantActivated()
@@ -64,14 +84,12 @@ public class InGameManager : MonoBehaviour
 
         yield return new WaitForSeconds(0.5f);
 
-        RestaurantUI.SetActive(true);
+        OpenRestaurantUI();
     }
 
     IEnumerator KitchenActivated()
     {
-        
-        
-        RestaurantUI.SetActive(false);
+        CloseRestaurantUI();
 
         yield return new WaitForSeconds(0.5f);
 
@@ -82,24 +100,12 @@ public class InGameManager : MonoBehaviour
         
     }
 
-    private void ActivateCustomerUI()
-    {
-        CustomerUI.SetActive(true);
-    }
-
-    public void CloseCustomerScreen()
-    {
-        CustomerUI.SetActive(false);
-    }
-
     IEnumerator DayStart()
     {
         yield return new WaitForSeconds(3f);
 
-        CustomerUI.SetActive(true);
+        OpenCustomerUI();
 
-        RestaurantUI.SetActive(true);
-
-        
+        OpenRestaurantUI();
     }
 }

@@ -5,7 +5,7 @@ using UnityEngine;
 public class OrderManager : MonoBehaviour
 {
     public static OrderManager Instance;
-    public OrderSushiType orderedSushi;
+    private OrderedSushiType _orderedSushi;
 
     private void Awake()
     {
@@ -19,16 +19,21 @@ public class OrderManager : MonoBehaviour
         }
     }
 
-    public void UpdateOrder(OrderSushiType orderedSushi)
+    public OrderedSushiType GetOrder()
     {
-        if(this.orderedSushi == OrderSushiType.Empty)
+        return _orderedSushi;
+    }
+
+    public void UpdateOrder(OrderedSushiType orderedSushi)
+    {
+        if(_orderedSushi == OrderedSushiType.Empty)
         {
-            this.orderedSushi = orderedSushi;
+            _orderedSushi = orderedSushi;
         }
     }
 
     public void EmptyOrder()
     {
-        orderedSushi = OrderSushiType.Empty;
+        _orderedSushi = OrderedSushiType.Empty;
     }
 }

@@ -70,7 +70,7 @@ public class IngredientController : MonoBehaviour
                 }
             }
 
-            if (OrderManager.Instance.orderedSushi != OrderSushiType.SalmonCucumberChumaki)
+            if (OrderManager.Instance.GetOrder() != OrderedSushiType.SalmonCucumberChumaki)
             {
                 _text.text = "Ben bu yemeði istememiþtim!";
             }
@@ -100,7 +100,7 @@ public class IngredientController : MonoBehaviour
             HosomakiDisplay hosomaki = other.GetComponent<HosomakiDisplay>();
             GameObject hosomakiGO = other.gameObject;
 
-            if (OrderManager.Instance.orderedSushi == OrderSushiType.SalmonHosomaki)
+            if (OrderManager.Instance.GetOrder() == OrderedSushiType.SalmonHosomaki)
             {
                 if (hosomakiGO.name == "Salmon Hosomaki")
                 {
@@ -118,7 +118,7 @@ public class IngredientController : MonoBehaviour
                     }
                 }
             }
-            else if (OrderManager.Instance.orderedSushi == OrderSushiType.CucumberHosomaki)
+            else if (OrderManager.Instance.GetOrder() == OrderedSushiType.CucumberHosomaki)
             {
                 if (hosomakiGO.name == "Cucumber Hosomaki")
                 {

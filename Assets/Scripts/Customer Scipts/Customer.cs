@@ -2,22 +2,22 @@ using UnityEngine;
 
 public class Customer
 {
-    GameObject customerObj;
-    OrderSushiType wantedSushi;
+    GameObject _customerObj;
+    OrderedSushiType _orderedSushi;
 
-    public Customer(GameObject customerObj, OrderSushiType wantedSushi)
+    public Customer(GameObject customerObj, OrderedSushiType orderedSushi)
     {
-        this.customerObj = customerObj;
-        this.wantedSushi = wantedSushi;
+        _customerObj = customerObj;
+        _orderedSushi = orderedSushi;
     }
 
     public GameObject GetCustomerObj 
     { 
-        get => customerObj; 
+        get => _customerObj; 
     }
 
-    public OrderSushiType GetOrderedSushi 
+    public OrderedSushiType GetOrderedSushi 
     { 
-        get => wantedSushi; 
+        get => _orderedSushi; 
     }
 }

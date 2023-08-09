@@ -2261,7 +2261,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5a320e81755182428ac527116e303c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  orderedSushi: 0
 --- !u!1 &1147023439
 GameObject:
   m_ObjectHideFlags: 0
@@ -3500,8 +3499,8 @@ MonoBehaviour:
   differentIngredientCount: 0
   material: []
   _seaweed: {fileID: 780781433}
-  salmonCounter: 0
-  cucumberCounter: 0
+  SalmonCounter: 0
+  CucumberCounter: 0
   _text: {fileID: 1147023441}
 --- !u!54 &1583828999
 Rigidbody:
