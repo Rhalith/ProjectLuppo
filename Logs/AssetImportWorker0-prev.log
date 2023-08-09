@@ -1,6 +1,6 @@
 Using pre-set license
 Built from '2021.3/release' branch; Version is '2021.3.27f1 (ca3ffb99bcc6) revision 13254651'; Using compiler version '192829333'; Build Type 'Release'
-OS: 'Windows 11  (10.0.22621) 64bit Professional' Language: 'tr' Physical Memory: 16222 MB
+OS: 'Windows 11  (10.0.22621) 64bit Professional' Language: 'tr' Physical Memory: 16190 MB
 BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 1
 
 COMMAND LINE ARGUMENTS:
@@ -11,19 +11,13 @@ C:\Program Files\Unity\Hub\Editor\2021.3.27f1\Editor\Unity.exe
 -name
 AssetImportWorker0
 -projectPath
-D:/Sushi For You/ProjectLuppo
+C:/Users/birda/Documents/GitHub/ProjectLuppo
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-<<<<<<< HEAD
-60698
+53090
 Successfully changed project path to: C:/Users/birda/Documents/GitHub/ProjectLuppo
 C:/Users/birda/Documents/GitHub/ProjectLuppo
-=======
-58446
-Successfully changed project path to: D:/Sushi For You/ProjectLuppo
-D:/Sushi For You/ProjectLuppo
->>>>>>> f01a1e5ffd8329f9b89407ed3a9dbc4686ea9e13
 [UnityMemory] Configuration Parameters - Can be set up in boot.config
     "memorysetup-bucket-allocator-granularity=16"
     "memorysetup-bucket-allocator-bucket-count=8"
@@ -53,828 +47,109 @@ D:/Sushi For You/ProjectLuppo
     "memorysetup-temp-allocator-size-cloud-worker=32768"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-<<<<<<< HEAD
-Player connection [26800] Host "[IP] 172.17.3.235 [Port] 0 [Flags] 2 [Guid] 575326873 [EditorId] 575326873 [Version] 1048832 [Id] WindowsEditor(7,JuniorLaptop) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
+Player connection [23512] Host "[IP] 172.17.3.235 [Port] 0 [Flags] 2 [Guid] 698927639 [EditorId] 698927639 [Version] 1048832 [Id] WindowsEditor(7,JuniorLaptop) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
 
-Player connection [26800] Host "[IP] 172.17.3.235 [Port] 0 [Flags] 2 [Guid] 575326873 [EditorId] 575326873 [Version] 1048832 [Id] WindowsEditor(7,JuniorLaptop) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
+Player connection [23512] Host "[IP] 172.17.3.235 [Port] 0 [Flags] 2 [Guid] 698927639 [EditorId] 698927639 [Version] 1048832 [Id] WindowsEditor(7,JuniorLaptop) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
 
-Refreshing native plugins compatible for Editor in 365.91 ms, found 5 plugins.
-=======
-Player connection [28144] Host "[IP] 172.17.3.223 [Port] 0 [Flags] 2 [Guid] 841181259 [EditorId] 841181259 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-11BJ015) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
-
-Player connection [28144] Host "[IP] 172.17.3.223 [Port] 0 [Flags] 2 [Guid] 841181259 [EditorId] 841181259 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-11BJ015) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
-
-Refreshing native plugins compatible for Editor in 129.22 ms, found 5 plugins.
->>>>>>> f01a1e5ffd8329f9b89407ed3a9dbc4686ea9e13
+Refreshing native plugins compatible for Editor in 333.17 ms, found 5 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2021.3.27f1 (ca3ffb99bcc6)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2021.3.27f1/Editor/Data/Resources/UnitySubsystems
-[Subsystems] Discovering subsystems at path D:/Sushi For You/ProjectLuppo/Assets
+[Subsystems] Discovering subsystems at path C:/Users/birda/Documents/GitHub/ProjectLuppo/Assets
 GfxDevice: creating device client; threaded=0; jobified=0
 Direct3D:
     Version:  Direct3D 11.0 [level 11.1]
-    Renderer: NVIDIA GeForce GTX 1650 Ti (ID=0x1f95)
+    Renderer: NVIDIA GeForce GTX 1650 (ID=0x1f91)
     Vendor:   NVIDIA
     VRAM:     3949 MB
-    Driver:   31.0.15.3141
+    Driver:   31.0.15.3667
 Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2021.3.27f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2021.3.27f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/2021.3.27f1/Editor/Data/MonoBleedingEdge/etc'
-<<<<<<< HEAD
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56984
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56152
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2021.3.27f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.013290 seconds.
+Registered in 0.010239 seconds.
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 347.57 ms, found 5 plugins.
+Refreshing native plugins compatible for Editor in 374.17 ms, found 5 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.603 seconds
+- Completed reload, in  1.686 seconds
 Domain Reload Profiling:
-	ReloadAssembly (1604ms)
-		BeginReloadAssembly (207ms)
-=======
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56672
-Begin MonoManager ReloadAssembly
-Registering precompiled unity dll's ...
-Register platform support module: C:/Program Files/Unity/Hub/Editor/2021.3.27f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.005069 seconds.
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 106.37 ms, found 5 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  0.715 seconds
-Domain Reload Profiling:
-	ReloadAssembly (716ms)
-		BeginReloadAssembly (87ms)
->>>>>>> f01a1e5ffd8329f9b89407ed3a9dbc4686ea9e13
+	ReloadAssembly (1687ms)
+		BeginReloadAssembly (235ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (0ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
 			CreateAndSetChildDomain (1ms)
-<<<<<<< HEAD
-		EndReloadAssembly (1149ms)
-			LoadAssemblies (202ms)
+		EndReloadAssembly (1225ms)
+			LoadAssemblies (228ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (238ms)
+			SetupTypeCache (290ms)
 			ReleaseScriptCaches (0ms)
-			RebuildScriptCaches (73ms)
-			SetupLoadedEditorAssemblies (711ms)
+			RebuildScriptCaches (59ms)
+			SetupLoadedEditorAssemblies (738ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (20ms)
-				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (348ms)
-				BeforeProcessingInitializeOnLoad (2ms)
-				ProcessInitializeOnLoadAttributes (232ms)
-				ProcessInitializeOnLoadMethodAttributes (109ms)
-=======
-		EndReloadAssembly (519ms)
-			LoadAssemblies (84ms)
-			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (130ms)
-			ReleaseScriptCaches (0ms)
-			RebuildScriptCaches (33ms)
-			SetupLoadedEditorAssemblies (300ms)
-				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (7ms)
-				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (106ms)
-				BeforeProcessingInitializeOnLoad (1ms)
-				ProcessInitializeOnLoadAttributes (133ms)
-				ProcessInitializeOnLoadMethodAttributes (52ms)
->>>>>>> f01a1e5ffd8329f9b89407ed3a9dbc4686ea9e13
+				InitializePlatformSupportModulesInManaged (13ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (374ms)
+				BeforeProcessingInitializeOnLoad (3ms)
+				ProcessInitializeOnLoadAttributes (255ms)
+				ProcessInitializeOnLoadMethodAttributes (92ms)
 				AfterProcessingInitializeOnLoad (0ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (0ms)
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-<<<<<<< HEAD
-Registered in 0.018286 seconds.
-Assembly with name 'VRM10.Tests' already exists (Assets/Plugins/VRM10/Tests/VRM10.Tests.asmdef)
-Assembly with name 'VRM10.Tests' already exists (Assets/VRM10/Tests/VRM10.Tests.asmdef)
-Assembly with name 'VrmLib' already exists (Assets/Plugins/VRM10/vrmlib/Runtime/VrmLib.asmdef)
-Assembly with name 'VrmLib' already exists (Assets/VRM10/vrmlib/Runtime/VrmLib.asmdef)
-Assembly with name 'UniGLTF.Tests' already exists (Assets/Plugins/UniGLTF/Tests/UniGLTF.Tests.asmdef)
-Assembly with name 'UniGLTF.Tests' already exists (Assets/UniGLTF/Tests/UniGLTF.Tests.asmdef)
-Assembly with name 'FastSpringBone10' already exists (Assets/VRM10/Runtime/FastSpringBone/FastSpringBone10.asmdef)
-Assembly with name 'FastSpringBone10' already exists (Assets/Plugins/VRM10/Runtime/FastSpringBone/FastSpringBone10.asmdef)
-Assembly with name 'VRMShaders.GLTF.IO.Tests' already exists (Assets/VRMShaders/GLTF/IO/Tests/VRMShaders.GLTF.IO.Tests.asmdef)
-Assembly with name 'VRMShaders.GLTF.IO.Tests' already exists (Assets/Plugins/VRMShaders/GLTF/IO/Tests/VRMShaders.GLTF.IO.Tests.asmdef)
-Assembly with name 'UniGLTF' already exists (Assets/Plugins/UniGLTF/Runtime/UniGLTF.asmdef)
-Assembly with name 'UniGLTF' already exists (Assets/UniGLTF/Runtime/UniGLTF.asmdef)
-Assembly with name 'VRMShaders.VRM10.MToon10.Editor' already exists (Assets/Plugins/VRMShaders/VRM10/MToon10/Editor/VRMShaders.VRM10.MToon10.Editor.asmdef)
-Assembly with name 'VRMShaders.VRM10.MToon10.Editor' already exists (Assets/VRMShaders/VRM10/MToon10/Editor/VRMShaders.VRM10.MToon10.Editor.asmdef)
-Assembly with name 'UniHumanoid' already exists (Assets/Plugins/UniGLTF/Runtime/UniHumanoid/UniHumanoid.asmdef)
-Assembly with name 'UniHumanoid' already exists (Assets/UniGLTF/Runtime/UniHumanoid/UniHumanoid.asmdef)
-Assembly with name 'VRM10' already exists (Assets/VRM10/Runtime/VRM10.asmdef)
-Assembly with name 'VRM10' already exists (Assets/Plugins/VRM10/Runtime/VRM10.asmdef)
-Assembly with name 'VRMShaders.GLTF.IO.Runtime' already exists (Assets/Plugins/VRMShaders/GLTF/IO/Runtime/VRMShaders.GLTF.IO.Runtime.asmdef)
-Assembly with name 'VRMShaders.GLTF.IO.Runtime' already exists (Assets/VRMShaders/GLTF/IO/Runtime/VRMShaders.GLTF.IO.Runtime.asmdef)
-Assembly with name 'VRM10.Editor' already exists (Assets/VRM10/Editor/VRM10.Editor.asmdef)
-Assembly with name 'VRM10.Editor' already exists (Assets/Plugins/VRM10/Editor/VRM10.Editor.asmdef)
-Assembly with name 'UniHumanoid.Editor.Tests' already exists (Assets/Plugins/UniGLTF/Tests/UniHumanoid/UniHumanoid.Editor.Tests.asmdef)
-Assembly with name 'UniHumanoid.Editor.Tests' already exists (Assets/UniGLTF/Tests/UniHumanoid/UniHumanoid.Editor.Tests.asmdef)
-Assembly with name 'VRMShaders.GLTF.UniUnlit.Editor' already exists (Assets/Plugins/VRMShaders/GLTF/UniUnlit/Editor/VRMShaders.GLTF.UniUnlit.Editor.asmdef)
-Assembly with name 'VRMShaders.GLTF.UniUnlit.Editor' already exists (Assets/VRMShaders/GLTF/UniUnlit/Editor/VRMShaders.GLTF.UniUnlit.Editor.asmdef)
-Assembly with name 'VRMShaders.GLTF.IO.Editor' already exists (Assets/VRMShaders/GLTF/IO/Editor/VRMShaders.GLTF.IO.Editor.asmdef)
-Assembly with name 'VRMShaders.GLTF.IO.Editor' already exists (Assets/Plugins/VRMShaders/GLTF/IO/Editor/VRMShaders.GLTF.IO.Editor.asmdef)
-Assembly with name 'VRMShaders.VRM10.Format.Runtime' already exists (Assets/VRMShaders/VRM10/Format/Runtime/VRMShaders.VRM10.Format.Runtime.asmdef)
-Assembly with name 'VRMShaders.VRM10.Format.Runtime' already exists (Assets/Plugins/VRMShaders/VRM10/Format/Runtime/VRMShaders.VRM10.Format.Runtime.asmdef)
-Assembly with name 'VrmLibTests' already exists (Assets/VRM10/vrmlib/Tests/VrmLib.Tests.asmdef)
-Assembly with name 'VrmLibTests' already exists (Assets/Plugins/VRM10/vrmlib/Tests/VrmLib.Tests.asmdef)
-Assembly with name 'UniGLTF.Utils' already exists (Assets/UniGLTF/Runtime/Utils/UniGLTF.Utils.asmdef)
-Assembly with name 'UniGLTF.Utils' already exists (Assets/Plugins/UniGLTF/Runtime/Utils/UniGLTF.Utils.asmdef)
-Assembly with name 'MToon' already exists (Assets/Plugins/VRMShaders/VRM/MToon/MToon/MToon.asmdef)
-Assembly with name 'MToon' already exists (Assets/VRMShaders/VRM/MToon/MToon/MToon.asmdef)
-Assembly with name 'VRMShaders.GLTF.UniUnlit.Runtime' already exists (Assets/Plugins/VRMShaders/GLTF/UniUnlit/Runtime/VRMShaders.GLTF.UniUnlit.Runtime.asmdef)
-Assembly with name 'VRMShaders.GLTF.UniUnlit.Runtime' already exists (Assets/VRMShaders/GLTF/UniUnlit/Runtime/VRMShaders.GLTF.UniUnlit.Runtime.asmdef)
-Assembly with name 'VRMShaders.VRM10.MToon10.Tests' already exists (Assets/VRMShaders/VRM10/MToon10/Tests/VRMShaders.VRM10.MToon10.Tests.asmdef)
-Assembly with name 'VRMShaders.VRM10.MToon10.Tests' already exists (Assets/Plugins/VRMShaders/VRM10/MToon10/Tests/VRMShaders.VRM10.MToon10.Tests.asmdef)
-Assembly with name 'MToon.Editor' already exists (Assets/Plugins/VRMShaders/VRM/MToon/MToon/Editor/MToon.Editor.asmdef)
-Assembly with name 'MToon.Editor' already exists (Assets/VRMShaders/VRM/MToon/MToon/Editor/MToon.Editor.asmdef)
-Assembly with name 'UniGLTF.Editor' already exists (Assets/Plugins/UniGLTF/Editor/UniGLTF.Editor.asmdef)
-Assembly with name 'UniGLTF.Editor' already exists (Assets/UniGLTF/Editor/UniGLTF.Editor.asmdef)
-Assembly with name 'UniHumanoid.Editor' already exists (Assets/UniGLTF/Editor/UniHumanoid/UniHumanoid.Editor.asmdef)
-Assembly with name 'UniHumanoid.Editor' already exists (Assets/Plugins/UniGLTF/Editor/UniHumanoid/UniHumanoid.Editor.asmdef)
-Assembly with name 'VRMShaders.VRM.IO.Runtime' already exists (Assets/Plugins/VRMShaders/VRM/IO/Runtime/VRMShaders.VRM.IO.Runtime.asmdef)
-Assembly with name 'VRMShaders.VRM.IO.Runtime' already exists (Assets/VRMShaders/VRM/IO/Runtime/VRMShaders.VRM.IO.Runtime.asmdef)
-Assembly with name 'VRMShaders.VRM10.MToon10.Runtime' already exists (Assets/VRMShaders/VRM10/MToon10/Runtime/VRMShaders.VRM10.MToon10.Runtime.asmdef)
-Assembly with name 'VRMShaders.VRM10.MToon10.Runtime' already exists (Assets/Plugins/VRMShaders/VRM10/MToon10/Runtime/VRMShaders.VRM10.MToon10.Runtime.asmdef)
-Assembly with name 'VRM10.Tests' already exists (Assets/Plugins/VRM10/Tests/VRM10.Tests.asmdef)
-Assembly with name 'VRM10.Tests' already exists (Assets/VRM10/Tests/VRM10.Tests.asmdef)
-Assembly with name 'VrmLib' already exists (Assets/Plugins/VRM10/vrmlib/Runtime/VrmLib.asmdef)
-Assembly with name 'VrmLib' already exists (Assets/VRM10/vrmlib/Runtime/VrmLib.asmdef)
-Assembly with name 'UniGLTF.Tests' already exists (Assets/Plugins/UniGLTF/Tests/UniGLTF.Tests.asmdef)
-Assembly with name 'UniGLTF.Tests' already exists (Assets/UniGLTF/Tests/UniGLTF.Tests.asmdef)
-Assembly with name 'FastSpringBone10' already exists (Assets/VRM10/Runtime/FastSpringBone/FastSpringBone10.asmdef)
-Assembly with name 'FastSpringBone10' already exists (Assets/Plugins/VRM10/Runtime/FastSpringBone/FastSpringBone10.asmdef)
-Assembly with name 'VRMShaders.GLTF.IO.Tests' already exists (Assets/VRMShaders/GLTF/IO/Tests/VRMShaders.GLTF.IO.Tests.asmdef)
-Assembly with name 'VRMShaders.GLTF.IO.Tests' already exists (Assets/Plugins/VRMShaders/GLTF/IO/Tests/VRMShaders.GLTF.IO.Tests.asmdef)
-Assembly with name 'UniGLTF' already exists (Assets/Plugins/UniGLTF/Runtime/UniGLTF.asmdef)
-Assembly with name 'UniGLTF' already exists (Assets/UniGLTF/Runtime/UniGLTF.asmdef)
-Assembly with name 'VRMShaders.VRM10.MToon10.Editor' already exists (Assets/Plugins/VRMShaders/VRM10/MToon10/Editor/VRMShaders.VRM10.MToon10.Editor.asmdef)
-Assembly with name 'VRMShaders.VRM10.MToon10.Editor' already exists (Assets/VRMShaders/VRM10/MToon10/Editor/VRMShaders.VRM10.MToon10.Editor.asmdef)
-Assembly with name 'UniHumanoid' already exists (Assets/Plugins/UniGLTF/Runtime/UniHumanoid/UniHumanoid.asmdef)
-Assembly with name 'UniHumanoid' already exists (Assets/UniGLTF/Runtime/UniHumanoid/UniHumanoid.asmdef)
-Assembly with name 'VRM10' already exists (Assets/VRM10/Runtime/VRM10.asmdef)
-Assembly with name 'VRM10' already exists (Assets/Plugins/VRM10/Runtime/VRM10.asmdef)
-Assembly with name 'VRMShaders.GLTF.IO.Runtime' already exists (Assets/Plugins/VRMShaders/GLTF/IO/Runtime/VRMShaders.GLTF.IO.Runtime.asmdef)
-Assembly with name 'VRMShaders.GLTF.IO.Runtime' already exists (Assets/VRMShaders/GLTF/IO/Runtime/VRMShaders.GLTF.IO.Runtime.asmdef)
-Assembly with name 'VRM10.Editor' already exists (Assets/VRM10/Editor/VRM10.Editor.asmdef)
-Assembly with name 'VRM10.Editor' already exists (Assets/Plugins/VRM10/Editor/VRM10.Editor.asmdef)
-Assembly with name 'UniHumanoid.Editor.Tests' already exists (Assets/Plugins/UniGLTF/Tests/UniHumanoid/UniHumanoid.Editor.Tests.asmdef)
-Assembly with name 'UniHumanoid.Editor.Tests' already exists (Assets/UniGLTF/Tests/UniHumanoid/UniHumanoid.Editor.Tests.asmdef)
-Assembly with name 'VRMShaders.GLTF.UniUnlit.Editor' already exists (Assets/Plugins/VRMShaders/GLTF/UniUnlit/Editor/VRMShaders.GLTF.UniUnlit.Editor.asmdef)
-Assembly with name 'VRMShaders.GLTF.UniUnlit.Editor' already exists (Assets/VRMShaders/GLTF/UniUnlit/Editor/VRMShaders.GLTF.UniUnlit.Editor.asmdef)
-Assembly with name 'VRMShaders.GLTF.IO.Editor' already exists (Assets/VRMShaders/GLTF/IO/Editor/VRMShaders.GLTF.IO.Editor.asmdef)
-Assembly with name 'VRMShaders.GLTF.IO.Editor' already exists (Assets/Plugins/VRMShaders/GLTF/IO/Editor/VRMShaders.GLTF.IO.Editor.asmdef)
-Assembly with name 'VRMShaders.VRM10.Format.Runtime' already exists (Assets/VRMShaders/VRM10/Format/Runtime/VRMShaders.VRM10.Format.Runtime.asmdef)
-Assembly with name 'VRMShaders.VRM10.Format.Runtime' already exists (Assets/Plugins/VRMShaders/VRM10/Format/Runtime/VRMShaders.VRM10.Format.Runtime.asmdef)
-Assembly with name 'VrmLibTests' already exists (Assets/VRM10/vrmlib/Tests/VrmLib.Tests.asmdef)
-Assembly with name 'VrmLibTests' already exists (Assets/Plugins/VRM10/vrmlib/Tests/VrmLib.Tests.asmdef)
-Assembly with name 'UniGLTF.Utils' already exists (Assets/UniGLTF/Runtime/Utils/UniGLTF.Utils.asmdef)
-Assembly with name 'UniGLTF.Utils' already exists (Assets/Plugins/UniGLTF/Runtime/Utils/UniGLTF.Utils.asmdef)
-Assembly with name 'MToon' already exists (Assets/Plugins/VRMShaders/VRM/MToon/MToon/MToon.asmdef)
-Assembly with name 'MToon' already exists (Assets/VRMShaders/VRM/MToon/MToon/MToon.asmdef)
-Assembly with name 'VRMShaders.GLTF.UniUnlit.Runtime' already exists (Assets/Plugins/VRMShaders/GLTF/UniUnlit/Runtime/VRMShaders.GLTF.UniUnlit.Runtime.asmdef)
-Assembly with name 'VRMShaders.GLTF.UniUnlit.Runtime' already exists (Assets/VRMShaders/GLTF/UniUnlit/Runtime/VRMShaders.GLTF.UniUnlit.Runtime.asmdef)
-Assembly with name 'VRMShaders.VRM10.MToon10.Tests' already exists (Assets/VRMShaders/VRM10/MToon10/Tests/VRMShaders.VRM10.MToon10.Tests.asmdef)
-Assembly with name 'VRMShaders.VRM10.MToon10.Tests' already exists (Assets/Plugins/VRMShaders/VRM10/MToon10/Tests/VRMShaders.VRM10.MToon10.Tests.asmdef)
-Assembly with name 'MToon.Editor' already exists (Assets/Plugins/VRMShaders/VRM/MToon/MToon/Editor/MToon.Editor.asmdef)
-Assembly with name 'MToon.Editor' already exists (Assets/VRMShaders/VRM/MToon/MToon/Editor/MToon.Editor.asmdef)
-Assembly with name 'UniGLTF.Editor' already exists (Assets/Plugins/UniGLTF/Editor/UniGLTF.Editor.asmdef)
-Assembly with name 'UniGLTF.Editor' already exists (Assets/UniGLTF/Editor/UniGLTF.Editor.asmdef)
-Assembly with name 'UniHumanoid.Editor' already exists (Assets/UniGLTF/Editor/UniHumanoid/UniHumanoid.Editor.asmdef)
-Assembly with name 'UniHumanoid.Editor' already exists (Assets/Plugins/UniGLTF/Editor/UniHumanoid/UniHumanoid.Editor.asmdef)
-Assembly with name 'VRMShaders.VRM.IO.Runtime' already exists (Assets/Plugins/VRMShaders/VRM/IO/Runtime/VRMShaders.VRM.IO.Runtime.asmdef)
-Assembly with name 'VRMShaders.VRM.IO.Runtime' already exists (Assets/VRMShaders/VRM/IO/Runtime/VRMShaders.VRM.IO.Runtime.asmdef)
-Assembly with name 'VRMShaders.VRM10.MToon10.Runtime' already exists (Assets/VRMShaders/VRM10/MToon10/Runtime/VRMShaders.VRM10.MToon10.Runtime.asmdef)
-Assembly with name 'VRMShaders.VRM10.MToon10.Runtime' already exists (Assets/Plugins/VRMShaders/VRM10/MToon10/Runtime/VRMShaders.VRM10.MToon10.Runtime.asmdef)
-=======
-Registered in 0.005531 seconds.
->>>>>>> f01a1e5ffd8329f9b89407ed3a9dbc4686ea9e13
+Registered in 0.030379 seconds.
 Begin MonoManager ReloadAssembly
-Symbol file LoadedFromMemory doesn't match image D:\Sushi For You\ProjectLuppo\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
-Symbol file LoadedFromMemory doesn't match image D:\Sushi For You\ProjectLuppo\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Symbol file LoadedFromMemory doesn't match image C:\Users\birda\Documents\GitHub\ProjectLuppo\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image C:\Users\birda\Documents\GitHub\ProjectLuppo\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
 Native extension for WindowsStandalone target not found
-<<<<<<< HEAD
-Refreshing native plugins compatible for Editor in 2.42 ms, found 5 plugins.
-=======
-Refreshing native plugins compatible for Editor in 115.03 ms, found 5 plugins.
->>>>>>> f01a1e5ffd8329f9b89407ed3a9dbc4686ea9e13
-Preloading 0 native plugins for Editor in 0.00 ms.
-Assembly with name 'VRM10.Tests' already exists (Assets/Plugins/VRM10/Tests/VRM10.Tests.asmdef)
-Assembly with name 'VRM10.Tests' already exists (Assets/VRM10/Tests/VRM10.Tests.asmdef)
-Assembly with name 'VrmLib' already exists (Assets/Plugins/VRM10/vrmlib/Runtime/VrmLib.asmdef)
-Assembly with name 'VrmLib' already exists (Assets/VRM10/vrmlib/Runtime/VrmLib.asmdef)
-Assembly with name 'UniGLTF.Tests' already exists (Assets/Plugins/UniGLTF/Tests/UniGLTF.Tests.asmdef)
-Assembly with name 'UniGLTF.Tests' already exists (Assets/UniGLTF/Tests/UniGLTF.Tests.asmdef)
-Assembly with name 'FastSpringBone10' already exists (Assets/VRM10/Runtime/FastSpringBone/FastSpringBone10.asmdef)
-Assembly with name 'FastSpringBone10' already exists (Assets/Plugins/VRM10/Runtime/FastSpringBone/FastSpringBone10.asmdef)
-Assembly with name 'VRMShaders.GLTF.IO.Tests' already exists (Assets/VRMShaders/GLTF/IO/Tests/VRMShaders.GLTF.IO.Tests.asmdef)
-Assembly with name 'VRMShaders.GLTF.IO.Tests' already exists (Assets/Plugins/VRMShaders/GLTF/IO/Tests/VRMShaders.GLTF.IO.Tests.asmdef)
-Assembly with name 'UniGLTF' already exists (Assets/Plugins/UniGLTF/Runtime/UniGLTF.asmdef)
-Assembly with name 'UniGLTF' already exists (Assets/UniGLTF/Runtime/UniGLTF.asmdef)
-Assembly with name 'VRMShaders.VRM10.MToon10.Editor' already exists (Assets/Plugins/VRMShaders/VRM10/MToon10/Editor/VRMShaders.VRM10.MToon10.Editor.asmdef)
-Assembly with name 'VRMShaders.VRM10.MToon10.Editor' already exists (Assets/VRMShaders/VRM10/MToon10/Editor/VRMShaders.VRM10.MToon10.Editor.asmdef)
-Assembly with name 'UniHumanoid' already exists (Assets/Plugins/UniGLTF/Runtime/UniHumanoid/UniHumanoid.asmdef)
-Assembly with name 'UniHumanoid' already exists (Assets/UniGLTF/Runtime/UniHumanoid/UniHumanoid.asmdef)
-Assembly with name 'VRM10' already exists (Assets/VRM10/Runtime/VRM10.asmdef)
-Assembly with name 'VRM10' already exists (Assets/Plugins/VRM10/Runtime/VRM10.asmdef)
-Assembly with name 'VRMShaders.GLTF.IO.Runtime' already exists (Assets/Plugins/VRMShaders/GLTF/IO/Runtime/VRMShaders.GLTF.IO.Runtime.asmdef)
-Assembly with name 'VRMShaders.GLTF.IO.Runtime' already exists (Assets/VRMShaders/GLTF/IO/Runtime/VRMShaders.GLTF.IO.Runtime.asmdef)
-Assembly with name 'VRM10.Editor' already exists (Assets/VRM10/Editor/VRM10.Editor.asmdef)
-Assembly with name 'VRM10.Editor' already exists (Assets/Plugins/VRM10/Editor/VRM10.Editor.asmdef)
-Assembly with name 'UniHumanoid.Editor.Tests' already exists (Assets/Plugins/UniGLTF/Tests/UniHumanoid/UniHumanoid.Editor.Tests.asmdef)
-Assembly with name 'UniHumanoid.Editor.Tests' already exists (Assets/UniGLTF/Tests/UniHumanoid/UniHumanoid.Editor.Tests.asmdef)
-Assembly with name 'VRMShaders.GLTF.UniUnlit.Editor' already exists (Assets/Plugins/VRMShaders/GLTF/UniUnlit/Editor/VRMShaders.GLTF.UniUnlit.Editor.asmdef)
-Assembly with name 'VRMShaders.GLTF.UniUnlit.Editor' already exists (Assets/VRMShaders/GLTF/UniUnlit/Editor/VRMShaders.GLTF.UniUnlit.Editor.asmdef)
-Assembly with name 'VRMShaders.GLTF.IO.Editor' already exists (Assets/VRMShaders/GLTF/IO/Editor/VRMShaders.GLTF.IO.Editor.asmdef)
-Assembly with name 'VRMShaders.GLTF.IO.Editor' already exists (Assets/Plugins/VRMShaders/GLTF/IO/Editor/VRMShaders.GLTF.IO.Editor.asmdef)
-Assembly with name 'VRMShaders.VRM10.Format.Runtime' already exists (Assets/VRMShaders/VRM10/Format/Runtime/VRMShaders.VRM10.Format.Runtime.asmdef)
-Assembly with name 'VRMShaders.VRM10.Format.Runtime' already exists (Assets/Plugins/VRMShaders/VRM10/Format/Runtime/VRMShaders.VRM10.Format.Runtime.asmdef)
-Assembly with name 'VrmLibTests' already exists (Assets/VRM10/vrmlib/Tests/VrmLib.Tests.asmdef)
-Assembly with name 'VrmLibTests' already exists (Assets/Plugins/VRM10/vrmlib/Tests/VrmLib.Tests.asmdef)
-Assembly with name 'UniGLTF.Utils' already exists (Assets/UniGLTF/Runtime/Utils/UniGLTF.Utils.asmdef)
-Assembly with name 'UniGLTF.Utils' already exists (Assets/Plugins/UniGLTF/Runtime/Utils/UniGLTF.Utils.asmdef)
-Assembly with name 'MToon' already exists (Assets/Plugins/VRMShaders/VRM/MToon/MToon/MToon.asmdef)
-Assembly with name 'MToon' already exists (Assets/VRMShaders/VRM/MToon/MToon/MToon.asmdef)
-Assembly with name 'VRMShaders.GLTF.UniUnlit.Runtime' already exists (Assets/Plugins/VRMShaders/GLTF/UniUnlit/Runtime/VRMShaders.GLTF.UniUnlit.Runtime.asmdef)
-Assembly with name 'VRMShaders.GLTF.UniUnlit.Runtime' already exists (Assets/VRMShaders/GLTF/UniUnlit/Runtime/VRMShaders.GLTF.UniUnlit.Runtime.asmdef)
-Assembly with name 'VRMShaders.VRM10.MToon10.Tests' already exists (Assets/VRMShaders/VRM10/MToon10/Tests/VRMShaders.VRM10.MToon10.Tests.asmdef)
-Assembly with name 'VRMShaders.VRM10.MToon10.Tests' already exists (Assets/Plugins/VRMShaders/VRM10/MToon10/Tests/VRMShaders.VRM10.MToon10.Tests.asmdef)
-Assembly with name 'MToon.Editor' already exists (Assets/Plugins/VRMShaders/VRM/MToon/MToon/Editor/MToon.Editor.asmdef)
-Assembly with name 'MToon.Editor' already exists (Assets/VRMShaders/VRM/MToon/MToon/Editor/MToon.Editor.asmdef)
-Assembly with name 'UniGLTF.Editor' already exists (Assets/Plugins/UniGLTF/Editor/UniGLTF.Editor.asmdef)
-Assembly with name 'UniGLTF.Editor' already exists (Assets/UniGLTF/Editor/UniGLTF.Editor.asmdef)
-Assembly with name 'UniHumanoid.Editor' already exists (Assets/UniGLTF/Editor/UniHumanoid/UniHumanoid.Editor.asmdef)
-Assembly with name 'UniHumanoid.Editor' already exists (Assets/Plugins/UniGLTF/Editor/UniHumanoid/UniHumanoid.Editor.asmdef)
-Assembly with name 'VRMShaders.VRM.IO.Runtime' already exists (Assets/Plugins/VRMShaders/VRM/IO/Runtime/VRMShaders.VRM.IO.Runtime.asmdef)
-Assembly with name 'VRMShaders.VRM.IO.Runtime' already exists (Assets/VRMShaders/VRM/IO/Runtime/VRMShaders.VRM.IO.Runtime.asmdef)
-Assembly with name 'VRMShaders.VRM10.MToon10.Runtime' already exists (Assets/VRMShaders/VRM10/MToon10/Runtime/VRMShaders.VRM10.MToon10.Runtime.asmdef)
-Assembly with name 'VRMShaders.VRM10.MToon10.Runtime' already exists (Assets/Plugins/VRMShaders/VRM10/MToon10/Runtime/VRMShaders.VRM10.MToon10.Runtime.asmdef)
-Mono: successfully reloaded assembly
-<<<<<<< HEAD
-- Completed reload, in  1.707 seconds
-Domain Reload Profiling:
-	ReloadAssembly (1708ms)
-		BeginReloadAssembly (225ms)
-			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (13ms)
-			BackupInstance (0ms)
-			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (38ms)
-		EndReloadAssembly (1264ms)
-			LoadAssemblies (155ms)
-			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (346ms)
-			ReleaseScriptCaches (2ms)
-			RebuildScriptCaches (67ms)
-			SetupLoadedEditorAssemblies (600ms)
-				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (10ms)
-				SetLoadedEditorAssemblies (1ms)
-				RefreshPlugins (3ms)
-				BeforeProcessingInitializeOnLoad (330ms)
-				ProcessInitializeOnLoadAttributes (192ms)
-				ProcessInitializeOnLoadMethodAttributes (42ms)
-				AfterProcessingInitializeOnLoad (22ms)
-				EditorAssembliesLoaded (0ms)
-			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (13ms)
-Platform modules already initialized, skipping
-========================================================================
-Worker process is ready to serve import requests
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.15 seconds
-Refreshing native plugins compatible for Editor in 3.95 ms, found 5 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 7192 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 50 unused Assets / (7.4 MB). Loaded Objects now: 7617.
-Memory consumption went from 304.0 MB to 296.7 MB.
-Total: 17.977500 ms (FindLiveObjects: 1.274500 ms CreateObjectMapping: 4.724200 ms MarkObjects: 6.930800 ms  DeleteObjects: 5.045400 ms)
-=======
-- Completed reload, in  1.411 seconds
-Domain Reload Profiling:
-	ReloadAssembly (1412ms)
-		BeginReloadAssembly (148ms)
-			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (7ms)
-			BackupInstance (0ms)
-			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (21ms)
-		EndReloadAssembly (1126ms)
-			LoadAssemblies (131ms)
-			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (331ms)
-			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (78ms)
-			SetupLoadedEditorAssemblies (560ms)
-				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (4ms)
-				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (115ms)
-				BeforeProcessingInitializeOnLoad (126ms)
-				ProcessInitializeOnLoadAttributes (263ms)
-				ProcessInitializeOnLoadMethodAttributes (44ms)
-				AfterProcessingInitializeOnLoad (7ms)
-				EditorAssembliesLoaded (0ms)
-			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (7ms)
-Platform modules already initialized, skipping
-========================================================================
-Worker process is ready to serve import requests
-Shader 'VRM10/Universal Render Pipeline/MToon10': fallback shader 'Hidden/Universal Render Pipeline/FallbackError' not found
-Shader 'VRM10/Universal Render Pipeline/MToon10': fallback shader 'Hidden/Universal Render Pipeline/FallbackError' not found
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.08 seconds
-Refreshing native plugins compatible for Editor in 1.74 ms, found 5 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 4751 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 39 unused Assets / (164.4 KB). Loaded Objects now: 5231.
-Memory consumption went from 192.8 MB to 192.6 MB.
-Total: 3.948400 ms (FindLiveObjects: 0.523000 ms CreateObjectMapping: 0.488100 ms MarkObjects: 2.799900 ms  DeleteObjects: 0.136200 ms)
->>>>>>> f01a1e5ffd8329f9b89407ed3a9dbc4686ea9e13
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Import Request.
-<<<<<<< HEAD
-  Time since last request: 28303.051743 seconds.
-  path: Assets/Square.png
-  artifactKey: Guid(331253d1adb2135448c3e2ae991ff94b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Square.png using Guid(331253d1adb2135448c3e2ae991ff94b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ae7afa446ef78903ce381f7a961ae9a9') in 0.471095 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 1.629679 seconds.
-  path: Assets/UniGLTF
-  artifactKey: Guid(4502ffceb7ee07441a884e5033f953a7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/UniGLTF using Guid(4502ffceb7ee07441a884e5033f953a7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dca695c56822d699f1a6b952a0099637') in 0.003239 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 53.140670 seconds.
-  path: Assets/Textures
-  artifactKey: Guid(ae044529b6c9f384f8091bcfa6e00185) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Textures using Guid(ae044529b6c9f384f8091bcfa6e00185) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd2ae3045d23fb63263a7f298612fc511') in 0.004597 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.461271 seconds.
-  path: Assets/JMO Assets
-  artifactKey: Guid(9442ffe4d3d6d234b8df3aaf0e779b4b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/JMO Assets using Guid(9442ffe4d3d6d234b8df3aaf0e779b4b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dc6cc16ef7e280371022eeb34457d392') in 0.004857 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 1.153881 seconds.
-  path: Assets/JMO Assets/Toony Colors Pro
-  artifactKey: Guid(91526101b975b0a4799acdfe0d1d2049) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/JMO Assets/Toony Colors Pro using Guid(91526101b975b0a4799acdfe0d1d2049) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5a04956a72da754771f2853088bbc6f7') in 0.009291 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 2.193715 seconds.
-  path: Assets/JMO Assets/Toony Colors Pro/Documentation
-  artifactKey: Guid(38b5b1084ccb12844b596ab48c5da7db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/JMO Assets/Toony Colors Pro/Documentation using Guid(38b5b1084ccb12844b596ab48c5da7db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0544e16fbe463823e9aeb0012dca4d58') in 0.003400 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 4.489972 seconds.
-  path: Assets/JMO Assets/Toony Colors Pro/Scripts
-  artifactKey: Guid(55a54241f0fb67040b5107085fa3670a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/JMO Assets/Toony Colors Pro/Scripts using Guid(55a54241f0fb67040b5107085fa3670a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7d8460e84ac790ce2e575b6d46819bf3') in 0.003264 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.251558 seconds.
-  path: Assets/JMO Assets/Toony Colors Pro/Shader Templates
-  artifactKey: Guid(923bd9ee0197a77499c9a282b7117f2d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/JMO Assets/Toony Colors Pro/Shader Templates using Guid(923bd9ee0197a77499c9a282b7117f2d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b3daf5a92c1a338c484f055a920e9e80') in 0.003077 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 10.175523 seconds.
-  path: Assets/_TerrainAutoUpgrade
-  artifactKey: Guid(a81b41fdac272944998f87f0ac743064) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/_TerrainAutoUpgrade using Guid(a81b41fdac272944998f87f0ac743064) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b0f0e6b2a7ee8d128f2c4ce27f23378f') in 0.003819 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.124312 seconds.
-  path: Assets/_TerrainAutoUpgrade/layer_Prototype Black3d3aba195e4d26ee.terrainlayer
-  artifactKey: Guid(8aeb040461ae2244aaafae2f05620b2e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/_TerrainAutoUpgrade/layer_Prototype Black3d3aba195e4d26ee.terrainlayer using Guid(8aeb040461ae2244aaafae2f05620b2e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '164550bb371087df151beb5b62bd3b04') in 0.046472 seconds 
-=======
-  Time since last request: 1085863.307431 seconds.
-  path: Assets/Square.png
-  artifactKey: Guid(331253d1adb2135448c3e2ae991ff94b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Square.png using Guid(331253d1adb2135448c3e2ae991ff94b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '83e21b0a801a6b2929f90333633513a8') in 0.134496 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000036 seconds.
-  path: Assets/bigsalt.fbx
-  artifactKey: Guid(92ea076de938d3a4a954ddf201370e61) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/bigsalt.fbx using Guid(92ea076de938d3a4a954ddf201370e61) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '520b47215df78795701383711bcbd19e') in 0.077791 seconds 
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.005841 seconds.
-Begin MonoManager ReloadAssembly
-Symbol file LoadedFromMemory doesn't match image D:\Sushi For You\ProjectLuppo\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
-Symbol file LoadedFromMemory doesn't match image D:\Sushi For You\ProjectLuppo\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 1.38 ms, found 5 plugins.
+Refreshing native plugins compatible for Editor in 388.69 ms, found 5 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.284 seconds
+- Completed reload, in  3.538 seconds
 Domain Reload Profiling:
-	ReloadAssembly (1285ms)
-		BeginReloadAssembly (177ms)
-			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (8ms)
-			BackupInstance (0ms)
-			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (53ms)
-		EndReloadAssembly (993ms)
-			LoadAssemblies (127ms)
-			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (314ms)
-			ReleaseScriptCaches (2ms)
-			RebuildScriptCaches (72ms)
-			SetupLoadedEditorAssemblies (420ms)
-				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (7ms)
-				SetLoadedEditorAssemblies (1ms)
-				RefreshPlugins (1ms)
-				BeforeProcessingInitializeOnLoad (98ms)
-				ProcessInitializeOnLoadAttributes (255ms)
-				ProcessInitializeOnLoadMethodAttributes (49ms)
-				AfterProcessingInitializeOnLoad (8ms)
-				EditorAssembliesLoaded (0ms)
-			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (8ms)
-Platform modules already initialized, skipping
-Shader 'VRM10/Universal Render Pipeline/MToon10': fallback shader 'Hidden/Universal Render Pipeline/FallbackError' not found
-Shader 'VRM10/Universal Render Pipeline/MToon10': fallback shader 'Hidden/Universal Render Pipeline/FallbackError' not found
-Refreshing native plugins compatible for Editor in 3.33 ms, found 5 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 4733 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 26 unused Assets / (138.0 KB). Loaded Objects now: 5250.
-Memory consumption went from 195.5 MB to 195.4 MB.
-Total: 5.997200 ms (FindLiveObjects: 0.670900 ms CreateObjectMapping: 0.540700 ms MarkObjects: 4.366900 ms  DeleteObjects: 0.416200 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.006312 seconds.
-Begin MonoManager ReloadAssembly
-Symbol file LoadedFromMemory doesn't match image D:\Sushi For You\ProjectLuppo\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
-Symbol file LoadedFromMemory doesn't match image D:\Sushi For You\ProjectLuppo\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 1.48 ms, found 5 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.273 seconds
-Domain Reload Profiling:
-	ReloadAssembly (1273ms)
-		BeginReloadAssembly (153ms)
-			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (8ms)
-			BackupInstance (0ms)
-			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (44ms)
-		EndReloadAssembly (1013ms)
-			LoadAssemblies (110ms)
-			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (330ms)
-			ReleaseScriptCaches (2ms)
-			RebuildScriptCaches (81ms)
-			SetupLoadedEditorAssemblies (430ms)
-				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (8ms)
-				SetLoadedEditorAssemblies (1ms)
-				RefreshPlugins (2ms)
-				BeforeProcessingInitializeOnLoad (106ms)
-				ProcessInitializeOnLoadAttributes (269ms)
-				ProcessInitializeOnLoadMethodAttributes (38ms)
-				AfterProcessingInitializeOnLoad (7ms)
-				EditorAssembliesLoaded (0ms)
-			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (7ms)
-Platform modules already initialized, skipping
-Shader 'VRM10/Universal Render Pipeline/MToon10': fallback shader 'Hidden/Universal Render Pipeline/FallbackError' not found
-Shader 'VRM10/Universal Render Pipeline/MToon10': fallback shader 'Hidden/Universal Render Pipeline/FallbackError' not found
-Refreshing native plugins compatible for Editor in 3.56 ms, found 5 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 4733 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 26 unused Assets / (137.9 KB). Loaded Objects now: 5253.
-Memory consumption went from 195.6 MB to 195.4 MB.
-Total: 4.355100 ms (FindLiveObjects: 0.410600 ms CreateObjectMapping: 0.450100 ms MarkObjects: 3.331800 ms  DeleteObjects: 0.161000 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.005725 seconds.
-Begin MonoManager ReloadAssembly
-Symbol file LoadedFromMemory doesn't match image D:\Sushi For You\ProjectLuppo\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
-Symbol file LoadedFromMemory doesn't match image D:\Sushi For You\ProjectLuppo\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 1.16 ms, found 5 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.300 seconds
-Domain Reload Profiling:
-	ReloadAssembly (1301ms)
-		BeginReloadAssembly (190ms)
-			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (10ms)
-			BackupInstance (0ms)
-			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (51ms)
-		EndReloadAssembly (1007ms)
-			LoadAssemblies (142ms)
-			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (378ms)
-			ReleaseScriptCaches (2ms)
-			RebuildScriptCaches (74ms)
-			SetupLoadedEditorAssemblies (375ms)
-				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (7ms)
-				SetLoadedEditorAssemblies (1ms)
-				RefreshPlugins (1ms)
-				BeforeProcessingInitializeOnLoad (80ms)
-				ProcessInitializeOnLoadAttributes (227ms)
-				ProcessInitializeOnLoadMethodAttributes (52ms)
-				AfterProcessingInitializeOnLoad (8ms)
-				EditorAssembliesLoaded (0ms)
-			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (8ms)
-Platform modules already initialized, skipping
-Shader 'VRM10/Universal Render Pipeline/MToon10': fallback shader 'Hidden/Universal Render Pipeline/FallbackError' not found
-Shader 'VRM10/Universal Render Pipeline/MToon10': fallback shader 'Hidden/Universal Render Pipeline/FallbackError' not found
-Refreshing native plugins compatible for Editor in 3.23 ms, found 5 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 4733 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 26 unused Assets / (137.9 KB). Loaded Objects now: 5256.
-Memory consumption went from 195.6 MB to 195.4 MB.
-Total: 4.074600 ms (FindLiveObjects: 0.527100 ms CreateObjectMapping: 0.496200 ms MarkObjects: 2.921000 ms  DeleteObjects: 0.129000 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.009848 seconds.
-Begin MonoManager ReloadAssembly
-Symbol file LoadedFromMemory doesn't match image D:\Sushi For You\ProjectLuppo\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
-Symbol file LoadedFromMemory doesn't match image D:\Sushi For You\ProjectLuppo\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 1.88 ms, found 5 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.361 seconds
-Domain Reload Profiling:
-	ReloadAssembly (1361ms)
-		BeginReloadAssembly (148ms)
-			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (8ms)
-			BackupInstance (0ms)
-			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (40ms)
-		EndReloadAssembly (1100ms)
-			LoadAssemblies (114ms)
-			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (381ms)
-			ReleaseScriptCaches (4ms)
-			RebuildScriptCaches (79ms)
-			SetupLoadedEditorAssemblies (445ms)
-				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (8ms)
-				SetLoadedEditorAssemblies (1ms)
-				RefreshPlugins (2ms)
-				BeforeProcessingInitializeOnLoad (109ms)
-				ProcessInitializeOnLoadAttributes (267ms)
-				ProcessInitializeOnLoadMethodAttributes (48ms)
-				AfterProcessingInitializeOnLoad (11ms)
-				EditorAssembliesLoaded (0ms)
-			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (10ms)
-Platform modules already initialized, skipping
-Shader 'VRM10/Universal Render Pipeline/MToon10': fallback shader 'Hidden/Universal Render Pipeline/FallbackError' not found
-Shader 'VRM10/Universal Render Pipeline/MToon10': fallback shader 'Hidden/Universal Render Pipeline/FallbackError' not found
-Refreshing native plugins compatible for Editor in 4.46 ms, found 5 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 4733 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 26 unused Assets / (138.9 KB). Loaded Objects now: 5259.
-Memory consumption went from 195.6 MB to 195.4 MB.
-Total: 6.668600 ms (FindLiveObjects: 0.880400 ms CreateObjectMapping: 1.300300 ms MarkObjects: 4.291400 ms  DeleteObjects: 0.193900 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.006460 seconds.
-Begin MonoManager ReloadAssembly
-Symbol file LoadedFromMemory doesn't match image D:\Sushi For You\ProjectLuppo\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
-Symbol file LoadedFromMemory doesn't match image D:\Sushi For You\ProjectLuppo\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 1.69 ms, found 5 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.336 seconds
-Domain Reload Profiling:
-	ReloadAssembly (1336ms)
-		BeginReloadAssembly (199ms)
-			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (10ms)
-			BackupInstance (0ms)
-			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (60ms)
-		EndReloadAssembly (1038ms)
-			LoadAssemblies (134ms)
-			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (342ms)
-			ReleaseScriptCaches (3ms)
-			RebuildScriptCaches (73ms)
-			SetupLoadedEditorAssemblies (439ms)
-				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (7ms)
-				SetLoadedEditorAssemblies (1ms)
-				RefreshPlugins (2ms)
-				BeforeProcessingInitializeOnLoad (101ms)
-				ProcessInitializeOnLoadAttributes (272ms)
-				ProcessInitializeOnLoadMethodAttributes (48ms)
-				AfterProcessingInitializeOnLoad (9ms)
-				EditorAssembliesLoaded (0ms)
-			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (9ms)
-Platform modules already initialized, skipping
-Shader 'VRM10/Universal Render Pipeline/MToon10': fallback shader 'Hidden/Universal Render Pipeline/FallbackError' not found
-Shader 'VRM10/Universal Render Pipeline/MToon10': fallback shader 'Hidden/Universal Render Pipeline/FallbackError' not found
-Refreshing native plugins compatible for Editor in 3.86 ms, found 5 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 4733 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 26 unused Assets / (137.9 KB). Loaded Objects now: 5262.
-Memory consumption went from 195.4 MB to 195.2 MB.
-Total: 6.335700 ms (FindLiveObjects: 0.761800 ms CreateObjectMapping: 0.839900 ms MarkObjects: 4.572200 ms  DeleteObjects: 0.160000 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.008068 seconds.
-Begin MonoManager ReloadAssembly
-Symbol file LoadedFromMemory doesn't match image D:\Sushi For You\ProjectLuppo\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
-Symbol file LoadedFromMemory doesn't match image D:\Sushi For You\ProjectLuppo\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 1.54 ms, found 5 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.298 seconds
-Domain Reload Profiling:
-	ReloadAssembly (1299ms)
-		BeginReloadAssembly (133ms)
-			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (8ms)
-			BackupInstance (0ms)
-			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (35ms)
-		EndReloadAssembly (1056ms)
-			LoadAssemblies (101ms)
-			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (338ms)
-			ReleaseScriptCaches (2ms)
-			RebuildScriptCaches (78ms)
-			SetupLoadedEditorAssemblies (453ms)
-				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (11ms)
-				SetLoadedEditorAssemblies (1ms)
-				RefreshPlugins (2ms)
-				BeforeProcessingInitializeOnLoad (107ms)
-				ProcessInitializeOnLoadAttributes (273ms)
-				ProcessInitializeOnLoadMethodAttributes (50ms)
-				AfterProcessingInitializeOnLoad (9ms)
-				EditorAssembliesLoaded (0ms)
-			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (10ms)
-Platform modules already initialized, skipping
-Shader 'VRM10/Universal Render Pipeline/MToon10': fallback shader 'Hidden/Universal Render Pipeline/FallbackError' not found
-Shader 'VRM10/Universal Render Pipeline/MToon10': fallback shader 'Hidden/Universal Render Pipeline/FallbackError' not found
-Refreshing native plugins compatible for Editor in 4.68 ms, found 5 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 4733 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 26 unused Assets / (137.9 KB). Loaded Objects now: 5265.
-Memory consumption went from 195.6 MB to 195.4 MB.
-Total: 4.344000 ms (FindLiveObjects: 0.486600 ms CreateObjectMapping: 0.545500 ms MarkObjects: 3.016400 ms  DeleteObjects: 0.293200 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.010859 seconds.
-Begin MonoManager ReloadAssembly
-Symbol file LoadedFromMemory doesn't match image D:\Sushi For You\ProjectLuppo\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
-Symbol file LoadedFromMemory doesn't match image D:\Sushi For You\ProjectLuppo\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 2.48 ms, found 5 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.546 seconds
-Domain Reload Profiling:
-	ReloadAssembly (1547ms)
-		BeginReloadAssembly (282ms)
+	ReloadAssembly (3539ms)
+		BeginReloadAssembly (243ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (12ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (75ms)
-		EndReloadAssembly (1075ms)
-			LoadAssemblies (197ms)
+			CreateAndSetChildDomain (37ms)
+		EndReloadAssembly (3045ms)
+			LoadAssemblies (223ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (264ms)
-			ReleaseScriptCaches (3ms)
-			RebuildScriptCaches (86ms)
-			SetupLoadedEditorAssemblies (508ms)
+			SetupTypeCache (856ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (219ms)
+			SetupLoadedEditorAssemblies (1613ms)
 				LogAssemblyErrors (0ms)
 				InitializePlatformSupportModulesInManaged (10ms)
-				SetLoadedEditorAssemblies (1ms)
-				RefreshPlugins (3ms)
-				BeforeProcessingInitializeOnLoad (129ms)
-				ProcessInitializeOnLoadAttributes (300ms)
-				ProcessInitializeOnLoadMethodAttributes (55ms)
-				AfterProcessingInitializeOnLoad (10ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (389ms)
+				BeforeProcessingInitializeOnLoad (364ms)
+				ProcessInitializeOnLoadAttributes (625ms)
+				ProcessInitializeOnLoadMethodAttributes (206ms)
+				AfterProcessingInitializeOnLoad (18ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (10ms)
+			AwakeInstancesAfterBackupRestoration (18ms)
 Platform modules already initialized, skipping
-Shader 'VRM10/Universal Render Pipeline/MToon10': fallback shader 'Hidden/Universal Render Pipeline/FallbackError' not found
-Shader 'VRM10/Universal Render Pipeline/MToon10': fallback shader 'Hidden/Universal Render Pipeline/FallbackError' not found
-Refreshing native plugins compatible for Editor in 4.51 ms, found 5 plugins.
+========================================================================
+Worker process is ready to serve import requests
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.35 seconds
+Refreshing native plugins compatible for Editor in 2.59 ms, found 5 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 4733 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 26 unused Assets / (137.9 KB). Loaded Objects now: 5268.
-Memory consumption went from 195.6 MB to 195.5 MB.
-Total: 4.589400 ms (FindLiveObjects: 0.724500 ms CreateObjectMapping: 0.815800 ms MarkObjects: 2.816000 ms  DeleteObjects: 0.231300 ms)
+Unloading 6552 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 73 unused Assets / (7.4 MB). Loaded Objects now: 6989.
+Memory consumption went from 287.9 MB to 280.5 MB.
+Total: 14.512900 ms (FindLiveObjects: 2.314700 ms CreateObjectMapping: 2.206500 ms MarkObjects: 6.259500 ms  DeleteObjects: 3.729500 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
@@ -886,4 +161,153 @@ AssetImportParameters requested are different than current active one (requested
   custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
   custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
->>>>>>> f01a1e5ffd8329f9b89407ed3a9dbc4686ea9e13
+========================================================================
+Received Import Request.
+  Time since last request: 29283.090478 seconds.
+  path: Assets/Plugins/VRMShaders/VRM10/MToon10/Resources/VRM10/vrmc_materials_mtoon_depthonly_vertex.hlsl
+  artifactKey: Guid(d9da53078e88fd043b826aee7ad91271) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/VRMShaders/VRM10/MToon10/Resources/VRM10/vrmc_materials_mtoon_depthonly_vertex.hlsl using Guid(d9da53078e88fd043b826aee7ad91271) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6455cfc352b6a961ae97c6621826e48c') in 0.082953 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000058 seconds.
+  path: Assets/Plugins/VRMShaders/VRM10/MToon10/Resources/VRM10/vrmc_materials_mtoon_forward_vertex.hlsl
+  artifactKey: Guid(95a69fece1f7e8f4dafd5b2eff697450) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/VRMShaders/VRM10/MToon10/Resources/VRM10/vrmc_materials_mtoon_forward_vertex.hlsl using Guid(95a69fece1f7e8f4dafd5b2eff697450) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ff006067d6540ca5dd762b4b95789597') in 0.004340 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000032 seconds.
+  path: Assets/Plugins/VRMShaders/VRM10/MToon10/Resources/VRM10/vrmc_materials_mtoon_input.hlsl
+  artifactKey: Guid(2b6152274a895334a893db35640d1eca) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/VRMShaders/VRM10/MToon10/Resources/VRM10/vrmc_materials_mtoon_input.hlsl using Guid(2b6152274a895334a893db35640d1eca) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '42b96a5c3729fc45e5a5bea462abf92c') in 0.003482 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/baharatlık.fbx
+  artifactKey: Guid(cad0eb0e258df364bb220af857086bf8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/baharatlık.fbx using Guid(cad0eb0e258df364bb220af857086bf8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'df67ef1dccddbdb36e275534b5cb9be6') in 0.262745 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000060 seconds.
+  path: Assets/Plugins/VRMShaders/VRM10/MToon10/Resources/VRM10/vrmc_materials_mtoon_forward_fragment.hlsl
+  artifactKey: Guid(2930996147fa7904e80b8b61dd867a98) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/VRMShaders/VRM10/MToon10/Resources/VRM10/vrmc_materials_mtoon_forward_fragment.hlsl using Guid(2930996147fa7904e80b8b61dd867a98) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c33ef6ee885274511767c8f2f015000b') in 0.003819 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000045 seconds.
+  path: Assets/mini salt.fbx
+  artifactKey: Guid(aa17be7173617cf49a818e49f83638c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/mini salt.fbx using Guid(aa17be7173617cf49a818e49f83638c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b6a80881c72c7e47d6461af74ad960c1') in 0.021941 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000078 seconds.
+  path: Assets/Plugins/VRMShaders/VRM10/MToon10/Resources/VRM10/vrmc_materials_mtoon_attribute.hlsl
+  artifactKey: Guid(7e581478832a6c5419efa6b698ef16f4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/VRMShaders/VRM10/MToon10/Resources/VRM10/vrmc_materials_mtoon_attribute.hlsl using Guid(7e581478832a6c5419efa6b698ef16f4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1763959f9b7d13a1f4e48283f1bed841') in 0.003376 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000031 seconds.
+  path: Assets/Plugins/VRMShaders/VRM10/MToon10/Resources/VRM10/vrmc_materials_mtoon_depthnormals_vertex.hlsl
+  artifactKey: Guid(2d26999db80d8cb4fbe0af4c71244e57) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/VRMShaders/VRM10/MToon10/Resources/VRM10/vrmc_materials_mtoon_depthnormals_vertex.hlsl using Guid(2d26999db80d8cb4fbe0af4c71244e57) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c361ae7592e127e3be2fcd107a138c7d') in 0.003868 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000068 seconds.
+  path: Assets/Square.png
+  artifactKey: Guid(331253d1adb2135448c3e2ae991ff94b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Square.png using Guid(331253d1adb2135448c3e2ae991ff94b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4fe3dab9e6151b951019f63523f2f62a') in 0.076230 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000031 seconds.
+  path: Assets/Plugins/VRMShaders/VRM10/MToon10/Resources/VRM10/vrmc_materials_mtoon_geometry_alpha.hlsl
+  artifactKey: Guid(9c0ad4a73e463b2488439fd4e9a8e33f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/VRMShaders/VRM10/MToon10/Resources/VRM10/vrmc_materials_mtoon_geometry_alpha.hlsl using Guid(9c0ad4a73e463b2488439fd4e9a8e33f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '634a1a21d2d253ce33c86ee8fcb710e0') in 0.008636 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000052 seconds.
+  path: Assets/Plugins/VRMShaders/VRM10/MToon10/Resources/VRM10/vrmc_materials_mtoon_geometry_uv.hlsl
+  artifactKey: Guid(ae4b96b7c316fee4eb77d158c4aab881) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/VRMShaders/VRM10/MToon10/Resources/VRM10/vrmc_materials_mtoon_geometry_uv.hlsl using Guid(ae4b96b7c316fee4eb77d158c4aab881) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a56cb871bf5334bdd7c8cb92cb3debb3') in 0.004570 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000044 seconds.
+  path: Assets/Plugins/VRMShaders/VRM10/MToon10/Resources/VRM10/vrmc_materials_mtoon_render_pipeline.hlsl
+  artifactKey: Guid(c64233f53ec4b4d46965e7c3e1cfff63) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/VRMShaders/VRM10/MToon10/Resources/VRM10/vrmc_materials_mtoon_render_pipeline.hlsl using Guid(c64233f53ec4b4d46965e7c3e1cfff63) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6a0c08f09ec9fe835379e4aa1371811b') in 0.004288 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000036 seconds.
+  path: Assets/Plugins/VRMShaders/VRM10/MToon10/Resources/VRM10/vrmc_materials_mtoon_depthnormals_fragment.hlsl
+  artifactKey: Guid(0c3a0e65f96ec4244bf3cbe262e92470) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/VRMShaders/VRM10/MToon10/Resources/VRM10/vrmc_materials_mtoon_depthnormals_fragment.hlsl using Guid(0c3a0e65f96ec4244bf3cbe262e92470) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c69b4a54067ebcba0e9bf9e6e4ac65f2') in 0.005222 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000040 seconds.
+  path: Assets/kaşık.fbx
+  artifactKey: Guid(8fca2ada174b3a0499bb70981c0c2819) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/kaşık.fbx using Guid(8fca2ada174b3a0499bb70981c0c2819) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3afdaa04eb8423f3a459b4ea86067010') in 0.034804 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000032 seconds.
+  path: Assets/bigsalt.fbx
+  artifactKey: Guid(92ea076de938d3a4a954ddf201370e61) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/bigsalt.fbx using Guid(92ea076de938d3a4a954ddf201370e61) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ecf9f662cbcd63553d919344607b6986') in 0.022941 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/Plugins/VRMShaders/VRM10/MToon10/Resources/VRM10/vrmc_materials_mtoon_geometry_normal.hlsl
+  artifactKey: Guid(e698c8d2d217df44e80dc1139deb05cb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/VRMShaders/VRM10/MToon10/Resources/VRM10/vrmc_materials_mtoon_geometry_normal.hlsl using Guid(e698c8d2d217df44e80dc1139deb05cb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '596ecdf2103cecddc86b55d3a0b4047c') in 0.004947 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/Plugins/VRMShaders/VRM10/MToon10/Resources/VRM10/vrmc_materials_mtoon_lighting_unity.hlsl
+  artifactKey: Guid(55990a2a5898c8b4b9997cfb97f9738e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/VRMShaders/VRM10/MToon10/Resources/VRM10/vrmc_materials_mtoon_lighting_unity.hlsl using Guid(55990a2a5898c8b4b9997cfb97f9738e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'da23925d63013b542436ae82f914eee4') in 0.005566 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000033 seconds.
+  path: Assets/Plugins/VRMShaders/VRM10/MToon10/Resources/VRM10/vrmc_materials_mtoon_shadowcaster_vertex.hlsl
+  artifactKey: Guid(be94db74dccfbae4788fd7c3c30420a8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/VRMShaders/VRM10/MToon10/Resources/VRM10/vrmc_materials_mtoon_shadowcaster_vertex.hlsl using Guid(be94db74dccfbae4788fd7c3c30420a8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b6d2a45ccadd2adcb61d71d37f4ec466') in 0.004192 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000036 seconds.
+  path: Assets/Plugins/VRMShaders/VRM10/MToon10/Resources/VRM10/vrmc_materials_mtoon_utility.hlsl
+  artifactKey: Guid(f1790367cb2198847aa82a39063b7042) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/VRMShaders/VRM10/MToon10/Resources/VRM10/vrmc_materials_mtoon_utility.hlsl using Guid(f1790367cb2198847aa82a39063b7042) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '931bd22f12565f309be69dd9c8573ece') in 0.003998 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000032 seconds.
+  path: Assets/Plugins/VRMShaders/VRM10/MToon10/Resources/VRM10/vrmc_materials_mtoon_depthonly_fragment.hlsl
+  artifactKey: Guid(d85b51a5c90d55045b9b1c9fd82ed731) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/VRMShaders/VRM10/MToon10/Resources/VRM10/vrmc_materials_mtoon_depthonly_fragment.hlsl using Guid(d85b51a5c90d55045b9b1c9fd82ed731) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a895e209f196151d697a83ce7e46dcd5') in 0.003970 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000035 seconds.
+  path: Assets/Plugins/VRMShaders/VRM10/MToon10/Resources/VRM10/vrmc_materials_mtoon_shadowcaster_fragment.hlsl
+  artifactKey: Guid(3a321b74dce3c4c40841dcdac55ba318) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/VRMShaders/VRM10/MToon10/Resources/VRM10/vrmc_materials_mtoon_shadowcaster_fragment.hlsl using Guid(3a321b74dce3c4c40841dcdac55ba318) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b658bc8fc4a91851451e9047bd59a982') in 0.006210 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000035 seconds.
+  path: Assets/Plugins/VRMShaders/VRM10/MToon10/Resources/VRM10/vrmc_materials_mtoon_geometry_vertex.hlsl
+  artifactKey: Guid(ada6fd800e556c948bbffb35ff6216e0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/VRMShaders/VRM10/MToon10/Resources/VRM10/vrmc_materials_mtoon_geometry_vertex.hlsl using Guid(ada6fd800e556c948bbffb35ff6216e0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '198cbc7205a5c8664b8a09aec0f892fe') in 0.005759 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000033 seconds.
+  path: Assets/Plugins/VRMShaders/VRM10/MToon10/Resources/VRM10/vrmc_materials_mtoon_lighting_mtoon.hlsl
+  artifactKey: Guid(3de39a759f9400c41acaa2993b3b5c9f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/VRMShaders/VRM10/MToon10/Resources/VRM10/vrmc_materials_mtoon_lighting_mtoon.hlsl using Guid(3de39a759f9400c41acaa2993b3b5c9f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e90538676194376b49f76762d55fa03e') in 0.004637 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/Plugins/VRMShaders/VRM10/MToon10/Resources/VRM10/vrmc_materials_mtoon_define.hlsl
+  artifactKey: Guid(8c8910a31292b804991f4197a5739d95) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/VRMShaders/VRM10/MToon10/Resources/VRM10/vrmc_materials_mtoon_define.hlsl using Guid(8c8910a31292b804991f4197a5739d95) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f0e39e16824f2825b98fa00f15bb1197') in 0.005760 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.913495 seconds.
+  path: Assets/Plugins/UniGLTF
+  artifactKey: Guid(184a3c46182fd6c4e92b5b9b5491c95c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/UniGLTF using Guid(184a3c46182fd6c4e92b5b9b5491c95c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '14cc83fbc732365e35a135d2f1e19e3d') in 0.003945 seconds 
