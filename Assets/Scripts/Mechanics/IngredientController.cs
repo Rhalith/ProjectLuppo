@@ -28,7 +28,6 @@ public class IngredientController : MonoBehaviour
     public List<string> Material { get => _material;}
     public int DifferentIngredientCount { get => _differentIngredientCount; }
 
-
     //TODO: SalmonCounter and CucumberCounter is not using, so I comment it out
     //public int SalmonCounter;
     //public int CucumberCounter;
@@ -165,7 +164,6 @@ public class IngredientController : MonoBehaviour
         }
         _ingredients.Add(ingredient);
         _count++;
-
         //please explain this part
         if (!_has)
         {

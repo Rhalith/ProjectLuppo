@@ -62,8 +62,6 @@ public class SeaweedWrap : MonoBehaviour
             _instObj = Instantiate(hosomakiPrefab, sushiPos, Quaternion.identity);
             _instObj.tag = "Sushi";
             _instObj.GetComponent<HosomakiDisplay>().sushiName = _sushiMaterial + "Hosomaki";
-            
-
         }
         else if (IngredientController.Instance.DifferentIngredientCount.Equals(2))
         {
