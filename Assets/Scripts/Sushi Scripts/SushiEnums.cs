@@ -1,0 +1,44 @@
+public enum SushiType
+{
+    Sashimi,
+    Nigiri,
+    Maki,
+    Uramaki,
+}
+
+public enum SushiIngredient
+{
+    shrimp,
+    omelette,
+    freshwatereel,
+    salmon,
+    rawoyster,
+    rawtunafish,
+    springonion,
+    rice,
+    fermentedsoybean,
+    juliennecucumber,
+    julienneradish,
+    gourd,
+    kombuweed,
+    crabmeat,
+    avocado,
+    cucumber,
+    sesameoil,
+    spicymayonnaise,
+    abalone,
+    gari,
+    capelincaviar,
+    caviar,
+    burdock,
+    soysauce,
+    unagisauce,
+    yellowtail,
+    octopus,
+    yuzu,
+    seaweed,
+    kanpyo,
+    nori,
+    carrot,
+    sriracha
+}

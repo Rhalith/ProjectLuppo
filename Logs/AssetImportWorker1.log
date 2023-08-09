@@ -15,7 +15,7 @@ C:/Users/birda/Documents/GitHub/ProjectLuppo
 -logFile
 Logs/AssetImportWorker1.log
 -srvPort
-50163
+60698
 Successfully changed project path to: C:/Users/birda/Documents/GitHub/ProjectLuppo
 C:/Users/birda/Documents/GitHub/ProjectLuppo
 [UnityMemory] Configuration Parameters - Can be set up in boot.config
@@ -47,11 +47,11 @@ C:/Users/birda/Documents/GitHub/ProjectLuppo
     "memorysetup-temp-allocator-size-cloud-worker=32768"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Player connection [4036] Host "[IP] 172.17.3.235 [Port] 0 [Flags] 2 [Guid] 3160443907 [EditorId] 3160443907 [Version] 1048832 [Id] WindowsEditor(7,JuniorLaptop) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
+Player connection [26652] Host "[IP] 172.17.3.235 [Port] 0 [Flags] 2 [Guid] 2627050824 [EditorId] 2627050824 [Version] 1048832 [Id] WindowsEditor(7,JuniorLaptop) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
 
-Player connection [4036] Host "[IP] 172.17.3.235 [Port] 0 [Flags] 2 [Guid] 3160443907 [EditorId] 3160443907 [Version] 1048832 [Id] WindowsEditor(7,JuniorLaptop) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
+Player connection [26652] Host "[IP] 172.17.3.235 [Port] 0 [Flags] 2 [Guid] 2627050824 [EditorId] 2627050824 [Version] 1048832 [Id] WindowsEditor(7,JuniorLaptop) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
 
-Refreshing native plugins compatible for Editor in 195.51 ms, found 5 plugins.
+Refreshing native plugins compatible for Editor in 359.54 ms, found 5 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2021.3.27f1 (ca3ffb99bcc6)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2021.3.27f1/Editor/Data/Resources/UnitySubsystems
@@ -67,91 +67,239 @@ Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2021.3.27f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2021.3.27f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/2021.3.27f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56940
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56712
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2021.3.27f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.010869 seconds.
+Registered in 0.011636 seconds.
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 160.94 ms, found 5 plugins.
+Refreshing native plugins compatible for Editor in 298.87 ms, found 5 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.214 seconds
+- Completed reload, in  1.648 seconds
 Domain Reload Profiling:
-	ReloadAssembly (1215ms)
-		BeginReloadAssembly (170ms)
+	ReloadAssembly (1656ms)
+		BeginReloadAssembly (154ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (0ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
 			CreateAndSetChildDomain (1ms)
-		EndReloadAssembly (842ms)
-			LoadAssemblies (165ms)
+		EndReloadAssembly (1288ms)
+			LoadAssemblies (149ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (225ms)
+			SetupTypeCache (212ms)
 			ReleaseScriptCaches (0ms)
-			RebuildScriptCaches (49ms)
-			SetupLoadedEditorAssemblies (471ms)
+			RebuildScriptCaches (126ms)
+			SetupLoadedEditorAssemblies (669ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (13ms)
+				InitializePlatformSupportModulesInManaged (16ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (161ms)
-				BeforeProcessingInitializeOnLoad (3ms)
-				ProcessInitializeOnLoadAttributes (200ms)
-				ProcessInitializeOnLoadMethodAttributes (94ms)
+				RefreshPlugins (299ms)
+				BeforeProcessingInitializeOnLoad (2ms)
+				ProcessInitializeOnLoadAttributes (264ms)
+				ProcessInitializeOnLoadMethodAttributes (87ms)
 				AfterProcessingInitializeOnLoad (0ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (0ms)
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.017837 seconds.
+Registered in 0.018505 seconds.
+Assembly with name 'VRM10.Tests' already exists (Assets/Plugins/VRM10/Tests/VRM10.Tests.asmdef)
+Assembly with name 'VRM10.Tests' already exists (Assets/VRM10/Tests/VRM10.Tests.asmdef)
+Assembly with name 'VrmLib' already exists (Assets/Plugins/VRM10/vrmlib/Runtime/VrmLib.asmdef)
+Assembly with name 'VrmLib' already exists (Assets/VRM10/vrmlib/Runtime/VrmLib.asmdef)
+Assembly with name 'UniGLTF.Tests' already exists (Assets/Plugins/UniGLTF/Tests/UniGLTF.Tests.asmdef)
+Assembly with name 'UniGLTF.Tests' already exists (Assets/UniGLTF/Tests/UniGLTF.Tests.asmdef)
+Assembly with name 'FastSpringBone10' already exists (Assets/VRM10/Runtime/FastSpringBone/FastSpringBone10.asmdef)
+Assembly with name 'FastSpringBone10' already exists (Assets/Plugins/VRM10/Runtime/FastSpringBone/FastSpringBone10.asmdef)
+Assembly with name 'VRMShaders.GLTF.IO.Tests' already exists (Assets/VRMShaders/GLTF/IO/Tests/VRMShaders.GLTF.IO.Tests.asmdef)
+Assembly with name 'VRMShaders.GLTF.IO.Tests' already exists (Assets/Plugins/VRMShaders/GLTF/IO/Tests/VRMShaders.GLTF.IO.Tests.asmdef)
+Assembly with name 'UniGLTF' already exists (Assets/Plugins/UniGLTF/Runtime/UniGLTF.asmdef)
+Assembly with name 'UniGLTF' already exists (Assets/UniGLTF/Runtime/UniGLTF.asmdef)
+Assembly with name 'VRMShaders.VRM10.MToon10.Editor' already exists (Assets/Plugins/VRMShaders/VRM10/MToon10/Editor/VRMShaders.VRM10.MToon10.Editor.asmdef)
+Assembly with name 'VRMShaders.VRM10.MToon10.Editor' already exists (Assets/VRMShaders/VRM10/MToon10/Editor/VRMShaders.VRM10.MToon10.Editor.asmdef)
+Assembly with name 'UniHumanoid' already exists (Assets/Plugins/UniGLTF/Runtime/UniHumanoid/UniHumanoid.asmdef)
+Assembly with name 'UniHumanoid' already exists (Assets/UniGLTF/Runtime/UniHumanoid/UniHumanoid.asmdef)
+Assembly with name 'VRM10' already exists (Assets/VRM10/Runtime/VRM10.asmdef)
+Assembly with name 'VRM10' already exists (Assets/Plugins/VRM10/Runtime/VRM10.asmdef)
+Assembly with name 'VRMShaders.GLTF.IO.Runtime' already exists (Assets/Plugins/VRMShaders/GLTF/IO/Runtime/VRMShaders.GLTF.IO.Runtime.asmdef)
+Assembly with name 'VRMShaders.GLTF.IO.Runtime' already exists (Assets/VRMShaders/GLTF/IO/Runtime/VRMShaders.GLTF.IO.Runtime.asmdef)
+Assembly with name 'VRM10.Editor' already exists (Assets/VRM10/Editor/VRM10.Editor.asmdef)
+Assembly with name 'VRM10.Editor' already exists (Assets/Plugins/VRM10/Editor/VRM10.Editor.asmdef)
+Assembly with name 'UniHumanoid.Editor.Tests' already exists (Assets/Plugins/UniGLTF/Tests/UniHumanoid/UniHumanoid.Editor.Tests.asmdef)
+Assembly with name 'UniHumanoid.Editor.Tests' already exists (Assets/UniGLTF/Tests/UniHumanoid/UniHumanoid.Editor.Tests.asmdef)
+Assembly with name 'VRMShaders.GLTF.UniUnlit.Editor' already exists (Assets/Plugins/VRMShaders/GLTF/UniUnlit/Editor/VRMShaders.GLTF.UniUnlit.Editor.asmdef)
+Assembly with name 'VRMShaders.GLTF.UniUnlit.Editor' already exists (Assets/VRMShaders/GLTF/UniUnlit/Editor/VRMShaders.GLTF.UniUnlit.Editor.asmdef)
+Assembly with name 'VRMShaders.GLTF.IO.Editor' already exists (Assets/VRMShaders/GLTF/IO/Editor/VRMShaders.GLTF.IO.Editor.asmdef)
+Assembly with name 'VRMShaders.GLTF.IO.Editor' already exists (Assets/Plugins/VRMShaders/GLTF/IO/Editor/VRMShaders.GLTF.IO.Editor.asmdef)
+Assembly with name 'VRMShaders.VRM10.Format.Runtime' already exists (Assets/VRMShaders/VRM10/Format/Runtime/VRMShaders.VRM10.Format.Runtime.asmdef)
+Assembly with name 'VRMShaders.VRM10.Format.Runtime' already exists (Assets/Plugins/VRMShaders/VRM10/Format/Runtime/VRMShaders.VRM10.Format.Runtime.asmdef)
+Assembly with name 'VrmLibTests' already exists (Assets/VRM10/vrmlib/Tests/VrmLib.Tests.asmdef)
+Assembly with name 'VrmLibTests' already exists (Assets/Plugins/VRM10/vrmlib/Tests/VrmLib.Tests.asmdef)
+Assembly with name 'UniGLTF.Utils' already exists (Assets/UniGLTF/Runtime/Utils/UniGLTF.Utils.asmdef)
+Assembly with name 'UniGLTF.Utils' already exists (Assets/Plugins/UniGLTF/Runtime/Utils/UniGLTF.Utils.asmdef)
+Assembly with name 'MToon' already exists (Assets/Plugins/VRMShaders/VRM/MToon/MToon/MToon.asmdef)
+Assembly with name 'MToon' already exists (Assets/VRMShaders/VRM/MToon/MToon/MToon.asmdef)
+Assembly with name 'VRMShaders.GLTF.UniUnlit.Runtime' already exists (Assets/Plugins/VRMShaders/GLTF/UniUnlit/Runtime/VRMShaders.GLTF.UniUnlit.Runtime.asmdef)
+Assembly with name 'VRMShaders.GLTF.UniUnlit.Runtime' already exists (Assets/VRMShaders/GLTF/UniUnlit/Runtime/VRMShaders.GLTF.UniUnlit.Runtime.asmdef)
+Assembly with name 'VRMShaders.VRM10.MToon10.Tests' already exists (Assets/VRMShaders/VRM10/MToon10/Tests/VRMShaders.VRM10.MToon10.Tests.asmdef)
+Assembly with name 'VRMShaders.VRM10.MToon10.Tests' already exists (Assets/Plugins/VRMShaders/VRM10/MToon10/Tests/VRMShaders.VRM10.MToon10.Tests.asmdef)
+Assembly with name 'MToon.Editor' already exists (Assets/Plugins/VRMShaders/VRM/MToon/MToon/Editor/MToon.Editor.asmdef)
+Assembly with name 'MToon.Editor' already exists (Assets/VRMShaders/VRM/MToon/MToon/Editor/MToon.Editor.asmdef)
+Assembly with name 'UniGLTF.Editor' already exists (Assets/Plugins/UniGLTF/Editor/UniGLTF.Editor.asmdef)
+Assembly with name 'UniGLTF.Editor' already exists (Assets/UniGLTF/Editor/UniGLTF.Editor.asmdef)
+Assembly with name 'UniHumanoid.Editor' already exists (Assets/UniGLTF/Editor/UniHumanoid/UniHumanoid.Editor.asmdef)
+Assembly with name 'UniHumanoid.Editor' already exists (Assets/Plugins/UniGLTF/Editor/UniHumanoid/UniHumanoid.Editor.asmdef)
+Assembly with name 'VRMShaders.VRM.IO.Runtime' already exists (Assets/Plugins/VRMShaders/VRM/IO/Runtime/VRMShaders.VRM.IO.Runtime.asmdef)
+Assembly with name 'VRMShaders.VRM.IO.Runtime' already exists (Assets/VRMShaders/VRM/IO/Runtime/VRMShaders.VRM.IO.Runtime.asmdef)
+Assembly with name 'VRMShaders.VRM10.MToon10.Runtime' already exists (Assets/VRMShaders/VRM10/MToon10/Runtime/VRMShaders.VRM10.MToon10.Runtime.asmdef)
+Assembly with name 'VRMShaders.VRM10.MToon10.Runtime' already exists (Assets/Plugins/VRMShaders/VRM10/MToon10/Runtime/VRMShaders.VRM10.MToon10.Runtime.asmdef)
+Assembly with name 'VRM10.Tests' already exists (Assets/Plugins/VRM10/Tests/VRM10.Tests.asmdef)
+Assembly with name 'VRM10.Tests' already exists (Assets/VRM10/Tests/VRM10.Tests.asmdef)
+Assembly with name 'VrmLib' already exists (Assets/Plugins/VRM10/vrmlib/Runtime/VrmLib.asmdef)
+Assembly with name 'VrmLib' already exists (Assets/VRM10/vrmlib/Runtime/VrmLib.asmdef)
+Assembly with name 'UniGLTF.Tests' already exists (Assets/Plugins/UniGLTF/Tests/UniGLTF.Tests.asmdef)
+Assembly with name 'UniGLTF.Tests' already exists (Assets/UniGLTF/Tests/UniGLTF.Tests.asmdef)
+Assembly with name 'FastSpringBone10' already exists (Assets/VRM10/Runtime/FastSpringBone/FastSpringBone10.asmdef)
+Assembly with name 'FastSpringBone10' already exists (Assets/Plugins/VRM10/Runtime/FastSpringBone/FastSpringBone10.asmdef)
+Assembly with name 'VRMShaders.GLTF.IO.Tests' already exists (Assets/VRMShaders/GLTF/IO/Tests/VRMShaders.GLTF.IO.Tests.asmdef)
+Assembly with name 'VRMShaders.GLTF.IO.Tests' already exists (Assets/Plugins/VRMShaders/GLTF/IO/Tests/VRMShaders.GLTF.IO.Tests.asmdef)
+Assembly with name 'UniGLTF' already exists (Assets/Plugins/UniGLTF/Runtime/UniGLTF.asmdef)
+Assembly with name 'UniGLTF' already exists (Assets/UniGLTF/Runtime/UniGLTF.asmdef)
+Assembly with name 'VRMShaders.VRM10.MToon10.Editor' already exists (Assets/Plugins/VRMShaders/VRM10/MToon10/Editor/VRMShaders.VRM10.MToon10.Editor.asmdef)
+Assembly with name 'VRMShaders.VRM10.MToon10.Editor' already exists (Assets/VRMShaders/VRM10/MToon10/Editor/VRMShaders.VRM10.MToon10.Editor.asmdef)
+Assembly with name 'UniHumanoid' already exists (Assets/Plugins/UniGLTF/Runtime/UniHumanoid/UniHumanoid.asmdef)
+Assembly with name 'UniHumanoid' already exists (Assets/UniGLTF/Runtime/UniHumanoid/UniHumanoid.asmdef)
+Assembly with name 'VRM10' already exists (Assets/VRM10/Runtime/VRM10.asmdef)
+Assembly with name 'VRM10' already exists (Assets/Plugins/VRM10/Runtime/VRM10.asmdef)
+Assembly with name 'VRMShaders.GLTF.IO.Runtime' already exists (Assets/Plugins/VRMShaders/GLTF/IO/Runtime/VRMShaders.GLTF.IO.Runtime.asmdef)
+Assembly with name 'VRMShaders.GLTF.IO.Runtime' already exists (Assets/VRMShaders/GLTF/IO/Runtime/VRMShaders.GLTF.IO.Runtime.asmdef)
+Assembly with name 'VRM10.Editor' already exists (Assets/VRM10/Editor/VRM10.Editor.asmdef)
+Assembly with name 'VRM10.Editor' already exists (Assets/Plugins/VRM10/Editor/VRM10.Editor.asmdef)
+Assembly with name 'UniHumanoid.Editor.Tests' already exists (Assets/Plugins/UniGLTF/Tests/UniHumanoid/UniHumanoid.Editor.Tests.asmdef)
+Assembly with name 'UniHumanoid.Editor.Tests' already exists (Assets/UniGLTF/Tests/UniHumanoid/UniHumanoid.Editor.Tests.asmdef)
+Assembly with name 'VRMShaders.GLTF.UniUnlit.Editor' already exists (Assets/Plugins/VRMShaders/GLTF/UniUnlit/Editor/VRMShaders.GLTF.UniUnlit.Editor.asmdef)
+Assembly with name 'VRMShaders.GLTF.UniUnlit.Editor' already exists (Assets/VRMShaders/GLTF/UniUnlit/Editor/VRMShaders.GLTF.UniUnlit.Editor.asmdef)
+Assembly with name 'VRMShaders.GLTF.IO.Editor' already exists (Assets/VRMShaders/GLTF/IO/Editor/VRMShaders.GLTF.IO.Editor.asmdef)
+Assembly with name 'VRMShaders.GLTF.IO.Editor' already exists (Assets/Plugins/VRMShaders/GLTF/IO/Editor/VRMShaders.GLTF.IO.Editor.asmdef)
+Assembly with name 'VRMShaders.VRM10.Format.Runtime' already exists (Assets/VRMShaders/VRM10/Format/Runtime/VRMShaders.VRM10.Format.Runtime.asmdef)
+Assembly with name 'VRMShaders.VRM10.Format.Runtime' already exists (Assets/Plugins/VRMShaders/VRM10/Format/Runtime/VRMShaders.VRM10.Format.Runtime.asmdef)
+Assembly with name 'VrmLibTests' already exists (Assets/VRM10/vrmlib/Tests/VrmLib.Tests.asmdef)
+Assembly with name 'VrmLibTests' already exists (Assets/Plugins/VRM10/vrmlib/Tests/VrmLib.Tests.asmdef)
+Assembly with name 'UniGLTF.Utils' already exists (Assets/UniGLTF/Runtime/Utils/UniGLTF.Utils.asmdef)
+Assembly with name 'UniGLTF.Utils' already exists (Assets/Plugins/UniGLTF/Runtime/Utils/UniGLTF.Utils.asmdef)
+Assembly with name 'MToon' already exists (Assets/Plugins/VRMShaders/VRM/MToon/MToon/MToon.asmdef)
+Assembly with name 'MToon' already exists (Assets/VRMShaders/VRM/MToon/MToon/MToon.asmdef)
+Assembly with name 'VRMShaders.GLTF.UniUnlit.Runtime' already exists (Assets/Plugins/VRMShaders/GLTF/UniUnlit/Runtime/VRMShaders.GLTF.UniUnlit.Runtime.asmdef)
+Assembly with name 'VRMShaders.GLTF.UniUnlit.Runtime' already exists (Assets/VRMShaders/GLTF/UniUnlit/Runtime/VRMShaders.GLTF.UniUnlit.Runtime.asmdef)
+Assembly with name 'VRMShaders.VRM10.MToon10.Tests' already exists (Assets/VRMShaders/VRM10/MToon10/Tests/VRMShaders.VRM10.MToon10.Tests.asmdef)
+Assembly with name 'VRMShaders.VRM10.MToon10.Tests' already exists (Assets/Plugins/VRMShaders/VRM10/MToon10/Tests/VRMShaders.VRM10.MToon10.Tests.asmdef)
+Assembly with name 'MToon.Editor' already exists (Assets/Plugins/VRMShaders/VRM/MToon/MToon/Editor/MToon.Editor.asmdef)
+Assembly with name 'MToon.Editor' already exists (Assets/VRMShaders/VRM/MToon/MToon/Editor/MToon.Editor.asmdef)
+Assembly with name 'UniGLTF.Editor' already exists (Assets/Plugins/UniGLTF/Editor/UniGLTF.Editor.asmdef)
+Assembly with name 'UniGLTF.Editor' already exists (Assets/UniGLTF/Editor/UniGLTF.Editor.asmdef)
+Assembly with name 'UniHumanoid.Editor' already exists (Assets/UniGLTF/Editor/UniHumanoid/UniHumanoid.Editor.asmdef)
+Assembly with name 'UniHumanoid.Editor' already exists (Assets/Plugins/UniGLTF/Editor/UniHumanoid/UniHumanoid.Editor.asmdef)
+Assembly with name 'VRMShaders.VRM.IO.Runtime' already exists (Assets/Plugins/VRMShaders/VRM/IO/Runtime/VRMShaders.VRM.IO.Runtime.asmdef)
+Assembly with name 'VRMShaders.VRM.IO.Runtime' already exists (Assets/VRMShaders/VRM/IO/Runtime/VRMShaders.VRM.IO.Runtime.asmdef)
+Assembly with name 'VRMShaders.VRM10.MToon10.Runtime' already exists (Assets/VRMShaders/VRM10/MToon10/Runtime/VRMShaders.VRM10.MToon10.Runtime.asmdef)
+Assembly with name 'VRMShaders.VRM10.MToon10.Runtime' already exists (Assets/Plugins/VRMShaders/VRM10/MToon10/Runtime/VRMShaders.VRM10.MToon10.Runtime.asmdef)
 Begin MonoManager ReloadAssembly
 Symbol file LoadedFromMemory doesn't match image C:\Users\birda\Documents\GitHub\ProjectLuppo\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
 Symbol file LoadedFromMemory doesn't match image C:\Users\birda\Documents\GitHub\ProjectLuppo\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 188.75 ms, found 5 plugins.
+Refreshing native plugins compatible for Editor in 2.28 ms, found 5 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
+Assembly with name 'VRM10.Tests' already exists (Assets/Plugins/VRM10/Tests/VRM10.Tests.asmdef)
+Assembly with name 'VRM10.Tests' already exists (Assets/VRM10/Tests/VRM10.Tests.asmdef)
+Assembly with name 'VrmLib' already exists (Assets/Plugins/VRM10/vrmlib/Runtime/VrmLib.asmdef)
+Assembly with name 'VrmLib' already exists (Assets/VRM10/vrmlib/Runtime/VrmLib.asmdef)
+Assembly with name 'UniGLTF.Tests' already exists (Assets/Plugins/UniGLTF/Tests/UniGLTF.Tests.asmdef)
+Assembly with name 'UniGLTF.Tests' already exists (Assets/UniGLTF/Tests/UniGLTF.Tests.asmdef)
+Assembly with name 'FastSpringBone10' already exists (Assets/VRM10/Runtime/FastSpringBone/FastSpringBone10.asmdef)
+Assembly with name 'FastSpringBone10' already exists (Assets/Plugins/VRM10/Runtime/FastSpringBone/FastSpringBone10.asmdef)
+Assembly with name 'VRMShaders.GLTF.IO.Tests' already exists (Assets/VRMShaders/GLTF/IO/Tests/VRMShaders.GLTF.IO.Tests.asmdef)
+Assembly with name 'VRMShaders.GLTF.IO.Tests' already exists (Assets/Plugins/VRMShaders/GLTF/IO/Tests/VRMShaders.GLTF.IO.Tests.asmdef)
+Assembly with name 'UniGLTF' already exists (Assets/Plugins/UniGLTF/Runtime/UniGLTF.asmdef)
+Assembly with name 'UniGLTF' already exists (Assets/UniGLTF/Runtime/UniGLTF.asmdef)
+Assembly with name 'VRMShaders.VRM10.MToon10.Editor' already exists (Assets/Plugins/VRMShaders/VRM10/MToon10/Editor/VRMShaders.VRM10.MToon10.Editor.asmdef)
+Assembly with name 'VRMShaders.VRM10.MToon10.Editor' already exists (Assets/VRMShaders/VRM10/MToon10/Editor/VRMShaders.VRM10.MToon10.Editor.asmdef)
+Assembly with name 'UniHumanoid' already exists (Assets/Plugins/UniGLTF/Runtime/UniHumanoid/UniHumanoid.asmdef)
+Assembly with name 'UniHumanoid' already exists (Assets/UniGLTF/Runtime/UniHumanoid/UniHumanoid.asmdef)
+Assembly with name 'VRM10' already exists (Assets/VRM10/Runtime/VRM10.asmdef)
+Assembly with name 'VRM10' already exists (Assets/Plugins/VRM10/Runtime/VRM10.asmdef)
+Assembly with name 'VRMShaders.GLTF.IO.Runtime' already exists (Assets/Plugins/VRMShaders/GLTF/IO/Runtime/VRMShaders.GLTF.IO.Runtime.asmdef)
+Assembly with name 'VRMShaders.GLTF.IO.Runtime' already exists (Assets/VRMShaders/GLTF/IO/Runtime/VRMShaders.GLTF.IO.Runtime.asmdef)
+Assembly with name 'VRM10.Editor' already exists (Assets/VRM10/Editor/VRM10.Editor.asmdef)
+Assembly with name 'VRM10.Editor' already exists (Assets/Plugins/VRM10/Editor/VRM10.Editor.asmdef)
+Assembly with name 'UniHumanoid.Editor.Tests' already exists (Assets/Plugins/UniGLTF/Tests/UniHumanoid/UniHumanoid.Editor.Tests.asmdef)
+Assembly with name 'UniHumanoid.Editor.Tests' already exists (Assets/UniGLTF/Tests/UniHumanoid/UniHumanoid.Editor.Tests.asmdef)
+Assembly with name 'VRMShaders.GLTF.UniUnlit.Editor' already exists (Assets/Plugins/VRMShaders/GLTF/UniUnlit/Editor/VRMShaders.GLTF.UniUnlit.Editor.asmdef)
+Assembly with name 'VRMShaders.GLTF.UniUnlit.Editor' already exists (Assets/VRMShaders/GLTF/UniUnlit/Editor/VRMShaders.GLTF.UniUnlit.Editor.asmdef)
+Assembly with name 'VRMShaders.GLTF.IO.Editor' already exists (Assets/VRMShaders/GLTF/IO/Editor/VRMShaders.GLTF.IO.Editor.asmdef)
+Assembly with name 'VRMShaders.GLTF.IO.Editor' already exists (Assets/Plugins/VRMShaders/GLTF/IO/Editor/VRMShaders.GLTF.IO.Editor.asmdef)
+Assembly with name 'VRMShaders.VRM10.Format.Runtime' already exists (Assets/VRMShaders/VRM10/Format/Runtime/VRMShaders.VRM10.Format.Runtime.asmdef)
+Assembly with name 'VRMShaders.VRM10.Format.Runtime' already exists (Assets/Plugins/VRMShaders/VRM10/Format/Runtime/VRMShaders.VRM10.Format.Runtime.asmdef)
+Assembly with name 'VrmLibTests' already exists (Assets/VRM10/vrmlib/Tests/VrmLib.Tests.asmdef)
+Assembly with name 'VrmLibTests' already exists (Assets/Plugins/VRM10/vrmlib/Tests/VrmLib.Tests.asmdef)
+Assembly with name 'UniGLTF.Utils' already exists (Assets/UniGLTF/Runtime/Utils/UniGLTF.Utils.asmdef)
+Assembly with name 'UniGLTF.Utils' already exists (Assets/Plugins/UniGLTF/Runtime/Utils/UniGLTF.Utils.asmdef)
+Assembly with name 'MToon' already exists (Assets/Plugins/VRMShaders/VRM/MToon/MToon/MToon.asmdef)
+Assembly with name 'MToon' already exists (Assets/VRMShaders/VRM/MToon/MToon/MToon.asmdef)
+Assembly with name 'VRMShaders.GLTF.UniUnlit.Runtime' already exists (Assets/Plugins/VRMShaders/GLTF/UniUnlit/Runtime/VRMShaders.GLTF.UniUnlit.Runtime.asmdef)
+Assembly with name 'VRMShaders.GLTF.UniUnlit.Runtime' already exists (Assets/VRMShaders/GLTF/UniUnlit/Runtime/VRMShaders.GLTF.UniUnlit.Runtime.asmdef)
+Assembly with name 'VRMShaders.VRM10.MToon10.Tests' already exists (Assets/VRMShaders/VRM10/MToon10/Tests/VRMShaders.VRM10.MToon10.Tests.asmdef)
+Assembly with name 'VRMShaders.VRM10.MToon10.Tests' already exists (Assets/Plugins/VRMShaders/VRM10/MToon10/Tests/VRMShaders.VRM10.MToon10.Tests.asmdef)
+Assembly with name 'MToon.Editor' already exists (Assets/Plugins/VRMShaders/VRM/MToon/MToon/Editor/MToon.Editor.asmdef)
+Assembly with name 'MToon.Editor' already exists (Assets/VRMShaders/VRM/MToon/MToon/Editor/MToon.Editor.asmdef)
+Assembly with name 'UniGLTF.Editor' already exists (Assets/Plugins/UniGLTF/Editor/UniGLTF.Editor.asmdef)
+Assembly with name 'UniGLTF.Editor' already exists (Assets/UniGLTF/Editor/UniGLTF.Editor.asmdef)
+Assembly with name 'UniHumanoid.Editor' already exists (Assets/UniGLTF/Editor/UniHumanoid/UniHumanoid.Editor.asmdef)
+Assembly with name 'UniHumanoid.Editor' already exists (Assets/Plugins/UniGLTF/Editor/UniHumanoid/UniHumanoid.Editor.asmdef)
+Assembly with name 'VRMShaders.VRM.IO.Runtime' already exists (Assets/Plugins/VRMShaders/VRM/IO/Runtime/VRMShaders.VRM.IO.Runtime.asmdef)
+Assembly with name 'VRMShaders.VRM.IO.Runtime' already exists (Assets/VRMShaders/VRM/IO/Runtime/VRMShaders.VRM.IO.Runtime.asmdef)
+Assembly with name 'VRMShaders.VRM10.MToon10.Runtime' already exists (Assets/VRMShaders/VRM10/MToon10/Runtime/VRMShaders.VRM10.MToon10.Runtime.asmdef)
+Assembly with name 'VRMShaders.VRM10.MToon10.Runtime' already exists (Assets/Plugins/VRMShaders/VRM10/MToon10/Runtime/VRMShaders.VRM10.MToon10.Runtime.asmdef)
 Mono: successfully reloaded assembly
-- Completed reload, in  2.138 seconds
+- Completed reload, in  1.699 seconds
 Domain Reload Profiling:
-	ReloadAssembly (2139ms)
-		BeginReloadAssembly (193ms)
+	ReloadAssembly (1701ms)
+		BeginReloadAssembly (228ms)
 			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (9ms)
+			DisableScriptedObjects (13ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (28ms)
-		EndReloadAssembly (1755ms)
-			LoadAssemblies (161ms)
+			CreateAndSetChildDomain (40ms)
+		EndReloadAssembly (1249ms)
+			LoadAssemblies (140ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (479ms)
-			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (116ms)
-			SetupLoadedEditorAssemblies (910ms)
+			SetupTypeCache (343ms)
+			ReleaseScriptCaches (2ms)
+			RebuildScriptCaches (66ms)
+			SetupLoadedEditorAssemblies (604ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (7ms)
-				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (189ms)
-				BeforeProcessingInitializeOnLoad (210ms)
-				ProcessInitializeOnLoadAttributes (423ms)
-				ProcessInitializeOnLoadMethodAttributes (63ms)
-				AfterProcessingInitializeOnLoad (17ms)
+				InitializePlatformSupportModulesInManaged (10ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (3ms)
+				BeforeProcessingInitializeOnLoad (327ms)
+				ProcessInitializeOnLoadAttributes (198ms)
+				ProcessInitializeOnLoadMethodAttributes (43ms)
+				AfterProcessingInitializeOnLoad (22ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (12ms)
+			AwakeInstancesAfterBackupRestoration (15ms)
 Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
-Shader 'VRM10/Universal Render Pipeline/MToon10': fallback shader 'Hidden/Universal Render Pipeline/FallbackError' not found
-Shader 'VRM10/Universal Render Pipeline/MToon10': fallback shader 'Hidden/Universal Render Pipeline/FallbackError' not found
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.12 seconds
-Refreshing native plugins compatible for Editor in 1.34 ms, found 5 plugins.
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.14 seconds
+Refreshing native plugins compatible for Editor in 6.25 ms, found 5 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 4599 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 39 unused Assets / (164.3 KB). Loaded Objects now: 5056.
-Memory consumption went from 169.0 MB to 168.8 MB.
-Total: 4.870400 ms (FindLiveObjects: 0.405100 ms CreateObjectMapping: 0.389700 ms MarkObjects: 3.841200 ms  DeleteObjects: 0.232700 ms)
+Unloading 7192 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 50 unused Assets / (7.4 MB). Loaded Objects now: 7617.
+Memory consumption went from 304.0 MB to 296.7 MB.
+Total: 13.230600 ms (FindLiveObjects: 1.006900 ms CreateObjectMapping: 1.205000 ms MarkObjects: 5.842300 ms  DeleteObjects: 5.174600 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
@@ -163,31 +311,3 @@ AssetImportParameters requested are different than current active one (requested
   custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
   custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Import Request.
-  Time since last request: 7891.983294 seconds.
-  path: Assets/UniGLTF/Runtime/Scenes/LookDev/cubemap/spruit_sunrise_1k.mat
-  artifactKey: Guid(d6b534e4a88689d499df389f744ce346) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/UniGLTF/Runtime/Scenes/LookDev/cubemap/spruit_sunrise_1k.mat using Guid(d6b534e4a88689d499df389f744ce346) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9e0e2fc6e3b51f6b3239b0ec781a4e57') in 0.227536 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000037 seconds.
-  path: Assets/UniGLTF/Editor/UniGLTF/Gizmo/Models/HoverBone.mat
-  artifactKey: Guid(3074a2fc6fdd2f24d896038be6eebe6a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/UniGLTF/Editor/UniGLTF/Gizmo/Models/HoverBone.mat using Guid(3074a2fc6fdd2f24d896038be6eebe6a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a84ca07c421b72004d5a48ce607fe394') in 0.088683 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.178617 seconds.
-  path: Assets/VRM10/Tests/TestAssets/TestUnlitColor.mat
-  artifactKey: Guid(f7f4d0051179dea4abb0a5cc1e06868f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/VRM10/Tests/TestAssets/TestUnlitColor.mat using Guid(f7f4d0051179dea4abb0a5cc1e06868f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '60b2ccac201f623ce78b1f61f437687c') in 0.062255 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000024 seconds.
-  path: Assets/VRM10/Tests/TestAssets/TestUnlitCutout.mat
-  artifactKey: Guid(4fb31f9c7e0666b4bbfe0d6e3e8e147b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/VRM10/Tests/TestAssets/TestUnlitCutout.mat using Guid(4fb31f9c7e0666b4bbfe0d6e3e8e147b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'eb70902e1c8b8ca6898a2dbe476aecb0') in 0.009855 seconds 
-Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
-AssetImportWorker is now disconnected from the server
-Process exiting
-Exiting without the bug reporter. Application will terminate with return code 0
