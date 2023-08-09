@@ -10,6 +10,7 @@ public class SushiManager : MonoBehaviour
     private List<Sushi> _availabeSushis = new();
     private List<Sushi> _createdSushis = new();
 
+    public static SushiManager Instance { get => _instance; }
     public List<SushiIngredient> AvailableIngredients { get => _availableIngredients; set => _availableIngredients = value; }
 
     private void Awake()
@@ -17,13 +18,14 @@ public class SushiManager : MonoBehaviour
         if(_instance != null && _instance != this)
         {
             Destroy(gameObject);
-            return;
         }
-        
-        _instance = this;
+        else
+        {
+            _instance = this;
 
-        DontDestroyOnLoad(gameObject);
-
+            // This did not works, because this script's object is child of Managers GameObject
+            DontDestroyOnLoad(gameObject);
+        }
     }
 
     private void Start()
