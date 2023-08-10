@@ -7,13 +7,12 @@ using UnityEngine.UIElements;
 public class FollowMouse : MonoBehaviour
 {
     RaycastHit hit;
-    Vector3 movePoint;
     public GameObject ingredientPrefab;
     public GameObject wrapPrefab;
     [SerializeField] GameObject _nigiriRice;
     GameObject hitObject;
     GameObject instObj;
-    string ingredientName;
+    [SerializeField] SushiIngredient ingredientName;
 
     //Makes Instantiated objects follow mouse, and when clicked they instantiates objects they symbolize.
     private void Start()
@@ -48,7 +47,7 @@ public class FollowMouse : MonoBehaviour
                         if (hit.collider.name == "CuttingBoard")
                         {
                             instObj = Instantiate(wrapPrefab, transform.position, Quaternion.identity);
-                            InstantiatedController.Instance.SeawedWrap = instObj;
+                            InstantiatedController.Instance.SeaweedWrap = instObj.GetComponent<SeaweedWrap>();
                             instObj.transform.parent = hitObject.transform;
                             instObj.transform.localPosition = new Vector3(0, 0f, 0.00073f);
                         }
@@ -82,7 +81,6 @@ public class FollowMouse : MonoBehaviour
                             {
                                 //TODO: Get Child Name for filtering
                                 instObj = Instantiate(ingredientPrefab, transform.position, Quaternion.identity);
-                                ingredientName = ingredientPrefab.name;
                                 ingredientPrefab.tag = "Ingredient";
                                 instObj.transform.parent = hitObject.transform;
                                 foreach (Transform t in instObj.transform)
@@ -94,7 +92,6 @@ public class FollowMouse : MonoBehaviour
                         }
                         else
                         {
-                            ingredientName = ingredientPrefab.name;
                             IngredientController.Instance.AddIngredient(ingredientName);
                             instObj = Instantiate(ingredientPrefab, transform.position, Quaternion.identity);
                             ingredientPrefab.tag = "Ingredient";

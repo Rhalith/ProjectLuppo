@@ -6,14 +6,14 @@ public class InstantiatedController : MonoBehaviour
 {
     private GameObject _instantiatedObject;
 
-    private GameObject _seawedWrap;
+    private SeaweedWrap _seaweedWrap;
 
     private int _instantiatedIngredientCount;
 
     public static InstantiatedController Instance;
 
     public GameObject InstantiatedObject { get => _instantiatedObject; set => _instantiatedObject = value; }
-    public GameObject SeawedWrap { get => _seawedWrap; set => _seawedWrap = value; }
+    public SeaweedWrap SeaweedWrap { get => _seaweedWrap; set => _seaweedWrap = value; }
     public int InstantiatedIngredientCount { get => _instantiatedIngredientCount; set => _instantiatedIngredientCount = value; }
 
     private void Awake()

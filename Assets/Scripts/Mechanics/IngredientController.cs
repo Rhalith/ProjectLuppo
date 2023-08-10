@@ -12,10 +12,8 @@ public class IngredientController : MonoBehaviour
     private int _count;
     private int _differentIngredientCount;
 
-    private List<string> _ingredients = new();
+    private List<SushiIngredient> _ingredients = new();
     private List<string> _material = new();
-
-    private bool _has;
 
     private SeaweedWrap _wrap;
 
@@ -24,7 +22,7 @@ public class IngredientController : MonoBehaviour
 
     public static IngredientController Instance;
 
-    public List<string> Ingredients { get => _ingredients;}
+    public List<SushiIngredient> Ingredients { get => _ingredients;}
     public List<string> Material { get => _material;}
     public int DifferentIngredientCount { get => _differentIngredientCount; }
 
@@ -149,32 +147,17 @@ public class IngredientController : MonoBehaviour
     }
     #endregion
 
-    public void AddIngredient(string ingredient)
+    public void AddIngredient(SushiIngredient ingredient)
     {
-        if (_count > 0)
-        {
-            if(_ingredients.Contains(ingredient))
-            {
-                _has = true;
-            }
-            else
-            {
-                _has = false;
-            }
-        }
         _ingredients.Add(ingredient);
         _count++;
-        if (!_has)
+        if (!_ingredients.Contains(ingredient))
         {
-            _wrap = InstantiatedController.Instance.SeawedWrap.GetComponent<SeaweedWrap>();
-            _material.Add(ingredient);
+            _wrap = InstantiatedController.Instance.SeaweedWrap;
+            _material.Add(ingredient.ToString());
             _wrap._sushiMaterial = _wrap._sushiMaterial + _material[InstantiatedController.Instance.InstantiatedIngredientCount] + " ";
             Debug.Log("ingredients: " + _material[InstantiatedController.Instance.InstantiatedIngredientCount]);
             InstantiatedController.Instance.InstantiatedIngredientCount++;
-        }
-        else
-        {
-            _has = false;
         }
     }
 

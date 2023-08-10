@@ -60,7 +60,6 @@ public class SeaweedWrap : MonoBehaviour
             SaveSushiIngredients();
             Vector3 sushiPosition = _endPosition;
             _instObj = Instantiate(hosomakiPrefab, sushiPos, Quaternion.identity);
-            _instObj.tag = "Sushi";
             _instObj.GetComponent<HosomakiDisplay>().sushiName = _sushiMaterial + "Hosomaki";
         }
         else if (IngredientController.Instance.DifferentIngredientCount.Equals(2))
@@ -68,7 +67,6 @@ public class SeaweedWrap : MonoBehaviour
             SaveSushiIngredients();
             Vector3 sushiPosition = _endPosition;
             _instObj = Instantiate(chumaki2Prefab, sushiPos, Quaternion.identity);
-            _instObj.tag = "Sushi";
             _instObj.GetComponent<ChumakiDisplay>().sushiName = _sushiMaterial + "Chumaki";
             
         }
@@ -77,7 +75,6 @@ public class SeaweedWrap : MonoBehaviour
             SaveSushiIngredients();
             Vector3 sushiPosition = _endPosition;
             _instObj = Instantiate(chumaki3Prefab, sushiPos, Quaternion.identity);
-            _instObj.tag = "Sushi";
             
         }
 
@@ -86,7 +83,6 @@ public class SeaweedWrap : MonoBehaviour
             SaveSushiIngredients();
             Vector3 sushiPosition = _endPosition;
             _instObj = Instantiate(futomakiPrefab, sushiPos, Quaternion.identity);
-            _instObj.tag = "Sushi";
             
 
         }
@@ -94,7 +90,7 @@ public class SeaweedWrap : MonoBehaviour
 
     public void SaveSushiIngredients()
     {
-        foreach(string t in IngredientController.Instance.Ingredients)
+        foreach(SushiIngredient t in IngredientController.Instance.Ingredients)
         {
             if(t != null)
             {
