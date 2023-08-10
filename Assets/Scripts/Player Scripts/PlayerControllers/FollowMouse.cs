@@ -12,12 +12,12 @@ public class FollowMouse : MonoBehaviour
     GameObject hitObject;
     GameObject instObj;
 
-    private void OnEnable()
+    private void Start()
     {
         InputManager.Instance.OnLeftMouseButtonDown += OnLeftMouseButtonDown;
     }
 
-    private void OnDisable()
+    private void OnDestroy()
     {
         InputManager.Instance.OnLeftMouseButtonDown -= OnLeftMouseButtonDown;
     }

@@ -29,15 +29,26 @@ public class OrderController : MonoBehaviour
         }
     }
 
-
     public void CheckOrder()
     {
-        if (_sushiType.Equals(OrderedSushiType.SalmonCucumberChumaki))
+        // Empty olduðuna dair bir uyarý verilebilir.
+        if(_sushiType.Equals(OrderedSushiType.Empty))
         {
-            CheckSalmonCucumberChumaki();
+            return;
         }
-        _ingredients.Clear();
-        Destroy(_instantiatedSushi);
+        else
+        {
+            if (_sushiType.Equals(OrderedSushiType.SalmonCucumberChumaki))
+            {
+                CheckSalmonCucumberChumaki();
+            }
+
+            _ingredients.Clear();
+            Destroy(_instantiatedSushi);
+
+            // Trigger serving event
+            GameEventsManager.Instance.ServingAdded();
+        }
     }
 
     private void CheckSalmonCucumberChumaki()
