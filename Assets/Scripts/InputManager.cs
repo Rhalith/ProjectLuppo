@@ -1,8 +1,4 @@
 ﻿using UnityEngine;
-using System.Collections;
-using UnityEngine.InputSystem;
-using UnityEngine.Windows;
-using Unity.VisualScripting;
 
 public class InputManager : MonoBehaviour {
     //[SerializeField] PlayerController playerController;

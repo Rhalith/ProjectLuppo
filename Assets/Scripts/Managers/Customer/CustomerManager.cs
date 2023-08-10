@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-
 // GetFoodName metodu ile ayrý bir yere taþýnabilirler.
 public enum OrderedSushiType
 {
