@@ -4,10 +4,11 @@ using UnityEngine;
 public class ChumakiDisplay : MonoBehaviour
 {
     private ChumakiObject _chumaki;
-    public string sushiName;
+    private List<SushiIngredient> _ingredients = new();
 
     [SerializeField] private List<MeshRenderer> _fillingObjects = new();
     [SerializeField] private ChumakiObject _salmonCucumberChumaki;
+    public List<SushiIngredient> Ingredients { get => _ingredients; set => _ingredients = value; }
 
     //TODO: now works with only cucumber and salmon, needs to be changed
     public void CheckIngredientList(List<SushiIngredient> ingredients)
@@ -20,6 +21,7 @@ public class ChumakiDisplay : MonoBehaviour
                 {
                     _chumaki = _salmonCucumberChumaki;
                     gameObject.name = "Salmon Cucumber Chumaki";
+                    OrderController.Instance.SushiType = OrderedSushiType.SalmonCucumberChumaki;
                 }
             }
         }
@@ -27,7 +29,7 @@ public class ChumakiDisplay : MonoBehaviour
         {
             _fillingObjects[i].material = _chumaki.filling[i];
         }
+        OrderController.Instance.Ingredients = _ingredients;
         IngredientController.Instance.ClearIngredient();
-        InstantiatedController.Instance.InstantiatedIngredientCount = 0;
     }
 }

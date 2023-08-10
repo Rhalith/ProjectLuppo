@@ -7,8 +7,6 @@ public class IngredientController : MonoBehaviour
     [SerializeField] private GameObject _seaweed;
     [SerializeField] TextMeshProUGUI _text;
 
-    private int _count;
-
     private List<SushiIngredient> _ingredients = new();
 
     private SeaweedWrap _wrap;
@@ -38,107 +36,90 @@ public class IngredientController : MonoBehaviour
 
     #region Ingredients
 
-    void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Chumaki"))
-        {
-            ChumakiDisplay chumaki = other.GetComponent<ChumakiDisplay>();
-            GameObject chumakiGO = other.gameObject;
+    //void OnTriggerEnter(Collider other)
+    //{
+    //    if (other.CompareTag("Chumaki"))
+    //    {
+    //        ChumakiDisplay chumaki = other.GetComponent<ChumakiDisplay>();
 
-            //if (chumakiGO.name == "Salmon Cucumber Chumaki")
-            //{
-            //    foreach (KeyValuePair<string, int> s in chumaki.ingredients)
-            //    {
-            //        if (s.Key == "Salmon")
-            //        {
-            //            _salmon = s.Value;
-            //        }
+    //        if (OrderManager.Instance.GetOrder() != OrderedSushiType.SalmonCucumberChumaki)
+    //        {
+    //            _text.text = "Ben bu yemeði istememiþtim!";
+    //        }
+    //        else if (_cucumber < 3)
+    //        {
+    //            _text.text = "Salatalýðý az olmuþ.";
+    //        }
+    //        else if (_cucumber > 3)
+    //        {
+    //            _text.text = "Salatalýðý fazla olmuþ.";
+    //        }
+    //        else if (_salmon < 3)
+    //        {
+    //            _text.text = "Somonu az olmuþ.";
+    //        }
+    //        else if (_salmon > 3)
+    //        {
+    //            _text.text = "Somonu fazla olmuþ.";
+    //        }
+    //        else
+    //        {
+    //            _text.text = "Yediðim en güzel sushiydi. Sanki bu dünyadan deðil!";
+    //        }
+    //    }
+    //    else if (other.CompareTag("Hosomaki"))
+    //    {
+    //        HosomakiDisplay hosomaki = other.GetComponent<HosomakiDisplay>();
+    //        GameObject hosomakiGO = other.gameObject;
 
-            //        if (s.Key == "Cucumber")
-            //        {
-            //            _cucumber = s.Value;
-            //        }
-            //    }
-            //}
+    //        if (OrderManager.Instance.GetOrder() == OrderedSushiType.SalmonHosomaki)
+    //        {
+    //            if (hosomakiGO.name == "Salmon Hosomaki")
+    //            {
+    //                if (hosomaki.count < 3)
+    //                {
+    //                    _text.text = "Somonu az olmuþ.";
+    //                }
+    //                else if (hosomaki.count > 3)
+    //                {
+    //                    _text.text = "Somonu fazla olmuþ.";
+    //                }
+    //                else
+    //                {
+    //                    _text.text = "Yediðim en güzel sushiydi. Sanki bu dünyadan deðil!";
+    //                }
+    //            }
+    //        }
+    //        else if (OrderManager.Instance.GetOrder() == OrderedSushiType.CucumberHosomaki)
+    //        {
+    //            if (hosomakiGO.name == "Cucumber Hosomaki")
+    //            {
+    //                if (hosomaki.count < 3)
+    //                {
+    //                    _text.text = "Salatalýðý az olmuþ.";
+    //                }
 
-            if (OrderManager.Instance.GetOrder() != OrderedSushiType.SalmonCucumberChumaki)
-            {
-                _text.text = "Ben bu yemeði istememiþtim!";
-            }
-            else if (_cucumber < 3)
-            {
-                _text.text = "Salatalýðý az olmuþ.";
-            }
-            else if (_cucumber > 3)
-            {
-                _text.text = "Salatalýðý fazla olmuþ.";
-            }
-            else if (_salmon < 3)
-            {
-                _text.text = "Somonu az olmuþ.";
-            }
-            else if (_salmon > 3)
-            {
-                _text.text = "Somonu fazla olmuþ.";
-            }
-            else
-            {
-                _text.text = "Yediðim en güzel sushiydi. Sanki bu dünyadan deðil!";
-            }
-        }
-        else if (other.CompareTag("Hosomaki"))
-        {
-            HosomakiDisplay hosomaki = other.GetComponent<HosomakiDisplay>();
-            GameObject hosomakiGO = other.gameObject;
+    //                else if (hosomaki.count > 3)
+    //                {
+    //                    _text.text = "Salatalýðý fazla olmuþ.";
+    //                }
 
-            if (OrderManager.Instance.GetOrder() == OrderedSushiType.SalmonHosomaki)
-            {
-                if (hosomakiGO.name == "Salmon Hosomaki")
-                {
-                    if (hosomaki.count < 3)
-                    {
-                        _text.text = "Somonu az olmuþ.";
-                    }
-                    else if (hosomaki.count > 3)
-                    {
-                        _text.text = "Somonu fazla olmuþ.";
-                    }
-                    else
-                    {
-                        _text.text = "Yediðim en güzel sushiydi. Sanki bu dünyadan deðil!";
-                    }
-                }
-            }
-            else if (OrderManager.Instance.GetOrder() == OrderedSushiType.CucumberHosomaki)
-            {
-                if (hosomakiGO.name == "Cucumber Hosomaki")
-                {
-                    if (hosomaki.count < 3)
-                    {
-                        _text.text = "Salatalýðý az olmuþ.";
-                    }
+    //                else
+    //                {
+    //                    _text.text = "Yediðim en güzel sushiydi. Sanki bu dünyadan deðil!";
+    //                }
+    //            }
+    //        }
+    //        else
+    //        {
+    //            _text.text = "Ben sizden bunu istememiþtim!";
+    //        }
+    //    }
 
-                    else if (hosomaki.count > 3)
-                    {
-                        _text.text = "Salatalýðý fazla olmuþ.";
-                    }
+    //    Destroy(other.gameObject);
 
-                    else
-                    {
-                        _text.text = "Yediðim en güzel sushiydi. Sanki bu dünyadan deðil!";
-                    }
-                }
-            }
-            else
-            {
-                _text.text = "Ben sizden bunu istememiþtim!";
-            }
-        }
-
-        Destroy(other.gameObject);
-
-        GameEventsManager.Instance.ServingAdded();
-    }
+    //    GameEventsManager.Instance.ServingAdded();
+    //}
     #endregion
 
     public void AddIngredient(SushiIngredient ingredient)
@@ -150,14 +131,11 @@ public class IngredientController : MonoBehaviour
             InstantiatedController.Instance.InstantiatedIngredientCount++;
         }
         _ingredients.Add(ingredient);
-        _count++;
-
     }
 
     public void ClearIngredient()
     {
         _ingredients.Clear();
         InstantiatedController.Instance.InstantiatedIngredientCount = 0;
-        _count = 0;
     }
 }

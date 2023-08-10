@@ -14,11 +14,12 @@ public class SeaweedWrap : MonoBehaviour
     private GameObject _instObj;
     //TODO: sushiPos will be assigned in rolling animations end.
     Vector3 sushiPos;
-    private List<SushiIngredient> _sushiIngredients = new ();
+    private List<SushiIngredient> _differentSushiIngredients = new ();
+    private List<SushiIngredient> _sushiIngredients;
     public int salmonCounter;
     public int cucumberCounter;
 
-    public List<SushiIngredient> DifferentIngredients { get => _sushiIngredients; set => _sushiIngredients = value; }
+    public List<SushiIngredient> DifferentIngredients { get => _differentSushiIngredients; set => _differentSushiIngredients = value; }
 
     private void OnMouseDown()
     {
@@ -59,50 +60,28 @@ public class SeaweedWrap : MonoBehaviour
         //TODO: Must change scriptable object based on their ingredient (mostly done)
         if (InstantiatedController.Instance.InstantiatedIngredientCount.Equals(1))
         {
-            SaveSushiIngredients();
+            _sushiIngredients = new (IngredientController.Instance.Ingredients);
             _instObj = Instantiate(hosomakiPrefab, sushiPos, Quaternion.identity);
             //_instObj.GetComponent<HosomakiDisplay>().sushiName = _sushiMaterial + "Hosomaki";
         }
         else if (InstantiatedController.Instance.InstantiatedIngredientCount.Equals(2))
         {
-            SaveSushiIngredients();
+            _sushiIngredients = new(IngredientController.Instance.Ingredients);
             _instObj = Instantiate(chumaki2Prefab, sushiPos, Quaternion.identity);
-            _instObj.GetComponent<ChumakiDisplay>().CheckIngredientList(_sushiIngredients);
+            OrderController.Instance.InstantiatedSushi = _instObj;
+            _instObj.GetComponent<ChumakiDisplay>().Ingredients = new(_sushiIngredients);
+            _instObj.GetComponent<ChumakiDisplay>().CheckIngredientList(_differentSushiIngredients);
         }
         else if (InstantiatedController.Instance.InstantiatedIngredientCount.Equals(3))
         {
-            SaveSushiIngredients();
+            _sushiIngredients = new(IngredientController.Instance.Ingredients);
             _instObj = Instantiate(chumaki3Prefab, sushiPos, Quaternion.identity);
         }
 
         else
         {
-            SaveSushiIngredients();
+            _sushiIngredients = new(IngredientController.Instance.Ingredients);
             _instObj = Instantiate(futomakiPrefab, sushiPos, Quaternion.identity);
         }
-    }
-
-    public void SaveSushiIngredients()
-    {
-        foreach(SushiIngredient t in IngredientController.Instance.Ingredients)
-        {
-            if(t != null)
-            {
-                if (t.Equals("Salmon"))
-                {
-                    salmonCounter++;
-                }
-
-                if (t.Equals("Cucumber"))
-                {
-                    cucumberCounter++;
-                }
-            }
-        }
-
-        
-        //TODO: SalmonCounter and CucumberCounter is not using, so I comment it out
-        //IngredientController.Instance.SalmonCounter = salmonCounter;
-        //IngredientController.Instance.CucumberCounter = cucumberCounter;
     }
 }
