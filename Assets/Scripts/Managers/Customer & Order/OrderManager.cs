@@ -1,7 +1,18 @@
+using TMPro;
 using UnityEngine;
+
+public enum OrderedSushiType
+{
+    Empty,
+    SalmonHosomaki,
+    CucumberHosomaki,
+    SalmonCucumberChumaki,
+}
 
 public class OrderManager : MonoBehaviour
 {
+    [SerializeField] TextMeshProUGUI customerText;
+
     public static OrderManager Instance;
     private OrderedSushiType _orderedSushi;
 
@@ -27,11 +38,34 @@ public class OrderManager : MonoBehaviour
         if(_orderedSushi == OrderedSushiType.Empty)
         {
             _orderedSushi = orderedSushi;
+
+            customerText.text = "Selamlar, ben bir adet " + GetFoodName(_orderedSushi) + " alabilir miyim?";
         }
     }
 
     public void EmptyOrder()
     {
         _orderedSushi = OrderedSushiType.Empty;
+        customerText.text = "Sipariþ Yok.";
+    }
+
+    public string GetFoodName(OrderedSushiType orderedSushi)
+    {
+        string sushiName = "Somon Salatalýk Chumaki";
+
+        if (orderedSushi == OrderedSushiType.CucumberHosomaki)
+        {
+            sushiName = "Salatalýk Hosomaki";
+        }
+        else if (orderedSushi == OrderedSushiType.SalmonHosomaki)
+        {
+            sushiName = "Somon Hosomaki";
+        }
+        else if (orderedSushi == OrderedSushiType.SalmonCucumberChumaki)
+        {
+            sushiName = "Somon Salatalýk Chumaki";
+        }
+
+        return sushiName;
     }
 }

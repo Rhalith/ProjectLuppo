@@ -3,25 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-// GetFoodName metodu ile ayrý bir yere taþýnabilirler.
-public enum OrderedSushiType
-{
-    Empty,
-    SalmonHosomaki,
-    CucumberHosomaki,
-    SalmonCucumberChumaki,
-}
-
 public class CustomerManager : MonoBehaviour
 {
-    #region Customer Creation
     #region SerializeFields
     [SerializeField] GameObject[] customerPrefabs;
     [SerializeField] GameObject spawnPoint;
     [SerializeField] GameObject turnPoint;
     [SerializeField] GameObject orderPoint;
-    [SerializeField] TextMeshProUGUI customerText;
-    [SerializeField] GameObject customerUI;
     [SerializeField] Transform customersParentTransform;
 
     [SerializeField] int customerLimit = 5;
@@ -29,7 +17,7 @@ public class CustomerManager : MonoBehaviour
 
     private Vector3 _position;
     private Quaternion _rotation;
-    
+
     // Customer Queue FIFO
     public Queue<Customer> customerQueue = new Queue<Customer>();
 
@@ -58,27 +46,7 @@ public class CustomerManager : MonoBehaviour
         GameEventsManager.Instance.OnServingAdded += OnServingAdded;
     }
 
-    #region Get Name With enum
-    public string GetFoodName(OrderedSushiType orderedSushi)
-    {
-        string sushiName = "Somon Salatalýk Chumaki";
-
-        if (orderedSushi == OrderedSushiType.CucumberHosomaki)
-        {
-            sushiName = "Salatalýk Hosomaki";
-        }
-        else if (orderedSushi == OrderedSushiType.SalmonHosomaki)
-        {
-            sushiName = "Somon Hosomaki";
-        }
-        else if (orderedSushi == OrderedSushiType.SalmonCucumberChumaki)
-        {
-            sushiName = "Somon Salatalýk Chumaki";
-        }
-
-        return sushiName;
-    }
-    #endregion
+    #region Customer Spawn and Destroy
     //TODO: All of them salmoncucumberchumaki right now for testing.
     private OrderedSushiType GiveOrder()
     {
@@ -106,14 +74,11 @@ public class CustomerManager : MonoBehaviour
         GameObject customerPref = customerPrefabs[Random.Range(0, 3)];
         return Instantiate(customerPref, _position, _rotation, customersParentTransform);
     }
-    #endregion
-
-    #region Customer Ordering
 
     // Customer spawner ve queue baþtan yazýlacak
     public IEnumerator SpawnNewCustomers()
     {
-        while(customerQueue.Count < customerLimit)
+        while (customerQueue.Count < customerLimit)
         {
             // Fonksiyon isimleri düzenlenebilir.
             GameObject customerObj = CustomerInstantiate();
@@ -127,9 +92,6 @@ public class CustomerManager : MonoBehaviour
 
             // Wait for a random time
             yield return new WaitForSeconds(Random.Range(1.5f, 5f));
-
-            // Customer diyalog'u buradan ayrý olmalý. 
-            // customerText.text = "Selamlar, ben bir adet " + GetFoodName(sushi) + " alabilir miyim?";
         }
     }
 
@@ -155,13 +117,5 @@ public class CustomerManager : MonoBehaviour
     {
         StartCoroutine(DestroyCustomer());
     }
-
-
-    #endregion
-
-    #region SushiMechanic
-
-
-
     #endregion
 }
