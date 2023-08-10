@@ -26,10 +26,8 @@ public class InstantiatedController : MonoBehaviour
         }
     }
 
-
     public void ClearInstantiatedObject()
     {
         _instantiatedObject = null;
     }
-
 }

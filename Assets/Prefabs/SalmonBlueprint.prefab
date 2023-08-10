@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 458690094863893107}
   m_Layer: 2
   m_Name: SalmonBlueprint
-  m_TagString: Untagged
+  m_TagString: Instantiated
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -2,9 +2,9 @@ using UnityEngine;
 
 public class WrapCreator : MonoBehaviour
 {
-    [Header("Ingredient to Instantiate")]
     [SerializeField] GameObject _createPrefab;
     private GameObject _instantiatedObject;
+
     private void OnMouseDown()
     {
         if (!InstantiatedController.Instance.InstantiatedObject)
@@ -21,12 +21,10 @@ public class WrapCreator : MonoBehaviour
             DestroySushiObjectIfExists();
         }
     }
-
         
     public void InstantiateIngredientObject()
     {
         _instantiatedObject = Instantiate(_createPrefab);
-        _instantiatedObject.tag = "Instantiated";
         InstantiatedController.Instance.InstantiatedObject = _instantiatedObject;
     }
 

@@ -4,6 +4,7 @@ public class ObjectCreator : MonoBehaviour
 {
     [SerializeField] GameObject sushiObject;
     private GameObject _instantiatedObject;
+
     private void OnMouseDown()
     {
         if (!InstantiatedController.Instance.InstantiatedObject)
