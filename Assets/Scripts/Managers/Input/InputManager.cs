@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 
 public class InputManager : MonoBehaviour {
-    //[SerializeField] PlayerController playerController;
+    [SerializeField] PlayerCam playerCam;
 
     PlayerInputs controls;
     PlayerInputs.PlayerInputActions playerInput;
@@ -11,6 +11,11 @@ public class InputManager : MonoBehaviour {
 
     public bool isMovable;
     public bool isMouseDown;
+
+    // Mouse click delegate and events
+    public delegate void MouseClickHandler();
+    public event MouseClickHandler OnLeftMouseButtonDown;
+    public event MouseClickHandler OnRightMouseButtonDown;
 
     private static InputManager _instance;
     public static InputManager Instance { get { return _instance; } }
@@ -67,7 +72,7 @@ public class InputManager : MonoBehaviour {
         // Additionally, it can only has -1, 0 and 1 as input values
         if (isMovable)
         {
-            //playerController.ReceiveHorizontalInput(movementInput);
+            playerCam.ReceiveHorizontalInput(movementInput);
         }
         else
         {
@@ -83,12 +88,12 @@ public class InputManager : MonoBehaviour {
 
     void LeftClickPerformed()
     {
-        //ObjectController.Instance.CastRay();
+        OnLeftMouseButtonDown?.Invoke();
     }
 
     void RightClickPerformed()
     {
-        //ObjectController.Instance.ReleaseObject();
+        OnRightMouseButtonDown?.Invoke();
     }
 
     void StopClicking(string actionName)

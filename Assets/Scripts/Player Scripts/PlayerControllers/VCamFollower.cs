@@ -3,32 +3,32 @@ using UnityEngine;
 
 public class VCamFollower : MonoBehaviour
 {
+    [SerializeField] private GameObject kitchenCam;
+    [SerializeField] private GameObject restaurantCam;
 
-    CinemachineVirtualCamera vcam;
+    private CinemachineVirtualCamera _vcam;
 
-    [SerializeField] GameObject KitchenCam;
-    [SerializeField] GameObject RestaurantCam;
     private void Start()
     {
         GameEventsManager.Instance.OnKitchenActivated += OnKitchenActivated;
         GameEventsManager.Instance.OnRestaurantActivated += OnRestaurantActivated;
         GameEventsManager.Instance.OnServingAdded += OnServingAdded;
 
-        vcam = GetComponent<CinemachineVirtualCamera>();
+        _vcam = GetComponent<CinemachineVirtualCamera>();
     }
 
     void OnKitchenActivated()
     {
-        vcam.LookAt = KitchenCam.transform;
+        _vcam.LookAt = kitchenCam.transform;
     }
 
     private void OnRestaurantActivated()
     {
-        vcam.LookAt = RestaurantCam.transform;
+        _vcam.LookAt = restaurantCam.transform;
     }
 
     void OnServingAdded()
     {
-        vcam.LookAt = RestaurantCam.transform;
+        _vcam.LookAt = restaurantCam.transform;
     }
 }

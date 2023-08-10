@@ -1,89 +1,29 @@
+using System;
 using UnityEngine;
 
 public class DragAndDrop : MonoBehaviour
 {
-    private GameObject _selectedObject;
-    Vector3 _zoneOffset = new Vector3(0, 0.1f, 0);
     [SerializeField] GameObject[] _prepareZones;
+    private GameObject _selectedObject;
 
+    private void OnEnable()
+    {
+        InputManager.Instance.OnLeftMouseButtonDown += OnLeftMouseButtonDown;
+    }
+
+    private void OnDisable()
+    {
+        InputManager.Instance.OnLeftMouseButtonDown -= OnLeftMouseButtonDown;
+    }
 
     private void Update()
     {
-        //Knowing issue: Because of not checking if there is any instantiated object, it is selecting cutting board when you put seawed on the cutting board.
-        if (Input.GetMouseButtonDown(0))
-        {
-            if (_selectedObject == null)
-            {
-                RaycastHit hit = CastRay();
-                if (hit.collider != null)
-                {
-                    if (!hit.collider.CompareTag("ServingSet") && !hit.collider.CompareTag("Sushi"))
-                    {
-                        return;
-                    }
-                    _selectedObject = hit.collider.gameObject;
-                }
-            }
-            else
-            {
-                Vector3 position = new Vector3(Input.mousePosition.x, Input.mousePosition.y, Camera.main.WorldToScreenPoint(_selectedObject.transform.position).z);
-                Vector3 worldPosition = Camera.main.ScreenToWorldPoint(position);
-                _selectedObject.transform.position = new Vector3(worldPosition.x, 3.3f, worldPosition.z);
-                if (_selectedObject.transform.position.x < -9)
-                {
-                    _selectedObject.transform.position = new Vector3(-9f, 3.3f, worldPosition.z);
-
-                    if (_selectedObject.transform.position.z > 0.2)
-                    {
-                        _selectedObject.transform.position = new Vector3(-9f, 3.3f, 0.2f);
-                    }
-
-                    if (_selectedObject.transform.position.z < -2)
-                    {
-                        _selectedObject.transform.position = new Vector3(-9f, 3.3f, -2f);
-                    }
-                }
-
-
-
-                else if (_selectedObject.transform.position.x > 2.1)
-                {
-                    _selectedObject.transform.position = new Vector3(2.1f, 3.3f, worldPosition.z);
-
-                    if (_selectedObject.transform.position.z < -2)
-                    {
-                        _selectedObject.transform.position = new Vector3(2.1f, 3.3f, -2f);
-                    }
-
-                    if (_selectedObject.transform.position.z > 0.2)
-                    {
-                        _selectedObject.transform.position = new Vector3(2.1f, 3.3f, 0.2f);
-                    }
-                }
-                else
-                {
-                    if (_selectedObject.transform.position.z > 0.2)
-                    {
-                        _selectedObject.transform.position = new Vector3(worldPosition.x, 3.3f, 0.2f);
-                    }
-
-                    if (_selectedObject.transform.position.z < -2)
-                    {
-                        _selectedObject.transform.position = new Vector3(worldPosition.x, 3.3f, -25f);
-                    }
-                }
-
-                _selectedObject = null;
-            }
-
-        }
         if (_selectedObject != null)
         {
             Vector3 position = new Vector3(Input.mousePosition.x, Input.mousePosition.y, Camera.main.WorldToScreenPoint(_selectedObject.transform.position).z);
             Vector3 worldPosition = Camera.main.ScreenToWorldPoint(position);
             _selectedObject.transform.position = new Vector3(worldPosition.x, 4f, worldPosition.z);
         }
-
     }
 
     private void PlaceObjectInZone(GameObject objectToPlace)
@@ -110,11 +50,78 @@ public class DragAndDrop : MonoBehaviour
         return hit;
     }
 
+    // Yeni input sisteminde bunlar yok.
     private void OnMouseUp()
     {
         if(_selectedObject !=null)
         {
             PlaceObjectInZone(_selectedObject);
+            _selectedObject = null;
+        }
+    }
+
+    private void OnLeftMouseButtonDown()
+    {
+        //Knowing issue: Because of not checking if there is any instantiated object, it is selecting cutting board when you put seawed on the cutting board.
+        if (_selectedObject == null)
+        {
+            RaycastHit hit = CastRay();
+            if (hit.collider != null)
+            {
+                if (!hit.collider.CompareTag("ServingSet") && !hit.collider.CompareTag("Sushi"))
+                {
+                    return;
+                }
+                _selectedObject = hit.collider.gameObject;
+            }
+        }
+        else
+        {
+            Vector3 position = new Vector3(Input.mousePosition.x, Input.mousePosition.y, Camera.main.WorldToScreenPoint(_selectedObject.transform.position).z);
+            Vector3 worldPosition = Camera.main.ScreenToWorldPoint(position);
+            _selectedObject.transform.position = new Vector3(worldPosition.x, 3.3f, worldPosition.z);
+
+            if (_selectedObject.transform.position.x < -9)
+            {
+                _selectedObject.transform.position = new Vector3(-9f, 3.3f, worldPosition.z);
+
+                if (_selectedObject.transform.position.z > 0.2)
+                {
+                    _selectedObject.transform.position = new Vector3(-9f, 3.3f, 0.2f);
+                }
+
+                if (_selectedObject.transform.position.z < -2)
+                {
+                    _selectedObject.transform.position = new Vector3(-9f, 3.3f, -2f);
+                }
+            }
+            else if (_selectedObject.transform.position.x > 2.1)
+            {
+                _selectedObject.transform.position = new Vector3(2.1f, 3.3f, worldPosition.z);
+
+                if (_selectedObject.transform.position.z < -2)
+                {
+                    _selectedObject.transform.position = new Vector3(2.1f, 3.3f, -2f);
+                }
+
+                if (_selectedObject.transform.position.z > 0.2)
+                {
+                    _selectedObject.transform.position = new Vector3(2.1f, 3.3f, 0.2f);
+                }
+            }
+            else
+            {
+                if (_selectedObject.transform.position.z > 0.2)
+                {
+                    _selectedObject.transform.position = new Vector3(worldPosition.x, 3.3f, 0.2f);
+                }
+
+                if (_selectedObject.transform.position.z < -2)
+                {
+                    _selectedObject.transform.position = new Vector3(worldPosition.x, 3.3f, -25f);
+                }
+            }
+
             _selectedObject = null;
         }
     }
