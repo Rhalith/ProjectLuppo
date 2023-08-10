@@ -12,6 +12,6 @@ public class RollingAnimation : MonoBehaviour
 
     public void ChangeAnimationState(float t)
     {
-        animator.playbackTime = t;
+        animator.speed = 0.1f;
     }
 }
