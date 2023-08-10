@@ -15,6 +15,8 @@ public class InputManager : MonoBehaviour {
     private static InputManager _instance;
     public static InputManager Instance { get { return _instance; } }
 
+    public Vector2 MouseInput { get => mouseInput; }
+
     private void Awake ()
     {
         if (_instance != null && _instance != this)
