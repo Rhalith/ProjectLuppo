@@ -10,10 +10,8 @@ public class IngredientController : MonoBehaviour
     [SerializeField] TextMeshProUGUI _text;
 
     private int _count;
-    private int _differentIngredientCount;
 
     private List<SushiIngredient> _ingredients = new();
-    private List<string> _material = new();
 
     private SeaweedWrap _wrap;
 
@@ -23,8 +21,6 @@ public class IngredientController : MonoBehaviour
     public static IngredientController Instance;
 
     public List<SushiIngredient> Ingredients { get => _ingredients;}
-    public List<string> Material { get => _material;}
-    public int DifferentIngredientCount { get => _differentIngredientCount; }
 
     //TODO: SalmonCounter and CucumberCounter is not using, so I comment it out
     //public int SalmonCounter;
@@ -51,21 +47,21 @@ public class IngredientController : MonoBehaviour
             ChumakiDisplay chumaki = other.GetComponent<ChumakiDisplay>();
             GameObject chumakiGO = other.gameObject;
 
-            if (chumakiGO.name == "Salmon Cucumber Chumaki")
-            {
-                foreach (KeyValuePair<string, int> s in chumaki.ingredients)
-                {
-                    if (s.Key == "Salmon")
-                    {
-                        _salmon = s.Value;
-                    }
+            //if (chumakiGO.name == "Salmon Cucumber Chumaki")
+            //{
+            //    foreach (KeyValuePair<string, int> s in chumaki.ingredients)
+            //    {
+            //        if (s.Key == "Salmon")
+            //        {
+            //            _salmon = s.Value;
+            //        }
 
-                    if (s.Key == "Cucumber")
-                    {
-                        _cucumber = s.Value;
-                    }
-                }
-            }
+            //        if (s.Key == "Cucumber")
+            //        {
+            //            _cucumber = s.Value;
+            //        }
+            //    }
+            //}
 
             if (OrderManager.Instance.GetOrder() != OrderedSushiType.SalmonCucumberChumaki)
             {
@@ -149,22 +145,20 @@ public class IngredientController : MonoBehaviour
 
     public void AddIngredient(SushiIngredient ingredient)
     {
-        _ingredients.Add(ingredient);
-        _count++;
         if (!_ingredients.Contains(ingredient))
         {
             _wrap = InstantiatedController.Instance.SeaweedWrap;
-            _material.Add(ingredient.ToString());
-            _wrap._sushiMaterial = _wrap._sushiMaterial + _material[InstantiatedController.Instance.InstantiatedIngredientCount] + " ";
-            Debug.Log("ingredients: " + _material[InstantiatedController.Instance.InstantiatedIngredientCount]);
+            _wrap.DifferentIngredients.Add(ingredient);
             InstantiatedController.Instance.InstantiatedIngredientCount++;
         }
+        _ingredients.Add(ingredient);
+        _count++;
+
     }
 
     public void ClearIngredient()
     {
         _ingredients.Clear();
-        _material.Clear();
         InstantiatedController.Instance.InstantiatedIngredientCount = 0;
         _count = 0;
     }

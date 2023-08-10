@@ -5,47 +5,31 @@ using UnityEngine;
 
 public class ChumakiDisplay : MonoBehaviour
 {
-    public ChumakiObject chumaki;
-    Renderer _fillingRend;
+    private ChumakiObject _chumaki;
     public string sushiName;
-    IngredientController controller;
 
-    public GameObject[] filling;
-    public Dictionary<string, int> ingredients;
-    void Start()
+    [SerializeField] private List<MeshRenderer> _fillingObjects = new();
+    [SerializeField] private ChumakiObject _salmonCucumberChumaki;
+
+    //TODO: now works with only cucumber and salmon, needs to be changed
+    public void CheckIngredientList(List<SushiIngredient> ingredients)
     {
-        //TODO: bad design, must properly assigned
-        controller = GameObject.FindWithTag("CustomerManager").GetComponent<IngredientController>();
-
-        if (sushiName == "Cucumber Salmon Chumaki")
+        if (ingredients.Count == 2)
         {
-            chumaki = Resources.Load<ChumakiObject>("Scriptable Objects/Chumaki/Salmon Cucumber Chumaki");
-            gameObject.name = "Salmon Cucumber Chumaki";
+            if (ingredients.Contains(SushiIngredient.cucumber))
+            {
+                if(ingredients.Contains(SushiIngredient.salmon))
+                {
+                    _chumaki = _salmonCucumberChumaki;
+                    gameObject.name = "Salmon Cucumber Chumaki";
+                }
+            }
         }
-        else
+        for (int i = 0; i < _fillingObjects.Count; i++)
         {
-            chumaki = Resources.Load<ChumakiObject>("Scriptable Objects/Chumaki/" + sushiName);
-            gameObject.name = sushiName;
+            _fillingObjects[i].material = _chumaki.filling[i];
         }
-
-        foreach (GameObject go in filling)
-        {
-            _fillingRend = go.GetComponent<MeshRenderer>();
-            _fillingRend.enabled = true;
-            int index = System.Array.IndexOf(filling, go);
-            _fillingRend.material = chumaki.filling[index];
-        }
-
-        ingredients = new Dictionary<string, int>();
-        FillingCount();
-
-        controller.ClearIngredient();
-    }
-
-    private void FillingCount()
-    {
-        //TODO: SalmonCounter and CucumberCounter is not using, so I comment it out
-        //ingredients.Add("Salmon", GameObject.FindWithTag("CustomerManager").GetComponent<IngredientController>().SalmonCounter);
-        //ingredients.Add("Cucumber", GameObject.FindWithTag("CustomerManager").GetComponent<IngredientController>().CucumberCounter);
+        IngredientController.Instance.ClearIngredient();
+        InstantiatedController.Instance.InstantiatedIngredientCount = 0;
     }
 }

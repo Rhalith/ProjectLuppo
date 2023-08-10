@@ -131,11 +131,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c51011dcfa8afc14bb8f6f6669f00859, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  chumaki: {fileID: 0}
   sushiName: 
-  filling:
-  - {fileID: 4129706966404274466}
-  - {fileID: 7919040722735505159}
+  _fillingObjects:
+  - {fileID: 3263143837891367083}
+  - {fileID: 2552954288059131114}
+  _salmonCucumberChumaki: {fileID: 11400000, guid: d13660fc60fd4b84faa79b98fe2706c7, type: 2}
 --- !u!65 &1463877860001030530
 BoxCollider:
   m_ObjectHideFlags: 0
