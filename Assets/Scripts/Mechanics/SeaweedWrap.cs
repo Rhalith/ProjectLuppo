@@ -8,15 +8,19 @@ public class SeaweedWrap : MonoBehaviour
     private Vector3 _startPosition;
     private Vector3 _endPosition;
     private bool _isBeingDragged = false;
+    //TODO: all of the sushi prefabs should be in different class
     public GameObject hosomakiPrefab;
     public GameObject chumaki2Prefab;
     public GameObject chumaki3Prefab;
     public GameObject futomakiPrefab;
     private GameObject _instObj;
+    //TODO: sushiPos will be assigned in rolling animations end.
     Vector3 sushiPos;
-    public string _sushiMaterial;
+    private List<SushiIngredient> _sushiIngredients = new ();
     public int salmonCounter;
     public int cucumberCounter;
+
+    public List<SushiIngredient> DifferentIngredients { get => _sushiIngredients; set => _sushiIngredients = value; }
 
     private void OnMouseDown()
     {
@@ -32,7 +36,7 @@ public class SeaweedWrap : MonoBehaviour
         {
 
             _endPosition = GetMouseWorldPosition();
-            Debug.Log(_endPosition);
+            //Debug.Log(_endPosition);
             // Calculate the distance between the start position and the end position
             float distanceDragged = Vector3.Distance(_startPosition, _endPosition);
 
@@ -55,46 +59,34 @@ public class SeaweedWrap : MonoBehaviour
     private void InstantiateSushi()
     {
         //TODO: Must change scriptable object based on their ingredient (mostly done)
-        if (IngredientController.Instance.DifferentIngredientCount.Equals(1))
+        if (InstantiatedController.Instance.InstantiatedIngredientCount.Equals(1))
         {
             SaveSushiIngredients();
-            Vector3 sushiPosition = _endPosition;
             _instObj = Instantiate(hosomakiPrefab, sushiPos, Quaternion.identity);
-            _instObj.tag = "Sushi";
-            _instObj.GetComponent<HosomakiDisplay>().sushiName = _sushiMaterial + "Hosomaki";
+            //_instObj.GetComponent<HosomakiDisplay>().sushiName = _sushiMaterial + "Hosomaki";
         }
-        else if (IngredientController.Instance.DifferentIngredientCount.Equals(2))
+        else if (InstantiatedController.Instance.InstantiatedIngredientCount.Equals(2))
         {
             SaveSushiIngredients();
-            Vector3 sushiPosition = _endPosition;
             _instObj = Instantiate(chumaki2Prefab, sushiPos, Quaternion.identity);
-            _instObj.tag = "Sushi";
-            _instObj.GetComponent<ChumakiDisplay>().sushiName = _sushiMaterial + "Chumaki";
-            
+            _instObj.GetComponent<ChumakiDisplay>().CheckIngredientList(_sushiIngredients);
         }
-        else if (IngredientController.Instance.DifferentIngredientCount.Equals(3))
+        else if (InstantiatedController.Instance.InstantiatedIngredientCount.Equals(3))
         {
             SaveSushiIngredients();
-            Vector3 sushiPosition = _endPosition;
             _instObj = Instantiate(chumaki3Prefab, sushiPos, Quaternion.identity);
-            _instObj.tag = "Sushi";
-            
         }
 
         else
         {
             SaveSushiIngredients();
-            Vector3 sushiPosition = _endPosition;
             _instObj = Instantiate(futomakiPrefab, sushiPos, Quaternion.identity);
-            _instObj.tag = "Sushi";
-            
-
         }
     }
 
     public void SaveSushiIngredients()
     {
-        foreach(string t in IngredientController.Instance.Ingredients)
+        foreach(SushiIngredient t in IngredientController.Instance.Ingredients)
         {
             if(t != null)
             {

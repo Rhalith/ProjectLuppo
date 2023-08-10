@@ -112,3 +112,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ingredientPrefab: {fileID: 1500150666396148296, guid: be9774a151311d04883fe7a4f7c63d8e, type: 3}
   wrapPrefab: {fileID: 0}
+  _nigiriRice: {fileID: 0}
+  ingredientName: 15

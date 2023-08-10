@@ -113,3 +113,4 @@ MonoBehaviour:
   ingredientPrefab: {fileID: 0}
   wrapPrefab: {fileID: 4884412016718644659, guid: e4a5ec14c5be10449a8074839b9f1278, type: 3}
   _nigiriRice: {fileID: 0}
+  ingredientName: 28

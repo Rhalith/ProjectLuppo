@@ -176,9 +176,10 @@ GameObject:
   m_Component:
   - component: {fileID: 5427928377284423506}
   - component: {fileID: 1426232689439278333}
+  - component: {fileID: 3134219230683068008}
   m_Layer: 0
   m_Name: Futomaki
-  m_TagString: Untagged
+  m_TagString: Sushi
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -215,6 +216,21 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &3134219230683068008
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4618494973174396392}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69fb9a8eb77ea204da1ec2de08111544, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  futomaki: {fileID: 0}
+  sushiName: 
+  filling: []
 --- !u!1 &7951012480623767471
 GameObject:
   m_ObjectHideFlags: 0

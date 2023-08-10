@@ -10,12 +10,8 @@ public class IngredientController : MonoBehaviour
     [SerializeField] TextMeshProUGUI _text;
 
     private int _count;
-    private int _differentIngredientCount;
 
-    private List<string> _ingredients = new();
-    private List<string> _material = new();
-
-    private bool _has;
+    private List<SushiIngredient> _ingredients = new();
 
     private SeaweedWrap _wrap;
 
@@ -24,9 +20,7 @@ public class IngredientController : MonoBehaviour
 
     public static IngredientController Instance;
 
-    public List<string> Ingredients { get => _ingredients;}
-    public List<string> Material { get => _material;}
-    public int DifferentIngredientCount { get => _differentIngredientCount; }
+    public List<SushiIngredient> Ingredients { get => _ingredients;}
 
     //TODO: SalmonCounter and CucumberCounter is not using, so I comment it out
     //public int SalmonCounter;
@@ -53,21 +47,21 @@ public class IngredientController : MonoBehaviour
             ChumakiDisplay chumaki = other.GetComponent<ChumakiDisplay>();
             GameObject chumakiGO = other.gameObject;
 
-            if (chumakiGO.name == "Salmon Cucumber Chumaki")
-            {
-                foreach (KeyValuePair<string, int> s in chumaki.ingredients)
-                {
-                    if (s.Key == "Salmon")
-                    {
-                        _salmon = s.Value;
-                    }
+            //if (chumakiGO.name == "Salmon Cucumber Chumaki")
+            //{
+            //    foreach (KeyValuePair<string, int> s in chumaki.ingredients)
+            //    {
+            //        if (s.Key == "Salmon")
+            //        {
+            //            _salmon = s.Value;
+            //        }
 
-                    if (s.Key == "Cucumber")
-                    {
-                        _cucumber = s.Value;
-                    }
-                }
-            }
+            //        if (s.Key == "Cucumber")
+            //        {
+            //            _cucumber = s.Value;
+            //        }
+            //    }
+            //}
 
             if (OrderManager.Instance.GetOrder() != OrderedSushiType.SalmonCucumberChumaki)
             {
@@ -149,39 +143,22 @@ public class IngredientController : MonoBehaviour
     }
     #endregion
 
-    public void AddIngredient(string ingredient)
+    public void AddIngredient(SushiIngredient ingredient)
     {
-        if (_count > 0)
+        if (!_ingredients.Contains(ingredient))
         {
-            if(_ingredients.Contains(ingredient))
-            {
-                _has = true;
-            }
-            else
-            {
-                _has = false;
-            }
+            _wrap = InstantiatedController.Instance.SeaweedWrap;
+            _wrap.DifferentIngredients.Add(ingredient);
+            InstantiatedController.Instance.InstantiatedIngredientCount++;
         }
         _ingredients.Add(ingredient);
         _count++;
-        if (!_has)
-        {
-            _wrap = InstantiatedController.Instance.SeawedWrap.GetComponent<SeaweedWrap>();
-            _material.Add(ingredient);
-            _wrap._sushiMaterial = _wrap._sushiMaterial + _material[InstantiatedController.Instance.InstantiatedIngredientCount] + " ";
-            Debug.Log("ingredients: " + _material[InstantiatedController.Instance.InstantiatedIngredientCount]);
-            InstantiatedController.Instance.InstantiatedIngredientCount++;
-        }
-        else
-        {
-            _has = false;
-        }
+
     }
 
     public void ClearIngredient()
     {
         _ingredients.Clear();
-        _material.Clear();
         InstantiatedController.Instance.InstantiatedIngredientCount = 0;
         _count = 0;
     }
