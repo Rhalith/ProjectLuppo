@@ -71,11 +71,11 @@ public class InputManager : MonoBehaviour {
         // Additionally, it can only has -1, 0 and 1 as input values
         if (isMovable)
         {
-            playerController.ReceiveHorizontalInput(movementInput);
+            //playerController.ReceiveHorizontalInput(movementInput);
         }
         else
         {
-            objectController.RotateObject(movementInput);
+            //objectController.RotateObject(movementInput);
         }
     }
 
