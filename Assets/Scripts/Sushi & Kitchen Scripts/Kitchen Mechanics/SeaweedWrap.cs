@@ -19,7 +19,7 @@ public class SeaweedWrap : MonoBehaviour
     public int salmonCounter;
     public int cucumberCounter;
 
-    public List<SushiIngredient> DifferentIngredients { get => _differentSushiIngredients; set => _differentSushiIngredients = value; }
+    public List<SushiIngredient> DifferentIngredients { get => _differentSushiIngredients; set => _differentSushiIngredients = new(value); }
 
     private void OnMouseDown()
     {
@@ -33,7 +33,6 @@ public class SeaweedWrap : MonoBehaviour
     {
         if (_isBeingDragged)
         {
-
             _endPosition = GetMouseWorldPosition();
             //Debug.Log(_endPosition);
             // Calculate the distance between the start position and the end position
@@ -69,7 +68,7 @@ public class SeaweedWrap : MonoBehaviour
             _sushiIngredients = new(IngredientController.Instance.Ingredients);
             _instObj = Instantiate(chumaki2Prefab, sushiPos, Quaternion.identity);
             OrderController.Instance.InstantiatedSushi = _instObj;
-            _instObj.GetComponent<ChumakiDisplay>().Ingredients = new(_sushiIngredients);
+            _instObj.GetComponent<ChumakiDisplay>().Ingredients = _sushiIngredients;
             _instObj.GetComponent<ChumakiDisplay>().CheckIngredientList(_differentSushiIngredients);
         }
         else if (InstantiatedController.Instance.InstantiatedIngredientCount.Equals(3))

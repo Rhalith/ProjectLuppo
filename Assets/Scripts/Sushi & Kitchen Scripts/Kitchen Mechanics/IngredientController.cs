@@ -11,9 +11,6 @@ public class IngredientController : MonoBehaviour
 
     private SeaweedWrap _wrap;
 
-    private int _cucumber;
-    private int _salmon;
-
     public static IngredientController Instance;
 
     public List<SushiIngredient> Ingredients { get => _ingredients;}

@@ -8,7 +8,7 @@ public class ChumakiDisplay : MonoBehaviour
 
     [SerializeField] private List<MeshRenderer> _fillingObjects = new();
     [SerializeField] private ChumakiObject _salmonCucumberChumaki;
-    public List<SushiIngredient> Ingredients { get => _ingredients; set => _ingredients = value; }
+    public List<SushiIngredient> Ingredients { get => _ingredients; set => _ingredients = new(value); }
 
     //TODO: now works with only cucumber and salmon, needs to be changed
     public void CheckIngredientList(List<SushiIngredient> ingredients)
