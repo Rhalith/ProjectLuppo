@@ -5,8 +5,7 @@ using UnityEngine.Windows;
 using Unity.VisualScripting;
 
 public class InputManager : MonoBehaviour {
-    [SerializeField] PlayerController playerController;
-    [SerializeField] ObjectController objectController;
+    //[SerializeField] PlayerController playerController;
 
     PlayerInputs controls;
     PlayerInputs.PlayerInputActions playerInput;
