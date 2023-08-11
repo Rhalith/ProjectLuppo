@@ -64,67 +64,70 @@ public class DragAndDropManager : MonoBehaviour
 
     private void OnLeftMouseButtonDown()
     {
-        //Knowing issue: Because of not checking if there is any instantiated object, it is selecting cutting board when you put seawed on the cutting board.
-        if (_selectedObject == null)
+        if(!InstantiatedController.Instance.InstantiatedObject)
         {
-            RaycastHit hit = CastRay();
-            if (hit.collider != null)
+            //Knowing issue: Because of not checking if there is any instantiated object, it is selecting cutting board when you put seawed on the cutting board.
+            if (_selectedObject == null)
             {
-                if (!hit.collider.CompareTag("ServingSet") && !hit.collider.CompareTag("Sushi"))
+                RaycastHit hit = CastRay();
+                if (hit.collider != null)
                 {
-                    return;
-                }
-                _selectedObject = hit.collider.gameObject;
-            }
-        }
-        else
-        {
-            Vector3 position = new Vector3(Input.mousePosition.x, Input.mousePosition.y, Camera.main.WorldToScreenPoint(_selectedObject.transform.position).z);
-            Vector3 worldPosition = Camera.main.ScreenToWorldPoint(position);
-            _selectedObject.transform.position = new Vector3(worldPosition.x, 3.3f, worldPosition.z);
-
-            if (_selectedObject.transform.position.x < -9)
-            {
-                _selectedObject.transform.position = new Vector3(-9f, 3.3f, worldPosition.z);
-
-                if (_selectedObject.transform.position.z > 0.2)
-                {
-                    _selectedObject.transform.position = new Vector3(-9f, 3.3f, 0.2f);
-                }
-
-                if (_selectedObject.transform.position.z < -2)
-                {
-                    _selectedObject.transform.position = new Vector3(-9f, 3.3f, -2f);
-                }
-            }
-            else if (_selectedObject.transform.position.x > 2.1)
-            {
-                _selectedObject.transform.position = new Vector3(2.1f, 3.3f, worldPosition.z);
-
-                if (_selectedObject.transform.position.z < -2)
-                {
-                    _selectedObject.transform.position = new Vector3(2.1f, 3.3f, -2f);
-                }
-
-                if (_selectedObject.transform.position.z > 0.2)
-                {
-                    _selectedObject.transform.position = new Vector3(2.1f, 3.3f, 0.2f);
+                    if (!hit.collider.CompareTag("ServingSet") && !hit.collider.CompareTag("Sushi"))
+                    {
+                        return;
+                    }
+                    _selectedObject = hit.collider.gameObject;
                 }
             }
             else
             {
-                if (_selectedObject.transform.position.z > 0.2)
+                Vector3 position = new Vector3(Input.mousePosition.x, Input.mousePosition.y, Camera.main.WorldToScreenPoint(_selectedObject.transform.position).z);
+                Vector3 worldPosition = Camera.main.ScreenToWorldPoint(position);
+                _selectedObject.transform.position = new Vector3(worldPosition.x, 3.3f, worldPosition.z);
+
+                if (_selectedObject.transform.position.x < -9)
                 {
-                    _selectedObject.transform.position = new Vector3(worldPosition.x, 3.3f, 0.2f);
+                    _selectedObject.transform.position = new Vector3(-9f, 3.3f, worldPosition.z);
+
+                    if (_selectedObject.transform.position.z > 0.2)
+                    {
+                        _selectedObject.transform.position = new Vector3(-9f, 3.3f, 0.2f);
+                    }
+
+                    if (_selectedObject.transform.position.z < -2)
+                    {
+                        _selectedObject.transform.position = new Vector3(-9f, 3.3f, -2f);
+                    }
+                }
+                else if (_selectedObject.transform.position.x > 2.1)
+                {
+                    _selectedObject.transform.position = new Vector3(2.1f, 3.3f, worldPosition.z);
+
+                    if (_selectedObject.transform.position.z < -2)
+                    {
+                        _selectedObject.transform.position = new Vector3(2.1f, 3.3f, -2f);
+                    }
+
+                    if (_selectedObject.transform.position.z > 0.2)
+                    {
+                        _selectedObject.transform.position = new Vector3(2.1f, 3.3f, 0.2f);
+                    }
+                }
+                else
+                {
+                    if (_selectedObject.transform.position.z > 0.2)
+                    {
+                        _selectedObject.transform.position = new Vector3(worldPosition.x, 3.3f, 0.2f);
+                    }
+
+                    if (_selectedObject.transform.position.z < -2)
+                    {
+                        _selectedObject.transform.position = new Vector3(worldPosition.x, 3.3f, -25f);
+                    }
                 }
 
-                if (_selectedObject.transform.position.z < -2)
-                {
-                    _selectedObject.transform.position = new Vector3(worldPosition.x, 3.3f, -25f);
-                }
+                _selectedObject = null;
             }
-
-            _selectedObject = null;
         }
     }
 
