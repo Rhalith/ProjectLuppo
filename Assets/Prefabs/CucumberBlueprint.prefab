@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: -6771041544198393374}
   m_Layer: 2
   m_Name: CucumberBlueprint
-  m_TagString: Untagged
+  m_TagString: Instantiated
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

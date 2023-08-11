@@ -12,28 +12,17 @@ public class FollowMouse : MonoBehaviour
     GameObject hitObject;
     GameObject instObj;
 
-    private void OnEnable()
+    private void Start()
     {
         InputManager.Instance.OnLeftMouseButtonDown += OnLeftMouseButtonDown;
     }
 
-    private void OnDisable()
+    private void OnDestroy()
     {
         InputManager.Instance.OnLeftMouseButtonDown -= OnLeftMouseButtonDown;
     }
 
     private void Update()
-    {
-         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-
-         if (Physics.Raycast(ray, out hit, 50000.0f))
-         {
-             transform.position = hit.point;
-             hitObject = hit.transform.gameObject;
-         }
-    }
-
-    private void OnLeftMouseButtonDown()
     {
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
@@ -42,6 +31,11 @@ public class FollowMouse : MonoBehaviour
             transform.position = hit.point;
             hitObject = hit.transform.gameObject;
         }
+    }
+
+    private void OnLeftMouseButtonDown()
+    {
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
         if (Physics.Raycast(ray, out hit, 50000.0f))
         {
