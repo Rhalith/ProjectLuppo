@@ -24,6 +24,7 @@ public class InGameManager : MonoBehaviour
     {
         GameEventsManager.Instance.OnKitchenActivated -= OnKitchenActivated;
         GameEventsManager.Instance.OnRestaurantActivated -= OnRestaurantActivated;
+        GameEventsManager.Instance.OnServingAdded -= OnServingAdded;
     }
 
     public void ActivateRestaurant()
@@ -73,11 +74,21 @@ public class InGameManager : MonoBehaviour
         CustomerUI.SetActive(false);
     }
 
-    IEnumerator RestaurantActivated()
+    private void OpenKitchenUI()
+    {
+        KitchenUI.SetActive(true);
+    }
+
+    public void CloseKitchenUI()
     {
         KitchenUI.SetActive(false);
+    }
 
-        yield return new WaitForSeconds(0.5f);
+    IEnumerator RestaurantActivated()
+    {
+        CloseKitchenUI();
+
+        yield return new WaitForSeconds(0.25f);
 
         OpenRestaurantUI();
     }
@@ -86,13 +97,9 @@ public class InGameManager : MonoBehaviour
     {
         CloseRestaurantUI();
 
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.25f);
 
-        KitchenUI.SetActive(true);
-
-        //firstmethod();
-        //invoke(secondmethod(), 0.5f);
-        
+        OpenKitchenUI();
     }
 
     IEnumerator DayStart()

@@ -6,12 +6,12 @@ public class DragAndDrop : MonoBehaviour
     [SerializeField] GameObject[] _prepareZones;
     private GameObject _selectedObject;
 
-    private void OnEnable()
+    private void Start()
     {
         InputManager.Instance.OnLeftMouseButtonDown += OnLeftMouseButtonDown;
     }
 
-    private void OnDisable()
+    private void OnDestroy()
     {
         InputManager.Instance.OnLeftMouseButtonDown -= OnLeftMouseButtonDown;
     }

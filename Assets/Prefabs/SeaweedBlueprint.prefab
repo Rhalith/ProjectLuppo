@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 6735100567694830871}
   m_Layer: 2
   m_Name: SeaweedBlueprint
-  m_TagString: Untagged
+  m_TagString: Instantiated
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
