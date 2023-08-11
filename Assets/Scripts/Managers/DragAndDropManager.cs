@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-public class DragAndDrop : MonoBehaviour
+public class DragAndDropManager : MonoBehaviour
 {
     [SerializeField] GameObject[] _prepareZones;
     private GameObject _selectedObject;
@@ -9,11 +9,13 @@ public class DragAndDrop : MonoBehaviour
     private void Start()
     {
         InputManager.Instance.OnLeftMouseButtonDown += OnLeftMouseButtonDown;
+        InputManager.Instance.OnLeftMouseButtonUp += OnLeftMouseButtonUp; ;
     }
 
     private void OnDestroy()
     {
         InputManager.Instance.OnLeftMouseButtonDown -= OnLeftMouseButtonDown;
+        InputManager.Instance.OnLeftMouseButtonUp -= OnLeftMouseButtonUp; ;
     }
 
     private void Update()
@@ -124,5 +126,11 @@ public class DragAndDrop : MonoBehaviour
 
             _selectedObject = null;
         }
+    }
+
+
+    private void OnLeftMouseButtonUp()
+    {
+
     }
 }

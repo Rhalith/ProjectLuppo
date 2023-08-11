@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5456562230567239721}
   - component: {fileID: 5456562230567239720}
   - component: {fileID: 458690094863893107}
+  - component: {fileID: 400168112507883410}
   m_Layer: 2
   m_Name: SalmonBlueprint
   m_TagString: Instantiated
@@ -112,5 +113,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ingredientPrefab: {fileID: 2693261514558317484, guid: f7a9b14e6113aa6488082f7af768ef53, type: 3}
   wrapPrefab: {fileID: 0}
+  _nigiriRice: {fileID: 0}
+  ingredientName: 3
+--- !u!114 &400168112507883410
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5456562230567239722}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d41aa53f7b899fb43a25385a4b405f33, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  IngredientPrefab: {fileID: 2693261514558317484, guid: f7a9b14e6113aa6488082f7af768ef53, type: 3}
+  WrapPrefab: {fileID: 0}
   _nigiriRice: {fileID: 0}
   ingredientName: 3

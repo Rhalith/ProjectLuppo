@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4151132485200560722}
   - component: {fileID: 8224988117763796361}
   - component: {fileID: 7397909382552554934}
+  - component: {fileID: -6024091267006628625}
   m_Layer: 2
   m_Name: RiceBlueprint
   m_TagString: Instantiated
@@ -112,5 +113,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ingredientPrefab: {fileID: 6424770718258198018, guid: becd6b840b9d0b6459719d87ed6471f4, type: 3}
   wrapPrefab: {fileID: 0}
+  _nigiriRice: {fileID: 8981383513165481447, guid: 2143d305544c2074285f4dcd2b6c6ad0, type: 3}
+  ingredientName: 7
+--- !u!114 &-6024091267006628625
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1977126448359183054}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d41aa53f7b899fb43a25385a4b405f33, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  IngredientPrefab: {fileID: 6424770718258198018, guid: becd6b840b9d0b6459719d87ed6471f4, type: 3}
+  WrapPrefab: {fileID: 0}
   _nigiriRice: {fileID: 8981383513165481447, guid: 2143d305544c2074285f4dcd2b6c6ad0, type: 3}
   ingredientName: 7

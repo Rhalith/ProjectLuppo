@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4886122445779542426}
   - component: {fileID: 5961870494598222786}
   - component: {fileID: -6771041544198393374}
+  - component: {fileID: -4659514821535174896}
   m_Layer: 2
   m_Name: CucumberBlueprint
   m_TagString: Instantiated
@@ -112,5 +113,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ingredientPrefab: {fileID: 1500150666396148296, guid: be9774a151311d04883fe7a4f7c63d8e, type: 3}
   wrapPrefab: {fileID: 0}
+  _nigiriRice: {fileID: 0}
+  ingredientName: 15
+--- !u!114 &-4659514821535174896
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6931029377274543407}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d41aa53f7b899fb43a25385a4b405f33, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  IngredientPrefab: {fileID: 1500150666396148296, guid: be9774a151311d04883fe7a4f7c63d8e, type: 3}
+  WrapPrefab: {fileID: 0}
   _nigiriRice: {fileID: 0}
   ingredientName: 15

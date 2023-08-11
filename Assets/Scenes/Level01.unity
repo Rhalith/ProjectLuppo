@@ -1006,7 +1006,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 316652904}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c9c6a84a77c987042a7422aeff6afde6, type: 3}
+  m_Script: {fileID: 11500000, guid: 607f90a90cbe8b945a8c6d178921dc61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   objectPref: {fileID: 1977126448359183054, guid: df4c2ba82865acd49954aa7f3b7e6ecc, type: 3}
@@ -1226,7 +1226,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 445989229}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 895739b815dbd0341b946cea446fc26d, type: 3}
+  m_Script: {fileID: 11500000, guid: 607f90a90cbe8b945a8c6d178921dc61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   objectPref: {fileID: 6931029377274543407, guid: a6f7324a6c989b4428c85eaeef2e5227, type: 3}
@@ -1831,7 +1831,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 780781433}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 57da384674bad714095729fedd4502c1, type: 3}
+  m_Script: {fileID: 11500000, guid: 607f90a90cbe8b945a8c6d178921dc61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   objectPref: {fileID: 2291465282635682432, guid: 82daebbc45b7ad74895ed2c82170b71b, type: 3}
@@ -4874,6 +4874,7 @@ GameObject:
   - component: {fileID: 10424841567122075}
   - component: {fileID: 6680861754698022247}
   - component: {fileID: 47433973415022221}
+  - component: {fileID: 6680861754698022248}
   m_Layer: 0
   m_Name: "lpsu\u015Fimasa.001"
   m_TagString: Untagged
@@ -5055,6 +5056,20 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2316134056560621814}
+  m_Mesh: {fileID: -4044756829580821555, guid: afee68ac5983a7c4d83c53658e514d27, type: 3}
+--- !u!64 &6680861754698022248
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2316134056560621814}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
   m_Mesh: {fileID: -4044756829580821555, guid: afee68ac5983a7c4d83c53658e514d27, type: 3}
 --- !u!1 &6708861272007804774
 GameObject:
@@ -5247,7 +5262,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 8435425334276536828}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8887725fffc50cb46872f33837da9927, type: 3}
+  m_Script: {fileID: 11500000, guid: 607f90a90cbe8b945a8c6d178921dc61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   objectPref: {fileID: 5456562230567239722, guid: 32dd6f9dfbc704b49bc13778646f57a3, type: 3}
