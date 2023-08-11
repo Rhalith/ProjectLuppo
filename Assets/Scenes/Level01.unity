@@ -4874,6 +4874,7 @@ GameObject:
   - component: {fileID: 10424841567122075}
   - component: {fileID: 6680861754698022247}
   - component: {fileID: 47433973415022221}
+  - component: {fileID: 6680861754698022248}
   m_Layer: 0
   m_Name: "lpsu\u015Fimasa.001"
   m_TagString: Untagged
@@ -5055,6 +5056,20 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2316134056560621814}
+  m_Mesh: {fileID: -4044756829580821555, guid: afee68ac5983a7c4d83c53658e514d27, type: 3}
+--- !u!64 &6680861754698022248
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2316134056560621814}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
   m_Mesh: {fileID: -4044756829580821555, guid: afee68ac5983a7c4d83c53658e514d27, type: 3}
 --- !u!1 &6708861272007804774
 GameObject:
