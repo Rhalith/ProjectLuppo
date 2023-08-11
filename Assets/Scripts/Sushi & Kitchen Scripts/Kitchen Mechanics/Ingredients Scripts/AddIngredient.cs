@@ -36,9 +36,10 @@ public class AddIngredient : MonoBehaviour
                     {
                         instObj = Instantiate(WrapPrefab, transform.position, Quaternion.identity);
                         InstantiatedController.Instance.SeaweedWrap = instObj.GetComponent<SeaweedWrap>();
+                        IngredientController.Instance.StartRollingButton.SetActive(true);
                         instObj.transform.SetParent(hit.transform);
-                        instObj.transform.localPosition = new Vector3(0.00014f, -0.009f, 0.00087f);
-                        instObj.transform.localRotation = Quaternion.Euler(0, 180, 270);
+                        instObj.transform.localPosition = new Vector3(0, -0.009f, 0.0009f);
+                        instObj.transform.localRotation = Quaternion.Euler(0, 0, 270);
                     }
                 }
                 else if (IngredientPrefab.name == "Rice")
@@ -51,7 +52,7 @@ public class AddIngredient : MonoBehaviour
                 }
             }
 
-            if (hit.collider.CompareTag("Ingredient"))
+            if (hit.collider.CompareTag("SeaweedWrap"))
             {
                 if (IngredientPrefab != null)
                 {

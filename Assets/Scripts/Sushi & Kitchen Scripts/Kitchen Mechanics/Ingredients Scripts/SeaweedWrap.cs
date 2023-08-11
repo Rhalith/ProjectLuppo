@@ -1,12 +1,11 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SeaweedWrap : MonoBehaviour
 {
     [SerializeField] private RollingAnimation _rollingAnimation;
-    private Vector3 _startPosition;
-    private Vector3 _endPosition;
-    private bool _isBeingDragged = false;
+    [SerializeField] private Transform _maskObject;
     //TODO: all of the sushi prefabs should be in different class
     public GameObject hosomakiPrefab;
     public GameObject chumaki2Prefab;
@@ -14,29 +13,52 @@ public class SeaweedWrap : MonoBehaviour
     public GameObject futomakiPrefab;
     private GameObject _instObj;
     //TODO: sushiPos will be assigned in rolling animations end.
+    private bool _isRollingEnd;
     Vector3 sushiPos;
     private List<SushiIngredient> _differentSushiIngredients = new ();
     private List<SushiIngredient> _sushiIngredients;
-    public int salmonCounter;
-    public int cucumberCounter;
 
+    RaycastHit hit;
+    float rollingAmount;
     public List<SushiIngredient> DifferentIngredients { get => _differentSushiIngredients; set => _differentSushiIngredients = new(value); }
 
     private void Start()
     {
-        InputManager.Instance.OnLeftClickPerformed += OnLeftClickPerformed;
+        InputManager.Instance.OnLeftMouseButtonUp += OnLeftMouseButtonUp;
+        sushiPos = transform.position;
     }
-
-    private void OnLeftClickPerformed()
+    private void OnLeftMouseButtonUp()
     {
-        if (InputManager.Instance.MouseInput.y > 0.1f)
-        {
-            Debug.Log(InputManager.Instance.MouseInput);
-        }
+        if (rollingAmount < 0) rollingAmount = 0;
     }
     private void OnDestroy()
     {
-        InputManager.Instance.OnLeftClickPerformed -= OnLeftClickPerformed;
+        InputManager.Instance.OnLeftMouseButtonUp -= OnLeftMouseButtonUp;
+    }
+    //TODO: knowing issue if player starts from middle, it places maskobject to middle first.
+    private void OnMouseDrag()
+    {
+        if (IngredientController.Instance.IsRolling && !OrderManager.Instance.CinemachineBrain.IsBlending)
+        {
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+
+            if (Physics.Raycast(ray, out hit, 50000.0f))
+            {
+                 rollingAmount += InputManager.Instance.MouseInput.x/3;
+                if(rollingAmount > 312)
+                {
+                    rollingAmount = 0;
+                    IngredientController.Instance.StopRollingButton.GetComponent<Button>().onClick.Invoke();
+                    InstantiateSushi();
+                }
+                else
+                {
+                    _rollingAnimation.RollSeaweed(rollingAmount);
+                    _maskObject.position = new Vector3(hit.point.x - _maskObject.lossyScale.x / 2, _maskObject.position.y, _maskObject.position.z);
+                }
+
+            }
+        }
     }
 
     private Vector3 GetMouseWorldPosition()
@@ -73,5 +95,7 @@ public class SeaweedWrap : MonoBehaviour
             _sushiIngredients = new(IngredientController.Instance.Ingredients);
             _instObj = Instantiate(futomakiPrefab, sushiPos, Quaternion.identity);
         }
+
+        Destroy(gameObject);
     }
 }

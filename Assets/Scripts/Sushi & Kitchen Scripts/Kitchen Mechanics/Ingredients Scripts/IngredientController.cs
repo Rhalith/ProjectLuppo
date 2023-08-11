@@ -6,14 +6,23 @@ public class IngredientController : MonoBehaviour
 {
     [SerializeField] private GameObject _seaweed;
     [SerializeField] TextMeshProUGUI _text;
+    [SerializeField] private GameObject _startRollingButton;
+    [SerializeField] private GameObject _stopRollingButton;
+
 
     private List<SushiIngredient> _ingredients = new();
 
     private SeaweedWrap _wrap;
+    private bool _isRolling;
 
     public static IngredientController Instance;
 
     public List<SushiIngredient> Ingredients { get => _ingredients;}
+
+
+    public bool IsRolling { get => _isRolling; }
+    public GameObject StartRollingButton { get => _startRollingButton;}
+    public GameObject StopRollingButton { get => _stopRollingButton;}
 
     //TODO: SalmonCounter and CucumberCounter is not using, so I comment it out
     //public int SalmonCounter;
@@ -134,5 +143,15 @@ public class IngredientController : MonoBehaviour
     {
         _ingredients.Clear();
         InstantiatedController.Instance.InstantiatedIngredientCount = 0;
+    }
+
+    public void StartRolling()
+    {
+        _isRolling = true;
+    }
+
+    public void StopRolling()
+    {
+        _isRolling = false;
     }
 }

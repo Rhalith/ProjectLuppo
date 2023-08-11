@@ -6,42 +6,20 @@ public class RollingAnimation : MonoBehaviour
 {
     [SerializeField] private SkinnedMeshRenderer _skinnedRenderer;
 
-    private void Start()
+    public void RollSeaweed(float rollAmount)
     {
-        StartCoroutine(nameof(RollSeaweed));
-    }
-
-    private IEnumerator RollSeaweed()
-    {
-        float _startValue = 1;
-        while (_startValue <= 100)
+        if(rollAmount > 0 && rollAmount <= 100)
         {
-            _skinnedRenderer.SetBlendShapeWeight(0, 100-_startValue);
-            _startValue +=1f;
-            yield return new WaitForSeconds(0.01f);
+            _skinnedRenderer.SetBlendShapeWeight(0, 100-rollAmount);
         }
-        _startValue = 1;
-        while(_startValue <= 100)
+        else if (rollAmount > 100 && rollAmount <= 200)
         {
-            _skinnedRenderer.SetBlendShapeWeight(1, _startValue);
-            _startValue +=1f;
-            yield return new WaitForSeconds(0.01f);
+            _skinnedRenderer.SetBlendShapeWeight(1, rollAmount-100);
         }
-        _startValue = 1;
-        while(_startValue <= 100)
+        else if (rollAmount > 200 && rollAmount <= 300)
         {
-            _skinnedRenderer.SetBlendShapeWeight(1, 100 - _startValue);
-            _skinnedRenderer.SetBlendShapeWeight(2, _startValue);
-            _startValue +=1f;
-            yield return new WaitForSeconds(0.01f);
+            if(_skinnedRenderer.GetBlendShapeWeight(1) > 0) _skinnedRenderer.SetBlendShapeWeight(1, 300 - rollAmount);
+            _skinnedRenderer.SetBlendShapeWeight(2, rollAmount-200);
         }
-        //_startValue = 1;
-        //while (_startValue <= 100)
-        //{
-        //    _skinnedRenderer.SetBlendShapeWeight(2, _startValue);
-        //    _startValue += 1f;
-        //    yield return new WaitForSeconds(0.01f);
-        //}
-
     }
 }

@@ -1,3 +1,4 @@
+using Cinemachine;
 using TMPro;
 using UnityEngine;
 
@@ -12,9 +13,11 @@ public enum OrderedSushiType
 public class OrderManager : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI customerText;
+    [SerializeField] CinemachineBrain _cinemachineBrain;
 
     public static OrderManager Instance;
     private OrderedSushiType _orderedSushi;
+    public CinemachineBrain CinemachineBrain { get => _cinemachineBrain; }
 
     private void Awake()
     {
