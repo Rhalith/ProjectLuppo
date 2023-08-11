@@ -16,6 +16,8 @@ public class InputManager : MonoBehaviour {
     public delegate void MouseClickHandler();
     public event MouseClickHandler OnLeftMouseButtonDown;
     public event MouseClickHandler OnRightMouseButtonDown;
+    public event MouseClickHandler OnLeftMouseButtonUp;
+    public event MouseClickHandler OnRightMouseButtonUp;
 
     private static InputManager _instance;
     public static InputManager Instance { get { return _instance; } }
@@ -48,11 +50,11 @@ public class InputManager : MonoBehaviour {
         playerInput.MouseY.performed += ctx => mouseInput.y = ctx.ReadValue<float>();
 
         // Usage of started and canceled (KeyDown and KeyUp)
-        playerInput.LeftClick.started += ctx => Clicked(ctx.action.name);
-        playerInput.LeftClick.canceled += ctx => StopClicking(ctx.action.name);
+        playerInput.LeftClick.started += _ => LeftMouseButtonDown();
+        playerInput.LeftClick.canceled += _ => LeftMouseButtonUp();
 
-        playerInput.RightClick.started += ctx => Clicked(ctx.action.name);
-        playerInput.RightClick.canceled += ctx => StopClicking(ctx.action.name);
+        playerInput.RightClick.started += _ => RightMouseButtonDown();
+        playerInput.RightClick.canceled += _ => RightMouseButtonUp();
 
         // Usage of performed (KeyDown - same as started)
         playerInput.LeftClick.performed += _ => LeftClickPerformed();
@@ -82,26 +84,34 @@ public class InputManager : MonoBehaviour {
         }
     }
 
-    void Clicked (string actionName)
-    {
-        //Debug.Log($"{actionName} CLICKED AND HOLDING");
-        isMouseDown = true;
-    }
-
-    void LeftClickPerformed()
+    private void LeftMouseButtonDown()
     {
         OnLeftMouseButtonDown?.Invoke();
     }
 
-    void RightClickPerformed()
+    private void LeftMouseButtonUp()
+    {
+        OnLeftMouseButtonUp?.Invoke();
+    }
+
+    private void RightMouseButtonDown()
     {
         OnRightMouseButtonDown?.Invoke();
     }
 
-    void StopClicking(string actionName)
+    private void RightMouseButtonUp()
     {
-        //Debug.Log($"{actionName} RELEASED");
-        isMouseDown = false;
+        OnRightMouseButtonUp?.Invoke();
+    }
+
+    private void RightClickPerformed()
+    {
+
+    }
+
+    private void LeftClickPerformed()
+    {
+
     }
 
     private void OnEnable ()
