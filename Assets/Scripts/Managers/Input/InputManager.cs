@@ -18,6 +18,7 @@ public class InputManager : MonoBehaviour {
     public event MouseClickHandler OnRightMouseButtonDown;
     public event MouseClickHandler OnLeftMouseButtonUp;
     public event MouseClickHandler OnRightMouseButtonUp;
+    public event MouseClickHandler OnLeftClickPerformed;
 
     private static InputManager _instance;
     public static InputManager Instance { get { return _instance; } }
@@ -111,7 +112,7 @@ public class InputManager : MonoBehaviour {
 
     private void LeftClickPerformed()
     {
-
+        OnLeftClickPerformed?.Invoke();
     }
 
     private void OnEnable ()

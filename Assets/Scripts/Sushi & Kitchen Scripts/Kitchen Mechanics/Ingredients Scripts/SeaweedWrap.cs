@@ -22,34 +22,21 @@ public class SeaweedWrap : MonoBehaviour
 
     public List<SushiIngredient> DifferentIngredients { get => _differentSushiIngredients; set => _differentSushiIngredients = new(value); }
 
-    private void OnMouseDown()
+    private void Start()
     {
-        _startPosition = GetMouseWorldPosition();
-        _isBeingDragged = true;
-        Vector3 _offset = new Vector3(-0.8f, 0.1f, 0);
-        sushiPos = gameObject.transform.position + _offset;
+        InputManager.Instance.OnLeftClickPerformed += OnLeftClickPerformed;
     }
 
-    private void OnMouseDrag()
+    private void OnLeftClickPerformed()
     {
-        if (_isBeingDragged)
+        if (InputManager.Instance.MouseInput.y > 0.1f)
         {
-            _endPosition = GetMouseWorldPosition();
-            //Debug.Log(_endPosition);
-            // Calculate the distance between the start position and the end position
-            float distanceDragged = Vector3.Distance(_startPosition, _endPosition);
-
-
-            
-           //If the dragged distance is greater than 1 unit, create sushi
-           if (distanceDragged >= 0.07f)
-           {
-                //_rollingAnimation.ChangeAnimationState(distanceDragged);
-                //InstantiateSushi();
-                //_isBeingDragged = false;
-                //Destroy(GameObject.Find("Seaweed(Clone)"));
-            }
+            Debug.Log(InputManager.Instance.MouseInput);
         }
+    }
+    private void OnDestroy()
+    {
+        InputManager.Instance.OnLeftClickPerformed -= OnLeftClickPerformed;
     }
 
     private Vector3 GetMouseWorldPosition()

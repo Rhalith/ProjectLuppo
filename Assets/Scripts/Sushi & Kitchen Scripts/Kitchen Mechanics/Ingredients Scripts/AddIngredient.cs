@@ -37,7 +37,8 @@ public class AddIngredient : MonoBehaviour
                         instObj = Instantiate(WrapPrefab, transform.position, Quaternion.identity);
                         InstantiatedController.Instance.SeaweedWrap = instObj.GetComponent<SeaweedWrap>();
                         instObj.transform.SetParent(hit.transform);
-                        instObj.transform.localPosition = new Vector3(0, 0f, 0.00073f);
+                        instObj.transform.localPosition = new Vector3(0.00014f, -0.009f, 0.00087f);
+                        instObj.transform.localRotation = Quaternion.Euler(0, 180, 270);
                     }
                 }
                 else if (IngredientPrefab.name == "Rice")
