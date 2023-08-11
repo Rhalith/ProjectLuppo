@@ -44,7 +44,7 @@ public class SeaweedWrap : MonoBehaviour
            //If the dragged distance is greater than 1 unit, create sushi
            if (distanceDragged >= 0.07f)
            {
-                _rollingAnimation.ChangeAnimationState(distanceDragged);
+                //_rollingAnimation.ChangeAnimationState(distanceDragged);
                 //InstantiateSushi();
                 //_isBeingDragged = false;
                 //Destroy(GameObject.Find("Seaweed(Clone)"));

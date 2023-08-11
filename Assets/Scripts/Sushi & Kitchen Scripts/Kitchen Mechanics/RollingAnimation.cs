@@ -4,14 +4,44 @@ using UnityEngine;
 
 public class RollingAnimation : MonoBehaviour
 {
-    [SerializeField] private Animator animator;
-    private void Awake()
+    [SerializeField] private SkinnedMeshRenderer _skinnedRenderer;
+
+    private void Start()
     {
-        animator.speed = 0;
+        StartCoroutine(nameof(RollSeaweed));
     }
 
-    public void ChangeAnimationState(float t)
+    private IEnumerator RollSeaweed()
     {
-        animator.speed = 0.1f;
+        float _startValue = 1;
+        while (_startValue <= 100)
+        {
+            _skinnedRenderer.SetBlendShapeWeight(0, 100-_startValue);
+            _startValue +=1f;
+            yield return new WaitForSeconds(0.01f);
+        }
+        _startValue = 1;
+        while(_startValue <= 100)
+        {
+            _skinnedRenderer.SetBlendShapeWeight(1, _startValue);
+            _startValue +=1f;
+            yield return new WaitForSeconds(0.01f);
+        }
+        _startValue = 1;
+        while(_startValue <= 100)
+        {
+            _skinnedRenderer.SetBlendShapeWeight(1, 100 - _startValue);
+            _skinnedRenderer.SetBlendShapeWeight(2, _startValue);
+            _startValue +=1f;
+            yield return new WaitForSeconds(0.01f);
+        }
+        //_startValue = 1;
+        //while (_startValue <= 100)
+        //{
+        //    _skinnedRenderer.SetBlendShapeWeight(2, _startValue);
+        //    _startValue += 1f;
+        //    yield return new WaitForSeconds(0.01f);
+        //}
+
     }
 }
