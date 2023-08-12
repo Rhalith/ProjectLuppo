@@ -13,12 +13,12 @@ public class AddIngredient : MonoBehaviour
 
     private void Start()
     {
-        InputManager.Instance.OnLeftMouseButtonDown += OnLeftMouseButtonDown;
+        InputManager.Instance.OnLeftMouseDown += OnLeftMouseButtonDown;
     }
 
     private void OnDestroy()
     {
-        InputManager.Instance.OnLeftMouseButtonDown -= OnLeftMouseButtonDown;
+        InputManager.Instance.OnLeftMouseDown -= OnLeftMouseButtonDown;
     }
 
     // Add ingredient

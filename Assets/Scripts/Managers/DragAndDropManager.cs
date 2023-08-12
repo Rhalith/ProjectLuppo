@@ -11,14 +11,14 @@ public class DragAndDropManager : MonoBehaviour
 
     private void Start()
     {
-        InputManager.Instance.OnLeftMouseButtonDown += OnLeftMouseButtonDown;
-        InputManager.Instance.OnLeftMouseButtonUp += OnLeftMouseButtonUp; ;
+        InputManager.Instance.OnLeftMouseDown += OnLeftMouseButtonDown;
+        InputManager.Instance.OnLeftMouseUp += OnLeftMouseButtonUp; ;
     }
 
     private void OnDestroy()
     {
-        InputManager.Instance.OnLeftMouseButtonDown -= OnLeftMouseButtonDown;
-        InputManager.Instance.OnLeftMouseButtonUp -= OnLeftMouseButtonUp; ;
+        InputManager.Instance.OnLeftMouseDown -= OnLeftMouseButtonDown;
+        InputManager.Instance.OnLeftMouseUp -= OnLeftMouseButtonUp; ;
     }
 
     private void Update()

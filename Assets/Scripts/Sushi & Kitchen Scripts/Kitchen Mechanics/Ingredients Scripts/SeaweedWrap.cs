@@ -24,7 +24,7 @@ public class SeaweedWrap : MonoBehaviour
 
     private void Start()
     {
-        InputManager.Instance.OnLeftMouseButtonUp += OnLeftMouseButtonUp;
+        InputManager.Instance.OnLeftMouseUp += OnLeftMouseButtonUp;
         sushiPos = transform.position;
     }
     private void OnLeftMouseButtonUp()
@@ -33,7 +33,7 @@ public class SeaweedWrap : MonoBehaviour
     }
     private void OnDestroy()
     {
-        InputManager.Instance.OnLeftMouseButtonUp -= OnLeftMouseButtonUp;
+        InputManager.Instance.OnLeftMouseUp -= OnLeftMouseButtonUp;
     }
     //TODO: knowing issue if player starts from middle, it places maskobject to middle first.
     private void OnMouseDrag()

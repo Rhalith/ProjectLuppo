@@ -14,10 +14,12 @@ public class InputManager : MonoBehaviour {
 
     // Mouse click delegate and events
     public delegate void MouseClickHandler();
-    public event MouseClickHandler OnLeftMouseButtonDown;
-    public event MouseClickHandler OnRightMouseButtonDown;
-    public event MouseClickHandler OnLeftMouseButtonUp;
-    public event MouseClickHandler OnRightMouseButtonUp;
+    public event MouseClickHandler OnLeftMouseDown;
+    public event MouseClickHandler OnLeftMouseHolding;
+    public event MouseClickHandler OnLeftMouseUp;
+    public event MouseClickHandler OnRightMouseDown;
+    public event MouseClickHandler OnRightMouseUp;
+
     public event MouseClickHandler OnLeftClickPerformed;
 
     private static InputManager _instance;
@@ -83,26 +85,34 @@ public class InputManager : MonoBehaviour {
         {
             //objectController.RotateObject(movementInput);
         }
+
+        // Mouse holding trigger
+        if (isMouseDown)
+        {
+            OnLeftMouseHolding?.Invoke();
+        }
     }
 
     private void LeftMouseButtonDown()
     {
-        OnLeftMouseButtonDown?.Invoke();
+        OnLeftMouseDown?.Invoke();
+        isMouseDown = true;
     }
 
     private void LeftMouseButtonUp()
     {
-        OnLeftMouseButtonUp?.Invoke();
+        OnLeftMouseUp?.Invoke();
+        isMouseDown = false;
     }
 
     private void RightMouseButtonDown()
     {
-        OnRightMouseButtonDown?.Invoke();
+        OnRightMouseDown?.Invoke();
     }
 
     private void RightMouseButtonUp()
     {
-        OnRightMouseButtonUp?.Invoke();
+        OnRightMouseUp?.Invoke();
     }
 
     private void RightClickPerformed()
