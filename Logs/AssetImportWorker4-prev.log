@@ -1,0 +1,319 @@
+Using pre-set license
+Built from '2021.3/release' branch; Version is '2021.3.27f1 (ca3ffb99bcc6) revision 13254651'; Using compiler version '192829333'; Build Type 'Release'
+OS: 'Windows 11  (10.0.22621) 64bit Professional' Language: 'tr' Physical Memory: 16190 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 1
+
+COMMAND LINE ARGUMENTS:
+C:\Program Files\Unity\Hub\Editor\2021.3.27f1\Editor\Unity.exe
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker4
+-projectPath
+C:/Users/birda/Documents/GitHub/ProjectLuppo
+-logFile
+Logs/AssetImportWorker4.log
+-srvPort
+50697
+Successfully changed project path to: C:/Users/birda/Documents/GitHub/ProjectLuppo
+C:/Users/birda/Documents/GitHub/ProjectLuppo
+[UnityMemory] Configuration Parameters - Can be set up in boot.config
+    "memorysetup-bucket-allocator-granularity=16"
+    "memorysetup-bucket-allocator-bucket-count=8"
+    "memorysetup-bucket-allocator-block-size=33554432"
+    "memorysetup-bucket-allocator-block-count=8"
+    "memorysetup-main-allocator-block-size=16777216"
+    "memorysetup-thread-allocator-block-size=16777216"
+    "memorysetup-gfx-main-allocator-block-size=16777216"
+    "memorysetup-gfx-thread-allocator-block-size=16777216"
+    "memorysetup-cache-allocator-block-size=4194304"
+    "memorysetup-typetree-allocator-block-size=2097152"
+    "memorysetup-profiler-bucket-allocator-granularity=16"
+    "memorysetup-profiler-bucket-allocator-bucket-count=8"
+    "memorysetup-profiler-bucket-allocator-block-size=33554432"
+    "memorysetup-profiler-bucket-allocator-block-count=8"
+    "memorysetup-profiler-allocator-block-size=16777216"
+    "memorysetup-profiler-editor-allocator-block-size=1048576"
+    "memorysetup-temp-allocator-size-main=16777216"
+    "memorysetup-job-temp-allocator-block-size=2097152"
+    "memorysetup-job-temp-allocator-block-size-background=1048576"
+    "memorysetup-job-temp-allocator-reduction-small-platforms=262144"
+    "memorysetup-temp-allocator-size-background-worker=32768"
+    "memorysetup-temp-allocator-size-job-worker=262144"
+    "memorysetup-temp-allocator-size-preload-manager=33554432"
+    "memorysetup-temp-allocator-size-nav-mesh-worker=65536"
+    "memorysetup-temp-allocator-size-audio-worker=65536"
+    "memorysetup-temp-allocator-size-cloud-worker=32768"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gfx=262144"
+Player connection [28900] Host "[IP] 172.17.3.147 [Port] 0 [Flags] 2 [Guid] 1576001959 [EditorId] 1576001959 [Version] 1048832 [Id] WindowsEditor(7,JuniorLaptop) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
+
+Player connection [28900] Host "[IP] 172.17.3.147 [Port] 0 [Flags] 2 [Guid] 1576001959 [EditorId] 1576001959 [Version] 1048832 [Id] WindowsEditor(7,JuniorLaptop) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
+
+Refreshing native plugins compatible for Editor in 262.45 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 2021.3.27f1 (ca3ffb99bcc6)
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2021.3.27f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path C:/Users/birda/Documents/GitHub/ProjectLuppo/Assets
+GfxDevice: creating device client; threaded=0; jobified=0
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: NVIDIA GeForce GTX 1650 (ID=0x1f91)
+    Vendor:   NVIDIA
+    VRAM:     3949 MB
+    Driver:   31.0.15.3699
+Initialize mono
+Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2021.3.27f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2021.3.27f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
+Mono config path = 'C:/Program Files/Unity/Hub/Editor/2021.3.27f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56376
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2021.3.27f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.009315 seconds.
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 255.83 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.234 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1235ms)
+		BeginReloadAssembly (155ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (0ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (2ms)
+		EndReloadAssembly (891ms)
+			LoadAssemblies (148ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (187ms)
+			ReleaseScriptCaches (0ms)
+			RebuildScriptCaches (52ms)
+			SetupLoadedEditorAssemblies (561ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (13ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (256ms)
+				BeforeProcessingInitializeOnLoad (2ms)
+				ProcessInitializeOnLoadAttributes (205ms)
+				ProcessInitializeOnLoadMethodAttributes (85ms)
+				AfterProcessingInitializeOnLoad (0ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (0ms)
+Platform modules already initialized, skipping
+Registering precompiled user dll's ...
+Registered in 0.018928 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image C:\Users\birda\Documents\GitHub\ProjectLuppo\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image C:\Users\birda\Documents\GitHub\ProjectLuppo\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 253.96 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  2.560 seconds
+Domain Reload Profiling:
+	ReloadAssembly (2561ms)
+		BeginReloadAssembly (260ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (10ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (32ms)
+		EndReloadAssembly (2090ms)
+			LoadAssemblies (189ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (523ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (130ms)
+			SetupLoadedEditorAssemblies (1174ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (7ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (254ms)
+				BeforeProcessingInitializeOnLoad (223ms)
+				ProcessInitializeOnLoadAttributes (517ms)
+				ProcessInitializeOnLoadMethodAttributes (155ms)
+				AfterProcessingInitializeOnLoad (16ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (12ms)
+Platform modules already initialized, skipping
+========================================================================
+Worker process is ready to serve import requests
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.13 seconds
+Refreshing native plugins compatible for Editor in 1.64 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 6011 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 72 unused Assets / (7.2 MB). Loaded Objects now: 6463.
+Memory consumption went from 285.1 MB to 277.9 MB.
+Total: 13.411900 ms (FindLiveObjects: 0.567600 ms CreateObjectMapping: 0.710000 ms MarkObjects: 8.837000 ms  DeleteObjects: 3.295300 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 124353.503438 seconds.
+  path: Assets/RızaAnimation/sushiroll
+  artifactKey: Guid(19a8fd6dea23d934f82e597285f3b567) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RızaAnimation/sushiroll using Guid(19a8fd6dea23d934f82e597285f3b567) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '65cea1f30889cb73cf08194de2246603') in 0.021421 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 7.968075 seconds.
+  path: Assets/RızaAnimation/sushirollseaweed
+  artifactKey: Guid(19a8fd6dea23d934f82e597285f3b567) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RızaAnimation/sushirollseaweed using Guid(19a8fd6dea23d934f82e597285f3b567) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '10693eaf6774ae98bed1803ed7422ec8') in 0.002901 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 11.354223 seconds.
+  path: Assets/RızaAnimation/sushisunummasa.fbx
+  artifactKey: Guid(5ab328aa0db787644a237801a1c455cb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RızaAnimation/sushisunummasa.fbx using Guid(5ab328aa0db787644a237801a1c455cb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e32bce94ef1613cb18678fb1a82c3035') in 0.045219 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 4.939124 seconds.
+  path: Assets/RızaAnimation/sushisunum_tahtası_Material.003_BaseMap.png
+  artifactKey: Guid(cf73ff8447aecac438a7b2477206d51e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RızaAnimation/sushisunum_tahtası_Material.003_BaseMap.png using Guid(cf73ff8447aecac438a7b2477206d51e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '67d5b234ed3a362e3b06d0efdb0c0472') in 0.017001 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 1.988237 seconds.
+  path: Assets/RızaAnimation/sushisunummasa.fbx
+  artifactKey: Guid(5ab328aa0db787644a237801a1c455cb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RızaAnimation/sushisunummasa.fbx using Guid(5ab328aa0db787644a237801a1c455cb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cf6effd0a4f3df38547928bf91a22304') in 0.004370 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000047 seconds.
+  path: Assets/RızaAnimation/sushisunum_tahtası_Material.003_Normal.png
+  artifactKey: Guid(ae79b84d9a81459488bdaea9b39bf7ec) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RızaAnimation/sushisunum_tahtası_Material.003_Normal.png using Guid(ae79b84d9a81459488bdaea9b39bf7ec) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ba3c0442915dab29e5f50ed84cf23afc') in 0.007480 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 3.481675 seconds.
+  path: Assets/RızaAnimation/sushisunum_tahtası_Material.003_Normal.png
+  artifactKey: Guid(ae79b84d9a81459488bdaea9b39bf7ec) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RızaAnimation/sushisunum_tahtası_Material.003_Normal.png using Guid(ae79b84d9a81459488bdaea9b39bf7ec) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c5661ff57dc086db925841af367eefdc') in 0.015587 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 54.252194 seconds.
+  path: Assets/RızaAnimation/Material.002.mat
+  artifactKey: Guid(cfe55b8c16d51c34e9c907283cfbd90f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RızaAnimation/Material.002.mat using Guid(cfe55b8c16d51c34e9c907283cfbd90f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7c6415192e6ea93ebe18f85cd309589c') in 0.008051 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 1004.922158 seconds.
+  path: Assets/Objects/Textures/sushisushi_Material.003_Emissive.png
+  artifactKey: Guid(360a0e96dab625d4fb75e060b790a398) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Objects/Textures/sushisushi_Material.003_Emissive.png using Guid(360a0e96dab625d4fb75e060b790a398) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7d4731e3f68a933f14ef35983aee49bc') in 0.010747 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 1.449318 seconds.
+  path: Assets/Textures/sushisushi_Material.003_MaskMap.png
+  artifactKey: Guid(c4c592dc125ba6b48a2b6630b605231a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Textures/sushisushi_Material.003_MaskMap.png using Guid(c4c592dc125ba6b48a2b6630b605231a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b8a7dcbdad8924d26dd63a9bb2727c5c') in 0.024014 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.062397 seconds.
+  path: Assets/Textures/sushisushi_Material.003_Normal.png
+  artifactKey: Guid(d4af3bb0c36edde4abf88198036c4d6b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Textures/sushisushi_Material.003_Normal.png using Guid(d4af3bb0c36edde4abf88198036c4d6b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bfcfa3e522c1f078a25b741af364ff0f') in 0.014906 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.288137 seconds.
+  path: Assets/Textures/taburelp_Material.003_BaseMap.png
+  artifactKey: Guid(a24c7b30cb020084d9cb1be1c05f57ff) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Textures/taburelp_Material.003_BaseMap.png using Guid(a24c7b30cb020084d9cb1be1c05f57ff) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2b29763f015114fd34163f68c6a508df') in 0.018709 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 1.117003 seconds.
+  path: Packages/com.unity.collab-proxy/Editor/PlasticSCM/Assets/Images/stepok@2x.png
+  artifactKey: Guid(be340a165cb9c8d4cb50f1deeb51d4ea) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.unity.collab-proxy/Editor/PlasticSCM/Assets/Images/stepok@2x.png using Guid(be340a165cb9c8d4cb50f1deeb51d4ea) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '62d5d01130dcf52cfcb26aefebc20ddf') in 0.005139 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.448158 seconds.
+  path: Packages/com.unity.collab-proxy/Editor/PlasticSCM/Assets/Images/step3@2x.png
+  artifactKey: Guid(36e6970b84831434a9eac79abd03700b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.unity.collab-proxy/Editor/PlasticSCM/Assets/Images/step3@2x.png using Guid(36e6970b84831434a9eac79abd03700b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3f9ea32e387ba518a64859c26f5ac270') in 0.016313 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000576 seconds.
+  path: Packages/com.unity.collab-proxy/Editor/PlasticSCM/Assets/Images/step2@2x.png
+  artifactKey: Guid(0029170d14ce6c04c9f45c22cdae5559) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.unity.collab-proxy/Editor/PlasticSCM/Assets/Images/step2@2x.png using Guid(0029170d14ce6c04c9f45c22cdae5559) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '971a661c37076f18e672dc875bc36028') in 0.005488 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.044451 seconds.
+  path: Packages/com.unity.collab-proxy/Editor/PlasticSCM/Assets/Images/step1@2x.png
+  artifactKey: Guid(affeade9874cf2347abb155e8d0db4d8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.unity.collab-proxy/Editor/PlasticSCM/Assets/Images/step1@2x.png using Guid(affeade9874cf2347abb155e8d0db4d8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0d5362d9a2a41ccf2dd40240fd69a129') in 0.005480 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.234711 seconds.
+  path: Packages/com.unity.2d.spriteshape/Editor/Handles/ss_rightrange.png
+  artifactKey: Guid(ee5df01235032491c8b180741ea820fe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.unity.2d.spriteshape/Editor/Handles/ss_rightrange.png using Guid(ee5df01235032491c8b180741ea820fe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6a0861339664db3e87e19ecb1ac8737c') in 0.006533 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.018815 seconds.
+  path: Packages/com.unity.2d.spriteshape/Editor/Handles/ss_leftrange.png
+  artifactKey: Guid(9417efc47083f4a1598c1966a6345cdb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.unity.2d.spriteshape/Editor/Handles/ss_leftrange.png using Guid(9417efc47083f4a1598c1966a6345cdb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7058d46362feb654a390a9f15f32cf3a') in 0.006066 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.094200 seconds.
+  path: Assets/Temp/SrpeloTemp/SrpeloSad/srpeloamgri30.png
+  artifactKey: Guid(655a042d082b4d644b2980a02caba352) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Temp/SrpeloTemp/SrpeloSad/srpeloamgri30.png using Guid(655a042d082b4d644b2980a02caba352) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7056060fef95264428672a83df4d4551') in 0.009303 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 6759.926838 seconds.
+  path: Assets/RızaAnimation/sushiseaweedshapetest.fbx
+  artifactKey: Guid(14156d8e755b3ed4d8131ef6d50dd9f7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RızaAnimation/sushiseaweedshapetest.fbx using Guid(14156d8e755b3ed4d8131ef6d50dd9f7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c7d5def152a601b64036a82955a5bf62') in 0.629394 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.014759 seconds.
+  path: Assets/RızaAnimation/sushiseaweedshapetest_Material.003_MaskMap.png
+  artifactKey: Guid(de8ccebea8989334a97f39c36e3adad9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RızaAnimation/sushiseaweedshapetest_Material.003_MaskMap.png using Guid(de8ccebea8989334a97f39c36e3adad9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'eb7c99cd654e2c6f802b67b56984f5c9') in 0.133435 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000032 seconds.
+  path: Assets/RızaAnimation/sushiseaweedshapetest_Material.003_Normal.png
+  artifactKey: Guid(7a1d4796ec78de640847f6875ed647ea) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RızaAnimation/sushiseaweedshapetest_Material.003_Normal.png using Guid(7a1d4796ec78de640847f6875ed647ea) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00fd91d4c4059d2fdabd8e58a8bbbaa2') in 0.026905 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 3.469480 seconds.
+  path: Assets/RızaAnimation/sushiseaweedshapetest_Material.003_Normal.png
+  artifactKey: Guid(7a1d4796ec78de640847f6875ed647ea) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RızaAnimation/sushiseaweedshapetest_Material.003_Normal.png using Guid(7a1d4796ec78de640847f6875ed647ea) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '07ad8df1e0ff5be10f54f2871381cd61') in 0.060235 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 21.270240 seconds.
+  path: Assets/RızaAnimation/Material.002.mat
+  artifactKey: Guid(cfe55b8c16d51c34e9c907283cfbd90f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RızaAnimation/Material.002.mat using Guid(cfe55b8c16d51c34e9c907283cfbd90f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ef1fc55434ecc126605f454c0482ed19') in 0.183097 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 258.269253 seconds.
+  path: Assets/RızaAnimation/Material.005.mat
+  artifactKey: Guid(ae9a72db6ad26df4395f03514bf26a99) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RızaAnimation/Material.005.mat using Guid(ae9a72db6ad26df4395f03514bf26a99) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f7ad0b1941cca8c7ea0e4fe20c90f1dc') in 0.028396 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 19.827991 seconds.
+  path: Assets/Quibli/Shaders/StylizedLit.shader
+  artifactKey: Guid(2a230514c860643f69b6a4d1871d3825) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Quibli/Shaders/StylizedLit.shader using Guid(2a230514c860643f69b6a4d1871d3825) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '57eda03970518d81233329ea55e9d34d') in 0.470679 seconds 
