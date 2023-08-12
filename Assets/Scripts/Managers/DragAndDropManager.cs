@@ -5,6 +5,9 @@ public class DragAndDropManager : MonoBehaviour
 {
     [SerializeField] GameObject[] _prepareZones;
     private GameObject _selectedObject;
+    [Header("Drag and Drop Borders")]
+    [SerializeField] float minX = -9.13f; [SerializeField] float minZ = -1.8f; [SerializeField] float maxX = 2.14f; [SerializeField] float maxZ = 0.15f;
+
 
     private void Start()
     {
@@ -85,44 +88,44 @@ public class DragAndDropManager : MonoBehaviour
                 Vector3 worldPosition = Camera.main.ScreenToWorldPoint(position);
                 _selectedObject.transform.position = new Vector3(worldPosition.x, 3.3f, worldPosition.z);
 
-                if (_selectedObject.transform.position.x < -9)
+                if (_selectedObject.transform.position.x < minX)
                 {
-                    _selectedObject.transform.position = new Vector3(-9f, 3.3f, worldPosition.z);
+                    _selectedObject.transform.position = new Vector3(minX, 3.3f, worldPosition.z);
 
-                    if (_selectedObject.transform.position.z > 0.2)
+                    if (_selectedObject.transform.position.z > maxZ)
                     {
-                        _selectedObject.transform.position = new Vector3(-9f, 3.3f, 0.2f);
+                        _selectedObject.transform.position = new Vector3(minX, 3.3f, maxZ);
                     }
 
-                    if (_selectedObject.transform.position.z < -2)
+                    if (_selectedObject.transform.position.z < minZ)
                     {
-                        _selectedObject.transform.position = new Vector3(-9f, 3.3f, -2f);
+                        _selectedObject.transform.position = new Vector3(minX, 3.3f, minZ);
                     }
                 }
-                else if (_selectedObject.transform.position.x > 2.1)
+                else if (_selectedObject.transform.position.x > maxX)
                 {
-                    _selectedObject.transform.position = new Vector3(2.1f, 3.3f, worldPosition.z);
+                    _selectedObject.transform.position = new Vector3(maxX, 3.3f, worldPosition.z);
 
-                    if (_selectedObject.transform.position.z < -2)
+                    if (_selectedObject.transform.position.z < minZ)
                     {
-                        _selectedObject.transform.position = new Vector3(2.1f, 3.3f, -2f);
+                        _selectedObject.transform.position = new Vector3(maxX, 3.3f, minZ);
                     }
 
-                    if (_selectedObject.transform.position.z > 0.2)
+                    if (_selectedObject.transform.position.z > maxZ)
                     {
-                        _selectedObject.transform.position = new Vector3(2.1f, 3.3f, 0.2f);
+                        _selectedObject.transform.position = new Vector3(maxX, 3.3f, maxZ);
                     }
                 }
                 else
                 {
-                    if (_selectedObject.transform.position.z > 0.2)
+                    if (_selectedObject.transform.position.z > maxZ)
                     {
-                        _selectedObject.transform.position = new Vector3(worldPosition.x, 3.3f, 0.2f);
+                        _selectedObject.transform.position = new Vector3(worldPosition.x, 3.3f, maxZ);
                     }
 
-                    if (_selectedObject.transform.position.z < -2)
+                    if (_selectedObject.transform.position.z < minZ)
                     {
-                        _selectedObject.transform.position = new Vector3(worldPosition.x, 3.3f, -25f);
+                        _selectedObject.transform.position = new Vector3(worldPosition.x, 3.3f, minZ);
                     }
                 }
 
