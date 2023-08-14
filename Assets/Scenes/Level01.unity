@@ -4181,7 +4181,7 @@ GameObject:
   - component: {fileID: 1583828999}
   m_Layer: 0
   m_Name: ServingZone
-  m_TagString: CuttingBoard
+  m_TagString: PrepareZone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
