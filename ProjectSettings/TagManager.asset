@@ -6,22 +6,14 @@ TagManager:
   tags:
   - Ingredient
   - Instantiated
-  - ServingSet
   - CuttingBoard
   - SashimiPlate
   - NigiriPlate
-  - drag
   - PrepareZone
-  - Sushi
-  - GameEventsManager
-  - Spawn
-  - Turn
-  - Order
-  - CustomerManager
-  - Customer
   - Chumaki
   - Hosomaki
-  - SeaweedWrap
+  - ServingSet
+  - Sushi
   layers:
   - Default
   - TransparentFX

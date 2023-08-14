@@ -98,7 +98,7 @@ GameObject:
   - component: {fileID: 8114430610992246341}
   m_Layer: 0
   m_Name: sushiseaweedshapetest
-  m_TagString: SeaweedWrap
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

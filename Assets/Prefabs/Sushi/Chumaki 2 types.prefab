@@ -131,7 +131,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c51011dcfa8afc14bb8f6f6669f00859, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sushiName: 
   _fillingObjects:
   - {fileID: 3263143837891367083}
   - {fileID: 2552954288059131114}

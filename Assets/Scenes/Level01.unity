@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 18963778}
   m_Layer: 0
   m_Name: GameEventsManager
-  m_TagString: GameEventsManager
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1057,7 +1057,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1075624787}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &395500718
 MonoBehaviour:
@@ -1118,7 +1118,7 @@ GameObject:
   - component: {fileID: 423231738}
   m_Layer: 0
   m_Name: CustomerSpawnPoint
-  m_TagString: Spawn
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2197,7 +2197,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1075624787}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &912036533
 MonoBehaviour:
@@ -2671,9 +2671,9 @@ Transform:
   - {fileID: 1143800182}
   - {fileID: 72098852}
   - {fileID: 395328454}
-  - {fileID: 1609523273}
   - {fileID: 395500717}
   - {fileID: 912036532}
+  - {fileID: 1609523273}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3027,7 +3027,7 @@ GameObject:
   - component: {fileID: 1150858363}
   m_Layer: 0
   m_Name: CustomerOrderPoint
-  m_TagString: Order
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3092,7 +3092,7 @@ GameObject:
   - component: {fileID: 1229482659}
   m_Layer: 0
   m_Name: Customer Manager
-  m_TagString: CustomerManager
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4181,7 +4181,7 @@ GameObject:
   - component: {fileID: 1583828999}
   m_Layer: 0
   m_Name: ServingZone
-  m_TagString: PrepareZone
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4491,7 +4491,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1075624787}
-  m_RootOrder: 5
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: -179.931, z: 0}
 --- !u!114 &1609523274
 MonoBehaviour:
@@ -4905,7 +4905,7 @@ GameObject:
   - component: {fileID: 1829529758}
   m_Layer: 0
   m_Name: CustomerTurnPoint
-  m_TagString: Turn
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
