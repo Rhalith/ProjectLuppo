@@ -7,17 +7,26 @@ public class InputManager : MonoBehaviour {
     PlayerInputs.PlayerInputActions playerInput;
 
     float movementInput;
-    Vector2 mouseInput;
+    Vector2 mouseInput; 
+    Ray ray;
+    RaycastHit hit;
 
     public bool isMovable;
     public bool isMouseDown;
 
     // Mouse click delegate and events
     public delegate void MouseClickHandler();
-    public event MouseClickHandler OnLeftMouseButtonDown;
-    public event MouseClickHandler OnRightMouseButtonDown;
-    public event MouseClickHandler OnLeftMouseButtonUp;
-    public event MouseClickHandler OnRightMouseButtonUp;
+    public event MouseClickHandler OnLeftMouseDown;
+    public event MouseClickHandler OnLeftMouseHolding;
+    public event MouseClickHandler OnLeftMouseUp;
+    public event MouseClickHandler OnRightMouseDown;
+    public event MouseClickHandler OnRightMouseUp;
+
+    // Mouse over delegate and events
+    public delegate void MouseOverHandler(RaycastHit hit);
+    public event MouseOverHandler OnLeftMouseDownOver;
+    public event MouseOverHandler OnLeftMouseUpOver;
+
     public event MouseClickHandler OnLeftClickPerformed;
 
     private static InputManager _instance;
@@ -83,26 +92,46 @@ public class InputManager : MonoBehaviour {
         {
             //objectController.RotateObject(movementInput);
         }
+
+        // Mouse holding trigger
+        if (isMouseDown)
+        {
+            OnLeftMouseHolding?.Invoke();
+        }
     }
 
     private void LeftMouseButtonDown()
     {
-        OnLeftMouseButtonDown?.Invoke();
+        OnLeftMouseDown?.Invoke();
+        isMouseDown = true;
+
+        ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        if(Physics.Raycast(ray, out hit, 50000.0f))
+        {
+            OnLeftMouseDownOver?.Invoke(hit);
+        }
     }
 
     private void LeftMouseButtonUp()
     {
-        OnLeftMouseButtonUp?.Invoke();
+        OnLeftMouseUp?.Invoke();
+        isMouseDown = false;
+
+        ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        if (Physics.Raycast(ray, out hit, 50000.0f))
+        {
+            OnLeftMouseUpOver?.Invoke(hit);
+        }
     }
 
     private void RightMouseButtonDown()
     {
-        OnRightMouseButtonDown?.Invoke();
+        OnRightMouseDown?.Invoke();
     }
 
     private void RightMouseButtonUp()
     {
-        OnRightMouseButtonUp?.Invoke();
+        OnRightMouseUp?.Invoke();
     }
 
     private void RightClickPerformed()
@@ -112,7 +141,7 @@ public class InputManager : MonoBehaviour {
 
     private void LeftClickPerformed()
     {
-        OnLeftClickPerformed?.Invoke();
+
     }
 
     private void OnEnable ()

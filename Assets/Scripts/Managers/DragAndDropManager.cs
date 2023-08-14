@@ -6,19 +6,22 @@ public class DragAndDropManager : MonoBehaviour
     [SerializeField] GameObject[] _prepareZones;
     private GameObject _selectedObject;
     [Header("Drag and Drop Borders")]
-    [SerializeField] float minX = -9.13f; [SerializeField] float minZ = -1.8f; [SerializeField] float maxX = 2.14f; [SerializeField] float maxZ = 0.15f;
+    [SerializeField] float minX = -9.13f; 
+    [SerializeField] float minZ = -1.8f; 
+    [SerializeField] float maxX = 2.14f; 
+    [SerializeField] float maxZ = 0.15f;
 
 
     private void Start()
     {
-        InputManager.Instance.OnLeftMouseButtonDown += OnLeftMouseButtonDown;
-        InputManager.Instance.OnLeftMouseButtonUp += OnLeftMouseButtonUp; ;
+        InputManager.Instance.OnLeftMouseDownOver += OnLeftMouseButtonDownOver;
+        InputManager.Instance.OnLeftMouseUpOver += OnLeftMouseButtonUpOver;
     }
 
     private void OnDestroy()
     {
-        InputManager.Instance.OnLeftMouseButtonDown -= OnLeftMouseButtonDown;
-        InputManager.Instance.OnLeftMouseButtonUp -= OnLeftMouseButtonUp; ;
+        InputManager.Instance.OnLeftMouseDownOver -= OnLeftMouseButtonDownOver;
+        InputManager.Instance.OnLeftMouseUpOver -= OnLeftMouseButtonUpOver;
     }
 
     private void Update()
@@ -43,39 +46,16 @@ public class DragAndDropManager : MonoBehaviour
         }
     }
 
-    private RaycastHit CastRay()
+    private void OnLeftMouseButtonDownOver(RaycastHit hit)
     {
-        Vector3 screenMousePosFar = new Vector3(Input.mousePosition.x, Input.mousePosition.y, Camera.main.farClipPlane);
-        Vector3 screenMousePosNear = new Vector3(Input.mousePosition.x, Input.mousePosition.y, Camera.main.nearClipPlane);
-        Vector3 worldMousePosFar = Camera.main.ScreenToWorldPoint(screenMousePosFar);
-        Vector3 worldMousePosNear = Camera.main.ScreenToWorldPoint(screenMousePosNear);
-        RaycastHit hit;
-        Physics.Raycast(worldMousePosNear, worldMousePosFar - worldMousePosNear, out hit);
-
-        return hit;
-    }
-
-    // Yeni input sisteminde bunlar yok.
-    private void OnMouseUp()
-    {
-        if(_selectedObject !=null)
-        {
-            PlaceObjectInZone(_selectedObject);
-            _selectedObject = null;
-        }
-    }
-
-    private void OnLeftMouseButtonDown()
-    {
+        // Checks if player holding any ingredient
         if(!InstantiatedController.Instance.InstantiatedObject)
         {
-            //Knowing issue: Because of not checking if there is any instantiated object, it is selecting cutting board when you put seawed on the cutting board.
             if (_selectedObject == null)
             {
-                RaycastHit hit = CastRay();
                 if (hit.collider != null)
                 {
-                    if (!hit.collider.CompareTag("ServingSet") && !hit.collider.CompareTag("Sushi"))
+                    if (!hit.collider.CompareTag("CuttingBoard") && !hit.collider.CompareTag("Sushi"))
                     {
                         return;
                     }
@@ -134,9 +114,16 @@ public class DragAndDropManager : MonoBehaviour
         }
     }
 
-
-    private void OnLeftMouseButtonUp()
+    // OnMouseUp, þu anlýk sýkýntý olmaz her þey tag'ler ile ayrýlacaðý için, ama ilerde ayný tagde birden fazla obje olursa sýkýntý çýkarýr.
+    private void OnLeftMouseButtonUpOver(RaycastHit hit)
     {
-
+        if(hit.collider.CompareTag(gameObject.tag))
+        {
+            if (_selectedObject != null)
+            {
+                PlaceObjectInZone(_selectedObject);
+                _selectedObject = null;
+            }
+        }
     }
 }

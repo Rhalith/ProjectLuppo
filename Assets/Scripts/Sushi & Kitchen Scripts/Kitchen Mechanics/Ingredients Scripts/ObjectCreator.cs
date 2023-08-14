@@ -9,29 +9,35 @@ public class ObjectCreator : MonoBehaviour
     private void Start()
     {
         InstantiatedController.Instance.OnInstantiatedObjectCleared += OnInstantiatedObjectCleared;
+        InputManager.Instance.OnLeftMouseDownOver += OnLeftMouseDownOver;
     }
 
     private void OnDestroy()
     {
         InstantiatedController.Instance.OnInstantiatedObjectCleared -= OnInstantiatedObjectCleared;
+        InputManager.Instance.OnLeftMouseDownOver -= OnLeftMouseDownOver;
     }
 
-    private void OnMouseDown()
+    private void OnLeftMouseDownOver(RaycastHit hit)
     {
-        if (!InstantiatedController.Instance.InstantiatedObject)
+        // Þu an box'larýn tag'leri olmadýðý için isimle kontrol ediyoruz.
+        if(hit.collider.gameObject.name.Equals(gameObject.name))
         {
-            InstantiateIngredientObject();
-        }
-        else
-        {
-            if (InstantiatedController.Instance.InstantiatedObject.Equals(_instantiatedObject))
+            if (!InstantiatedController.Instance.InstantiatedObject)
             {
-                DestroySushiObjectIfExists();
+                InstantiateIngredientObject();
             }
             else
             {
-                DestroySushiObjectIfExists();
-                InstantiateIngredientObject();
+                if (InstantiatedController.Instance.InstantiatedObject.Equals(_instantiatedObject))
+                {
+                    DestroySushiObjectIfExists();
+                }
+                else
+                {
+                    DestroySushiObjectIfExists();
+                    InstantiateIngredientObject();
+                }
             }
         }
     }
