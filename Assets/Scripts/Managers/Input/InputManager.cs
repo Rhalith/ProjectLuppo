@@ -7,7 +7,9 @@ public class InputManager : MonoBehaviour {
     PlayerInputs.PlayerInputActions playerInput;
 
     float movementInput;
-    Vector2 mouseInput;
+    Vector2 mouseInput; 
+    Ray ray;
+    RaycastHit hit;
 
     public bool isMovable;
     public bool isMouseDown;
@@ -19,6 +21,11 @@ public class InputManager : MonoBehaviour {
     public event MouseClickHandler OnLeftMouseUp;
     public event MouseClickHandler OnRightMouseDown;
     public event MouseClickHandler OnRightMouseUp;
+
+    // Mouse over delegate and events
+    public delegate void MouseOverHandler(RaycastHit hit);
+    public event MouseOverHandler OnLeftMouseDownOver;
+    public event MouseOverHandler OnLeftMouseUpOver;
 
     public event MouseClickHandler OnLeftClickPerformed;
 
@@ -97,12 +104,24 @@ public class InputManager : MonoBehaviour {
     {
         OnLeftMouseDown?.Invoke();
         isMouseDown = true;
+
+        ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        if(Physics.Raycast(ray, out hit, 50000.0f))
+        {
+            OnLeftMouseDownOver?.Invoke(hit);
+        }
     }
 
     private void LeftMouseButtonUp()
     {
         OnLeftMouseUp?.Invoke();
         isMouseDown = false;
+
+        ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        if (Physics.Raycast(ray, out hit, 50000.0f))
+        {
+            OnLeftMouseUpOver?.Invoke(hit);
+        }
     }
 
     private void RightMouseButtonDown()
@@ -122,7 +141,7 @@ public class InputManager : MonoBehaviour {
 
     private void LeftClickPerformed()
     {
-        OnLeftClickPerformed?.Invoke();
+
     }
 
     private void OnEnable ()
