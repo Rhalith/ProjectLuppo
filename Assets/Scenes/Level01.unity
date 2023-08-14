@@ -525,7 +525,7 @@ GameObject:
   - component: {fileID: 176538341}
   - component: {fileID: 176538340}
   m_Layer: 2
-  m_Name: Text (TMP)
+  m_Name: "Yaz\u0131"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4797,7 +4797,7 @@ GameObject:
   - component: {fileID: 1824129952}
   - component: {fileID: 1824129956}
   m_Layer: 0
-  m_Name: TrashCan
+  m_Name: "\xC7\xF6pKutusu"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5698,7 +5698,7 @@ GameObject:
   - component: {fileID: 47433973415022221}
   - component: {fileID: 6680861754698022248}
   m_Layer: 0
-  m_Name: "lpsu\u015Fimasa.001"
+  m_Name: "Tezgah\u0131nKendisi"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5842,7 +5842,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3775226818548119969}
   m_Layer: 0
-  m_Name: Masa
+  m_Name: Tezgah
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5905,7 +5905,7 @@ GameObject:
   - component: {fileID: 4597914858917337718}
   - component: {fileID: 2313659518000741354}
   m_Layer: 0
-  m_Name: lp
+  m_Name: Malzemelik
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5918,6 +5918,110 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1277152694}
     m_Modifications:
+    - target: {fileID: 146597897509390488, guid: ed630307665efcd42ba2e8f305001539, type: 3}
+      propertyPath: m_Name
+      value: Zemin
+      objectReference: {fileID: 0}
+    - target: {fileID: 1041384558113579400, guid: ed630307665efcd42ba2e8f305001539, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1041384558113579400, guid: ed630307665efcd42ba2e8f305001539, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1041384558113579400, guid: ed630307665efcd42ba2e8f305001539, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1041384558113579400, guid: ed630307665efcd42ba2e8f305001539, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1041384558113579400, guid: ed630307665efcd42ba2e8f305001539, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 1041384558113579400, guid: ed630307665efcd42ba2e8f305001539, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 1365566249306004040, guid: ed630307665efcd42ba2e8f305001539, type: 3}
+      propertyPath: m_Name
+      value: Masa_2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2018255918675704683, guid: ed630307665efcd42ba2e8f305001539, type: 3}
+      propertyPath: m_Name
+      value: Masa_1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2567191878062495852, guid: ed630307665efcd42ba2e8f305001539, type: 3}
+      propertyPath: m_Name
+      value: Bayrak_1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2689801226744157896, guid: ed630307665efcd42ba2e8f305001539, type: 3}
+      propertyPath: m_Name
+      value: Tabure_2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3348252431095488580, guid: ed630307665efcd42ba2e8f305001539, type: 3}
+      propertyPath: m_Name
+      value: SandalyeMinderi
+      objectReference: {fileID: 0}
+    - target: {fileID: 4504880318489430142, guid: ed630307665efcd42ba2e8f305001539, type: 3}
+      propertyPath: m_Name
+      value: Bayrak_2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4760796836967955865, guid: ed630307665efcd42ba2e8f305001539, type: 3}
+      propertyPath: m_Name
+      value: Tabure_3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5069584556237954157, guid: ed630307665efcd42ba2e8f305001539, type: 3}
+      propertyPath: m_Name
+      value: Kupa_1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5243859826290781794, guid: ed630307665efcd42ba2e8f305001539, type: 3}
+      propertyPath: m_Name
+      value: "\xC7at\u0131"
+      objectReference: {fileID: 0}
+    - target: {fileID: 5429669685196840178, guid: ed630307665efcd42ba2e8f305001539, type: 3}
+      propertyPath: m_Name
+      value: TahtaKolon
+      objectReference: {fileID: 0}
+    - target: {fileID: 6266314393673840096, guid: ed630307665efcd42ba2e8f305001539, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6266314393673840096, guid: ed630307665efcd42ba2e8f305001539, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6266314393673840096, guid: ed630307665efcd42ba2e8f305001539, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6266314393673840096, guid: ed630307665efcd42ba2e8f305001539, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6266314393673840096, guid: ed630307665efcd42ba2e8f305001539, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 6266314393673840096, guid: ed630307665efcd42ba2e8f305001539, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 6728056019274972599, guid: ed630307665efcd42ba2e8f305001539, type: 3}
+      propertyPath: m_Name
+      value: Tabure_1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7124355290672592992, guid: ed630307665efcd42ba2e8f305001539, type: 3}
+      propertyPath: m_Name
+      value: Sandalye_2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7136821993794550553, guid: ed630307665efcd42ba2e8f305001539, type: 3}
+      propertyPath: m_Name
+      value: Pencere_1
+      objectReference: {fileID: 0}
     - target: {fileID: 7160305503230532752, guid: ed630307665efcd42ba2e8f305001539, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -5962,6 +6066,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7265496515475664031, guid: ed630307665efcd42ba2e8f305001539, type: 3}
+      propertyPath: m_Name
+      value: Masa_4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7265496515729498257, guid: ed630307665efcd42ba2e8f305001539, type: 3}
+      propertyPath: m_Name
+      value: Masa_6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7265496515800158559, guid: ed630307665efcd42ba2e8f305001539, type: 3}
+      propertyPath: m_Name
+      value: Masa_7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7265496515903476769, guid: ed630307665efcd42ba2e8f305001539, type: 3}
+      propertyPath: m_Name
+      value: Masa_3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7265496516007091381, guid: ed630307665efcd42ba2e8f305001539, type: 3}
+      propertyPath: m_Name
+      value: Masa_5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7455394355627906527, guid: ed630307665efcd42ba2e8f305001539, type: 3}
+      propertyPath: m_Name
+      value: Bayrak_3
+      objectReference: {fileID: 0}
     - target: {fileID: 7499992321176684074, guid: ed630307665efcd42ba2e8f305001539, type: 3}
       propertyPath: m_Name
       value: Tavern
@@ -5969,6 +6097,46 @@ PrefabInstance:
     - target: {fileID: 7499992321176684074, guid: ed630307665efcd42ba2e8f305001539, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7831212808765789739, guid: ed630307665efcd42ba2e8f305001539, type: 3}
+      propertyPath: m_Name
+      value: Tabure_4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8837364804808123905, guid: ed630307665efcd42ba2e8f305001539, type: 3}
+      propertyPath: m_Name
+      value: Duvar
+      objectReference: {fileID: 0}
+    - target: {fileID: 8925006816323448322, guid: ed630307665efcd42ba2e8f305001539, type: 3}
+      propertyPath: m_Name
+      value: Pencere_2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8995197583791412773, guid: ed630307665efcd42ba2e8f305001539, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8995197583791412773, guid: ed630307665efcd42ba2e8f305001539, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8995197583791412773, guid: ed630307665efcd42ba2e8f305001539, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8995197583791412773, guid: ed630307665efcd42ba2e8f305001539, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8995197583791412773, guid: ed630307665efcd42ba2e8f305001539, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 8995197583791412773, guid: ed630307665efcd42ba2e8f305001539, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 9074578399180181798, guid: ed630307665efcd42ba2e8f305001539, type: 3}
+      propertyPath: m_Name
+      value: Sandalye_1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ed630307665efcd42ba2e8f305001539, type: 3}
