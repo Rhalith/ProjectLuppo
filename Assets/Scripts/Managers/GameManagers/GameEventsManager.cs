@@ -13,6 +13,7 @@ public class GameEventsManager : MonoBehaviour
         }
         Instance = this;
     }
+
     //Example event(Also day end event)
     public event Action OnDayEnded;
 
@@ -46,21 +47,13 @@ public class GameEventsManager : MonoBehaviour
         }
     }
 
-    public event Action OnServingAdded;
+    public event Action OnOrderServed;
 
-    public void ServingAdded()
+    public void ServeOrder()
     {
-        if (OnServingAdded != null)
-        { OnServingAdded(); }
-    }
-
-    public event Action OnServingServed;
-
-    public void ServingServed()
-    {
-        if (OnServingServed != null)
-        {
-            OnServingServed();
+        if (OnOrderServed != null)
+        { 
+            OnOrderServed(); 
         }
     }
 }

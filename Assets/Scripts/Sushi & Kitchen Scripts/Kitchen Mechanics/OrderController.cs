@@ -47,7 +47,7 @@ public class OrderController : MonoBehaviour
             Destroy(_instantiatedSushi);
 
             // Trigger serving event
-            GameEventsManager.Instance.ServingAdded();
+            GameEventsManager.Instance.ServeOrder();
         }
     }
 

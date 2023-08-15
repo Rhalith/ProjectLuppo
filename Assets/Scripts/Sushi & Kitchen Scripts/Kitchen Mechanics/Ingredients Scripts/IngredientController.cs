@@ -41,7 +41,6 @@ public class IngredientController : MonoBehaviour
     }
 
     #region Ingredients
-
     //void OnTriggerEnter(Collider other)
     //{
     //    if (other.CompareTag("Chumaki"))

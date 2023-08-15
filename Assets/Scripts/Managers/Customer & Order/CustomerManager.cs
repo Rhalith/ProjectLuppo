@@ -41,9 +41,15 @@ public class CustomerManager : MonoBehaviour
         _position = orderPoint.transform.position;
         _rotation.eulerAngles = new Vector3(0, 0, 0);
 
+        // Add Customer
         StartCoroutine(SpawnNewCustomers());
 
-        GameEventsManager.Instance.OnServingAdded += OnServingAdded;
+        GameEventsManager.Instance.OnOrderServed += OnOrderServed;
+    }
+
+    private void OnDestroy()
+    {
+        GameEventsManager.Instance.OnOrderServed -= OnOrderServed;
     }
 
     #region Customer Spawn and Destroy
@@ -113,7 +119,7 @@ public class CustomerManager : MonoBehaviour
         StartCoroutine(SpawnNewCustomers());
     }
 
-    void OnServingAdded()
+    void OnOrderServed()
     {
         StartCoroutine(DestroyCustomer());
     }
