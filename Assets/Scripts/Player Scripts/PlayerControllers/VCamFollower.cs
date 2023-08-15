@@ -3,15 +3,15 @@ using UnityEngine;
 
 public class VCamFollower : MonoBehaviour
 {
-    [SerializeField] private GameObject kitchenCam;
-    [SerializeField] private GameObject restaurantCam;
+    [SerializeField] private GameObject kitchenLookAtPoint;
+    [SerializeField] private GameObject customerLookAtPoint;
 
     private CinemachineVirtualCamera _vcam;
 
     private void Start()
     {
-        GameEventsManager.Instance.OnKitchenActivated += OnKitchenActivated;
-        GameEventsManager.Instance.OnRestaurantActivated += OnRestaurantActivated;
+        GameEventsManager.Instance.OnReturnToKitchen += OnReturnToKitchen;
+        GameEventsManager.Instance.OnReturnToCustomer += OnReturnToCustomer;
         GameEventsManager.Instance.OnOrderServed += OnOrderServed;
 
         _vcam = GetComponent<CinemachineVirtualCamera>();
@@ -19,23 +19,23 @@ public class VCamFollower : MonoBehaviour
 
     private void OnDestroy()
     {
-        GameEventsManager.Instance.OnKitchenActivated -= OnKitchenActivated;
-        GameEventsManager.Instance.OnRestaurantActivated -= OnRestaurantActivated;
+        GameEventsManager.Instance.OnReturnToKitchen -= OnReturnToKitchen;
+        GameEventsManager.Instance.OnReturnToCustomer -= OnReturnToCustomer;
         GameEventsManager.Instance.OnOrderServed -= OnOrderServed;
     }
 
-    void OnKitchenActivated()
+    void OnReturnToKitchen()
     {
-        _vcam.LookAt = kitchenCam.transform;
+        _vcam.LookAt = kitchenLookAtPoint.transform;
     }
 
-    private void OnRestaurantActivated()
+    private void OnReturnToCustomer()
     {
-        _vcam.LookAt = restaurantCam.transform;
+        _vcam.LookAt = customerLookAtPoint.transform;
     }
 
     void OnOrderServed()
     {
-        _vcam.LookAt = restaurantCam.transform;
+        _vcam.LookAt = customerLookAtPoint.transform;
     }
 }

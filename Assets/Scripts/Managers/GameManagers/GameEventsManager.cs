@@ -11,39 +11,31 @@ public class GameEventsManager : MonoBehaviour
         {
             Debug.LogError("Found more than one Game Events Manager in the scene.");
         }
-        Instance = this;
-    }
-
-    //Example event(Also day end event)
-    public event Action OnDayEnded;
-
-    public void DayEnded()
-    {
-        if (OnDayEnded != null)
+        else
         {
-            OnDayEnded();
+            Instance = this;
         }
     }
 
     // Button Activation/Scene Change to Kitchen
-    public event Action OnKitchenActivated;
+    public event Action OnReturnToKitchen;
 
-    public void KitchenActivated()
+    public void ReturnKitchen()
     {
-        if (OnKitchenActivated != null)
+        if (OnReturnToKitchen != null)
         {
-            OnKitchenActivated();
+            OnReturnToKitchen();
         }
     }
 
-    // Button Activation/Scene Change to Restaurant
-    public event Action OnRestaurantActivated;
+    // Button Activation/Scene Change to Customer
+    public event Action OnReturnToCustomer;
 
-    public void RestaurantActivated()
+    public void ReturnCustomer()
     {
-        if (OnRestaurantActivated != null)
+        if (OnReturnToCustomer != null)
         {
-            OnRestaurantActivated();
+            OnReturnToCustomer();
         }
     }
 
@@ -54,6 +46,17 @@ public class GameEventsManager : MonoBehaviour
         if (OnOrderServed != null)
         { 
             OnOrderServed(); 
+        }
+    }
+
+    //Example event(Also day end event)
+    public event Action OnDayEnded;
+
+    public void DayEnded()
+    {
+        if (OnDayEnded != null)
+        {
+            OnDayEnded();
         }
     }
 }

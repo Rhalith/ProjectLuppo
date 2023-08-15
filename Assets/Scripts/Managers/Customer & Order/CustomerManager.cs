@@ -43,13 +43,6 @@ public class CustomerManager : MonoBehaviour
 
         // Add Customer
         StartCoroutine(SpawnNewCustomers());
-
-        GameEventsManager.Instance.OnOrderServed += OnOrderServed;
-    }
-
-    private void OnDestroy()
-    {
-        GameEventsManager.Instance.OnOrderServed -= OnOrderServed;
     }
 
     #region Customer Spawn and Destroy
@@ -101,27 +94,22 @@ public class CustomerManager : MonoBehaviour
         }
     }
 
-    IEnumerator DestroyCustomer()
+    public void DequeueCustomer()
     {
         // Sýrada en baþta olan eleman destroy edilir ve order Empty olarak ayarlanýr.
         Destroy(customerQueue.Dequeue().GetCustomerObj);
         OrderManager.Instance.EmptyOrder();
+    }
 
+    public IEnumerator SetNewOrder()
+    {
+        DequeueCustomer();
         // Bunun yerine event kullanýlabilir.
         OrderManager.Instance.UpdateOrder(customerQueue.Peek().GetOrderedSushi);
 
         yield return new WaitForSeconds(2f);
 
-
-        // Coroutine'ler tamamlanýnca temizleniyorlar mý???
-        //if(_spawnCustomerCoroutine == null)
-
         StartCoroutine(SpawnNewCustomers());
-    }
-
-    void OnOrderServed()
-    {
-        StartCoroutine(DestroyCustomer());
     }
     #endregion
 }
