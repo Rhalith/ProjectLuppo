@@ -2,13 +2,20 @@ public enum SushiType
 {
     Sashimi,
     Nigiri,
-    Maki,
+    Hosomaki,
+    Chumaki,
+    Futomaki,
     Uramaki,
+    Temaki,
+    GunkanMaki,
 }
 
 public enum SushiIngredient
 {
     shrimp,
+    creamcheese,
+    tomatopesto,
+    plum,
     omelette,
     freshwatereel,
     salmon,
@@ -17,11 +24,17 @@ public enum SushiIngredient
     springonion,
     rice,
     fermentedsoybean,
+    tempura,
+    spicysauce,
+    teriyakichicken,
+    juliennebellpepper,
+    mango,
     juliennecucumber,
     julienneradish,
+    juliennedaikon,
     gourd,
     kombuweed,
-    crabmeat,
+    crabstick,
     avocado,
     cucumber,
     sesameoil,
@@ -40,5 +53,6 @@ public enum SushiIngredient
     kanpyo,
     nori,
     carrot,
-    sriracha
+    sriracha,
+    freshshisoleaves,
 }
