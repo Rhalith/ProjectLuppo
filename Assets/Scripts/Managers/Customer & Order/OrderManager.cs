@@ -12,12 +12,12 @@ public enum OrderedSushiType
 
 public class OrderManager : MonoBehaviour
 {
-    [SerializeField] TextMeshProUGUI customerText;
-    [SerializeField] CinemachineBrain _cinemachineBrain;
+    [SerializeField] CinemachineBrain cinemachineBrain;
+
+    private OrderedSushiType _orderedSushi;
+    public CinemachineBrain CinemachineBrain { get => cinemachineBrain; }
 
     public static OrderManager Instance;
-    private OrderedSushiType _orderedSushi;
-    public CinemachineBrain CinemachineBrain { get => _cinemachineBrain; }
 
     private void Awake()
     {
@@ -42,14 +42,14 @@ public class OrderManager : MonoBehaviour
         {
             _orderedSushi = orderedSushi;
 
-            customerText.text = "Selamlar, ben bir adet " + GetFoodName(_orderedSushi) + " alabilir miyim?";
+            CustomerDialogManager.Instance.ChangeText("Selamlar, ben bir adet " + GetFoodName(_orderedSushi) + " alabilir miyim?");
         }
     }
 
     public void EmptyOrder()
     {
         _orderedSushi = OrderedSushiType.Empty;
-        customerText.text = "Sipariþ Yok.";
+        CustomerDialogManager.Instance.ChangeText("Sipariþ Yok.");
     }
 
     public string GetFoodName(OrderedSushiType orderedSushi)

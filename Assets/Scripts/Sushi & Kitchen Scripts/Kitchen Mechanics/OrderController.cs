@@ -6,8 +6,6 @@ using UnityEngine;
 
 public class OrderController : MonoBehaviour
 {
-    [SerializeField] TMP_Text _text;
-
     private List<SushiIngredient> _ingredients;
     private OrderedSushiType _sushiType;
     private GameObject _instantiatedSushi;
@@ -55,27 +53,27 @@ public class OrderController : MonoBehaviour
     {
         if (OrderManager.Instance.GetOrder() != _sushiType)
         {
-            _text.text = "Ben bu yemeði istememiþtim!";
+            CustomerDialogManager.Instance.ChangeText("Ben bu yemeði istememiþtim!");
         }
         else if (_ingredients.Count(n => n.Equals(SushiIngredient.cucumber)) < 3)
         {
-            _text.text = "Salatalýðý az olmuþ.";
+            CustomerDialogManager.Instance.ChangeText("Salatalýðý az olmuþ.");
         }
         else if (_ingredients.Count(n => n.Equals(SushiIngredient.cucumber)) > 3)
         {
-            _text.text = "Salatalýðý fazla olmuþ.";
+            CustomerDialogManager.Instance.ChangeText("Salatalýðý fazla olmuþ.");
         }
         else if (_ingredients.Count(n => n.Equals(SushiIngredient.salmon)) < 3)
         {
-            _text.text = "Somonu az olmuþ.";
+            CustomerDialogManager.Instance.ChangeText("Somonu az olmuþ.");
         }
         else if (_ingredients.Count(n => n.Equals(SushiIngredient.salmon)) > 3)
         {
-            _text.text = "Somonu fazla olmuþ.";
+            CustomerDialogManager.Instance.ChangeText("Somonu fazla olmuþ.");
         }
         else
         {
-            _text.text = "Yediðim en güzel sushiydi. Sanki bu dünyadan deðil!";
+            CustomerDialogManager.Instance.ChangeText("Yediðim en güzel sushiydi. Sanki bu dünyadan deðil!");
         }
     }
 }
