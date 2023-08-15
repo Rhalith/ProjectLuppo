@@ -3,75 +3,36 @@ using UnityEngine;
 
 public class InGameManager : MonoBehaviour
 {
-    [SerializeField] GameObject RestaurantUI;
     [SerializeField] GameObject KitchenUI;
     [SerializeField] GameObject CustomerUI;
 
-    bool animate = false;
     bool kitchenActive = false;
     bool restaurantActive = true;
-
-    public Animator anim;
 
 
     public void Start()
     {
-        GameEventsManager.Instance.OnKitchenActivated += OnKitchenActivated;
-        GameEventsManager.Instance.OnRestaurantActivated += OnRestaurantActivated;
+        GameEventsManager.Instance.OnReturnToKitchen += OnReturnToKitchen;
+        GameEventsManager.Instance.OnReturnToCustomer += OnReturnToCustomer;
         GameEventsManager.Instance.OnOrderServed += OnOrderServed;
-        StartCoroutine(DayStart());
+
+        StartCoroutine(InitialStartCustomerUI());
     }
 
     public void OnDestroy()
     {
-        GameEventsManager.Instance.OnKitchenActivated -= OnKitchenActivated;
-        GameEventsManager.Instance.OnRestaurantActivated -= OnRestaurantActivated;
+        GameEventsManager.Instance.OnReturnToKitchen -= OnReturnToKitchen;
+        GameEventsManager.Instance.OnReturnToCustomer -= OnReturnToCustomer;
         GameEventsManager.Instance.OnOrderServed -= OnOrderServed;
     }
 
-    public void ActivateRestaurant()
-    {
-        GameEventsManager.Instance.RestaurantActivated();
-    }
-
-    public void ActivateKitchen()
-    {
-        GameEventsManager.Instance.KitchenActivated();
-    }
-
-    private void OnKitchenActivated()
-    {
-        StartCoroutine(KitchenActivated());
-    }
-
-    private void OnRestaurantActivated()
-    {
-        StartCoroutine(RestaurantActivated());
-    }
-
-    void OnOrderServed()
-    {
-        OpenCustomerUI();
-
-        StartCoroutine(RestaurantActivated());
-    }
-
+    // Methods
     private void OpenCustomerUI()
     {
         CustomerUI.SetActive(true);
     }
 
     public void CloseCustomerUI()
-    {
-        CustomerUI.SetActive(false);
-    }
-
-    private void OpenRestaurantUI()
-    {
-        CustomerUI.SetActive(true);
-    }
-
-    public void CloseRestaurantUI()
     {
         CustomerUI.SetActive(false);
     }
@@ -86,30 +47,63 @@ public class InGameManager : MonoBehaviour
         KitchenUI.SetActive(false);
     }
 
-    IEnumerator RestaurantActivated()
+    public void ReturnToCustomer()
+    {
+        GameEventsManager.Instance.ReturnCustomer();
+    }
+
+    public void ReturnToKitchen()
+    {
+        GameEventsManager.Instance.ReturnKitchen();
+    }
+
+    public void GetNewOrder()
+    {
+        StartCoroutine(CustomerManager.Instance.SetNewOrder());
+
+        StartCoroutine(InitialStartCustomerUI());
+    }
+
+    // Event relative methods
+    private void OnReturnToCustomer()
+    {
+        StartCoroutine(ActivateCustomerUI());
+    }
+
+    private void OnReturnToKitchen()
+    {
+        StartCoroutine(ActivateKitchenUI());
+    }
+
+    private void OnOrderServed()
+    {
+
+        StartCoroutine(ActivateCustomerUI());
+    }
+
+    // Coroutines
+    IEnumerator ActivateCustomerUI()
     {
         CloseKitchenUI();
 
         yield return new WaitForSeconds(0.25f);
 
-        OpenRestaurantUI();
+        OpenCustomerUI();
     }
 
-    IEnumerator KitchenActivated()
+    IEnumerator ActivateKitchenUI()
     {
-        CloseRestaurantUI();
+        CloseCustomerUI();
 
         yield return new WaitForSeconds(0.25f);
 
         OpenKitchenUI();
     }
 
-    IEnumerator DayStart()
+    IEnumerator InitialStartCustomerUI()
     {
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(Random.Range(2f, 4.5f));
 
         OpenCustomerUI();
-
-        OpenRestaurantUI();
     }
 }
