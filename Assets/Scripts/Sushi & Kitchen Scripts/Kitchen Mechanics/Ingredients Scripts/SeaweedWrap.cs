@@ -54,7 +54,16 @@ public class SeaweedWrap : MonoBehaviour
                 else
                 {
                     _rollingAnimation.RollSeaweed(rollingAmount);
-                    _maskObject.position = new Vector3(hit.point.x - _maskObject.lossyScale.x / 2, _maskObject.position.y, _maskObject.position.z);
+                    Debug.Log("hit point x : "+hit.point.x);
+                    Debug.Log("transform x : "+transform.lossyScale.x * 0.5f);
+                    if(hit.point.x - transform.localScale.x * 0.5f >= 0.2f || hit.point.x - transform.localScale.x * 0.5f >= - 0.2f)
+                    {
+                        _maskObject.position = new Vector3(hit.point.x - _maskObject.lossyScale.x / 2, _maskObject.position.y, _maskObject.position.z);
+                    }
+                    else
+                    {
+                        _maskObject.position = new Vector3(hit.point.x - (_maskObject.lossyScale.x / 2 + hit.point.x - transform.localScale.x * 0.5f), _maskObject.position.y, _maskObject.position.z);
+                    }
                 }
 
             }
