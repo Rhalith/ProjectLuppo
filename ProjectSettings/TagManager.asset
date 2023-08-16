@@ -15,6 +15,7 @@ TagManager:
   - ServingSet
   - Sushi
   - SeaweedWrap
+  - MaskObject
   layers:
   - Default
   - TransparentFX

@@ -8,7 +8,11 @@ public class SushiSlicer : MonoBehaviour
 {
     private List<GameObject> _hullList = new();
     [SerializeField] private CuttingAnimation _cuttingAnimation;
+    [SerializeField] private MeshCollider _meshCollider;
     [SerializeField] private Transform _parentTransform;
+    [SerializeField] private GameObject _parentOfHulls;
+    [SerializeField] private GameObject _maskObject;
+    [SerializeField] private GameObject _parentOfMaskObjects;
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space))
@@ -29,16 +33,20 @@ public class SushiSlicer : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Sushi") && !_hullList.Contains(other.gameObject))
+        if (other.gameObject.CompareTag("MaskObject"))
+        {
+            _meshCollider.isTrigger = false;
+        }
+        else if (other.gameObject.CompareTag("Sushi") && !_hullList.Contains(other.gameObject))
         {
             SlicedHull slicedHull = CutSushi(other.gameObject);
             GameObject upperHull = slicedHull.CreateUpperHull(other.gameObject);
-            //This may need to change depending on main scene sushi position
-            //upperHull.transform.position = new(upperHull.transform.position.x, upperHull.transform.position.y, upperHull.transform.position.z - 0.02f);
             GameObject lowerHull = slicedHull.CreateLowerHull(other.gameObject);
-            other.gameObject.SetActive(false);
+            Destroy(other.gameObject);
             PrepapeHull(upperHull);
             PrepapeHull(lowerHull);
+            GameObject maskOjbect = Instantiate(_maskObject, _parentOfMaskObjects.transform);
+            maskOjbect.transform.position = new Vector3(maskOjbect.transform.position.x, maskOjbect.transform.position.y+0.015f, _parentTransform.position.z);
         }
     }
 
@@ -50,19 +58,18 @@ public class SushiSlicer : MonoBehaviour
     private void PrepapeHull(GameObject hull)
     {
         _hullList.Add(hull);
+        hull.transform.parent = _parentOfHulls.transform;
         MeshCollider collider = hull.AddComponent<MeshCollider>();
         Rigidbody rb = hull.AddComponent<Rigidbody>();
-        collider.convex = true;
-        collider.isTrigger = false;
-        rb.isKinematic = false;
-        rb.useGravity = true;
+        collider.convex = false;
+        rb.isKinematic = true;
         hull.tag = "Sushi";
-        rb.AddExplosionForce(15f, transform.position, 3f);
     }
 
     //Call it in the end of knife animation
     public void ResetHullList()
     {
         _hullList.Clear();
+        _meshCollider.isTrigger = true;
     }
 }
