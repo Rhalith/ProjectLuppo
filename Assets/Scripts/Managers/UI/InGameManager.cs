@@ -57,7 +57,7 @@ public class InGameManager : MonoBehaviour
         GameEventsManager.Instance.ReturnKitchen();
     }
 
-    public void GetNewOrder()
+    public void InstantiateNewOrder()
     {
         StartCoroutine(CustomerManager.Instance.SetNewOrder());
 
@@ -77,7 +77,6 @@ public class InGameManager : MonoBehaviour
 
     private void OnOrderServed()
     {
-
         StartCoroutine(ActivateCustomerUI());
     }
 
@@ -100,6 +99,7 @@ public class InGameManager : MonoBehaviour
         OpenKitchenUI();
     }
 
+    // Opens CustomerUI before every order
     IEnumerator InitialStartCustomerUI()
     {
         yield return new WaitForSeconds(Random.Range(2f, 4.5f));

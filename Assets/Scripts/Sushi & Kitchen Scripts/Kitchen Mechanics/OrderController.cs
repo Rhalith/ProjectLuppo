@@ -46,6 +46,9 @@ public class OrderController : MonoBehaviour
 
             // Trigger serving event
             GameEventsManager.Instance.ServeOrder();
+            
+            // Para miktarlarýnýn nasýl alýnacaðý konuþulacak. 
+            MoneyManager.Instance.AddMoney(5);
         }
     }
 
