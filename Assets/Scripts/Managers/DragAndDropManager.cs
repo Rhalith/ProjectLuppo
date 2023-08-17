@@ -6,10 +6,10 @@ public class DragAndDropManager : MonoBehaviour
     [SerializeField] GameObject[] _prepareZones;
     private GameObject _selectedObject;
     [Header("Drag and Drop Borders")]
-    [SerializeField] float minX = -9.13f; 
-    [SerializeField] float minZ = -1.8f; 
-    [SerializeField] float maxX = 2.14f; 
-    [SerializeField] float maxZ = 0.15f;
+    [SerializeField] float minX = -7.7f; 
+    [SerializeField] float minZ = 0.4f; 
+    [SerializeField] float maxX = 0.5f; 
+    [SerializeField] float maxZ = 2.72f;
 
 
     private void Start()
@@ -30,7 +30,7 @@ public class DragAndDropManager : MonoBehaviour
         {
             Vector3 position = new Vector3(Input.mousePosition.x, Input.mousePosition.y, Camera.main.WorldToScreenPoint(_selectedObject.transform.position).z);
             Vector3 worldPosition = Camera.main.ScreenToWorldPoint(position);
-            _selectedObject.transform.position = new Vector3(worldPosition.x, 4f, worldPosition.z);
+            _selectedObject.transform.position = new Vector3(worldPosition.x, 5.5f, worldPosition.z);
         }
     }
 
@@ -66,46 +66,46 @@ public class DragAndDropManager : MonoBehaviour
             {
                 Vector3 position = new Vector3(Input.mousePosition.x, Input.mousePosition.y, Camera.main.WorldToScreenPoint(_selectedObject.transform.position).z);
                 Vector3 worldPosition = Camera.main.ScreenToWorldPoint(position);
-                _selectedObject.transform.position = new Vector3(worldPosition.x, 3.3f, worldPosition.z);
+                _selectedObject.transform.position = new Vector3(worldPosition.x, 5f, worldPosition.z);
 
                 if (_selectedObject.transform.position.x < minX)
                 {
-                    _selectedObject.transform.position = new Vector3(minX, 3.3f, worldPosition.z);
+                    _selectedObject.transform.position = new Vector3(minX, 5f, worldPosition.z);
 
                     if (_selectedObject.transform.position.z > maxZ)
                     {
-                        _selectedObject.transform.position = new Vector3(minX, 3.3f, maxZ);
+                        _selectedObject.transform.position = new Vector3(minX, 5f, maxZ);
                     }
 
                     if (_selectedObject.transform.position.z < minZ)
                     {
-                        _selectedObject.transform.position = new Vector3(minX, 3.3f, minZ);
+                        _selectedObject.transform.position = new Vector3(minX, 5f, minZ);
                     }
                 }
                 else if (_selectedObject.transform.position.x > maxX)
                 {
-                    _selectedObject.transform.position = new Vector3(maxX, 3.3f, worldPosition.z);
+                    _selectedObject.transform.position = new Vector3(maxX, 5f, worldPosition.z);
 
                     if (_selectedObject.transform.position.z < minZ)
                     {
-                        _selectedObject.transform.position = new Vector3(maxX, 3.3f, minZ);
+                        _selectedObject.transform.position = new Vector3(maxX, 5f, minZ);
                     }
 
                     if (_selectedObject.transform.position.z > maxZ)
                     {
-                        _selectedObject.transform.position = new Vector3(maxX, 3.3f, maxZ);
+                        _selectedObject.transform.position = new Vector3(maxX, 5f, maxZ);
                     }
                 }
                 else
                 {
                     if (_selectedObject.transform.position.z > maxZ)
                     {
-                        _selectedObject.transform.position = new Vector3(worldPosition.x, 3.3f, maxZ);
+                        _selectedObject.transform.position = new Vector3(worldPosition.x, 5f, maxZ);
                     }
 
                     if (_selectedObject.transform.position.z < minZ)
                     {
-                        _selectedObject.transform.position = new Vector3(worldPosition.x, 3.3f, minZ);
+                        _selectedObject.transform.position = new Vector3(worldPosition.x, 5f, minZ);
                     }
                 }
 
