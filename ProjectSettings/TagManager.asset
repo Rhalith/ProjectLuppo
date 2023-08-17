@@ -17,6 +17,7 @@ TagManager:
   - SeaweedWrap
   - MaskObject
   - SushiMat
+  - TrashCan
   layers:
   - Default
   - TransparentFX
