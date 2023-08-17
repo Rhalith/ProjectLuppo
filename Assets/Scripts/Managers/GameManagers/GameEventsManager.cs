@@ -3,11 +3,19 @@ using UnityEngine;
 
 public class GameEventsManager : MonoBehaviour
 {
+
+    // Game event delegate and events
+    public delegate void GameEventHandler();
+    public event GameEventHandler OnReturnToKitchen;
+    public event GameEventHandler OnReturnToCustomer;
+    public event GameEventHandler OnDayEnded;
+    public event GameEventHandler OnOrderServed;
+
     public static GameEventsManager Instance { get; private set; }
 
     private void Awake()
     {
-        if (Instance != null)
+        if (Instance != null && Instance != this)
         {
             Debug.LogError("Found more than one Game Events Manager in the scene.");
             Destroy(this);
@@ -18,46 +26,11 @@ public class GameEventsManager : MonoBehaviour
         }
     }
 
-    // Button Activation/Scene Change to Kitchen
-    public event Action OnReturnToKitchen;
+    public void ReturnKitchen() => OnReturnToKitchen?.Invoke();
 
-    public void ReturnKitchen()
-    {
-        if (OnReturnToKitchen != null)
-        {
-            OnReturnToKitchen();
-        }
-    }
+    public void ReturnCustomer() => OnReturnToCustomer?.Invoke();
 
-    // Button Activation/Scene Change to Customer
-    public event Action OnReturnToCustomer;
+    public void ServeOrder() => OnOrderServed?.Invoke();
 
-    public void ReturnCustomer()
-    {
-        if (OnReturnToCustomer != null)
-        {
-            OnReturnToCustomer();
-        }
-    }
-
-    public event Action OnOrderServed;
-
-    public void ServeOrder()
-    {
-        if (OnOrderServed != null)
-        { 
-            OnOrderServed(); 
-        }
-    }
-
-    //Example event(Also day end event)
-    public event Action OnDayEnded;
-
-    public void DayEnded()
-    {
-        if (OnDayEnded != null)
-        {
-            OnDayEnded();
-        }
-    }
+    public void DayEnded() => OnDayEnded?.Invoke();
 }

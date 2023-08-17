@@ -12,9 +12,9 @@ public enum OrderedSushiType
 
 public class OrderManager : MonoBehaviour
 {
-    [SerializeField] CinemachineBrain cinemachineBrain;
-
+    [SerializeField] private CinemachineBrain cinemachineBrain;
     private OrderedSushiType _orderedSushi;
+
     public CinemachineBrain CinemachineBrain { get => cinemachineBrain; }
 
     public static OrderManager Instance;
