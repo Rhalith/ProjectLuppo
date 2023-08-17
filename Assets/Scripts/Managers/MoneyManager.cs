@@ -5,7 +5,7 @@ public class MoneyManager : MonoBehaviour
 {
     [SerializeField] private TMP_Text moneyText;
 
-    private int _moneyAmount;
+    private int _moneyAmount = 0;
 
     public delegate void MoneyDelegate(int moneyAmount);
     public event MoneyDelegate OnMoneyChanged;
