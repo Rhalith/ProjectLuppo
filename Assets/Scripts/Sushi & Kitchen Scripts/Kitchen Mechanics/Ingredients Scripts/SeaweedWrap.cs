@@ -27,8 +27,6 @@ public class SeaweedWrap : MonoBehaviour
     private void Start()
     {
         InputManager.Instance.OnLeftMouseUp += OnLeftMouseButtonUp;
-        sushiPos = transform.position;
-        sushiPos.x -= 0.1f; sushiPos.z -= 0.17f;
     }
     private void OnLeftMouseButtonUp()
     {
@@ -66,6 +64,8 @@ public class SeaweedWrap : MonoBehaviour
 
     public void InstantiateSushi()
     {
+        sushiPos = transform.position;
+        sushiPos.x -= 0.1f; sushiPos.z -= 0.17f;
         //TODO: Must change scriptable object based on their ingredient (mostly done)
         if (InstantiatedController.Instance.InstantiatedIngredientCount.Equals(1))
         {
