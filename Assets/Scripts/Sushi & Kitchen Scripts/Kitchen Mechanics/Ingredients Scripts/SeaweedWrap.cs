@@ -26,6 +26,7 @@ public class SeaweedWrap : MonoBehaviour
     {
         InputManager.Instance.OnLeftMouseUp += OnLeftMouseButtonUp;
         sushiPos = transform.position;
+        sushiPos.y += 0.02f;
     }
     private void OnLeftMouseButtonUp()
     {
@@ -82,13 +83,14 @@ public class SeaweedWrap : MonoBehaviour
         if (InstantiatedController.Instance.InstantiatedIngredientCount.Equals(1))
         {
             _sushiIngredients = new (IngredientController.Instance.Ingredients);
-            _instObj = Instantiate(hosomakiPrefab, sushiPos, Quaternion.identity);
+            _instObj = Instantiate(hosomakiPrefab, sushiPos, _instObj.transform.rotation);
             //_instObj.GetComponent<HosomakiDisplay>().sushiName = _sushiMaterial + "Hosomaki";
         }
         else if (InstantiatedController.Instance.InstantiatedIngredientCount.Equals(2))
         {
             _sushiIngredients = new(IngredientController.Instance.Ingredients);
-            _instObj = Instantiate(chumaki2Prefab, sushiPos, Quaternion.identity);
+            _instObj = Instantiate(chumaki2Prefab);
+            _instObj.transform.position = sushiPos;
             OrderController.Instance.InstantiatedSushi = _instObj;
             _instObj.GetComponent<ChumakiDisplay>().Ingredients = _sushiIngredients;
             _instObj.GetComponent<ChumakiDisplay>().CheckIngredientList(_differentSushiIngredients);
@@ -96,13 +98,14 @@ public class SeaweedWrap : MonoBehaviour
         else if (InstantiatedController.Instance.InstantiatedIngredientCount.Equals(3))
         {
             _sushiIngredients = new(IngredientController.Instance.Ingredients);
-            _instObj = Instantiate(chumaki3Prefab, sushiPos, Quaternion.identity);
+            _instObj = Instantiate(chumaki3Prefab, sushiPos, _instObj.transform.rotation);
         }
 
         else
         {
             _sushiIngredients = new(IngredientController.Instance.Ingredients);
-            _instObj = Instantiate(futomakiPrefab, sushiPos, Quaternion.identity);
+            _instObj = Instantiate(futomakiPrefab);
+            _instObj.transform.position = sushiPos;
         }
 
         Destroy(gameObject);

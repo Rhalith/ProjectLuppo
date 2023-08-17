@@ -111,10 +111,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f73f36b2a132a640ae8ec72b62cb788, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ingredientPrefab: {fileID: 2693261514558317484, guid: f7a9b14e6113aa6488082f7af768ef53, type: 3}
-  wrapPrefab: {fileID: 0}
-  _nigiriRice: {fileID: 0}
-  ingredientName: 3
 --- !u!114 &400168112507883410
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -130,4 +126,4 @@ MonoBehaviour:
   IngredientPrefab: {fileID: 2693261514558317484, guid: f7a9b14e6113aa6488082f7af768ef53, type: 3}
   WrapPrefab: {fileID: 0}
   _nigiriRice: {fileID: 0}
-  ingredientName: 3
+  ingredientName: 6

@@ -7,6 +7,7 @@ using Unity.VisualScripting;
 public class SushiSlicer : MonoBehaviour
 {
     private List<GameObject> _hullList = new();
+    public GameObject[] SlicedObject;
     [SerializeField] private CuttingAnimation _cuttingAnimation;
     [SerializeField] private MeshCollider _meshCollider;
     [SerializeField] private Transform _parentTransform;
@@ -39,9 +40,10 @@ public class SushiSlicer : MonoBehaviour
         }
         else if (other.gameObject.CompareTag("Sushi") && !_hullList.Contains(other.gameObject))
         {
-            SlicedHull slicedHull = CutSushi(other.gameObject);
-            GameObject upperHull = slicedHull.CreateUpperHull(other.gameObject);
-            GameObject lowerHull = slicedHull.CreateLowerHull(other.gameObject);
+            GameObject[] slicedHull = CutSushi(other.gameObject);
+            SlicedObject = slicedHull;
+            GameObject upperHull = slicedHull[0];
+            GameObject lowerHull = slicedHull[1];
             Destroy(other.gameObject);
             PrepapeHull(upperHull);
             PrepapeHull(lowerHull);
@@ -50,9 +52,9 @@ public class SushiSlicer : MonoBehaviour
         }
     }
 
-    private SlicedHull CutSushi(GameObject obj, Material mat = null)
+    private GameObject[] CutSushi(GameObject obj, Material mat = null)
     {
-        return obj.Slice(transform.position, transform.up, mat);
+        return obj.SliceInstantiate(transform.position, transform.up, mat);
     }
 
     private void PrepapeHull(GameObject hull)
