@@ -2,6 +2,7 @@
 
 public class InputManager : MonoBehaviour {
     [SerializeField] PlayerCam playerCam;
+    [SerializeField] KnifeMovement knifeMovement;
 
     PlayerInputs controls;
     PlayerInputs.PlayerInputActions playerInput;
@@ -13,6 +14,7 @@ public class InputManager : MonoBehaviour {
 
     public bool isMovable;
     public bool isMouseDown;
+    public bool IsCutting;
 
     // Mouse click delegate and events
     public delegate void MouseClickHandler();
@@ -92,7 +94,10 @@ public class InputManager : MonoBehaviour {
         {
             //objectController.RotateObject(movementInput);
         }
-
+        if (IsCutting)
+        {
+            knifeMovement.ReceiveHorizontalInput(movementInput);
+        }
         // Mouse holding trigger
         if (isMouseDown)
         {

@@ -8,7 +8,6 @@ public class CuttingAnimation : MonoBehaviour
     [SerializeField] private SushiSlicer _sushiSlicer;
     [SerializeField] private GameObject _knifeIndicator;
 
-    public bool IsCutting;
     public void StartCutting()
     {
         SetCut(1);
@@ -26,6 +25,6 @@ public class CuttingAnimation : MonoBehaviour
     private void SetCut(int i)
     {
         _animator.SetBool("startCut", i != 0);
-        IsCutting = i != 0;
+        IngredientController.Instance.IsCutting = i != 0;
     }
 }

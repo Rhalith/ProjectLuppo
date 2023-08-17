@@ -6,6 +6,7 @@ public class KnifeAnimation : MonoBehaviour
 {
     [SerializeField] private Animator _knifeAnimator;
     [SerializeField] private GameObject _knifeHolder;
+    [SerializeField] private GameObject _stopCuttingButton;
     [SerializeField] private MeshRenderer _meshRenderer;
 
     public void StartMovement()
@@ -16,6 +17,7 @@ public class KnifeAnimation : MonoBehaviour
     {
         _knifeHolder.SetActive(false);
         _meshRenderer.enabled = true;
+        _stopCuttingButton.SetActive(false);
         SetMovement(0);
     }
 
@@ -23,6 +25,7 @@ public class KnifeAnimation : MonoBehaviour
     {
         _knifeHolder.SetActive(true);
         _meshRenderer.enabled = false;
+        _stopCuttingButton.SetActive(true);
     }
     private void SetMovement(int i)
     {

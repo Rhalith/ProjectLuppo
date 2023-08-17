@@ -65,7 +65,7 @@ public class DragAndDropManager : MonoBehaviour
                     _selectedObject = hit.collider.gameObject;
                     if (_selectedObject.CompareTag("Sushi"))
                     {
-                        _selectedObject.GetComponent<BoxCollider>().enabled = false;
+                        _selectedObject.GetComponent<MeshCollider>().enabled = false;
                     }
                 }
             }
@@ -76,10 +76,11 @@ public class DragAndDropManager : MonoBehaviour
                     if (hit.collider.CompareTag("CuttingBoard"))
                     {
                         _selectedObject.transform.position = _cuttingBoardSushiPlace;
-                        _selectedObject.transform.rotation = Quaternion.Euler(0f, 90f, 0f);
-                        _selectedObject.GetComponent<BoxCollider>().enabled = true;
+                        _selectedObject.transform.rotation = Quaternion.Euler(-90f, 90f, 0f);
+                        _selectedObject.GetComponent<MeshCollider>().enabled = true;
                         _knifeAnimation.StartMovement();
                         _camera.Priority = 11;
+                        InputManager.Instance.IsCutting = true;
                         _selectedObject = null;
                     }
                     else

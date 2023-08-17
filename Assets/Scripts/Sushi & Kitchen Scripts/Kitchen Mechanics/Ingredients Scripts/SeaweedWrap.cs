@@ -64,6 +64,7 @@ public class SeaweedWrap : MonoBehaviour
 
     public void InstantiateSushi()
     {
+        IngredientController.Instance.StopRollingButton.GetComponent<Button>().onClick?.Invoke();
         IngredientController.Instance.StartRollingButton.SetActive(false);
         sushiPos = transform.position;
         sushiPos.x -= 0.1f; sushiPos.z -= 0.17f;
