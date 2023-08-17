@@ -23,17 +23,18 @@ public class AddIngredient : MonoBehaviour
     // Add ingredient
     private void OnMouseClickOn(RaycastHit hit)
     {
-        if (hit.collider.CompareTag("CuttingBoard"))
+        if (hit.collider.CompareTag("SushiMat"))
         {
             if (WrapPrefab != null)
             {
                 // CuttingBoard
                 instObj = Instantiate(WrapPrefab, transform.position, Quaternion.identity);
-                InstantiatedController.Instance.SeaweedWrap = instObj.GetComponent<SeaweedWrap>();
+                InstantiatedController.Instance.SeaweedWrap = instObj.GetComponentInChildren<SeaweedWrap>();
                 IngredientController.Instance.StartRollingButton.SetActive(true);
+                InstantiatedController.Instance.SeaweedWrap.SushiMatController = hit.collider.GetComponent<SushiMatController>();
                 instObj.transform.SetParent(hit.transform);
-                instObj.transform.localPosition = new Vector3(0, -0.009f, 0.0009f);
-                instObj.transform.localRotation = Quaternion.Euler(0, 0, 270);
+                instObj.transform.localPosition = new Vector3(0.046f, 0.002f, -0.0015f);
+                instObj.transform.localScale = new Vector3(0.87f, 0.87f, 0.87f);
             }
         }
         else if (hit.collider.CompareTag("NigiriPlate"))
