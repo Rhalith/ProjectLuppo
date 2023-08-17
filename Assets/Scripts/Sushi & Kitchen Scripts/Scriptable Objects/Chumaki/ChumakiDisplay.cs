@@ -4,7 +4,7 @@ using UnityEngine;
 public class ChumakiDisplay : MonoBehaviour
 {
     private ChumakiObject _chumaki;
-    private List<SushiIngredient> _ingredients = new();
+    private List<SushiIngredient> _ingredients;
 
     [SerializeField] private List<MeshRenderer> _fillingObjects = new();
     [SerializeField] private ChumakiObject _salmonCucumberChumaki;

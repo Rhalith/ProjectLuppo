@@ -21,7 +21,7 @@ public class ObjectCreator : MonoBehaviour
     private void OnLeftMouseDownOver(RaycastHit hit)
     {
         // Þu an box'larýn tag'leri olmadýðý için isimle kontrol ediyoruz.
-        if(hit.collider.gameObject.name.Equals(gameObject.name))
+        if(hit.collider.gameObject.name.Equals(gameObject.name) && !IngredientController.Instance.IsRolling)
         {
             if (!InstantiatedController.Instance.InstantiatedObject)
             {

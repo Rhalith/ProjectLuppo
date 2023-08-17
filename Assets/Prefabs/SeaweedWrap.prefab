@@ -218,4 +218,4 @@ MonoBehaviour:
   hosomakiPrefab: {fileID: 6431443485097882031, guid: 553fec21ae06bf44fb6497421e3058da, type: 3}
   chumaki2Prefab: {fileID: 4875584856571692352, guid: c6bb1677e7cda3a46b17ccab8ef3db24, type: 3}
   chumaki3Prefab: {fileID: 0}
-  futomakiPrefab: {fileID: 4618494973174396392, guid: 8f11c4d6809ea264eabb4179b177b9d6, type: 3}
+  futomakiPrefab: {fileID: 395608045919047660, guid: 787c8b44d6246a645a9e26c94e7f155b, type: 3}
