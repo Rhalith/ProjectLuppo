@@ -93,7 +93,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5251863696162594810}
   - component: {fileID: 3077656264292093052}
-  - component: {fileID: 1463877860001030530}
+  - component: {fileID: 6390099165941251665}
   m_Layer: 0
   m_Name: Chumaki 2 types
   m_TagString: Sushi
@@ -135,7 +135,7 @@ MonoBehaviour:
   - {fileID: 3263143837891367083}
   - {fileID: 2552954288059131114}
   _salmonCucumberChumaki: {fileID: 11400000, guid: d13660fc60fd4b84faa79b98fe2706c7, type: 2}
---- !u!65 &1463877860001030530
+--- !u!65 &6390099165941251665
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

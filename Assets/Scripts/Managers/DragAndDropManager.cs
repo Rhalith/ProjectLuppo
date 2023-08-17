@@ -4,6 +4,9 @@ using UnityEngine;
 public class DragAndDropManager : MonoBehaviour
 {
     [SerializeField] GameObject[] _prepareZones;
+    [SerializeField] private KnifeAnimation _knifeAnimation;
+    [SerializeField] private Cinemachine.CinemachineVirtualCamera _camera;
+    [SerializeField] private Vector3 _cuttingBoardSushiPlace;
     private GameObject _selectedObject;
     [Header("Drag and Drop Borders")]
     [SerializeField] float minX = -7.7f; 
@@ -60,6 +63,29 @@ public class DragAndDropManager : MonoBehaviour
                         return;
                     }
                     _selectedObject = hit.collider.gameObject;
+                    if (_selectedObject.CompareTag("Sushi"))
+                    {
+                        _selectedObject.GetComponent<BoxCollider>().enabled = false;
+                    }
+                }
+            }
+            else if (_selectedObject.CompareTag("Sushi"))
+            {
+                if (hit.collider != null)
+                {
+                    if (hit.collider.CompareTag("CuttingBoard"))
+                    {
+                        _selectedObject.transform.position = _cuttingBoardSushiPlace;
+                        _selectedObject.transform.rotation = Quaternion.Euler(0f, 90f, 0f);
+                        _selectedObject.GetComponent<BoxCollider>().enabled = true;
+                        _knifeAnimation.StartMovement();
+                        _camera.Priority = 11;
+                        _selectedObject = null;
+                    }
+                    else
+                    {
+                        Debug.Log(hit.collider.tag);
+                    }
                 }
             }
             else

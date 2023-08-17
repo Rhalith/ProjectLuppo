@@ -127,9 +127,10 @@ GameObject:
   - component: {fileID: 2598666780765829281}
   - component: {fileID: 567500960628127639}
   - component: {fileID: 6038291432088210843}
+  - component: {fileID: 966661302109967686}
   m_Layer: 0
   m_Name: SushiMat
-  m_TagString: Untagged
+  m_TagString: SushiMat
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -143,7 +144,7 @@ Transform:
   m_GameObject: {fileID: 7799465950817948912}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 31, y: 31, z: 31}
+  m_LocalScale: {x: 25, y: 25, z: 25}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 4810429232305260024}
@@ -224,3 +225,16 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.075279, y: 0.0010000002, z: 0.038117435}
   m_Center: {x: 0.008127043, y: 0.0015, z: -0.0020928585}
+--- !u!114 &966661302109967686
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7799465950817948912}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30e3553d4668dff40ad62cc6ca0a7755, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sushiMatAnimator: {fileID: 567500960628127639}

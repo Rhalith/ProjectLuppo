@@ -29,7 +29,7 @@ public class AddIngredient : MonoBehaviour
             {
                 // CuttingBoard
                 instObj = Instantiate(WrapPrefab, transform.position, Quaternion.identity);
-                InstantiatedController.Instance.SeaweedWrap = instObj.GetComponentInChildren<SeaweedWrap>();
+                InstantiatedController.Instance.SeaweedWrap = instObj.GetComponent<SeaweedWrap>();
                 IngredientController.Instance.StartRollingButton.SetActive(true);
                 InstantiatedController.Instance.SeaweedWrap.SushiMatController = hit.collider.GetComponent<SushiMatController>();
                 instObj.transform.SetParent(hit.transform);
