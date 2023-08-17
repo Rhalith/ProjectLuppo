@@ -28,7 +28,7 @@ public class SeaweedWrap : MonoBehaviour
     {
         InputManager.Instance.OnLeftMouseUp += OnLeftMouseButtonUp;
         sushiPos = transform.position;
-        sushiPos.y += 0.02f;
+        sushiPos.x -= 0.1f; sushiPos.z -= 0.17f;
     }
     private void OnLeftMouseButtonUp()
     {
@@ -70,7 +70,9 @@ public class SeaweedWrap : MonoBehaviour
         if (InstantiatedController.Instance.InstantiatedIngredientCount.Equals(1))
         {
             _sushiIngredients = new (IngredientController.Instance.Ingredients);
-            _instObj = Instantiate(hosomakiPrefab, sushiPos, _instObj.transform.rotation);
+            _instObj = Instantiate(hosomakiPrefab);
+            _instObj.transform.position = sushiPos;
+            OrderController.Instance.InstantiatedSushi = _instObj;
             //_instObj.GetComponent<HosomakiDisplay>().sushiName = _sushiMaterial + "Hosomaki";
         }
         else if (InstantiatedController.Instance.InstantiatedIngredientCount.Equals(2))
@@ -85,7 +87,9 @@ public class SeaweedWrap : MonoBehaviour
         else if (InstantiatedController.Instance.InstantiatedIngredientCount.Equals(3))
         {
             _sushiIngredients = new(IngredientController.Instance.Ingredients);
-            _instObj = Instantiate(chumaki3Prefab, sushiPos, _instObj.transform.rotation);
+            _instObj = Instantiate(chumaki3Prefab);
+            _instObj.transform.position = sushiPos;
+            OrderController.Instance.InstantiatedSushi = _instObj;
         }
 
         else

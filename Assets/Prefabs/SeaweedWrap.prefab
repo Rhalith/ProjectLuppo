@@ -172,6 +172,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _rollingAnimation: {fileID: 2788484048915540140}
+  _sushiMatController: {fileID: 0}
   _maskObject: {fileID: 4663853346514794937}
   hosomakiPrefab: {fileID: 6431443485097882031, guid: 553fec21ae06bf44fb6497421e3058da, type: 3}
   chumaki2Prefab: {fileID: 4875584856571692352, guid: c6bb1677e7cda3a46b17ccab8ef3db24, type: 3}

@@ -3361,7 +3361,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 912036533}
         m_TargetAssemblyTypeName: InGameManager, Assembly-CSharp
-        m_MethodName: GetNewOrder
+        m_MethodName: InstantiateNewOrder
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
