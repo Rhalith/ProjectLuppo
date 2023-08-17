@@ -5,6 +5,7 @@ using UnityEngine.UI;
 public class SeaweedWrap : MonoBehaviour
 {
     [SerializeField] private RollingAnimation _rollingAnimation;
+    [SerializeField] private SushiMatController _sushiMatController;
     [SerializeField] private Transform _maskObject;
     //TODO: all of the sushi prefabs should be in different class
     public GameObject hosomakiPrefab;
@@ -21,6 +22,7 @@ public class SeaweedWrap : MonoBehaviour
     RaycastHit hit;
     float rollingAmount;
     public List<SushiIngredient> DifferentIngredients { get => _differentSushiIngredients; set => _differentSushiIngredients = new(value); }
+    public SushiMatController SushiMatController { get => _sushiMatController; set => _sushiMatController = value; }
 
     private void Start()
     {
@@ -45,28 +47,13 @@ public class SeaweedWrap : MonoBehaviour
 
             if (Physics.Raycast(ray, out hit, 50000.0f))
             {
-                 rollingAmount += InputManager.Instance.MouseInput.x/3;
-                if(rollingAmount > 312)
+                 rollingAmount += InputManager.Instance.MouseInput.y/3;
+                if(rollingAmount > 12)
                 {
                     rollingAmount = 0;
-                    IngredientController.Instance.StopRollingButton.GetComponent<Button>().onClick.Invoke();
-                    InstantiateSushi();
+                    _sushiMatController.StartRolling();
+                    _rollingAnimation.StartRolling();
                 }
-                else
-                {
-                    _rollingAnimation.RollSeaweed(rollingAmount);
-                    Debug.Log("hit point x : "+hit.point.x);
-                    Debug.Log("transform x : "+transform.lossyScale.x * 0.5f);
-                    if(hit.point.x - transform.localScale.x * 0.5f >= 0.2f || hit.point.x - transform.localScale.x * 0.5f >= - 0.2f)
-                    {
-                        _maskObject.position = new Vector3(hit.point.x - _maskObject.lossyScale.x / 2, _maskObject.position.y, _maskObject.position.z);
-                    }
-                    else
-                    {
-                        _maskObject.position = new Vector3(hit.point.x - (_maskObject.lossyScale.x / 2 + hit.point.x - transform.localScale.x * 0.5f), _maskObject.position.y, _maskObject.position.z);
-                    }
-                }
-
             }
         }
     }
@@ -77,7 +64,7 @@ public class SeaweedWrap : MonoBehaviour
         return Camera.main.ScreenToWorldPoint(screenMousePos);
     }
 
-    private void InstantiateSushi()
+    public void InstantiateSushi()
     {
         //TODO: Must change scriptable object based on their ingredient (mostly done)
         if (InstantiatedController.Instance.InstantiatedIngredientCount.Equals(1))

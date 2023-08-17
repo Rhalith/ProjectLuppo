@@ -2,24 +2,29 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RollingAnimation : MonoBehaviour
+public class RollingAnimation: MonoBehaviour
 {
-    [SerializeField] private SkinnedMeshRenderer _skinnedRenderer;
+    [SerializeField] private SeaweedWrap _seaweedWrap;
+    [SerializeField] private Animator _seaweedWrapAnimator;
+    [SerializeField] private Animator _maskObjectAnimator;
 
-    public void RollSeaweed(float rollAmount)
+    private bool _isRolling;
+
+    public bool IsRolling { get => _isRolling; }
+
+    public void StartRolling()
     {
-        if(rollAmount > 0 && rollAmount <= 100)
-        {
-            _skinnedRenderer.SetBlendShapeWeight(0, 100-rollAmount);
-        }
-        else if (rollAmount > 100 && rollAmount <= 200)
-        {
-            _skinnedRenderer.SetBlendShapeWeight(1, rollAmount-100);
-        }
-        else if (rollAmount > 200 && rollAmount <= 300)
-        {
-            if(_skinnedRenderer.GetBlendShapeWeight(1) > 0) _skinnedRenderer.SetBlendShapeWeight(1, 300 - rollAmount);
-            _skinnedRenderer.SetBlendShapeWeight(2, rollAmount-200);
-        }
+        SetRoll(1);
+    }
+    public void StopRolling()
+    {
+        SetRoll(0);
+        _seaweedWrap.InstantiateSushi();
+    }
+    private void SetRoll(int i)
+    {
+        _seaweedWrapAnimator.SetBool("isRolling", i != 0);
+        _maskObjectAnimator.SetBool("isMasking", i != 0);
+        _isRolling = i != 0;
     }
 }
