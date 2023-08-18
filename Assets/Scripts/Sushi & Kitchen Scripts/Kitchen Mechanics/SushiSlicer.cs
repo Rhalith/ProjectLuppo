@@ -9,7 +9,7 @@ public class SushiSlicer : MonoBehaviour
     private List<GameObject> _hullList = new();
     public GameObject[] SlicedObject;
     [SerializeField] private CuttingAnimation _cuttingAnimation;
-    [SerializeField] private MeshCollider _meshCollider;
+    [SerializeField] private BoxCollider _boxCollider;
     [SerializeField] private Transform _parentTransform;
     [SerializeField] private GameObject _parentOfHulls;
     [SerializeField] private GameObject _maskObject;
@@ -29,11 +29,11 @@ public class SushiSlicer : MonoBehaviour
     {
         if (other.gameObject.CompareTag("MaskObject"))
         {
-            _meshCollider.isTrigger = false;
+            _boxCollider.isTrigger = false;
         }
         else if (other.gameObject.CompareTag("Sushi") && !_hullList.Contains(other.gameObject))
         {
-            GameObject[] slicedHull = CutSushi(other.gameObject);
+            GameObject[] slicedHull = CutSushi(other.gameObject, transform.right);
             SlicedObject = slicedHull;
             GameObject upperHull = slicedHull[0];
             GameObject lowerHull = slicedHull[1];
@@ -45,19 +45,16 @@ public class SushiSlicer : MonoBehaviour
             maskOjbect.transform.rotation = Quaternion.Euler(0,90,0);
         }
     }
-    private GameObject[] CutSushi(GameObject obj, Material mat = null)
+    private GameObject[] CutSushi(GameObject obj, Vector3 transformVector, Material mat = null)
     {
-        return obj.SliceInstantiate(transform.position, transform.up, mat);
+        return obj.SliceInstantiate(transform.position, transformVector, mat);
     }
-
     private void PrepapeHull(GameObject hull)
     {
         _hullList.Add(hull);
         hull.transform.parent = _parentOfHulls.transform;
         MeshCollider collider = hull.AddComponent<MeshCollider>();
-        Rigidbody rb = hull.AddComponent<Rigidbody>();
         collider.convex = false;
-        rb.isKinematic = true;
         hull.tag = "Sushi";
     }
 
@@ -65,6 +62,6 @@ public class SushiSlicer : MonoBehaviour
     public void ResetHullList()
     {
         _hullList.Clear();
-        _meshCollider.isTrigger = true;
+        _boxCollider.isTrigger = true;
     }
 }

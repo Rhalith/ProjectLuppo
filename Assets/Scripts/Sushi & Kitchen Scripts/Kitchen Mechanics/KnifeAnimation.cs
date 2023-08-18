@@ -18,6 +18,7 @@ public class KnifeAnimation : MonoBehaviour
         _knifeHolder.SetActive(false);
         _meshRenderer.enabled = true;
         _stopCuttingButton.SetActive(false);
+        IngredientController.Instance.IsCuttingActive = false;
         SetMovement(0);
     }
 
@@ -26,6 +27,7 @@ public class KnifeAnimation : MonoBehaviour
         _knifeHolder.SetActive(true);
         _meshRenderer.enabled = false;
         _stopCuttingButton.SetActive(true);
+        IngredientController.Instance.IsCuttingActive = true;
     }
     private void SetMovement(int i)
     {
