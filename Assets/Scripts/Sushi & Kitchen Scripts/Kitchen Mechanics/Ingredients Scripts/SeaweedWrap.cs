@@ -66,17 +66,17 @@ public class SeaweedWrap : MonoBehaviour
         IngredientController.Instance.StopRollingButton.GetComponent<Button>().onClick?.Invoke();
         IngredientController.Instance.StartRollingButton.SetActive(false);
         sushiPos = transform.position;
-        sushiPos.x += 0.8f; sushiPos.y += 0.4f; sushiPos.z += 2f;
+        sushiPos.x += 2.4f; sushiPos.y += 0.3f; sushiPos.z -= 0.1f;
         //TODO: Must change scriptable object based on their ingredient (mostly done)
         if (InstantiatedController.Instance.InstantiatedIngredientCount.Equals(1))
         {
             //TODO: This will be changed after adding more orders
-            if (OrderController.Instance.SushiType.Equals(OrderedSushiType.SalmonHosomaki))
+            if (OrderManager.Instance.GetOrder().Equals(OrderedSushiType.SalmonHosomaki))
             {
                 _sushiIngredients = new(IngredientController.Instance.Ingredients);
                 _instObj = Instantiate(salmonHosomakiPrefab);
             }
-            else if (OrderController.Instance.SushiType.Equals(OrderedSushiType.CucumberHosomaki))
+            else if (OrderManager.Instance.GetOrder().Equals(OrderedSushiType.CucumberHosomaki))
             {
                 _sushiIngredients = new(IngredientController.Instance.Ingredients);
                 _instObj = Instantiate(cucumberHosomakiPrefab);
@@ -90,7 +90,7 @@ public class SeaweedWrap : MonoBehaviour
         }
         else if (InstantiatedController.Instance.InstantiatedIngredientCount.Equals(2))
         {
-            if(OrderController.Instance.SushiType.Equals(OrderedSushiType.SalmonCucumberChumaki))
+            if(OrderManager.Instance.GetOrder().Equals(OrderedSushiType.SalmonCucumberChumaki))
             {
                 _sushiIngredients = new(IngredientController.Instance.Ingredients);
                 _instObj = Instantiate(salmonCucumberChumakiPrefab);

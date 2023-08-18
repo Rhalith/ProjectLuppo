@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5689307831348227884}
   - component: {fileID: 8238483667609335764}
   - component: {fileID: -2764172374215571029}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: "Salatal\u0131k Hosomaki uzun"
   m_TagString: Sushi
   m_Icon: {fileID: 0}
