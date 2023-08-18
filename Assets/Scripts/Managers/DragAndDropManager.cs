@@ -58,7 +58,7 @@ public class DragAndDropManager : MonoBehaviour
             {
                 if (hit.collider != null)
                 {
-                    if (!hit.collider.CompareTag("CuttingBoard") && !hit.collider.CompareTag("Sushi"))
+                    if (!hit.collider.CompareTag("Sushi"))
                     {
                         return;
                     }
