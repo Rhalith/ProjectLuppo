@@ -29,8 +29,10 @@ public class OrderController : MonoBehaviour
 
     public void CheckOrder()
     {
+        SFXContainer.Instance.PlayMenuClickSFX();
+
         // Empty olduðuna dair bir uyarý verilebilir.
-        if(_sushiType.Equals(OrderedSushiType.Empty))
+        if (_sushiType.Equals(OrderedSushiType.Empty))
         {
             return;
         }

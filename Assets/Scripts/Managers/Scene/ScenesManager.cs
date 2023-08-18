@@ -12,7 +12,8 @@ public class ScenesManager : MonoBehaviour
     public enum Scene
     {
         MainMenu,
-        Level01
+        Level01,
+        SFX
     }
 
     //Loads Specific Scene
@@ -24,7 +25,7 @@ public class ScenesManager : MonoBehaviour
     //Loads First Scene
     public void LoadNewGame()
     {
-        SceneManager.LoadScene(Scene.Level01.ToString());
+        SceneManager.LoadScene(Scene.SFX.ToString());
     }
 
     //Loads Next Scene

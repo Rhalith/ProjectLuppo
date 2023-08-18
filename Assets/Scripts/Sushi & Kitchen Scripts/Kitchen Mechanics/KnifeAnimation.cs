@@ -15,6 +15,8 @@ public class KnifeAnimation : MonoBehaviour
     }
     public void ResetPosition()
     {
+        SFXContainer.Instance.PlayMenuClickSFX();
+
         _knifeHolder.SetActive(false);
         _meshRenderer.enabled = true;
         _stopCuttingButton.SetActive(false);

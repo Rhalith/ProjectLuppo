@@ -49,16 +49,22 @@ public class InGameManager : MonoBehaviour
 
     public void ReturnToCustomer()
     {
+        SFXContainer.Instance.PlayMenuClickSFX();
+
         GameEventsManager.Instance.ReturnCustomer();
     }
 
     public void ReturnToKitchen()
     {
+        SFXContainer.Instance.PlayMenuClickSFX();
+
         GameEventsManager.Instance.ReturnKitchen();
     }
 
     public void InstantiateNewOrder()
     {
+        SFXContainer.Instance.PlayMenuClickSFX();
+
         StartCoroutine(CustomerManager.Instance.SetNewOrder());
 
         StartCoroutine(InitialStartCustomerUI());

@@ -148,6 +148,8 @@ public class IngredientController : MonoBehaviour
 
     public void StartRolling()
     {
+        SFXContainer.Instance.PlayMenuClickSFX();
+
         _isRolling = true;
 
         // Clear holding ingredient
@@ -156,6 +158,8 @@ public class IngredientController : MonoBehaviour
 
     public void StopRolling()
     {
+        SFXContainer.Instance.PlayMenuClickSFX();
+
         _isRolling = false;
     }
 }
