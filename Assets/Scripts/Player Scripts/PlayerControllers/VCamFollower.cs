@@ -3,18 +3,15 @@ using UnityEngine;
 
 public class VCamFollower : MonoBehaviour
 {
-    [SerializeField] private GameObject kitchenLookAtPoint;
-    [SerializeField] private GameObject customerLookAtPoint;
 
-    private CinemachineVirtualCamera _vcam;
+    [SerializeField] private CinemachineVirtualCamera _customerCam;
+    [SerializeField] private CinemachineVirtualCamera _kitchenCam;
 
     private void Start()
     {
         GameEventsManager.Instance.OnReturnToKitchen += OnReturnToKitchen;
         GameEventsManager.Instance.OnReturnToCustomer += OnReturnToCustomer;
         GameEventsManager.Instance.OnOrderServed += OnOrderServed;
-
-        _vcam = GetComponent<CinemachineVirtualCamera>();
     }
 
     private void OnDestroy()
@@ -26,16 +23,19 @@ public class VCamFollower : MonoBehaviour
 
     void OnReturnToKitchen()
     {
-        _vcam.LookAt = kitchenLookAtPoint.transform;
+        _customerCam.Priority = 9;
+        _kitchenCam.Priority = 10;
     }
 
     private void OnReturnToCustomer()
     {
-        _vcam.LookAt = customerLookAtPoint.transform;
+        _customerCam.Priority = 10;
+        _kitchenCam.Priority = 9;
     }
 
     void OnOrderServed()
     {
-        _vcam.LookAt = customerLookAtPoint.transform;
+        _customerCam.Priority = 10;
+        _kitchenCam.Priority = 9;
     }
 }
