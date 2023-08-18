@@ -14,6 +14,7 @@ public class SushiSlicer : MonoBehaviour
     [SerializeField] private GameObject _parentOfHulls;
     [SerializeField] private GameObject _maskObject;
     [SerializeField] private GameObject _parentOfMaskObjects;
+    [SerializeField] private Transform _indicatorTransform;
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space))
@@ -22,14 +23,6 @@ public class SushiSlicer : MonoBehaviour
             {
                 _cuttingAnimation.StartCutting();
             }
-        }
-        else if (Input.GetKeyDown(KeyCode.A))
-        {
-            _parentTransform.position = new Vector3(_parentTransform.position.x, _parentTransform.position.y, _parentTransform.position.z - 0.1f);
-        }
-        else if (Input.GetKeyDown(KeyCode.D))
-        {
-            _parentTransform.position = new Vector3(_parentTransform.position.x, _parentTransform.position.y, _parentTransform.position.z + 0.1f);
         }
     }
     private void OnTriggerEnter(Collider other)
@@ -48,10 +41,10 @@ public class SushiSlicer : MonoBehaviour
             PrepapeHull(upperHull);
             PrepapeHull(lowerHull);
             GameObject maskOjbect = Instantiate(_maskObject, _parentOfMaskObjects.transform);
-            maskOjbect.transform.position = new Vector3(maskOjbect.transform.position.x, maskOjbect.transform.position.y+0.015f, _parentTransform.position.z);
+            maskOjbect.transform.position = new Vector3(_indicatorTransform.position.x, _indicatorTransform.position.y-0.1f, _indicatorTransform.position.z-0.035f);
+            maskOjbect.transform.rotation = Quaternion.Euler(0,90,0);
         }
     }
-
     private GameObject[] CutSushi(GameObject obj, Material mat = null)
     {
         return obj.SliceInstantiate(transform.position, transform.up, mat);

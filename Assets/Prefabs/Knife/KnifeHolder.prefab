@@ -151,6 +151,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ac437ff114baf84aa33fba561ab07e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SlicedObject: []
   _cuttingAnimation: {fileID: 8953696377437512701}
   _meshCollider: {fileID: 8953696377437512694}
   _parentTransform: {fileID: 8953696377860835211}
@@ -265,6 +266,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8953696377860835211}
+  - component: {fileID: 2382000863258188838}
   m_Layer: 0
   m_Name: KnifeHolder
   m_TagString: Untagged
@@ -289,3 +291,15 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
+--- !u!114 &2382000863258188838
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8953696377860835208}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 468061da0be960f43b8083ca89aeb0be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

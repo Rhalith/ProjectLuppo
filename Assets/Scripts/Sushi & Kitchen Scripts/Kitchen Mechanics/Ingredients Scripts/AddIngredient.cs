@@ -31,7 +31,7 @@ public class AddIngredient : MonoBehaviour
                 {
                     // CuttingBoard
                     instObj = Instantiate(WrapPrefab, transform.position, Quaternion.identity);
-                    InstantiatedController.Instance.SeaweedWrap = instObj.GetComponentInChildren<SeaweedWrap>();
+                    InstantiatedController.Instance.SeaweedWrap = instObj.GetComponent<SeaweedWrap>();
                     IngredientController.Instance.StartRollingButton.SetActive(true);
                     InstantiatedController.Instance.SeaweedWrap.SushiMatController = hit.collider.GetComponent<SushiMatController>();
                     instObj.transform.SetParent(hit.transform);
@@ -48,7 +48,7 @@ public class AddIngredient : MonoBehaviour
         {
             if (WrapPrefab == null)
             {
-                // ? Rice þu an ingredient tag'ine sahip. Bu NigiriRice mý?
+                // ? Rice Ã¾u an ingredient tag'ine sahip. Bu NigiriRice mÃ½?
                 if (ingredientName == SushiIngredient.rice)
                 {
                     instObj = Instantiate(_nigiriRice, transform.position, Quaternion.identity);

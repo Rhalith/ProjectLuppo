@@ -17,8 +17,10 @@ public class IngredientController : MonoBehaviour
 
     public static IngredientController Instance;
 
-    public List<SushiIngredient> Ingredients { get => _ingredients;}
+    public List<SushiIngredient> Ingredients { get => _ingredients; }
 
+
+    public bool IsCutting;
 
     public bool IsRolling { get => _isRolling; }
     public GameObject StartRollingButton { get => _startRollingButton;}
