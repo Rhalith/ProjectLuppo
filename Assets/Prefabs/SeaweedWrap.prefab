@@ -219,9 +219,9 @@ MonoBehaviour:
   _rollingAnimation: {fileID: 6757465577743906469}
   _sushiMatController: {fileID: 0}
   _maskObject: {fileID: 1471344881189117002}
-  salmonHosomakiPrefab: {fileID: 7878250918838935084, guid: 5326d5c28e015614bb29cf63e34427ac, type: 3}
-  cucumberHosomakiPrefab: {fileID: 6193723977973911289, guid: f8bd9b3884a869f46b5eac2a5a43cdba, type: 3}
-  salmonCucumberChumakiPrefab: {fileID: 1112926020037257210, guid: 6d843ea550e3d8c4e8770556b8c7146e, type: 3}
+  salmonHosomakiPrefab: {fileID: 2795485654951458410, guid: d064e7cbd6b7b6f4ebb764f558858d3c, type: 3}
+  cucumberHosomakiPrefab: {fileID: 3821951423602382801, guid: fbcca155f3b093a4692107a1ad4891f7, type: 3}
+  salmonCucumberChumakiPrefab: {fileID: 8436998180206782053, guid: 2777246c830a49044aaf9ea6c1e6b8d5, type: 3}
 --- !u!114 &6757465577743906469
 MonoBehaviour:
   m_ObjectHideFlags: 0

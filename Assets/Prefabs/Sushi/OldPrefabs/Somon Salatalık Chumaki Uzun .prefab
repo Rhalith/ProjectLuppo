@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1472980687831402031}
   - component: {fileID: 6142950554507853578}
   - component: {fileID: 6726254538641789887}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: "Somon Salatal\u0131k Chumaki Uzun "
   m_TagString: Sushi
   m_Icon: {fileID: 0}

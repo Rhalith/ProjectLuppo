@@ -17,7 +17,7 @@ public class CuttingAnimation : MonoBehaviour
     public void StopCutting() 
     {  
         SetCut(0);
-        //_sushiSlicer.ResetHullList();
+        _sushiSlicer.ResetHullList();
         _knifeIndicator.SetActive(true);
     }
 

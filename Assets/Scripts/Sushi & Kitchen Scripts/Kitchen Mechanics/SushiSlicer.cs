@@ -41,7 +41,7 @@ public class SushiSlicer : MonoBehaviour
             PrepapeHull(upperHull);
             PrepapeHull(lowerHull);
             GameObject maskOjbect = Instantiate(_maskObject, _parentOfMaskObjects.transform);
-            maskOjbect.transform.position = new Vector3(_indicatorTransform.position.x, _indicatorTransform.position.y-0.1f, _indicatorTransform.position.z-0.035f);
+            maskOjbect.transform.position = new Vector3(_indicatorTransform.position.x, _indicatorTransform.position.y-0.05f, _indicatorTransform.position.z);
             maskOjbect.transform.rotation = Quaternion.Euler(0,90,0);
         }
     }
@@ -56,6 +56,7 @@ public class SushiSlicer : MonoBehaviour
         MeshCollider collider = hull.AddComponent<MeshCollider>();
         collider.convex = false;
         hull.tag = "Sushi";
+        hull.layer = LayerMask.NameToLayer("TransparentFX");
     }
 
     //Call it in the end of knife animation
