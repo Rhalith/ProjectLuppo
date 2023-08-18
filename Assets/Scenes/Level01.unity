@@ -631,7 +631,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 157116144}
-  m_LocalRotation: {x: -2.5322465e-15, y: 0.701404, z: 2.4918877e-15, w: 0.71276397}
+  m_LocalRotation: {x: 2.5322465e-15, y: 0.701404, z: -2.4918877e-15, w: 0.71276397}
   m_LocalPosition: {x: 54.81788, y: 22, z: -235.86284}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2249,8 +2249,8 @@ Camera:
   m_GameObject: {fileID: 683422612}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_ClearFlags: 2
+  m_BackGroundColor: {r: 0.9811321, g: 0.75345844, b: 0.4017088, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -2290,7 +2290,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 683422612}
-  m_LocalRotation: {x: -2.5322465e-15, y: 0.701404, z: 2.4918877e-15, w: 0.71276397}
+  m_LocalRotation: {x: 2.5322465e-15, y: 0.701404, z: -2.4918877e-15, w: 0.71276397}
   m_LocalPosition: {x: 0, y: 0, z: -235.86284}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -5162,8 +5162,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4281450729
-  m_fontColor: {r: 0.9150943, g: 0.754713, b: 0.19337837, a: 1}
+    rgba: 4278190080
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -5331,7 +5331,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1452815349}
-  m_LocalRotation: {x: 0.4956549, y: 0.50430644, z: -0.4955805, w: 0.50438213}
+  m_LocalRotation: {x: 0.49558935, y: 0.50437313, z: -0.49564597, w: 0.50431544}
   m_LocalPosition: {x: 18.38, y: 38.14, z: -218.58}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -6527,8 +6527,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4281450729
-  m_fontColor: {r: 0.9150943, g: 0.754713, b: 0.19337837, a: 1}
+    rgba: 4278190080
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -6876,7 +6876,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1861810367}
-  m_LocalRotation: {x: 0.69705147, y: 0.0000003017456, z: -0.00000029334169, w: 0.71702117}
+  m_LocalRotation: {x: 0.69705147, y: -0.0000003017456, z: 0.00000029334169, w: 0.71702117}
   m_LocalPosition: {x: 27.47, y: 22.629, z: -218.756}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -7065,8 +7065,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4281450729
-  m_fontColor: {r: 0.9150943, g: 0.754713, b: 0.19337837, a: 1}
+    rgba: 4278190080
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -7960,7 +7960,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 607f90a90cbe8b945a8c6d178921dc61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectPref: {fileID: 8008533373699213114, guid: afa4489f3170d1f4bb2ee42029b8d85c, type: 3}
+  objectPref: {fileID: 4296592628755612158, guid: afa4489f3170d1f4bb2ee42029b8d85c, type: 3}
 --- !u!4 &3775226818548119969
 Transform:
   m_ObjectHideFlags: 0
