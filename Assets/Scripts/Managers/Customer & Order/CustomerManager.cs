@@ -70,7 +70,7 @@ public class CustomerManager : MonoBehaviour
     private GameObject CustomerInstantiate()
     {
         GameObject customerPref = customerPrefabs[Random.Range(0, 3)];
-        return Instantiate(customerPref, _position, _rotation, customersParentTransform);
+        return Instantiate(customerPref, new Vector3(_position.x + customerQueue.Count * 20, _position.y, _position.z + Random.Range(-5f, 5f)), _rotation, customersParentTransform);
     }
 
     // Customer spawner ve queue baþtan yazýlacak
