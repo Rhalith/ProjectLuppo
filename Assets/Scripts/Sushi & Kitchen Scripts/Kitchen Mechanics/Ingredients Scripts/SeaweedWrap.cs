@@ -63,14 +63,28 @@ public class SeaweedWrap : MonoBehaviour
     {
         _sushiIngredients = new(IngredientController.Instance.Ingredients);
 
-        if (_differentSushiIngredients.Contains(SushiIngredient.cucumber))
+        if(_differentSushiIngredients.Count == 1)
         {
-            OrderController.Instance.SushiType = OrderedSushiType.CucumberHosomaki;
+            if (_sushiIngredients.Contains(SushiIngredient.cucumber))
+            {
+                OrderController.Instance.SushiType = OrderedSushiType.CucumberHosomaki;
+            }
+            else if (_sushiIngredients.Contains(SushiIngredient.salmon))
+            {
+                OrderController.Instance.SushiType = OrderedSushiType.SalmonHosomaki;
+            }
         }
-        else if (_differentSushiIngredients.Contains(SushiIngredient.salmon))
+        else if (_differentSushiIngredients.Count == 2)
         {
-            OrderController.Instance.SushiType = OrderedSushiType.SalmonHosomaki;
+            if (_sushiIngredients.Contains(SushiIngredient.cucumber))
+            {
+                if (_sushiIngredients.Contains(SushiIngredient.salmon))
+                {
+                    OrderController.Instance.SushiType = OrderedSushiType.SalmonCucumberChumaki;
+                }
+            }
         }
+
         OrderController.Instance.Ingredients = _sushiIngredients;
         IngredientController.Instance.ClearIngredient();
     }
@@ -106,9 +120,10 @@ public class SeaweedWrap : MonoBehaviour
         }
         else if (InstantiatedController.Instance.InstantiatedIngredientCount.Equals(2))
         {
-            if(OrderController.Instance.SushiType.Equals(OrderedSushiType.SalmonCucumberChumaki))
+            CheckIngredientList();
+
+            if (OrderController.Instance.SushiType.Equals(OrderedSushiType.SalmonCucumberChumaki))
             {
-                _sushiIngredients = new(IngredientController.Instance.Ingredients);
                 _instObj = Instantiate(salmonCucumberChumakiPrefab);
             }
 

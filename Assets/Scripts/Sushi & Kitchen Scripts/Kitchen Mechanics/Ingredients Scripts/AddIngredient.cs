@@ -73,7 +73,7 @@ public class AddIngredient : MonoBehaviour
                 else
                 {
                     IngredientController.Instance.AddIngredient(ingredientName);
-                    instObj = Instantiate(IngredientPrefab, transform.position, Quaternion.identity);
+                    instObj = Instantiate(IngredientPrefab, transform.position, transform.rotation);
                     instObj.transform.SetParent(hit.transform);
                 }
             }

@@ -19,17 +19,14 @@ public class ChumakiDisplay : MonoBehaviour
             {
                 if(ingredients.Contains(SushiIngredient.salmon))
                 {
-                    _chumaki = _salmonCucumberChumaki;
                     gameObject.name = "Salmon Cucumber Chumaki";
-                    OrderController.Instance.SushiType = OrderedSushiType.SalmonCucumberChumaki;
                 }
             }
         }
+
         for (int i = 0; i < _fillingObjects.Count; i++)
         {
             _fillingObjects[i].material = _chumaki.filling[i];
         }
-        OrderController.Instance.Ingredients = _ingredients;
-        IngredientController.Instance.ClearIngredient();
     }
 }
