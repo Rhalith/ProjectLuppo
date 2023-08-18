@@ -22,6 +22,8 @@ public class IngredientController : MonoBehaviour
 
     public bool IsCutting;
 
+    public bool IsCuttingActive;
+
     public bool IsRolling { get => _isRolling; }
     public GameObject StartRollingButton { get => _startRollingButton;}
     public GameObject StopRollingButton { get => _stopRollingButton;}
