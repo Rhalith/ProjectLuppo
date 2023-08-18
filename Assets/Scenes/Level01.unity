@@ -631,7 +631,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 157116144}
-  m_LocalRotation: {x: 2.5322465e-15, y: 0.701404, z: -2.4918877e-15, w: 0.71276397}
+  m_LocalRotation: {x: -2.5322465e-15, y: 0.701404, z: 2.4918877e-15, w: 0.71276397}
   m_LocalPosition: {x: 54.81788, y: 22, z: -235.86284}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2370,7 +2370,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 683422612}
-  m_LocalRotation: {x: 2.5322465e-15, y: 0.701404, z: -2.4918877e-15, w: 0.71276397}
+  m_LocalRotation: {x: -2.5322465e-15, y: 0.701404, z: 2.4918877e-15, w: 0.71276397}
   m_LocalPosition: {x: 0, y: 0, z: -235.86284}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -5410,7 +5410,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1452815349}
-  m_LocalRotation: {x: 0.49561965, y: 0.50434226, z: -0.49561575, w: 0.5043462}
+  m_LocalRotation: {x: 0.4956747, y: 0.5042863, z: -0.4955607, w: 0.5044023}
   m_LocalPosition: {x: 18.38, y: 38.14, z: -218.58}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -6955,7 +6955,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1861810367}
-  m_LocalRotation: {x: 0.69705147, y: -0.0000003017456, z: 0.00000029334169, w: 0.71702117}
+  m_LocalRotation: {x: 0.69705147, y: 0.0000003017456, z: -0.00000029334169, w: 0.71702117}
   m_LocalPosition: {x: 27.47, y: 22.629, z: -218.756}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -7610,9 +7610,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8435425334276536828}
   m_LocalRotation: {x: 0.52418995, y: 0.019846926, z: -0.003416969, w: 0.85136324}
-  m_LocalPosition: {x: -5.089, y: 4.893, z: 3.26}
-  m_LocalScale: {x: 5.68, y: 5.68, z: 0.96097505}
-  m_ConstrainProportionsScale: 0
+  m_LocalPosition: {x: -12.67, y: -1.11, z: -27.93}
+  m_LocalScale: {x: 14.5199995, y: 14.5199995, z: 2.456577}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 193174378}
   m_RootOrder: 0
@@ -8291,7 +8291,7 @@ GameObject:
   - component: {fileID: 1145052589265205505}
   - component: {fileID: 8435425334276536830}
   - component: {fileID: 8435425334276536831}
-  m_Layer: 0
+  m_Layer: 1
   m_Name: Salmon Box
   m_TagString: Untagged
   m_Icon: {fileID: 0}

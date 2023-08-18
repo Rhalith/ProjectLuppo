@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &1500150666396148296
+--- !u!1 &7878250918838935084
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,47 +8,47 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4730355080644440227}
-  - component: {fileID: 4312072318303040061}
-  - component: {fileID: 3976840168465628925}
-  - component: {fileID: 2756973499943586981}
-  m_Layer: 1
-  m_Name: Cucumber
-  m_TagString: Ingredient
+  - component: {fileID: 7358595732719944854}
+  - component: {fileID: 5886521653918518067}
+  - component: {fileID: 8526957900909101049}
+  - component: {fileID: 2334412697669693694}
+  m_Layer: 0
+  m_Name: Somon Hosomaki uzun
+  m_TagString: Sushi
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4730355080644440227
+--- !u!4 &7358595732719944854
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1500150666396148296}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 517.0339, y: 4.191, z: 164.366}
-  m_LocalScale: {x: 0.028449314, y: 0.03755311, z: 0.30681914}
-  m_ConstrainProportionsScale: 0
+  m_GameObject: {fileID: 7878250918838935084}
+  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 25.62, y: 14.894, z: -216.575}
+  m_LocalScale: {x: 15.000001, y: 15.000001, z: 15.000001}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &4312072318303040061
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
+--- !u!33 &5886521653918518067
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1500150666396148296}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!23 &3976840168465628925
+  m_GameObject: {fileID: 7878250918838935084}
+  m_Mesh: {fileID: 3438083583663535806, guid: 2c88563f967fdbe4594f197059511677, type: 3}
+--- !u!23 &8526957900909101049
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1500150666396148296}
+  m_GameObject: {fileID: 7878250918838935084}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -62,7 +62,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c254d3e64e89c0f4786b0ede62522da6, type: 2}
+  - {fileID: 2100000, guid: 046f05be2cb8aa247bac3d6c5ca0ccc2, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -84,16 +84,22 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &2756973499943586981
-BoxCollider:
+--- !u!114 &2334412697669693694
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1500150666396148296}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_GameObject: {fileID: 7878250918838935084}
   m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7513ba05139607f4b805e780921caaf6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hosomaki: {fileID: 11400000, guid: bd6ca95ca2c25754e9ccb8a70774eba0, type: 2}
+  controller: {fileID: 0}
+  filling: {fileID: 0}
+  filling2: {fileID: 0}
+  ingredients: []
+  count: 0
+  sushiName: 

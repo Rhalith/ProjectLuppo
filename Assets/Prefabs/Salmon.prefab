@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2693261514558317487}
-  m_Layer: 0
+  m_Layer: 1
   m_Name: Salmon
   m_TagString: Ingredient
   m_Icon: {fileID: 0}
@@ -44,7 +44,7 @@ GameObject:
   - component: {fileID: 2693261514570926705}
   - component: {fileID: 2693261514570926710}
   - component: {fileID: 2693261514570926711}
-  m_Layer: 0
+  m_Layer: 1
   m_Name: Cube
   m_TagString: Ingredient
   m_Icon: {fileID: 0}

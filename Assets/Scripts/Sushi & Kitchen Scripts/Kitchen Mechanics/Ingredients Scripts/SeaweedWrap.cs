@@ -8,10 +8,9 @@ public class SeaweedWrap : MonoBehaviour
     [SerializeField] private SushiMatController _sushiMatController;
     [SerializeField] private Transform _maskObject;
     //TODO: all of the sushi prefabs should be in different class
-    public GameObject hosomakiPrefab;
-    public GameObject chumaki2Prefab;
-    public GameObject chumaki3Prefab;
-    public GameObject futomakiPrefab;
+    public GameObject salmonHosomakiPrefab;
+    public GameObject cucumberHosomakiPrefab;
+    public GameObject salmonCucumberChumakiPrefab;
     private GameObject _instObj;
     //TODO: sushiPos will be assigned in rolling animations end.
     private bool _isRollingEnd;
@@ -67,39 +66,53 @@ public class SeaweedWrap : MonoBehaviour
         IngredientController.Instance.StopRollingButton.GetComponent<Button>().onClick?.Invoke();
         IngredientController.Instance.StartRollingButton.SetActive(false);
         sushiPos = transform.position;
-        sushiPos.x -= 0.1f; sushiPos.z -= 0.17f;
+        sushiPos.x += 0.8f; sushiPos.y += 0.4f; sushiPos.z += 2f;
         //TODO: Must change scriptable object based on their ingredient (mostly done)
         if (InstantiatedController.Instance.InstantiatedIngredientCount.Equals(1))
         {
-            _sushiIngredients = new (IngredientController.Instance.Ingredients);
-            _instObj = Instantiate(hosomakiPrefab);
+            if (OrderController.Instance.SushiType.Equals(OrderedSushiType.SalmonHosomaki))
+            {
+                _sushiIngredients = new(IngredientController.Instance.Ingredients);
+                _instObj = Instantiate(salmonHosomakiPrefab);
+            }
+            else if (OrderController.Instance.SushiType.Equals(OrderedSushiType.CucumberHosomaki))
+            {
+                _sushiIngredients = new(IngredientController.Instance.Ingredients);
+                _instObj = Instantiate(cucumberHosomakiPrefab);
+            }
+            _sushiIngredients = new(IngredientController.Instance.Ingredients);
+            _instObj = Instantiate(salmonHosomakiPrefab);
+            _instObj.GetComponent<HosomakiDisplay>().Ingredients = _sushiIngredients;
+            _instObj.GetComponent<HosomakiDisplay>().CheckIngredientList(_differentSushiIngredients);
             _instObj.transform.position = sushiPos;
             OrderController.Instance.InstantiatedSushi = _instObj;
-            //_instObj.GetComponent<HosomakiDisplay>().sushiName = _sushiMaterial + "Hosomaki";
         }
         else if (InstantiatedController.Instance.InstantiatedIngredientCount.Equals(2))
         {
-            _sushiIngredients = new(IngredientController.Instance.Ingredients);
-            _instObj = Instantiate(chumaki2Prefab);
+            if(OrderController.Instance.SushiType.Equals(OrderedSushiType.SalmonCucumberChumaki))
+            {
+                _sushiIngredients = new(IngredientController.Instance.Ingredients);
+                _instObj = Instantiate(salmonCucumberChumakiPrefab);
+            }
             _instObj.transform.position = sushiPos;
             OrderController.Instance.InstantiatedSushi = _instObj;
             _instObj.GetComponent<ChumakiDisplay>().Ingredients = _sushiIngredients;
             _instObj.GetComponent<ChumakiDisplay>().CheckIngredientList(_differentSushiIngredients);
         }
-        else if (InstantiatedController.Instance.InstantiatedIngredientCount.Equals(3))
-        {
-            _sushiIngredients = new(IngredientController.Instance.Ingredients);
-            _instObj = Instantiate(chumaki3Prefab);
-            _instObj.transform.position = sushiPos;
-            OrderController.Instance.InstantiatedSushi = _instObj;
-        }
+        //else if (InstantiatedController.Instance.InstantiatedIngredientCount.Equals(3))
+        //{
+        //    _sushiIngredients = new(IngredientController.Instance.Ingredients);
+        //    _instObj = Instantiate(chumaki3Prefab);
+        //    _instObj.transform.position = sushiPos;
+        //    OrderController.Instance.InstantiatedSushi = _instObj;
+        //}
 
-        else
-        {
-            _sushiIngredients = new(IngredientController.Instance.Ingredients);
-            _instObj = Instantiate(futomakiPrefab);
-            _instObj.transform.position = sushiPos;
-        }
+        //else
+        //{
+        //    _sushiIngredients = new(IngredientController.Instance.Ingredients);
+        //    _instObj = Instantiate(futomakiPrefab);
+        //    _instObj.transform.position = sushiPos;
+        //}
 
         Destroy(gameObject);
     }
