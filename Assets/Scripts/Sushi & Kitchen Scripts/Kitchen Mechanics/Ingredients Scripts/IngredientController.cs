@@ -149,6 +149,9 @@ public class IngredientController : MonoBehaviour
     public void StartRolling()
     {
         _isRolling = true;
+
+        // Clear holding ingredient
+        InstantiatedController.Instance.ClearInstantiatedObject();
     }
 
     public void StopRolling()

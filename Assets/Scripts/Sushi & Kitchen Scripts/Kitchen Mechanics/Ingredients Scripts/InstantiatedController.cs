@@ -27,6 +27,24 @@ public class InstantiatedController : MonoBehaviour
         }
     }
 
+    private void Start()
+    {
+        InputManager.Instance.OnRightMouseDown += OnRightMouseDown;
+    }
+
+    private void OnDestroy()
+    {
+        InputManager.Instance.OnRightMouseDown -= OnRightMouseDown;
+    }
+
+    private void OnRightMouseDown()
+    {
+        if(_instantiatedObject != null)
+        {
+            ClearInstantiatedObject();
+        }
+    }
+
     public void ClearInstantiatedObject()
     {
         _instantiatedObject = null;
