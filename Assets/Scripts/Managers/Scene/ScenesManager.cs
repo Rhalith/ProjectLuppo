@@ -25,7 +25,7 @@ public class ScenesManager : MonoBehaviour
     //Loads First Scene
     public void LoadNewGame()
     {
-        SceneManager.LoadScene(Scene.SFX.ToString());
+        SceneManager.LoadScene(Scene.Level01.ToString());
     }
 
     //Loads Next Scene
