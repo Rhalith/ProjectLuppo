@@ -70,6 +70,7 @@ public class SeaweedWrap : MonoBehaviour
         //TODO: Must change scriptable object based on their ingredient (mostly done)
         if (InstantiatedController.Instance.InstantiatedIngredientCount.Equals(1))
         {
+            //TODO: This will be changed after adding more orders
             if (OrderController.Instance.SushiType.Equals(OrderedSushiType.SalmonHosomaki))
             {
                 _sushiIngredients = new(IngredientController.Instance.Ingredients);

@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3717127104507376357}
   - component: {fileID: 1472980687831402031}
   - component: {fileID: 6142950554507853578}
+  - component: {fileID: 6726254538641789887}
   m_Layer: 0
   m_Name: "Somon Salatal\u0131k Chumaki Uzun "
   m_TagString: Sushi
@@ -27,7 +28,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1112926020037257210}
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 27.146, y: 14.901, z: -216.553}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 15.000001, y: 15.000001, z: 15.000001}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -98,3 +99,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _fillingObjects: []
   _salmonCucumberChumaki: {fileID: 11400000, guid: d13660fc60fd4b84faa79b98fe2706c7, type: 2}
+--- !u!64 &6726254538641789887
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1112926020037257210}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 5274435336974542538, guid: 36bf25522d6a86d46aa71a65bdccb038, type: 3}

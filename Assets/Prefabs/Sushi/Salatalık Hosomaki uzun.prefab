@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7570705032934005734}
   - component: {fileID: 5689307831348227884}
   - component: {fileID: 8238483667609335764}
+  - component: {fileID: -2764172374215571029}
   m_Layer: 0
   m_Name: "Salatal\u0131k Hosomaki uzun"
   m_TagString: Sushi
@@ -27,7 +28,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6193723977973911289}
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 26.29, y: 14.918, z: -216.498}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 15.000001, y: 15.000001, z: 15.000001}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -96,10 +97,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7513ba05139607f4b805e780921caaf6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hosomaki: {fileID: 11400000, guid: 07ee69112f3c86f47a27aefb0830404d, type: 2}
-  controller: {fileID: 0}
-  filling: {fileID: 0}
-  filling2: {fileID: 0}
-  ingredients: []
-  count: 0
-  sushiName: 
+  _salmonHosomaki: {fileID: 0}
+  _cucumberHosomaki: {fileID: 0}
+  _fillingObject: {fileID: 0}
+--- !u!64 &-2764172374215571029
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6193723977973911289}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 7520777784420035632, guid: 0137e8140047eaa479c941b6b28b1cba, type: 3}

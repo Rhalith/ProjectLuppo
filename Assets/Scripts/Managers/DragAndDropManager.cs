@@ -33,7 +33,7 @@ public class DragAndDropManager : MonoBehaviour
         {
             Vector3 position = new Vector3(Input.mousePosition.x, Input.mousePosition.y, Camera.main.WorldToScreenPoint(_selectedObject.transform.position).z);
             Vector3 worldPosition = Camera.main.ScreenToWorldPoint(position);
-            _selectedObject.transform.position = new Vector3(worldPosition.x, 5.5f, worldPosition.z);
+            _selectedObject.transform.position = new Vector3(worldPosition.x, 16f, worldPosition.z);
         }
     }
 
@@ -93,46 +93,46 @@ public class DragAndDropManager : MonoBehaviour
             {
                 Vector3 position = new Vector3(Input.mousePosition.x, Input.mousePosition.y, Camera.main.WorldToScreenPoint(_selectedObject.transform.position).z);
                 Vector3 worldPosition = Camera.main.ScreenToWorldPoint(position);
-                _selectedObject.transform.position = new Vector3(worldPosition.x, 5f, worldPosition.z);
+                _selectedObject.transform.position = new Vector3(worldPosition.x, 15.5f, worldPosition.z);
 
                 if (_selectedObject.transform.position.x < minX)
                 {
-                    _selectedObject.transform.position = new Vector3(minX, 5f, worldPosition.z);
+                    _selectedObject.transform.position = new Vector3(minX, 15.5f, worldPosition.z);
 
                     if (_selectedObject.transform.position.z > maxZ)
                     {
-                        _selectedObject.transform.position = new Vector3(minX, 5f, maxZ);
+                        _selectedObject.transform.position = new Vector3(minX, 15.5f, maxZ);
                     }
 
                     if (_selectedObject.transform.position.z < minZ)
                     {
-                        _selectedObject.transform.position = new Vector3(minX, 5f, minZ);
+                        _selectedObject.transform.position = new Vector3(minX, 15.5f, minZ);
                     }
                 }
                 else if (_selectedObject.transform.position.x > maxX)
                 {
-                    _selectedObject.transform.position = new Vector3(maxX, 5f, worldPosition.z);
+                    _selectedObject.transform.position = new Vector3(maxX, 15.5f, worldPosition.z);
 
                     if (_selectedObject.transform.position.z < minZ)
                     {
-                        _selectedObject.transform.position = new Vector3(maxX, 5f, minZ);
+                        _selectedObject.transform.position = new Vector3(maxX, 15.5f, minZ);
                     }
 
                     if (_selectedObject.transform.position.z > maxZ)
                     {
-                        _selectedObject.transform.position = new Vector3(maxX, 5f, maxZ);
+                        _selectedObject.transform.position = new Vector3(maxX, 15.5f, maxZ);
                     }
                 }
                 else
                 {
                     if (_selectedObject.transform.position.z > maxZ)
                     {
-                        _selectedObject.transform.position = new Vector3(worldPosition.x, 5f, maxZ);
+                        _selectedObject.transform.position = new Vector3(worldPosition.x, 15.5f, maxZ);
                     }
 
                     if (_selectedObject.transform.position.z < minZ)
                     {
-                        _selectedObject.transform.position = new Vector3(worldPosition.x, 5f, minZ);
+                        _selectedObject.transform.position = new Vector3(worldPosition.x, 15.5f, minZ);
                     }
                 }
 
