@@ -6,24 +6,20 @@ public class HosomakiDisplay : MonoBehaviour
     [SerializeField] private HosomakiObject _salmonHosomaki;
     [SerializeField] private HosomakiObject _cucumberHosomaki;
 
-    private HosomakiObject _hosomaki;
     private List<SushiIngredient> _ingredients;
 
     [SerializeField] private MeshRenderer _fillingObject;
     public List<SushiIngredient> Ingredients { get => _ingredients; set => _ingredients = new(value); }
-    public void CheckIngredientList(List<SushiIngredient> ingredients)
+
+    public void CheckIngredientList(OrderedSushiType sushiType)
     {
-        if (ingredients.Contains(SushiIngredient.cucumber))
+        if (sushiType == OrderedSushiType.CucumberHosomaki)
         {
             gameObject.name = "Cucumber Hosomaki";
-            OrderController.Instance.SushiType = OrderedSushiType.CucumberHosomaki;
         }
-        else if (ingredients.Contains(SushiIngredient.salmon))
+        else if (sushiType == OrderedSushiType.SalmonHosomaki)
         {
             gameObject.name = "Salmon Hosomaki";
-            OrderController.Instance.SushiType = OrderedSushiType.SalmonHosomaki;
         }
-        OrderController.Instance.Ingredients = _ingredients;
-        IngredientController.Instance.ClearIngredient();
     }
 }

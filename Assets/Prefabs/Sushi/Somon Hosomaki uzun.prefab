@@ -98,7 +98,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _salmonHosomaki: {fileID: 0}
-  _cucumberHosomaki: {fileID: 0}
+  _cucumberHosomaki: {fileID: 11400000, guid: 07ee69112f3c86f47a27aefb0830404d, type: 2}
   _fillingObject: {fileID: 0}
 --- !u!64 &3713990869908055243
 MeshCollider:

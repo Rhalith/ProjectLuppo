@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class OrderController : MonoBehaviour
 {
-    private List<SushiIngredient> _ingredients;
+    private List<SushiIngredient> _ingredients = new List<SushiIngredient>();
     private OrderedSushiType _sushiType;
     private GameObject _instantiatedSushi;
 
@@ -38,7 +38,15 @@ public class OrderController : MonoBehaviour
         }
         else
         {
-            if (_sushiType.Equals(OrderedSushiType.SalmonCucumberChumaki))
+            if (_sushiType.Equals(OrderedSushiType.CucumberHosomaki))
+            {
+                CheckCucumberHosomaki();
+            }
+            else if (_sushiType.Equals(OrderedSushiType.SalmonHosomaki))
+            {
+                CheckSalmonHosomaki();
+            }
+            else if (_sushiType.Equals(OrderedSushiType.SalmonCucumberChumaki))
             {
                 CheckSalmonCucumberChumaki();
             }
@@ -89,6 +97,46 @@ public class OrderController : MonoBehaviour
         else if (_ingredients.Count(n => n.Equals(SushiIngredient.salmon)) > 3)
         {
             CustomerDialogManager.Instance.ChangeText("Somonu fazla olmuþ.");
+        }
+        else
+        {
+            CustomerDialogManager.Instance.ChangeText("Yediðim en güzel sushiydi. Sanki bu dünyadan deðil!");
+        }
+    }
+
+    private void CheckSalmonHosomaki()
+    {
+        if (OrderManager.Instance.GetOrder() != _sushiType)
+        {
+            CustomerDialogManager.Instance.ChangeText("Ben bu yemeði istememiþtim!");
+        }
+        else if (_ingredients.Count(n => n.Equals(SushiIngredient.salmon)) < 3)
+        {
+            CustomerDialogManager.Instance.ChangeText("Somonu az olmuþ.");
+        }
+        else if (_ingredients.Count(n => n.Equals(SushiIngredient.salmon)) > 3)
+        {
+            CustomerDialogManager.Instance.ChangeText("Somonu fazla olmuþ.");
+        }
+        else
+        {
+            CustomerDialogManager.Instance.ChangeText("Yediðim en güzel sushiydi. Sanki bu dünyadan deðil!");
+        }
+    }
+
+    private void CheckCucumberHosomaki()
+    {
+        if (OrderManager.Instance.GetOrder() != _sushiType)
+        {
+            CustomerDialogManager.Instance.ChangeText("Ben bu yemeði istememiþtim!");
+        }
+        else if (_ingredients.Count(n => n.Equals(SushiIngredient.cucumber)) < 3)
+        {
+            CustomerDialogManager.Instance.ChangeText("Salatalýðý az olmuþ.");
+        }
+        else if (_ingredients.Count(n => n.Equals(SushiIngredient.cucumber)) > 3)
+        {
+            CustomerDialogManager.Instance.ChangeText("Salatalýðý fazla olmuþ.");
         }
         else
         {

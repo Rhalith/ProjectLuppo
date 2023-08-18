@@ -46,7 +46,6 @@ public class CustomerManager : MonoBehaviour
     }
 
     #region Customer Spawn and Destroy
-    //TODO: All of them salmoncucumberchumaki right now for testing.
     private OrderedSushiType GiveOrder()
     {
         int orderNumber = Random.Range(0, 3);
@@ -54,11 +53,11 @@ public class CustomerManager : MonoBehaviour
 
         if (orderNumber == 0)
         {
-            food = OrderedSushiType.SalmonCucumberChumaki;
+            food = OrderedSushiType.CucumberHosomaki;
         }
         else if (orderNumber == 1)
         {
-            food = OrderedSushiType.SalmonCucumberChumaki;
+            food = OrderedSushiType.SalmonHosomaki;
         }
         else if (orderNumber == 2)
         {

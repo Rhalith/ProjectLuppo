@@ -27,14 +27,18 @@ public class SeaweedWrap : MonoBehaviour
     {
         InputManager.Instance.OnLeftMouseUp += OnLeftMouseButtonUp;
     }
-    private void OnLeftMouseButtonUp()
-    {
-        if (rollingAmount < 0) rollingAmount = 0;
-    }
+
     private void OnDestroy()
     {
         InputManager.Instance.OnLeftMouseUp -= OnLeftMouseButtonUp;
     }
+
+    private void OnLeftMouseButtonUp()
+    {
+        if (rollingAmount < 0) 
+            rollingAmount = 0;
+    }
+
     //TODO: knowing issue if player starts from middle, it places maskobject to middle first.
     private void OnMouseDrag()
     {
@@ -44,7 +48,7 @@ public class SeaweedWrap : MonoBehaviour
 
             if (Physics.Raycast(ray, out hit, 50000.0f))
             {
-                 rollingAmount += InputManager.Instance.MouseInput.y/3;
+                rollingAmount += InputManager.Instance.MouseInput.y/3;
                 if(rollingAmount > 12)
                 {
                     rollingAmount = 0;
@@ -55,38 +59,50 @@ public class SeaweedWrap : MonoBehaviour
         }
     }
 
-    private Vector3 GetMouseWorldPosition()
+    public void CheckIngredientList()
     {
-        Vector3 screenMousePos = new Vector3(Input.mousePosition.x, Input.mousePosition.y, Camera.main.nearClipPlane);
-        return Camera.main.ScreenToWorldPoint(screenMousePos);
+        _sushiIngredients = new(IngredientController.Instance.Ingredients);
+
+        if (_differentSushiIngredients.Contains(SushiIngredient.cucumber))
+        {
+            OrderController.Instance.SushiType = OrderedSushiType.CucumberHosomaki;
+        }
+        else if (_differentSushiIngredients.Contains(SushiIngredient.salmon))
+        {
+            OrderController.Instance.SushiType = OrderedSushiType.SalmonHosomaki;
+        }
+        OrderController.Instance.Ingredients = _sushiIngredients;
+        IngredientController.Instance.ClearIngredient();
     }
 
     public void InstantiateSushi()
     {
         IngredientController.Instance.StopRollingButton.GetComponent<Button>().onClick?.Invoke();
         IngredientController.Instance.StartRollingButton.SetActive(false);
+
         sushiPos = transform.position;
         sushiPos.x += 0.8f; sushiPos.y += 0.4f; sushiPos.z += 2f;
+
         //TODO: Must change scriptable object based on their ingredient (mostly done)
         if (InstantiatedController.Instance.InstantiatedIngredientCount.Equals(1))
         {
+            CheckIngredientList();
+
             //TODO: This will be changed after adding more orders
             if (OrderController.Instance.SushiType.Equals(OrderedSushiType.SalmonHosomaki))
             {
-                _sushiIngredients = new(IngredientController.Instance.Ingredients);
                 _instObj = Instantiate(salmonHosomakiPrefab);
             }
             else if (OrderController.Instance.SushiType.Equals(OrderedSushiType.CucumberHosomaki))
             {
-                _sushiIngredients = new(IngredientController.Instance.Ingredients);
                 _instObj = Instantiate(cucumberHosomakiPrefab);
             }
-            _sushiIngredients = new(IngredientController.Instance.Ingredients);
-            _instObj = Instantiate(salmonHosomakiPrefab);
-            _instObj.GetComponent<HosomakiDisplay>().Ingredients = _sushiIngredients;
-            _instObj.GetComponent<HosomakiDisplay>().CheckIngredientList(_differentSushiIngredients);
+
             _instObj.transform.position = sushiPos;
             OrderController.Instance.InstantiatedSushi = _instObj;
+
+            _instObj.GetComponent<HosomakiDisplay>().Ingredients = _sushiIngredients;
+            _instObj.GetComponent<HosomakiDisplay>().CheckIngredientList(OrderController.Instance.SushiType);
         }
         else if (InstantiatedController.Instance.InstantiatedIngredientCount.Equals(2))
         {
@@ -95,25 +111,28 @@ public class SeaweedWrap : MonoBehaviour
                 _sushiIngredients = new(IngredientController.Instance.Ingredients);
                 _instObj = Instantiate(salmonCucumberChumakiPrefab);
             }
+
             _instObj.transform.position = sushiPos;
             OrderController.Instance.InstantiatedSushi = _instObj;
+
             _instObj.GetComponent<ChumakiDisplay>().Ingredients = _sushiIngredients;
             _instObj.GetComponent<ChumakiDisplay>().CheckIngredientList(_differentSushiIngredients);
         }
-        //else if (InstantiatedController.Instance.InstantiatedIngredientCount.Equals(3))
-        //{
-        //    _sushiIngredients = new(IngredientController.Instance.Ingredients);
-        //    _instObj = Instantiate(chumaki3Prefab);
-        //    _instObj.transform.position = sushiPos;
-        //    OrderController.Instance.InstantiatedSushi = _instObj;
-        //}
-
-        //else
-        //{
-        //    _sushiIngredients = new(IngredientController.Instance.Ingredients);
-        //    _instObj = Instantiate(futomakiPrefab);
-        //    _instObj.transform.position = sushiPos;
-        //}
+        /*
+        else if (InstantiatedController.Instance.InstantiatedIngredientCount.Equals(3))
+        {
+            _sushiIngredients = new(IngredientController.Instance.Ingredients);
+            _instObj = Instantiate(chumaki3Prefab);
+            _instObj.transform.position = sushiPos;
+            OrderController.Instance.InstantiatedSushi = _instObj;
+        }
+        else
+        {
+            _sushiIngredients = new(IngredientController.Instance.Ingredients);
+            _instObj = Instantiate(futomakiPrefab);
+            _instObj.transform.position = sushiPos;
+        }
+        */
 
         Destroy(gameObject);
     }

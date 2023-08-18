@@ -97,7 +97,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7513ba05139607f4b805e780921caaf6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _salmonHosomaki: {fileID: 0}
+  _salmonHosomaki: {fileID: 11400000, guid: bd6ca95ca2c25754e9ccb8a70774eba0, type: 2}
   _cucumberHosomaki: {fileID: 0}
   _fillingObject: {fileID: 0}
 --- !u!64 &-2764172374215571029
