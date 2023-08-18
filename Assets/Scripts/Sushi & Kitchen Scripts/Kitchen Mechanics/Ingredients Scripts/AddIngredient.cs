@@ -25,23 +25,30 @@ public class AddIngredient : MonoBehaviour
     {
         if (hit.collider.CompareTag("SushiMat"))
         {
-            if (WrapPrefab != null)
+            if(OrderController.Instance.InstantiatedSushi == null)
             {
-                // CuttingBoard
-                instObj = Instantiate(WrapPrefab, transform.position, Quaternion.identity);
-                InstantiatedController.Instance.SeaweedWrap = instObj.GetComponent<SeaweedWrap>();
-                IngredientController.Instance.StartRollingButton.SetActive(true);
-                InstantiatedController.Instance.SeaweedWrap.SushiMatController = hit.collider.GetComponent<SushiMatController>();
-                instObj.transform.SetParent(hit.transform);
-                instObj.transform.localPosition = new Vector3(0.046f, 0.002f, -0.0015f);
-                instObj.transform.localScale = new Vector3(0.87f, 0.87f, 0.87f);
+                if (WrapPrefab != null)
+                {
+                    // CuttingBoard
+                    instObj = Instantiate(WrapPrefab, transform.position, Quaternion.identity);
+                    InstantiatedController.Instance.SeaweedWrap = instObj.GetComponent<SeaweedWrap>();
+                    IngredientController.Instance.StartRollingButton.SetActive(true);
+                    InstantiatedController.Instance.SeaweedWrap.SushiMatController = hit.collider.GetComponent<SushiMatController>();
+                    instObj.transform.SetParent(hit.transform);
+                    instObj.transform.localPosition = new Vector3(0.046f, 0.002f, -0.0015f);
+                    instObj.transform.localScale = new Vector3(0.87f, 0.87f, 0.87f);
+                }
+            }
+            else
+            {
+                Debug.Log("We already have a sushi. Destroy or serve it.");
             }
         }
         else if (hit.collider.CompareTag("NigiriPlate"))
         {
             if (WrapPrefab == null)
             {
-                // ? Rice þu an ingredient tag'ine sahip. Bu NigiriRice mý?
+                // ? Rice Ã¾u an ingredient tag'ine sahip. Bu NigiriRice mÃ½?
                 if (ingredientName == SushiIngredient.rice)
                 {
                     instObj = Instantiate(_nigiriRice, transform.position, Quaternion.identity);

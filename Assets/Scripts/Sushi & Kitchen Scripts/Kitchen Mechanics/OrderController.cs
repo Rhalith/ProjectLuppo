@@ -52,6 +52,20 @@ public class OrderController : MonoBehaviour
         }
     }
 
+    public void DestroyOrder()
+    {
+        // Empty olduðuna dair bir uyarý verilebilir.
+        if (_sushiType.Equals(OrderedSushiType.Empty))
+        {
+            return;
+        }
+        else
+        {
+            _ingredients.Clear();
+            Destroy(_instantiatedSushi);
+        }
+    }
+
     private void CheckSalmonCucumberChumaki()
     {
         if (OrderManager.Instance.GetOrder() != _sushiType)

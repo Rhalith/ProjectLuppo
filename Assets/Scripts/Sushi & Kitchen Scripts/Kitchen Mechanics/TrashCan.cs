@@ -2,9 +2,16 @@ using UnityEngine;
 
 public class TrashCan : MonoBehaviour
 {
-    //TODO: Not works, find a way for trash can
-    void OnCollisionEnter(Collision collision)
+    private void Start()
     {
-        Destroy(collision.gameObject);
+        InputManager.Instance.OnLeftMouseUpOver += OnLeftMouseUpOver;
+    }
+
+    private void OnLeftMouseUpOver(RaycastHit hit)
+    {
+        if(hit.collider.CompareTag("TrashCan"))
+        {
+            OrderController.Instance.DestroyOrder();
+        }
     }
 }
