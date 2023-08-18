@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1369065989112029412}
   - component: {fileID: 3826671045596124206}
   - component: {fileID: 8050738203979830832}
-  m_Layer: 0
+  m_Layer: 1
   m_Name: SalmonNew
   m_TagString: Ingredient
   m_Icon: {fileID: 0}
@@ -62,7 +62,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -8583780622465393609, guid: 89a93da3a1928fc498508ca209652eda, type: 3}
+  - {fileID: 2100000, guid: 40c3e8ab027a0e746b5781230aa437d3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

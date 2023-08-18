@@ -6,6 +6,9 @@ using UnityEngine;
 
 public class OrderController : MonoBehaviour
 {
+    [SerializeField] private GameObject _hullHolder;
+    [SerializeField] private GameObject _maskHolder;
+
     private List<SushiIngredient> _ingredients = new List<SushiIngredient>();
     private OrderedSushiType _sushiType;
     private GameObject _instantiatedSushi;
@@ -52,8 +55,21 @@ public class OrderController : MonoBehaviour
             }
 
             _ingredients.Clear();
-            Destroy(_instantiatedSushi);
-
+            if(_hullHolder.transform.childCount > 0)
+            {
+                for (int i = 0; i < _hullHolder.transform.childCount; i++)
+                {
+                    Destroy(_hullHolder.transform.GetChild(i).gameObject);
+                }
+                for (int i = 0; i < _maskHolder.transform.childCount; i++)
+                {
+                    Destroy(_maskHolder.transform.GetChild(i).gameObject);
+                }
+            }
+            else
+            {
+                Destroy(_instantiatedSushi);
+            }
             // Trigger serving event
             GameEventsManager.Instance.ServeOrder();
             

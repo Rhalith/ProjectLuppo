@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 344389576808061946}
   - component: {fileID: 2531994096645254960}
   - component: {fileID: 4641671293752025021}
-  m_Layer: 0
+  m_Layer: 1
   m_Name: CucumberNew
   m_TagString: Ingredient
   m_Icon: {fileID: 0}
@@ -62,7 +62,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -6629797300637803691, guid: 0a7c7e426012c574aa7f84e9a74d4851, type: 3}
+  - {fileID: 2100000, guid: e76d906f5fc32804cb9a20d5924b4aff, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
