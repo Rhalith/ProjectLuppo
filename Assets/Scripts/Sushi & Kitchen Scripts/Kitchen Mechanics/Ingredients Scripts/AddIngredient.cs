@@ -35,7 +35,7 @@ public class AddIngredient : MonoBehaviour
                     IngredientController.Instance.StartRollingButton.SetActive(true);
                     InstantiatedController.Instance.SeaweedWrap.SushiMatController = hit.collider.GetComponent<SushiMatController>();
                     instObj.transform.SetParent(hit.transform);
-                    instObj.transform.localPosition = new Vector3(0.046f, 0.002f, -0.0015f);
+                    instObj.transform.localPosition = new Vector3(0.006f, 0,0);
                     instObj.transform.localScale = new Vector3(0.87f, 0.87f, 0.87f);
                 }
             }

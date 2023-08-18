@@ -1,11 +1,19 @@
 Shader"Custom/IngredientMask"
 {
-    SubShader
-    {
-        Tags{"Queue" = "Transparent+1"}
+	SubShader
+	{
+		// Render the mask after regular geometry, but before masked geometry and
+		// transparent things.
 
-        Pass{
-            Blend Zero One
-        }
-    }
+		Tags {"Queue" = "Geometry" }
+
+		// Don't draw in the RGBA channels; just the depth buffer
+
+		ColorMask 0
+		//ZWrite Off
+
+		// Do nothing specific in the pass:
+
+		Pass {}
+	}
 }

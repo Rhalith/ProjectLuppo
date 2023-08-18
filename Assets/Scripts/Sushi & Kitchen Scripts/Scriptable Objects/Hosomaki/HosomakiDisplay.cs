@@ -1,43 +1,29 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class HosomakiDisplay : MonoBehaviour
 {
-    public HosomakiObject hosomaki;
-    Renderer _fillingRend;
+    [SerializeField] private HosomakiObject _salmonHosomaki;
+    [SerializeField] private HosomakiObject _cucumberHosomaki;
 
-    public IngredientController controller;
-    public GameObject filling;
-    public GameObject filling2;
-    public string[] ingredients;
-    public int count = 0;
-    public string sushiName;
-    void Start()
+    private HosomakiObject _hosomaki;
+    private List<SushiIngredient> _ingredients;
+
+    [SerializeField] private MeshRenderer _fillingObject;
+    public List<SushiIngredient> Ingredients { get => _ingredients; set => _ingredients = new(value); }
+    public void CheckIngredientList(List<SushiIngredient> ingredients)
     {
-
-        gameObject.name = sushiName;
-        #region Sample assigner
-        hosomaki = Resources.Load<HosomakiObject>("Assets/Hosomaki/" + sushiName);
-        #endregion
-
-        _fillingRend = filling.GetComponent<MeshRenderer>();
-        _fillingRend.enabled = true;
-        _fillingRend.material = hosomaki.filling;
-
-        _fillingRend = filling2.GetComponent<MeshRenderer>();
-        _fillingRend.enabled = true;
-        _fillingRend.material = hosomaki.filling;
-
-        controller = GameObject.FindWithTag("CustomerManager").GetComponent<IngredientController>();
-
-        if(gameObject.name == "Salmon Hosomaki")
+        if (ingredients.Contains(SushiIngredient.cucumber))
         {
-            //TODO: SalmonCounter and CucumberCounter is not using, so I comment it out
-            //count = controller.SalmonCounter;
+            gameObject.name = "Cucumber Hosomaki";
+            OrderController.Instance.SushiType = OrderedSushiType.CucumberHosomaki;
         }
-        else if(gameObject.name == "Cucumber Hosomaki")
+        else if (ingredients.Contains(SushiIngredient.salmon))
         {
-            //count = controller.CucumberCounter;
+            gameObject.name = "Salmon Hosomaki";
+            OrderController.Instance.SushiType = OrderedSushiType.SalmonHosomaki;
         }
-        controller.ClearIngredient();
+        OrderController.Instance.Ingredients = _ingredients;
+        IngredientController.Instance.ClearIngredient();
     }
 }
