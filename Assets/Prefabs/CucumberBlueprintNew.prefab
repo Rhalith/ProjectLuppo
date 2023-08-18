@@ -11,12 +11,11 @@ GameObject:
   - component: {fileID: 3524982154376911684}
   - component: {fileID: 523713892144452833}
   - component: {fileID: 2350998076797607979}
-  - component: {fileID: 4893609659115458726}
   - component: {fileID: 4893609659115458725}
   - component: {fileID: 4893609659115458724}
   m_Layer: 0
   m_Name: CucumberBlueprintNew
-  m_TagString: Untagged
+  m_TagString: Instantiated
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -86,19 +85,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &4893609659115458726
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4296592628755612158}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.00070333004, y: 0.008882581, z: 0.0010567217}
-  m_Center: {x: -0.0000000071595423, y: -4.656612e-10, z: 2.9103825e-11}
 --- !u!114 &4893609659115458725
 MonoBehaviour:
   m_ObjectHideFlags: 0
