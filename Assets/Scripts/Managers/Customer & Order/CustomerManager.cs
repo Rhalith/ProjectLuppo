@@ -39,7 +39,7 @@ public class CustomerManager : MonoBehaviour
     {
         // Þu anlýk Customer'lar direkt karþýmýzda spawnlansýn diye varlar.
         _position = orderPoint.transform.position;
-        _rotation.eulerAngles = new Vector3(0, 0, 0);
+        _rotation.eulerAngles = new Vector3(0, -90, 0);
 
         // Add Customer
         StartCoroutine(SpawnNewCustomers());
