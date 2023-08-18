@@ -52,7 +52,7 @@ public class DragAndDropManager : MonoBehaviour
     private void OnLeftMouseButtonDownOver(RaycastHit hit)
     {
         // Checks if player holding any ingredient
-        if(!InstantiatedController.Instance.InstantiatedObject && !IngredientController.Instance.IsRolling)
+        if(!InstantiatedController.Instance.InstantiatedObject && !IngredientController.Instance.IsRolling && !IngredientController.Instance.IsCutting)
         {
             if (_selectedObject == null)
             {
