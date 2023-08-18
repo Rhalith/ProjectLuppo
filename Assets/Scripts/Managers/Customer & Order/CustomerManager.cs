@@ -12,7 +12,7 @@ public class CustomerManager : MonoBehaviour
     [SerializeField] GameObject orderPoint;
     [SerializeField] Transform customersParentTransform;
 
-    [SerializeField] int customerLimit = 5;
+    [SerializeField] int customerLimit = 1;
     #endregion
 
     private Vector3 _position;
