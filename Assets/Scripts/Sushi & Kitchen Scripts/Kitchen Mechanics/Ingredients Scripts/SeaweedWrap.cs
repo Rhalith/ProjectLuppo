@@ -102,11 +102,11 @@ public class SeaweedWrap : MonoBehaviour
             CheckIngredientList();
 
             //TODO: This will be changed after adding more orders
-            if (OrderManager.Instance.GetOrder().Equals(OrderedSushiType.SalmonHosomaki))
+            if (OrderController.Instance.SushiType.Equals(OrderedSushiType.SalmonHosomaki))
             {
                 _instObj = Instantiate(salmonHosomakiPrefab);
             }
-            else if (OrderManager.Instance.GetOrder().Equals(OrderedSushiType.CucumberHosomaki))
+            else if (OrderController.Instance.SushiType.Equals(OrderedSushiType.CucumberHosomaki))
             {
                 _instObj = Instantiate(cucumberHosomakiPrefab);
             }
@@ -121,7 +121,7 @@ public class SeaweedWrap : MonoBehaviour
         {
             CheckIngredientList();
 
-            if(OrderManager.Instance.GetOrder().Equals(OrderedSushiType.SalmonCucumberChumaki))
+            if (OrderController.Instance.SushiType.Equals(OrderedSushiType.SalmonCucumberChumaki))
             {
                 _instObj = Instantiate(salmonCucumberChumakiPrefab);
             }
