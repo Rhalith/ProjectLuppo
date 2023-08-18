@@ -8,6 +8,7 @@ public class OrderController : MonoBehaviour
 {
     [SerializeField] private GameObject _hullHolder;
     [SerializeField] private GameObject _maskHolder;
+    [SerializeField] private SushiSlicer _sushiSlicer;
 
     private List<SushiIngredient> _ingredients = new List<SushiIngredient>();
     private OrderedSushiType _sushiType;
@@ -65,6 +66,7 @@ public class OrderController : MonoBehaviour
                 {
                     Destroy(_maskHolder.transform.GetChild(i).gameObject);
                 }
+                _sushiSlicer.ResetHullList();
             }
             else
             {
